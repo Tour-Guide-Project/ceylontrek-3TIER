@@ -13,15 +13,16 @@
 <body style="background-image: url('../resources/img/ct.jpg'); background-size:cover;background-position: center center;background-attachment: fixed; background-repeat:no-repeat;">
 	<?php include('../view/top_bar.php'); ?>
 	<div class="login_box">
-		<form action="../controller/login_controller.php" method="post">
+		<form action="../controller/auth/login_controller.php" method="post">
 			<h1>Login</h1>
-			<?php 
-			if(isset($errors)&& !empty($errors))
-			{
-				echo '<p class="error">Invalid Username/Password</p>';
-			 
-			}
-			?>
+		    <?php 
+			    if(isset($_GET['param'])){
+                    $errors=$_GET['param'];
+				    foreach ($errors as $error) {
+					    echo '<p class="error">'.$error.'</p>';
+				    }
+			    }
+		    ?>
 			<div class="text_box focus">
 				<div class="i">
 					<i class="fa fa-user fa-2x" aria-hidden="true"></i>
@@ -44,9 +45,9 @@
 
 			<button type="submit" name="submit">Log in</button>
 
-			<a href="forgot_password.php">Forgot Password?</a>
+			<a href="../view/forgot_password.php">Forgot Password?</a>
 
-			<p>Don't have an account yet? <a href="signup_selection_page.php">Sign up</a></p>
+			<p>Don't have an account yet? <a href="../view/signup_selection_page.php">Sign up</a></p>
 			
 			</form>
 

@@ -24,7 +24,7 @@
                 </li>
             </div>
 
-            <button class="loginbutton sign_out"><span>SignOut</span></button>
+            <button onclick="window.location='/ceylontrek-3tier/controller/auth/logout_controller.php'" class="loginbutton sign_out"><span>SignOut</span></button>
 
         </nav>
         
