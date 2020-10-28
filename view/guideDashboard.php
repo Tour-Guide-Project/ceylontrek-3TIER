@@ -17,54 +17,54 @@
             <div class="side_bar">
                 <img src="../resources/img/logo2.png" class="dashlogo">
                 <img src="../resources/img/reviewimg.jpg" class="profile" >
-                <button class="edit"><span>Edit Profile</span> </button><br>
+                <form action="../controller/admin_dashboard_controller.php" method="post">
+                    <button class="edit" name="edit_profile"><span>Edit Profile</span> </button><br>
+                </form>
                   
                 <div class="sidebar-menu">
-                    <form action="../controller/guide_dashboard_controller.php" method="post">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                                    <span class="menu-title">Inbox</span>
-                                </a>
-                            </li>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
+                                <span class="menu-title">Inbox</span>
+                            </a>
+                        </li>
 
-                            <li>
-                                <a href="#">
-                                    <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                    <span class="menu-title">Create tour package</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
+                                <span class="menu-title">Create tour package</span>
+                            </a>
+                        </li>
 
-                            <li>
-                                <a href="#">
-                                    <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                    <span class="menu-title">View My Profile</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                                <span class="menu-title">View My Profile</span>
+                            </a>
+                        </li>
 
-                            <li>
-                                <a href="#">
-                                    <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                    <span class="menu-title">View My Tour Packages</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                                <span class="menu-title">View My Tour Packages</span>
+                            </a>
+                        </li>
 
-                            <li>
-                                <a href="#">
-                                    <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                                    <span class="menu-title">Upcoming Tours</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
+                                <span class="menu-title">Upcoming Tours</span>
+                            </a>
+                        </li>
 
-                            <li>
-                                <a href="#">
-                                    <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                                    <span class="menu-title">Previous Tours</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </form>
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
+                                <span class="menu-title">Previous Tours</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div><!--sidebar-manu-->        
             </div><!--side_bar-->
 
