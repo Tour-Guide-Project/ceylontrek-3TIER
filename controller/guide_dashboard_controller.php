@@ -2,7 +2,7 @@
 session_start();?>
 <?php 
 	if (isset($_POST['edit_profile'])){
-		header('Location: ../view/view_guide_profile.php');
+		header('Location: ../controller/view_guide_profile_controller.php');
 		$_SESSION['level']='guide';
 	}
 ?>

@@ -78,16 +78,18 @@
         $gender=$_POST['gender'];
         
         //checking if email address already exists
-        $email=mysqli_real_escape_string($connection,$_POST['email']);//(email sanitized) escaped special charactrs,we can create legal query from this.
-        $result_set1=exist_email($connection,$email);
+        if (!$_SESSION['email'] == $email) {
+            $email=mysqli_real_escape_string($connection,$_POST['email']);//(email sanitized) escaped special charactrs,we can create legal query from this.
+            $result_set1=exist_email($connection,$email);
 
-        if ($result_set1) {
+            if ($result_set1) {
             
-            if (mysqli_num_rows($result_set1) == 1) {
-                $errors[]='Email address already exists';
+                if (mysqli_num_rows($result_set1) == 1) {
+                    $errors[]='Email address already exists';
+                }
             }
         }
-
+        
         // after pressed update button, add ne data to the database
         if(empty($errors)) {
 
