@@ -118,9 +118,9 @@
 		}
     }
 
-    /*if (isset($_POST['cancel'])) {
-        header('Location: /ceylontrek-3tier/view/guideDashboard.php?cancel-view-guide-profile=true');
-    }*/
+    if (isset($_POST['cancel'])) {
+        header('Location: /ceylontrek-3tier/view/guideDashboard.php');
+    }
 ?>
 
 <?php mysqli_close($connection);?>
