@@ -105,7 +105,7 @@
             $result_set2 = update_query($connection, $id, $first_name, $last_name, $contact, $address, $email, $gender);
 
             if($result_set2){
-				header('Location:/ceylontrek-3tier/view/view_admin_profile.php?admin-modified=true');
+				header('Location:/ceylontrek-3tier/controller/view_guide_profile_controller.php?admin-modified=true');
             }
 
             else{
@@ -114,9 +114,13 @@
         }
 
         else{
-			header('Location: /ceylontrek-3tier/view/view_admin_profile.php?'.http_build_query(array('param'=>$errors)));
+			header('Location: /ceylontrek-3tier/view/view_guide_profile.php?'.http_build_query(array('param'=>$errors)));
 		}
     }
+
+    /*if (isset($_POST['cancel'])) {
+        header('Location: /ceylontrek-3tier/view/guideDashboard.php?cancel-view-guide-profile=true');
+    }*/
 ?>
 
 <?php mysqli_close($connection);?>
