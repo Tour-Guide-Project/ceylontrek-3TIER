@@ -118,9 +118,6 @@
 		}
     }
 
-    if (isset($_POST['cancel'])) {
-        header('Location: /ceylontrek-3tier/view/guideDashboard.php');
-    }
 ?>
 
 <?php mysqli_close($connection);?>

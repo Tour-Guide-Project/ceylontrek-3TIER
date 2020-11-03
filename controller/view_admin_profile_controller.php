@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\config\connection.php'); ?>
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\signup_sql.php'); ?>
-<?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\view_profile_sql.php'); ?>
+<?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\view_admin_profile_sql.php'); ?>
 <?php 
 	//checking if a user is logged in
 	if (!isset($_SESSION['id'])) {
@@ -29,7 +29,9 @@
 				$_SESSION['gender']=$result['gender'];
 				$_SESSION['address']=$result['address'];
 				$_SESSION['contact']=$result['contact'];
+				$password=$result['password'];
 				//print_r($_SESSION);
+				//print_r($password);
 				header('Location:/ceylontrek-3tier/view/view_admin_profile.php');
 
 			}
@@ -62,28 +64,14 @@
 		if(!isset($_POST['address']) || strlen(trim($_POST['address']))<1){
 			$errors[]='Address is requried/Invalid!';
 		}
-		if(!isset($_POST['email']) || strlen(trim($_POST['email']))<1){
-			$errors[]='Email Address is requried/Invalid!';
-        }
         
+ 
 		$first_name=$_POST['first_name'];
 		$last_name=$_POST['last_name'];
-		$email=$_POST['email'];
 		$contact=$_POST['tel_no'];
 		$address=$_POST['address'];
-		$gender=$_POST['gender'];
-
-	
-		 //checking if email address already exists
-        $email=mysqli_real_escape_string($connection,$_POST['email']);//(email sanitized) escaped special charactrs,we can create legal query from this.
-        $result_set1=exist_email($connection,$email);
-
-		if($result_set1)
-		{
-			if(mysqli_num_rows($result_set1)==1){
-				$errors[]='Email address already exists';
-			}
-		} 
+        $gender=$_POST['gender'];
+		
 		//after pressed save button, add new users in to the database.
 		if (empty($errors)) {
 			//no errors found...adding new records
@@ -92,12 +80,11 @@
 			$contact=mysqli_real_escape_string($connection,$_POST['tel_no']);
 			$address=mysqli_real_escape_string($connection,$_POST['address']);
 			$gender=mysqli_real_escape_string($connection,$_POST['gender']);
-			//email address already sanitized
 
-			$result_set2=update_query($connection,$id,$first_name,$last_name,$contact,$address,$email,$gender);
+			$result_set2=update_query($connection,$id,$first_name,$last_name,$contact,$address,$gender);
 
 			if($result_set2){
-				header('Location:/ceylontrek-3tier/view/view_admin_profile.php?admin-modified=true');
+				header('Location:/ceylontrek-3tier/controller/view_admin_profile_controller.php?admin-modified=true');
             }
             else{
 				$errors[]='Failed to modify the record.';
@@ -107,6 +94,58 @@
 			header('Location: /ceylontrek-3tier/view/view_admin_profile.php?'.http_build_query(array('param'=>$errors)));
 		}
 		
+	}
+
+	if(isset($_POST['edit_email']))
+	{
+		header('Location:/ceylontrek-3tier/view/reset_email.php');
+	}
+
+	//check click update email address
+	if(isset($_POST['update_email']))
+	{
+		if(!isset($_POST['current_password']) || strlen(trim($_POST['current_password']))<1){
+			$errors[]='Current Password is requried/Invalid!';
+		}
+		if(!isset($_POST['new_email']) || strlen(trim($_POST['new_email']))<1){
+			$errors[]='New Email Address is requried/Invalid!';
+		}
+		$current_password=mysqli_real_escape_string($connection,$_POST['current_password']);
+		$curr_password=sha1($current_password);
+		//print($curr_password);
+		if($curr_password!=$password){
+			$errors[]='Current Password is Invalid!';
+		}
+
+		$new_email=mysqli_real_escape_string($connection,$_POST['new_email']);//(email sanitized) escaped special charactrs,we can create legal query from this.
+		$result_set1=exist_email($connection,$new_email);
+		
+       // checking if email address already exists
+        if ($result_set1) {
+            if (mysqli_num_rows($result_set1) == 1) {
+                    $errors[]='Email address already exists';
+            }
+		}
+		//empty errors
+		if(empty($errors)){
+
+			$result_set3=update_email($connection,$id,$new_email);
+			print_r($result_set3);
+			if($result_set3){
+				header('Location:/ceylontrek-3tier/controller/view_admin_profile_controller.php?admin-modified=true');
+            }
+            else{
+				$errors[]='Failed to modify the record.';
+			}
+		}
+		else{
+			header('Location: /ceylontrek-3tier/view/reset_email.php?'.http_build_query(array('param'=>$errors)));
+		}
+
+	}
+	if(isset($_POST['cancel']))
+	{
+		header('Location:/ceylontrek-3tier/view/view_admin_profile.php');
 	}
  ?>
 <?php mysqli_close($connection);?>

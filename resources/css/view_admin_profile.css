@@ -1,125 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 
-*{
-	margin: 0;
-	padding: 0;
-	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+.view_admin_profile_box {
+    margin: 150px auto 100px auto;
+    display: -webkit-box;
+    /*create box with auto hight */
+    width: 500px;
+    height: 100%;
+    padding: 50px;
+    background: rgba(0, 0, 0, .6);
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
 }
-.view_admin_profile_box{
-	margin:150px auto 100px auto;
-	display: -webkit-box;/*create box with auto hight */
-	width: 500px;
-	height: 100%;
-	padding: 50px;
-	background: rgba(0,0,0,.6);
-	box-sizing: border-box;
-	box-shadow: 0 5px 25px rgba(0,0,0,.5);
-	border-radius: 10px;
-}
-.view_admin_profile_box h1{
+
+.view_admin_profile_box h1 {
     font-weight: bold;
-	padding: 13px 0;
-	margin: 0 20px 22px;
-	font-size: 38px;
-	pointer-events: none;
-	text-align: center;
-	color:cadetblue;
-}
-.view_admin_profile_box a:hover,a:active{
-	color: white; font-size:18px;
-}
-.text_box{
-  width: 100%;
-  overflow: hidden;
-  font-size: 24px;
-  padding: 8px 0;
-  margin: 8px 10px;
-  border-bottom: 1px solid  lightgray;
-}
-.text_box label{
-	float: left;
-	font-size: 20px;
-	font-weight: bold;
-	color: black;
-}
-.text_box input{
-  border: none;
-  outline: none;
-  background: none;
-  color: white;
-  font-size: 18px;
-  width: 100%;
-  float: left;
-  margin-left: 10px;
-  margin-top:10px;
-}
-.input_radio{
-	margin-top: 10px;
-	margin-left: 9px;
-	font-size: 20px;
-	color: black;
-
+    padding: 13px 0;
+    margin: 0 20px 22px;
+    font-size: 38px;
+    pointer-events: none;
+    text-align: center;
+    color: cadetblue;
 }
 
-.reset_psw a{
-	padding: 10px 10px;
-	text-decoration: none;
-	color: #03a9f4;
-	font-size: 18px;
-	transition: .3s;	
-}
-.reset_psw a:hover{
-	color: black;
-	font-weight: bold;
-	font-size: 20px;
-}
-.reset_psw{
-	margin-top: 10px;
-	margin-left: 90px;
+.view_admin_profile_box a:hover,
+a:active {
+    color: white;
+    font-size: 18px;
 }
 
-.view_admin_profile_box p.error{
-	position: relative;
-	background-color:#92a8d1; 
-	outline: none;
-	color: red;
-	border-radius: 5px;
-	padding: 5px 5px 5px 5px;
-	font-size: 18px;
-	margin: 5px;
+.text_box {
+    width: 100%;
+    overflow: hidden;
+    font-size: 24px;
+    padding: 8px 0;
+    margin: 8px 10px;
+    border-bottom: 1px solid lightgray;
 }
-.submit{
-	float: right;
-	background: transparent;
-	border: none;
-	outline: none;
-	margin-top: 15px;
-	margin-right: 5px;
-	padding: 10px 20px;
-	font-size: 16px;
-	background: #03a9f4;
-	border-radius: 5px;
-	color: #fff;
-	cursor: pointer;
-	transition: .5s;
+
+.text_box label {
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
 }
-.cancel{
-	float: left;
-	background: transparent;
-	border: none;
-	outline: none;
-	margin-top: 15px;
-	margin-bottom: 30px;
-	padding: 10px 20px;
-	font-size: 16px;
-	background: #03a9f4;
-	border-radius: 5px;
-	color: #fff;
-	cursor: pointer;
-	transition: .5s;
+
+.text_box input {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
 }
-button:hover{color: white; font-weight: bold;font-size: 17px;}
+
+.input_radio {
+    margin-top: 10px;
+    margin-left: 9px;
+    font-size: 20px;
+    color: black;
+}
+
+.reset_psw a {
+    padding: 5px 5px;
+    text-decoration: none;
+    color: #03a9f4;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.reset_psw a:hover {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.reset_psw {
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.reset_email button:hover {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.reset_email button {
+    float: right;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    background: rgba(0, 0, 0, .6);
+    margin-top: 10px;
+    color: #03a9f4;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.view_admin_profile_box p.error {
+    position: relative;
+    background-color: #92a8d1;
+    outline: none;
+    color: red;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.submit {
+    float: right;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 30px 5px 0 0;
+    background: #03a9f4;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.cancel {
+    border: none;
+    outline: none;
+    float: left;
+    margin: 40px 30px 10px 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #03a9f4;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+
+button:hover {
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
 
 
+/* The popup form of edit email- hidden by default */
 
+.form-popup {
+    margin: 110px auto 30px 400px;
+    display: -webkit-box;
+    /*create box with auto hight */
+    width: 500px;
+    height: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
 
+.form-container {
+    margin: 60px auto 20px auto;
+    width: 500px;
+    padding: 50px;
+    background: #F0F8FF;
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+}
 
+.form-container label {
+    font-size: 18px;
+    color: black;
+}
+
+.form-container input {
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #DCDCDC;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+}
+
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.8;
+    float: right;
+}
+
+.form-container .cancel_form {
+    background-color: red;
+    float: left;
+}
+
+.form-container .btn:hover {
+    opacity: 1;
+}
+
+.form-container p.error {
+    position: relative;
+    background-color: #92a8d1;
+    outline: none;
+    color: red;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    font-size: 18px;
+    margin: 5px;
+}
