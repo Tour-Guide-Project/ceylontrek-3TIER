@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +16,7 @@
 			
             <!-- popup window -->
         <div class="form-popup" >
-          <form action="../controller/view_admin_profile_controller.php" method="post" class="form-container">
+          <form action="../controller/reset_email_controller.php" method="post" class="form-container">
             <?php
 				if(isset($_GET['param'])){
                     $errors=$_GET['param'];

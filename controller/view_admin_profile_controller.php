@@ -64,8 +64,8 @@
 		if(!isset($_POST['address']) || strlen(trim($_POST['address']))<1){
 			$errors[]='Address is requried/Invalid!';
 		}
-        
- 
+		
+		
 		$first_name=$_POST['first_name'];
 		$last_name=$_POST['last_name'];
 		$contact=$_POST['tel_no'];
@@ -102,47 +102,47 @@
 	}
 
 	//check click update email address
-	if(isset($_POST['update_email']))
-	{
-		if(!isset($_POST['current_password']) || strlen(trim($_POST['current_password']))<1){
-			$errors[]='Current Password is requried/Invalid!';
-		}
-		if(!isset($_POST['new_email']) || strlen(trim($_POST['new_email']))<1){
-			$errors[]='New Email Address is requried/Invalid!';
-		}
-		$current_password=mysqli_real_escape_string($connection,$_POST['current_password']);
-		$curr_password=sha1($current_password);
-		//print($curr_password);
-		if($curr_password!=$password){
-			$errors[]='Current Password is Invalid!';
-		}
+	// if(isset($_POST['update_email']))
+	// {
+	// 	if(!isset($_POST['current_password']) || strlen(trim($_POST['current_password']))<1){
+	// 		$errors[]='Current Password is requried/Invalid!';
+	// 	}
+	// 	if(!isset($_POST['new_email']) || strlen(trim($_POST['new_email']))<1){
+	// 		$errors[]='New Email Address is requried/Invalid!';
+	// 	}
+	// 	$current_password=mysqli_real_escape_string($connection,$_POST['current_password']);
+	// 	$curr_password=sha1($current_password);
+	// 	//print($curr_password);
+	// 	if($curr_password!=$password){
+	// 		$errors[]='Current Password is Invalid!';
+	// 	}
 
-		$new_email=mysqli_real_escape_string($connection,$_POST['new_email']);//(email sanitized) escaped special charactrs,we can create legal query from this.
-		$result_set1=exist_email($connection,$new_email);
+	// 	$new_email=mysqli_real_escape_string($connection,$_POST['new_email']);//(email sanitized) escaped special charactrs,we can create legal query from this.
+	// 	$result_set1=exist_email($connection,$new_email);
 		
-       // checking if email address already exists
-        if ($result_set1) {
-            if (mysqli_num_rows($result_set1) == 1) {
-                    $errors[]='Email address already exists';
-            }
-		}
-		//empty errors
-		if(empty($errors)){
+    //    // checking if email address already exists
+    //     if ($result_set1) {
+    //         if (mysqli_num_rows($result_set1) == 1) {
+    //                 $errors[]='Email address already exists';
+    //         }
+	// 	}
+	// 	//empty errors
+	// 	if(empty($errors)){
 
-			$result_set3=update_email($connection,$id,$new_email);
-			print_r($result_set3);
-			if($result_set3){
-				header('Location:/ceylontrek-3tier/controller/view_admin_profile_controller.php?admin-modified=true');
-            }
-            else{
-				$errors[]='Failed to modify the record.';
-			}
-		}
-		else{
-			header('Location: /ceylontrek-3tier/view/reset_email.php?'.http_build_query(array('param'=>$errors)));
-		}
+	// 		$result_set3=update_email($connection,$id,$new_email);
+	// 		print_r($result_set3);
+	// 		if($result_set3){
+	// 			header('Location:/ceylontrek-3tier/controller/view_admin_profile_controller.php?admin-modified=true');
+    //         }
+    //         else{
+	// 			$errors[]='Failed to modify the record.';
+	// 		}
+	// 	}
+	// 	else{
+	// 		header('Location: /ceylontrek-3tier/view/reset_email.php?'.http_build_query(array('param'=>$errors)));
+	// 	}
 
-	}
+	// }
 	if(isset($_POST['cancel']))
 	{
 		header('Location:/ceylontrek-3tier/view/view_admin_profile.php');
