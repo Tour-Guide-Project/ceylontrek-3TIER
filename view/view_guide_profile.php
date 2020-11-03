@@ -78,9 +78,13 @@ $contact=$_SESSION['contact'];
 				<label>Female</label>
 			</div><!-- label -->
 
-				<div class="reset_psw">
-					<a  href="/ceylontrek-3tier/view/reset_password.php">Reset Password</a>
-				</div>	
+			<div class="reset_psw">
+				<a  href="/ceylontrek-3tier/view/reset_password.php">Reset Password</a>
+			</div>
+
+			<div class="reset_email">
+				<button type="submit" name="edit_email">Reset Email</button>
+			</div>	
 			
 			<button class="cancel" type="reset" name="cancel">Cancel</button>
 			<button class="submit" type="submit" name="submit">Update Profile</button>
