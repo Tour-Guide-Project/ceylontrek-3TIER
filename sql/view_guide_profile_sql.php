@@ -22,4 +22,11 @@ function update_guide_email($connection,$id,$new_email){
     $result=mysqli_query($connection,$query);
     return $result;
 }
+
+function get_guides($connection){
+    $query = "SELECT * FROM tourguide WHERE level = 'tourguide' ORDER BY first_name";
+    
+    $result = mysqli_query($connection,$query);
+    return $result;
+}
 ?>

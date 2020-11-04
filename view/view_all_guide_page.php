@@ -1,3 +1,13 @@
+<?php session_start();
+
+$result_set = $_SESSION['result_set'];
+
+// $first_name=$_SESSION['first_name'];
+// // $last_name=$_SESSION['last_name'];
+// $email=$_SESSION['email'];
+// //print_r($_SESSION);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,83 +34,89 @@
 
 				<div class="moderator_dashboard_box">
 					<div class="prow">
-										
-						<div class="pcolumn">
-							<div class="pcard">
-								<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-									<div class="pcontainer">
-										<h2>Senal Arosh</h2>
-										<p>senal@gmail.com</p>
-										<p><button  class="pbutton">View Profile</button></p>
-									</div>
-							</div>
-						</div>
 
-						<div class="pcolumn">
-							<div class="pcard">
-								<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-									<div class="pcontainer">
-										<h2>Senal Arosh</h2>
-										<p>senal@gmail.com</p>
-										<p><button  class="pbutton">View Profile</button></p>
+						<?php 
+							while ($result = mysqli_fetch_assoc($result_set)) {
+						?>
+											
+								<div class="pcolumn">
+									<div class="pcard">
+										<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+											<div class="pcontainer">
+												<h2><?php echo $result['first_name']; ?></h2>
+												<p><?php echo $result['email']; ?></p>
+												<p><button  class="pbutton">View Profile</button></p>
+											</div>
 									</div>
-							</div>
-						</div>
+								</div>
 
-						<div class="pcolumn">
-							<div class="pcard">
-								<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-									<div class="pcontainer">
-										<h2>Senal Arosh</h2>
-										<p>senal@gmail.com</p>
-										<p><button  class="pbutton">View Profile</button></p>
-									</div>
-							</div>
-						</div>
+						<?php mysqli_free_result($result_set); } ?>
 
-						<div class="pcolumn">
-							<div class="pcard">
-								<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-									<div class="pcontainer">
-										<h2>Senal Arosh</h2>
-										<p>senal@gmail.com</p>
-										<p><button  class="pbutton">View Profile</button></p>
-									</div>
-							</div>
-						</div>
+						 <!-- <div class="pcolumn">
+						// 	<div class="pcard">
+						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						// 			<div class="pcontainer">
+						// 				<h2>Senal Arosh</h2>
+						// 				<p>senal@gmail.com</p>
+						// 				<p><button  class="pbutton">View Profile</button></p>
+						// 			</div>
+						// 	</div>
+						// </div>
 
-						<div class="pcolumn">
-							<div class="pcard">
-								<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-									<div class="pcontainer">
-										<h2>Senal Arosh</h2>
-										<p>senal@gmail.com</p>
-										<p><button  class="pbutton">View Profile</button></p>
-									</div>
-							</div>
-						</div>
+						// <div class="pcolumn">
+						// 	<div class="pcard">
+						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						// 			<div class="pcontainer">
+						// 				<h2>Senal Arosh</h2>
+						// 				<p>senal@gmail.com</p>
+						// 				<p><button  class="pbutton">View Profile</button></p>
+						// 			</div>
+						// 	</div>
+						// </div>
 
-						<div class="pcolumn">
-							<div class="pcard">
-								<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-									<div class="pcontainer">
-										<h2>Senal Arosh</h2>
-										<p>senal@gmail.com</p>
-										<p><button  class="pbutton">View Profile</button></p>
-									</div>
-							</div>
-						</div>
+						// <div class="pcolumn">
+						// 	<div class="pcard">
+						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						// 			<div class="pcontainer">
+						// 				<h2>Senal Arosh</h2>
+						// 				<p>senal@gmail.com</p>
+						// 				<p><button  class="pbutton">View Profile</button></p>
+						// 			</div>
+						// 	</div>
+						// </div>
 
-						<div class="pcolumn">
-							<div class="pcard">
-								<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-									<div class="pcontainer">
-										<h2>Senal Arosh</h2>
-										<p>senal@gmail.com</p>
-										<p><button  class="pbutton">View Profile</button></p>
-									</div>
-							</div>
-						</div>
+						// <div class="pcolumn">
+						// 	<div class="pcard">
+						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						// 			<div class="pcontainer">
+						// 				<h2>Senal Arosh</h2>
+						// 				<p>senal@gmail.com</p>
+						// 				<p><button  class="pbutton">View Profile</button></p>
+						// 			</div>
+						// 	</div>
+						// </div>
+
+						// <div class="pcolumn">
+						// 	<div class="pcard">
+						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						// 			<div class="pcontainer">
+						// 				<h2>Senal Arosh</h2>
+						// 				<p>senal@gmail.com</p>
+						// 				<p><button  class="pbutton">View Profile</button></p>
+						// 			</div>
+						// 	</div>
+						// </div>
+
+						// <div class="pcolumn">
+						// 	<div class="pcard">
+						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						// 			<div class="pcontainer">
+						// 				<h2>Senal Arosh</h2>
+						// 				<p>senal@gmail.com</p>
+						// 				<p><button  class="pbutton">View Profile</button></p>
+						// 			</div>
+						// 	</div>
+						// </div> -->
 							
 					</div> <!-- prow -->						
 
