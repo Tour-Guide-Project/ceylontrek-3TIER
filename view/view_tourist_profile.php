@@ -79,8 +79,10 @@ $contact=$_SESSION['contact'];
 					<a  href="/ceylontrek-3tier/view/reset_password.php">Reset Password</a>
 				</div>	
 			
-			<button class="cancel" type="submit" name="cancel">Cancel</button>
-			<button class="submit" type="submit" name="submit">Update Profile</button>
+				<div>
+					<button class="cancel" type="reset" name="cancel">Cancel</button>
+					<button class="submit" type="submit" name="submit">Update Profile</button>
+				</div>
 			
 			</form>
 			

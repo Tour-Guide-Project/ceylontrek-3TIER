@@ -83,8 +83,10 @@ $contact=$_SESSION['contact'];
 					<button type="submit" name="edit_email">Reset Email</button>
 				</div>
 				
-			<button class="cancel" type="reset" name="cancel">Cancel</button>
-			<button class="submit" type="submit" name="submit">Update Profile</button>
+				<div>
+					<button class="cancel" type="reset" name="cancel">Cancel</button>
+					<button class="submit" type="submit" name="submit">Update Profile</button>
+				</div>
 			
 			</form>
 			
