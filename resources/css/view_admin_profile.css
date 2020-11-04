@@ -80,7 +80,7 @@ a:active {
 .reset_psw a:hover {
     color: black;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .reset_psw {
@@ -91,8 +91,6 @@ a:active {
 
 .reset_email button:hover {
     color: black;
-    font-weight: bold;
-    font-size: 20px;
 }
 
 .reset_email button {
@@ -147,9 +145,8 @@ a:active {
 }
 
 button:hover {
-    color: white;
-    font-weight: bold;
-    font-size: 17px;
+    color: rgb(213, 213, 218);
+    background-color: #043e58;
 }
 
 

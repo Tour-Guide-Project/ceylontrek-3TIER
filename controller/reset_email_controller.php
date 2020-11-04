@@ -2,7 +2,7 @@
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\config\connection.php'); ?>
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\signup_sql.php'); ?>
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\view_admin_profile_sql.php'); ?>
-<?php //require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\view_moderator_profile_sql.php'); ?>
+<?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\view_moderator_profile_sql.php'); ?>
 <?php //require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\view_tourist_profile_sql.php'); ?>
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\view_guide_profile_sql.php'); ?>
 <?php 
@@ -24,9 +24,9 @@
             $result_set=get_id_admin($connection,$id);
         }
 
-        //if($level=='moderator') {
-            //$result_set=get_id_moderator($connection,$id);
-        //}
+        if($level=='moderator') {
+            $result_set=get_id_moderator($connection,$id);
+        }
 
         //if($level=='tourist') {
             //$result_set=get_id_tourist($connection,$id);
@@ -82,15 +82,13 @@
 				    header('Location:/ceylontrek-3tier/controller/view_admin_profile_controller.php?adminemail-modified=true');
                 }
 
-                // if($_SESSION['level']=='moderator') {
-                //     $result_set3=update_email($connection,$id,$new_email);
-                //     print_r($result_set3);
-				//     header('Location:/ceylontrek-3tier/controller/view_moderator_profile_controller.php?admin-modified=true');
-                // }
+                if($_SESSION['level']=='moderator') {
+                    $result_set3=update_moderator_email($connection,$id,$new_email);
+				    header('Location:/ceylontrek-3tier/controller/view_moderator_profile_controller.php?moderatoremail-modified=true');
+                }
 
                 // if($_SESSION['level']=='tourist') {
                 //     $result_set3=update_email($connection,$id,$new_email);
-                //     print_r($result_set3);
 				//     header('Location:/ceylontrek-3tier/controller/view_tourist_profile_controller.php?admin-modified=true');
                 // }
 

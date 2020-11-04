@@ -6,15 +6,12 @@ $email=$_SESSION['email'];
 $gender=$_SESSION['gender'];
 $address=$_SESSION['address'];
 $contact=$_SESSION['contact'];
-//print_r($_SESSION);
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>View Guide Profile-Ceylon Trek</title>
+	<title>View Moderator Profile-Ceylon Trek</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/view_admin_profile.css">
@@ -23,10 +20,10 @@ $contact=$_SESSION['contact'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body style="background: none;">
+<body style="background:none;">
 	<?php include('../view/new_top_bar.php'); ?>
 	<div class="view_admin_profile_box">
-		<form action="../controller/view_guide_profile_controller.php" method="post">
+		<form action="../controller/view_moderator_profile_controller.php" method="post">
 			<h1>Edit My Profile</h1>
 			<?php
 				if(isset($_GET['param'])){
@@ -78,18 +75,18 @@ $contact=$_SESSION['contact'];
 				<label>Female</label>
 			</div><!-- label -->
 
-			<div class="reset_psw">
-				<a  href="/ceylontrek-3tier/view/reset_password.php">Reset Password</a>
-			</div>
+				<div class="reset_psw">
+					<a  href="/ceylontrek-3tier/view/reset_password.php">Reset Password</a>
+				</div>
 
-			<div class="reset_email">
-				<button type="submit" name="edit_email">Reset Email</button>
-			</div>	
-			
-			<div>
-				<button class="cancel" type="reset" name="cancel">Cancel</button>
-				<button class="submit" type="submit" name="submit">Update Profile</button>
-			</div>
+				<div class="reset_email">
+					<button type="submit" name="edit_email">Reset Email</button>
+				</div>
+				
+				<div>
+					<button class="cancel" type="reset" name="cancel">Cancel</button>
+					<button class="submit" type="submit" name="submit">Update Profile</button>
+				</div>
 			
 			</form>
 			
