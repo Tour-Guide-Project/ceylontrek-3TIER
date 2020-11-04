@@ -1,0 +1,70 @@
+.tourPackage {
+    box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+    background: rgba(255, 255, 255, 0.90);
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    min-height: 300px;
+    width: 1050px;
+    padding-top: 10px;
+    margin-top: 20px;
+    margin-left: 375px;
+    margin-bottom: 20px;
+}
+
+
+/* 	Package details  */
+
+.package-details {
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+    padding: 10px;
+    height: 100%;
+    float: left;
+    margin-left: 10px
+}
+
+
+/* 	Package Name */
+
+.tourPackage .package-details h1 {
+    font-family: lato;
+    /* display: inline-block; */
+    position: relative;
+    font-size: 34px;
+    color: #344055;
+    margin: 0;
+}
+
+.tourPackage .package-details h4 {
+    font-family: lato;
+    /* display: inline-block; */
+    position: relative;
+    color: #344055;
+    margin: 0;
+    font-size: 20px;
+}
+
+
+/* The most important information about the Package */
+
+.tourPackage .package-details>p {
+    font-family: 'Farsan', cursive;
+    text-align: left;
+    font-size: 18px;
+    color: #7d7d7d;
+    padding-right: 20px;
+}
+
+
+/* control */
+
+.control {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 800px
+}
+
+
+/* the Button */

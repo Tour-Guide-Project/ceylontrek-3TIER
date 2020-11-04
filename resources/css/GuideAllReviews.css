@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    border: 0;
+}
+
+.Guide_All_Reviewsbody {
+    background-color: rgb(207, 206, 206);
+}
+
+.packagereviewbody {
+    height: auto;
+    background-color: rgb(207, 206, 206);
+}
+
+.wrapper {
+    height: auto;
+}
+
+.split_left {
+    width: 25%;
+    background-color: transparent;
+    float: left;
+    margin-top: 120px;
+    margin-left: 60px;
+    height: 320px;
+    width: 300px;
+    border: 0;
+    text-align: center;
+}
+
+.split_left img {
+    border-radius: 50%;
+    margin: 20px;
+    margin-left: 30px;
+    width: 200px;
+}
+
+.split_left h3 {
+    margin: 2px;
+    color: black;
+}
+
+.box {
+    padding: 30px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border: 0;
+    width: 60%;
+    height: 80px;
+    background-color: whitesmoke;
+    margin-left: 0px;
+    border-radius: 20px;
+}
+
+.box:hover {
+    border: 1px solid blue;
+}
+
+.rating {
+    margin-right: 130px;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    height: 200px;
+    float: right;
+}
+
+.reviews {
+    height: auto;
+    float: right;
+    width: 1000px;
+    background-color: transparent;
+    margin-right: 100px;
+    margin-bottom: 30px;
+    /* overflow: hidden; */
+}
+
+.reviews .review {
+    margin: 20px;
+    margin-left: 0;
+    width: 98%;
+    color: black;
+    background-color: whitesmoke;
+}
+
+.checked {
+    color: rgb(250, 165, 6);
+}
+
+.fa {
+    margin: 5px;
+    width: 20px;
+    height: 30px;
+}
+
+.star {
+    margin: 10px;
+}
+
+.star-container {
+    width: 25%;
+    white-space: nowrap;
+}
+
+.bar-container {
+    background-color: #f1f1f1;
+    width: 550px;
+}
+
+.bar-4 {
+    width: 200px;
+    height: 20px;
+    background-color: rgb(250, 165, 6);
+    border: 1px solid;
+}
+
+.bar-3 {
+    width: 400px;
+    height: 20px;
+    background-color: rgb(250, 165, 6);
+    border: 1px solid;
+}
+
+.bar-2 {
+    width: 300px;
+    height: 20px;
+    background-color: rgb(250, 165, 6);
+    border: 1px solid;
+}
+
+.bar-1 {
+    width: 500px;
+    height: 20px;
+    background-color: rgb(250, 165, 6);
+    border: 1px solid;
+}
+
+.reviewend {
+    float: left;
+}

@@ -1,0 +1,109 @@
+
+*{   margin:0; 
+	padding:0;
+	
+}
+
+.header
+{   width: 100%;
+	height: 100vh;
+	background: #eee;
+	background-image:url(../img/Tourguidesearch/pic1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat; 
+    align-items: center;
+    justify-content: center;	
+}
+
+h1
+{
+	text-align: center;
+	color: white;
+	border-bottom: 1px blue;
+	margin-bottom:70px;
+	font-size: 30px;
+	letter-spacing: 2px;
+	padding-bottom: 50px;
+}
+
+.search
+{
+	height: 26px;
+	padding: 10px;
+	padding-right: 20px; 
+	
+	
+
+
+}
+
+.destinations
+{
+	width: 400px;
+
+}
+.arrivaldate
+{
+	width: 200px;
+}
+.departuredate
+{
+    width: 200px;	
+}
+.numoftourist
+{
+	width: 120px;
+}
+.Search-btn
+{
+	height: 50px;
+	width: 150px;
+	background: #3e4979;
+	border: none;
+	color: #fff;
+}
+.Search-btn:hover
+{
+   background: #0394CA;
+   cursor: pointer;
+}
+.check-box
+{
+	text-align: center;
+	margin-right: 50px;
+}
+
+.check-box label{
+	margin-right: 50px;
+}
+
+
+.check-box input[type="checkbox"]
+{
+	width: 20px;
+	height: 20px;
+}
+
+.seeall-button{
+	width: 150px;
+	height: 50px;
+	background-color: rgb(70, 70, 134);
+	float: left;
+	margin-left: 500px;
+	border: none;
+	color: white;
+}
+
+.seeall-button:hover{
+	background-color: #0394CA;
+}
+
+ .form-box
+{
+	background: rgba(70, 67, 67, 0.664);
+	padding: 20px 20px;
+    width: 1250px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 70px;
+}

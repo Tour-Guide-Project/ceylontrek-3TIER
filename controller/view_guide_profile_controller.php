@@ -38,13 +38,13 @@
 
             else {
                 //user not found,redirect users page
-				header('Location:/ceylontrek-3tier/view/guideDashboard.php?err=admin_not_found');
+				header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
             }
         }
 
         else {
             //query unsuccessfull, redirect users page
-			header('Location:/ceylontrek-3tier/view/guideDashboard.php?err=admin_not_found');
+			header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
         }
     }
 
@@ -92,7 +92,7 @@
             $result_set2 = update_guide_query($connection, $id, $first_name, $last_name, $contact, $address, $gender);
 
             if($result_set2){
-				header('Location:/ceylontrek-3tier/controller/view_guide_profile_controller.php?admin-modified=true');
+				header('Location:/ceylontrek-3tier/controller/view_guide_profile_controller.php?guide-modified=true');
             }
 
             else{
@@ -107,12 +107,9 @@
 
     // Check update email address
     if (isset($_POST['edit_email'])) {
-        header('Location:/ceylontrek-3tier/view/reset_email.php');
+        header('Location:/ceylontrek-3tier/controller/reset_email_controller.php');
 	}
 
-	if(isset($_POST['cancel'])) {
-		header('Location:/ceylontrek-3tier/view/view_admin_profile.php');
-	}
 
 ?>
 <?php mysqli_close($connection);?>

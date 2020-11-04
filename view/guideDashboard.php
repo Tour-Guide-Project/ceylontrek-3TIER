@@ -138,8 +138,9 @@
                 </div><!--corner_button-->
             </div>
                 
-            <div class="dashend"> <?php include('inc/footer.php'); ?> </div>
-            <script src="js/guide dashboard.js"></script>
+            <div class="dashend"> 
+            <?php include('../view/footer.php'); ?> </div>
+            <script src="../resources/js/guide dashboard.js"></script>
         </div>
     </body>
 </html>

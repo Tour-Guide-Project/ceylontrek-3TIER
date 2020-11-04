@@ -6,19 +6,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/admin_dashboard.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/guidedashboardpage.css">
+	<link rel="stylesheet" href="../resources/css/pendingProfiles.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-image: url('../resources/img/ct10.jpg'); background-size:cover;background-position: center center;background-attachment: fixed; background-repeat:no-repeat;">
+<body style="background:none;">
 	<?php include('../view/new_top_bar.php'); ?>
 
 	<div class="side_bar">
         <img src="../resources/img/logo2.png" class="dashlogo">
         <img src="../resources/img/reviewimg.jpg" class="profile" >
-		<form action="../controller/moderator_dashboard_controller.php" method="post">
-                    <button class="edit" name="edit_profile"> <span>Edit Profile</span></button><br>
-					</form>
+        <a class="edit" href="view_moderator_profile.php">Edit Profile</a><br>
             <div class="sidebar-menu">
               <ul>
                   <li>
@@ -60,43 +60,110 @@
                     </li>
               </ul>
             </div><!--sidebar-manu-->        
-    </div><!--side_bar-->
+	</div><!--side_bar-->
 
-	<div class="moderator_dashboard_box">
+	<div class="notification">
+	<form action="moderator_dashboard.php" method="post">
+			
+		<button type="button" style="margin-left:1000px; " class="cobutton" onclick="openForm()">Create Notification</button>
+		
+	</form>
+	</div>
+
 	
-			<form action="moderator_dashboard.php" method="post">
-				<div class="txt_box">
-					<img src="../resources/img/reviewing2.jpg" style="border-radius: 100%; width:80%;margin-left: 20px;">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					 labore et dolore md est laborum.
-					<button type="submit">View More &raquo;</button></p>
+	<div class="moderator_dashboard_box">
+		<div class="prow">
+							
+			<div class="pcolumn">
+				<div class="pcard">
+					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						<div class="pcontainer">
+							<h2>Senal Arosh</h2>
+							<p>Pending Profile</p>
+							<p>senal@gmail.com</p>
+							<p><button  class="pbutton">View Profile</button></p>
+						</div>
+				</div>
+			</div>
 
+			<div class="pcolumn">
+				<div class="pcard">
+					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						<div class="pcontainer">
+							<h2>Senal Arosh</h2>
+							<p>Pending Profile</p>
+							<p>senal@gmail.com</p>
+							<p><button  class="pbutton">View Profile</button></p>
+						</div>
 				</div>
-				<div class="txt_box">
-					<img src="../resources/img/reviewing2.jpg" style="border-radius: 100%; width:80%;margin-left: 20px;">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					 labore et dolore md est laborum.<button type="submit">View More &raquo;</button></p>
-					
+			</div>
+
+			<div class="pcolumn">
+				<div class="pcard">
+					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						<div class="pcontainer">
+							<h2>Senal Arosh</h2>
+							<p>Pending Profile</p>
+							<p>senal@gmail.com</p>
+							<p><button  class="pbutton">View Profile</button></p>
+						</div>
 				</div>
-				<div class="txt_box">
-					<img src="../resources/img/reviewing2.jpg" style="border-radius: 100%; width:80%;margin-left: 20px;">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					 labore et dolore md est laborum.<button type="submit">View More &raquo;</button></p>
-					
+			</div>
+
+			<div class="pcolumn">
+				<div class="pcard">
+					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						<div class="pcontainer">
+							<h2>Senal Arosh</h2>
+							<p>Pending Profile</p>
+							<p>senal@gmail.com</p>
+							<p><button  class="pbutton">View Profile</button></p>
+						</div>
 				</div>
-				<div class="txt_box">
-					<img src="../resources/img/reviewing2.jpg" style="border-radius: 100%; width:80%;margin-left: 20px;">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					 labore et dolore md est laborum.<button type="submit">View More &raquo;</button></p>
-					
+			</div>
+
+			<div class="pcolumn">
+				<div class="pcard">
+					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						<div class="pcontainer">
+							<h2>Senal Arosh</h2>
+							<p>Pending Profile</p>
+							<p>senal@gmail.com</p>
+							<p><button  class="pbutton">View Profile</button></p>
+						</div>
 				</div>
-					<button type="button" class="create_notification_btn" onclick="openForm()">Create Notification</button>
+			</div>
+
+			<div class="pcolumn">
+				<div class="pcard">
+					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						<div class="pcontainer">
+							<h2>Senal Arosh</h2>
+							<p>Pending Profile</p>
+							<p>senal@gmail.com</p>
+							<p><button  class="pbutton">View Profile</button></p>
+						</div>
+				</div>
+			</div>
+
+			<div class="pcolumn">
+				<div class="pcard">
+					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+						<div class="pcontainer">
+							<h2>Senal Arosh</h2>
+							<p>Pending Profile</p>
+							<p>senal@gmail.com</p>
+							<p><button  class="pbutton">View Profile</button></p>
+						</div>
+				</div>
+			</div>
 				
-			</form>
+		</div> <!-- prow -->						
 
-	</div><!-- moderator_box -->
+    </div><!-- moderator_box -->
 
-	<!-- send notification popup window -->
+	
+<!-- send notification popup window -->
 	<div class="form-popup" id="myForm">
   		<form action="full_complain_view.php" class="form-container">
    			<label for="title"><b>Title</b></label>

@@ -12,7 +12,7 @@
     <body class="body">
     <div class="dashnav"></div>
             <div class="section1"> 
-            <?php include('new_top_bar.php'); ?>
+            <?php include('../view/new_top_bar.php'); ?>
                 <div class="side_bar">
                     <img src="../resources/img/logo2.png" class="dashlogo">
                     <img src="../resources/img/reviewimg.jpg" class="profile" >
@@ -76,27 +76,27 @@
 
                    <table class="table-fill">
                                 
-                                <tbody class="table-hover">
-                                <tr>
+                        <tbody class="table-hover">
+                            <tr>
                                 <td class="text-left">All Previous Tours with CeylonTrek</td>
                                 <td class="text-left">5</td>
-                                </tr>
-                                <tr>
+                            </tr>
+                            <tr>
                                 <td class="text-left">All Upcoming Tours with CeylonTrek</td>
                                 <td class="text-left">1</td>
-                                </tr>
+                            </tr>
                                 
-                                <tr>
+                            <tr>
                                 <td class="text-left">Guides Reviewed</td>
                                 <td class="text-left">2</td>
-                                </tr>
-                                <tr>
+                            </tr>
+                            <tr>
                                 <td class="text-left">Packages Reviewed</td>
                                 <td class="text-left">2</td>
-                                </tr>
+                            </tr>
 
-                                </tbody>
-                                </table>
+                        </tbody>
+                    </table>
                  
                 </div><!--schedule-->
           
@@ -132,10 +132,12 @@
                             <button class="cobutton" style="width:260px; margin-top:20px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
                         </div>
                 </div><!--corner_button-->
-</div>
-                <div class="dashend"> <?php include('footer.php'); ?> </div>
+            </div> <!--content -->
+
+            <div class="dashend">
+        <?php include('../view/footer.php'); ?> </div>
         <script src="../resources/js/guide dashboard.js"></script>
 
-        </div>
+    </div>
     </body>
 </html>

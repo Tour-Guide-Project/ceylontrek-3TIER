@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    border: 0;
+}
+
+.packagereviewbody{
+    height: auto;
+    background-color:rgb(55, 129, 123);
+}
+
+.wrapper{
+    height: auto;
+    background-color:rgb(55, 129, 123);
+}
+
+.split_left{
+    width: 25%;
+    background-color: rgb(55, 129, 123);
+    float: left;
+    height: 391.5px;
+}
+
+.split_right{
+    width: 75%;
+    background-color:  rgb(55, 129, 123);
+    float: right;   
+}
+
+.reviews{
+    width: 100%;
+    background-color:  rgb(55, 129, 123);
+    height: auto;
+    float: left;
+}
+
+
+
+.box{
+    padding: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border: 0.25px solid;
+    width: 90%;
+    height: 100px;
+    position: center;
+    background-color:white;
+    right: 0;
+    margin-left: 35px;
+}
+
+.box:hover{
+    border: 1px solid rgb(251, 255, 0);
+    
+}
+
+
+.rating{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    height: 300px;
+}
+
+.review{
+   border-radius: 10px;
+   margin-left: 385px;
+   margin-right: 20px;
+   margin-bottom: 20px;
+   width: 67%;
+   color: black;
+   background-color: whitesmoke;
+   height: auto;
+}
+
+.split_left img {
+    border-radius: 50%;
+    margin: 20px;
+    width: 200px;
+    
+}
+.split_left h3{
+    color: black;
+}
+ 
+.checked{
+    color: purple;
+}
+
+.fa {
+    margin: 20px;
+    width: 10px;
+    height: 20px;
+}
+
+.star{
+    margin: 10px;
+}
+
+.star-container{
+   
+    
+    width: 25%;
+    white-space: nowrap;
+}
+
+.bar-container{
+    background-color:#f1f1f1;
+    width: 700px;
+}
+
+.bar-4{
+    width: 200px;
+    height: 20px;
+    background-color: purple;
+  
+    border: 1px solid;
+}
+.bar-3{
+    width: 600px;
+    height: 20px;
+    background-color: purple;
+  
+    border: 1px solid;
+}
+.bar-2{
+    width: 300px;
+    height: 20px;
+    background-color: purple;
+    border: 1px solid;
+}
+
+.bar-1{
+    width: 500px;
+    height: 20px;
+    background-color: purple;
+    border: 1px solid;
+}
+
+.split_left h3{
+    margin: 2px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}

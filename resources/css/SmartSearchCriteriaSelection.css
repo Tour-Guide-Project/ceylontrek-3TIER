@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix {
+    overflow: auto
+}
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.con {
+    margin-left: 10%;
+}
+
+.searchButton {
+    background-color: rgba(0, 0, 255, .6);
+    border: outset;
+    color: white;
+    padding: 1% 2% 1% 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-left: 85%;
+    margin-top: 150px;
+    font-weight: 600;
+}
+
+.searchButton:hover {
+    background-color: rgba(0, 0, 255, .2)
+}
+
+.boxOutdoor {
+    width: 90%;
+    margin-top: 2%;
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+.boxIndoor {
+    width: 90%;
+    margin-top: 2%;
+    margin-bottom: 4.5%;
+    background: rgba(0, 0, 0, .6);
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+.name1 {
+    float: left;
+    margin-top: 6%;
+    margin-left: 3%;
+}
+
+.name1 h2 {
+    color: white;
+}
+
+.box {
+    float: right;
+    width: 70%
+}
+
+.checkbox1 {
+    margin: 2.5%;
+    display: inline-block;
+}
+
+
+/* The container */
+
+.cont {
+    display: block;
+    position: relative;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px 10px 20px 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cont input {
+    width: 15px;
+    height: 15px;
+}

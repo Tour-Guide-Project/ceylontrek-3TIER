@@ -51,16 +51,16 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('Welcome ceylon-trek!');</script>";
 
                 if ($level=='tourist'){
-                        echo "<script>window.location ='/ceylontrek-3tier/view/home_tourist_draft.php' </script>";
+                        echo "<script>window.location ='/ceylontrek-3tier/view/touristDashboard.php' </script>";
                 }
                 if ($level=='tourguide'){
-                        echo "<script>window.location ='/ceylontrek-3tier/view/home_tourguide_draft.php' </script>";
+                        echo "<script>window.location ='/ceylontrek-3tier/view/guideDashboard.php' </script>";
                 }
                 if ($level=='admin'){
                         echo "<script>window.location ='/ceylontrek-3tier/view/admin_dashboard.php' </script>";
                 }
                 if ($level=='moderator'){
-                        echo "<script>window.location ='/ceylontrek-3tier/view/home_moderator_draft.php' </script>";
+                        echo "<script>window.location ='/ceylontrek-3tier/view/moderator_dashboard.php' </script>";
                 }
         
         }

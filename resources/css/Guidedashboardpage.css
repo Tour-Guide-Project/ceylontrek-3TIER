@@ -54,8 +54,8 @@ a {
 
 .edit {
     float: left;
-    margin-left: 50px;
-    margin-top: 30px;
+    margin-left: 100px;
+    margin-top: 40px;
     border: 0;
     background-color: unset;
     width: 200px;
@@ -69,21 +69,22 @@ a {
 .edit:hover {
     background-color: rgb(79, 76, 90);
     cursor: pointer;
+    border-radius: 5px;
+    padding: 0;
 }
 
 .edit:span {
-    padding: 30px 30px 30px 30px;
+    padding: 20px;
     margin-top: 50px;
     color: white;
 }
 
-
-}
 .buttons {
     float: left;
     width: 100%;
     margin-top: 30px;
 }
+
 .button {
     float: left;
     margin-top: 20px;
@@ -94,15 +95,18 @@ a {
     height: 50px;
     text-align: center;
 }
+
 .button:hover {
     background-color: rgb(79, 76, 90);
 }
+
 .sidebar-menu ul {
     position: absolute;
     top: 300px;
     left: 0;
     width: 100%;
 }
+
 .sidebar-menu ul li {
     position: relative;
     width: 100%;
@@ -112,10 +116,12 @@ a {
     padding-top: 15px;
     padding-bottom: -15px;
 }
+
 .sidebar-menu ul li:hover {
     background-color: rgb(79, 76, 90);
     width: 100%;
 }
+
 .sidebar-menu ul li a {
     position: relative;
     display: block;
@@ -124,6 +130,7 @@ a {
     text-decoration: none;
     color: white;
 }
+
 .sidebar-menu ul li a .menu-icon {
     position: relative;
     display: block;
@@ -133,9 +140,11 @@ a {
     text-align: center;
     margin-right: 50px;
 }
+
 .sidebar-menu ul li a .menu-icon .fa {
     font-size: 20px;
 }
+
 .sidebar-menu ul li a .menu-title {
     position: relative;
     display: block;
@@ -144,6 +153,7 @@ a {
     line-height: 40px;
     text-align: start;
 }
+
 .schedule {
     background-color: rgba(0, 0, 0, 0.3);
     float: left;
@@ -156,6 +166,7 @@ a {
     margin-bottom: 20px;
     border-radius: 20px;
 }
+
 .schedule h1 {
     text-align: center;
     margin-top: 20px;
@@ -163,14 +174,16 @@ a {
     font-family: lato;
     color: darkblue;
 }
+
 .schedule p {
     margin: 15px;
     font-size: 17px;
 }
+
 .guidecalender {
     float: right;
-    margin-right: 100px;
-    margin-top: 40px;
+    margin-right: 20px;
+    margin-top: 60px;
     width: 275px;
     height: 300px;
     background-color: whitesmoke;
@@ -180,6 +193,7 @@ a {
     color: black;
     border-radius: 10px;
 }
+
 .month {
     width: 100%;
     height: 70px;
@@ -190,22 +204,28 @@ a {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
 .month i {
     font-size: 2rem;
     cursor: pointer;
-    margin: 3px;
+    padding: 3px;
     justify-content: space-between;
 }
+
 .date h3 {
     margin-left: 75px;
 }
+
 .date p {
-    margin-left: 55px;
+    margin-left: 60px;
+    margin-right: 0;
     font-size: small;
 }
+
 .month .next {
-    margin-left: 80px;
+    margin-left: 64px;
 }
+
 .weekdays {
     width: 100%;
     height: 10px;
@@ -216,6 +236,7 @@ a {
     margin-bottom: 25px;
     margin-left: 7px;
 }
+
 .weekdays div {
     font-size: small;
     letter-spacing: 0.1rem;
@@ -225,6 +246,7 @@ a {
     align-items: center;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
 }
+
 .days {
     width: 100%;
     display: flex;
@@ -232,6 +254,7 @@ a {
     padding: 3px;
     margin-left: 10px;
 }
+
 .days div {
     font-size: small;
     margin: 3px;
@@ -242,26 +265,32 @@ a {
     align-items: center;
     transition: background-color 0.2s;
 }
+
 .days div:hover:not(.today) {
     background-color: whitesmoke;
     border: 1px solid;
     cursor: pointer;
 }
+
 .prev-date,
 .next-date {
     opacity: 0.2;
 }
+
 .today {
     background-color: rgb(107, 107, 219);
     border: 1px solid;
 }
+
 .corner_buttons {
-    float: left;
-    margin-left: 80px;
-    margin-top: 100px;
+    float: right;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 50px;
     height: 200px;
     align-items: center;
 }
+
 .cobutton {
     transform: translateY(0px);
     transition: 0.3s linear;
@@ -281,25 +310,31 @@ a {
     font-size: 18px;
     margin: 0;
 }
+
 .cobutton:hover {
     transform: translateY(-4px);
 }
+
 .cobutton i {
     margin-right: 20px;
     border: 0;
     width: 20px;
     height: 30px;
 }
+
 .dashend {
     float: left;
     position: relative;
     bottom: 0;
 }
+
 .content {
     margin-top: 80px;
 }
 
+
 /* table style */
+
 .table-fill {
     background: white;
     border-radius: 3px;
@@ -313,37 +348,46 @@ a {
     animation: float 5s infinite;
     margin-bottom: 50px;
 }
+
 tr {
     border-top: 1px solid #C1C3D1;
-    border-bottom-: 1px solid #C1C3D1;
+    border-bottom: 1px solid #C1C3D1;
     color: black;
     font-size: 18px;
     font-weight: 600;
     text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
 }
+
 tr:hover td {
     background: #4E5066;
     color: #FFFFFF;
     border-top: 1px solid #22262e;
 }
+
 tr:first-child {
     border-top: none;
 }
+
 tr:last-child {
     border-bottom: none;
 }
+
 tr:nth-child(odd) td {
     background: #EBEBEB;
 }
+
 tr:nth-child(odd):hover td {
     background: #4E5066;
 }
+
 tr:last-child td:first-child {
     border-bottom-left-radius: 3px;
 }
+
 tr:last-child td:last-child {
     border-bottom-right-radius: 3px;
 }
+
 td {
     background: #FFFFFF;
     padding: 20px;
@@ -354,24 +398,31 @@ td {
     text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
     border-right: 1px solid #C1C3D1;
 }
+
 td:last-child {
     border-right: 0px;
 }
+
 th.text-left {
     text-align: left;
 }
+
 th.text-center {
     text-align: center;
 }
+
 th.text-right {
     text-align: right;
 }
+
 td.text-left {
     text-align: left;
 }
+
 td.text-center {
     text-align: center;
 }
+
 td.text-right {
     text-align: right;
 }

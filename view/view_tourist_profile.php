@@ -20,7 +20,7 @@ $contact=$_SESSION['contact'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body style="background-image: url('../resources/img/ct9.jpg'); background-size:cover;background-position: center center;background-attachment: fixed; background-repeat:no-repeat;">
+<body style="background:none;">
 	<?php include('../view/new_top_bar.php'); ?>
 	<div class="view_admin_profile_box">
 		<form action="../controller/view_tourist_profile_controller.php" method="post">

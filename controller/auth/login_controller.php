@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 		$hashed_password=sha1($password);
 		   
 		$result=loging($connection,$email,$hashed_password);//call sql function
-		print_r($result);
+		//print_r($result);
 		if($result)
 		{
 			//query successfull
@@ -47,13 +47,13 @@ if (isset($_POST['submit'])) {
 					$_SESSION['id']=$record['id'];
 					header('Location:/ceylontrek-3tier/view/moderator_dashboard.php');
 				}
-				elseif($record['level']=='tourist')
+				if($record['level']=='tourist')
 				{
 					$_SESSION['level']='tourist';
 					$_SESSION['id']=$record['id'];
 					header('Location: /ceylontrek-3tier/view/touristDashboard.php');
 				}
-				elseif($record['level']=='tourguide')
+				if($record['level']=='tourguide')
 				{
 					$_SESSION['level']='tourguide';
 					$_SESSION['id']=$record['id'];

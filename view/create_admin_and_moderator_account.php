@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body style="background-image: url('../resources/img/ct7.jpg'); background-size:cover;background-position: center center;background-attachment: fixed; background-repeat:no-repeat;">
+<body style="background:none;">
 	<?php include('../view/new_top_bar.php'); ?>
 	<div class="signup_box">
 		<form action="/ceylontrek-3tier/controller/signup_controller.php" method="post">

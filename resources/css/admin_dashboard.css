@@ -1,320 +1,165 @@
-
-body{
-	margin: 0;
-	padding: 0;
-	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-}
-.admin_dashboard_box , .moderator_dashboard_box{
-	margin:150px auto 10px auto;
-	display: -webkit-box;/*create box with auto hight */
-	width: 800px;
-	margin-left: 325px;
-	height: 100%;
-	padding: 30px;
-	background: rgba(0,0,0,.6);
-	box-sizing: border-box;
-	box-shadow: 0 5px 25px rgba(0,0,0,.5);
-	border-radius: 10px;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-.admin_dashboard_box button{
-	font-size: 16px;
-	color: black;
-	padding: 10px;
-  display: inline-block;
-  margin:30px;
-	background-color: #008000;
-	border-radius: 10px;
-	outline: none;
-	cursor: pointer;
-	border: none;
+.admin_dashboard_box {
+    margin: 150px auto 10px auto;
+    display: -webkit-box;
+    /*create box with auto hight */
+    width: 1220px;
+    margin-left: 100px;
+    height: auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, .6);
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    margin-top: 120px;
 }
 
-.admin_dashboard_box button :hover{
-	background-color: #90EE90;
+.admin_dashboard_box button {
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    margin: 20px;
+    background-color: #2f375b;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    border: none;
 }
-.admin_dashboard_box .text_box{
-  float: left;
-  outline: none;
-  width: 710px;
-  padding: 10px;
-  margin-top: 20px;
-  border: 1px solid  lightgray;
-  background-color: #8FBC8F;
-  padding: 10px 10px 10px 10px;
-  border-radius: 15px;
-  position: center;
+
+.admin_dashboard_box button:hover {
+    font-size: 18px;
 }
-.admin_dashboard_box .text_box label{
-  margin-left: 290px;
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #2E8B57;
+
+.admin_dashboard_box .text_box {
+    float: left;
+    outline: none;
+    width: 1150px;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid lightgray;
+    background-color: #8FBC8F;
+    padding: 10px 10px 10px 10px;
+    border-radius: 15px;
+    position: center;
 }
-.admin_dashboard_box textarea{
-  font-size: 16px;
-  margin-top: 10px;
-  border-radius: 15px;
-  border: none;
-  outline: none;
-  width: 97%;
-  resize: vertical;
-  height:100px;
-  background-color: #DCDCDC;
-  padding: 10px;
+
+.admin_dashboard_box .text_box label {
+    margin-left: 490px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #2E8B57;
 }
+
+.admin_dashboard_box textarea {
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    width: 98%;
+    resize: vertical;
+    height: 500px;
+    background-color: #DCDCDC;
+    padding: 10px;
+}
+
 
 /*moderaotor dashboard css*/
-.moderator_dashboard_box .txt_box {
-  font-size: 16px;
-  display: inline-block;
-  color: #fff;
-  width: 30%;
-  outline: none;
-  margin: 30px 40px 20px 40px;
-  border: 1px solid  lightgray;
-  background-color: #8FBC8F;
-  padding: 10px 10px 10px 10px;
-  border-radius: 15px;
-  position: center;
-}
 
-.moderator_dashboard_box .txt_box button{
-  margin:10px 50px 10px 30px ;
-  font-size: 16px;
-  color: black;
-  padding: 10px;
-  background-color: #008000;
-  border-radius: 10px;
-  outline: none;
-  cursor: pointer;
-  border: none;
-}
-.moderator_dashboard_box .txt_box button:hover{
-  background-color: #90EE90;
-}
-
-.moderator_dashboard_box button{
-  float: right;
-  font-size: 16px;
-  color: black;
-  padding: 10px;
-  margin:30px;
-  background-color: #5F9EA0;
-  border-radius: 10px;
-  outline: none;
-  cursor: pointer;
-  border: none;
-}
-.moderator_dashboard_box button:hover{
-  background-color: #483D8B;
-}
-
-
-/*sidebar css*/
-.side_bar{
-    background-color: #2f375b;
-    width: 40px;
-    position: fixed;
-    z-index: 1;
-    overflow: auto;  
-    height: 100%;
-    left: 0;
-    top: 0;
-    transition: 0.5s;
-    overflow: hidden;
-}
-
-.side_bar:hover{
-    width: 23.6%;
-}
-
-
-
-.dashlogo{
-    float: left;
-    margin-left: 40px;
-}
-
-
-.side_bar .profile{
-    float: left;
+.moderator_dashboard_box {
+    margin: 20px auto 100px auto;
+    display: -webkit-box;
+    /*create box with auto hight */
+    width: 1220px;
     margin-left: 100px;
-    margin-top:20px;
-    border-radius: 50%;
-    border: 3px solid blue;
-    width: 100px;
-    height: 100px;
-  
-}
-
-.edit{
-    font-size: 17px;
-    text-decoration: none;
-    float: left;
-    margin-left: 100px;
-    margin-top: 30px;
-    border: 0;
-    background-color: unset;
-    width: 100px;
-    height: 20px;
-    color: white;
-}
-
-.edit:hover{
-    background-color:  rgb(79, 76, 90);
-    padding: 5px;
+    height: auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, .6);
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
     border-radius: 10px;
 }
 
-.buttons{
-    float: left;
-    width: 100%;
-    margin-top: 30px;
-
-}
-
-.button{
-    float: left;
-    margin-top: 20px;
-    background-color: unset;
-    border: 0;
-    color: white;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    
-}
-
-.button:hover{
-    background-color: rgb(79, 76, 90);
-  
-}
-
-
-.sidebar-menu ul{
-    position: absolute;
-    top: 300px;
-    left: 0;
-    width: 100%;
-}
-.sidebar-menu ul li{
-    position: relative;
-    width: 100%;
-    list-style: none;
-    height: 50px;
-    margin-bottom: 5px;
-}
-
-.sidebar-menu ul li:hover{
-    background-color:  rgb(79, 76, 90);
-    width: 100%;
-}
-
-
-
-.sidebar-menu ul li a{
-    position: relative;
-    display: block;
-    width: 100%;
-    display: flex;
-    text-decoration: none;
-    color: white;
-}
-
-.sidebar-menu ul li a .menu-icon{
-    position: relative;
-    display: block;
-    min-width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    margin-right: 50px;
-}
-
-.sidebar-menu ul li a .menu-icon .fa{
-    font-size: 20px;
-}
-
-.sidebar-menu ul li a  .menu-title{
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    height: 40px;
-    line-height: 40px;
-    text-align: start;
-}
-
-
-
-
 
 /* The popup form of send notifications- hidden by default */
+
 .form-popup {
- 	display: none;
- 	position: fixed;
-	top: 80%;
-	left: 50%;
-  z-index: 100000;
-	transform: translate(-50%, -50%);
+    display: none;
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    z-index: 100000;
+    transform: translate(-50%, -50%);
 }
 
 .form-container {
-  opacity: initial;
-  margin:-400px auto 20px auto;
-	width: 500px;
-	padding: 50px;
-	background: #F0F8FF;
-	box-sizing: border-box;
-	box-shadow: 0 5px 25px rgba(0,0,0,.5);
-	border-radius: 15px;
+    opacity: initial;
+    margin: -400px auto 20px auto;
+    width: 500px;
+    padding: 50px;
+    background: #F0F8FF;
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    border-radius: 15px;
 }
-.form-container label{
-	font-size: 18px;
-	color: black;
+
+.form-container label {
+    font-size: 18px;
+    color: black;
 }
-.form-container input{
-	font-size: 16px;
-	border-radius: 10px;
-	border: none;
-	outline: none;
-	background-color: #DCDCDC;
-	width: 100%;
-  padding: 10px;
-  margin: 5px 0 22px 0;
+
+.form-container input {
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #DCDCDC;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
 }
-.form-container textarea{
-	font-size: 16px;
-	border-radius: 10px;
-	border: none;
-	outline: none;
-	width: 100%;
-	background-color: #DCDCDC;
-  padding: 10px;
-  margin: 5px 0 22px 0;
+
+.form-container textarea {
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: #DCDCDC;
+    padding: 10px;
+    margin: 5px 0 22px 0;
 }
 
 .form-container .btn {
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 20px;
-  padding: 10px 10px;
-  border: none;
-  cursor: pointer;
-  width: 30%;
-  opacity: 0.8;
-  float: left;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.8;
+    float: left;
 }
 
 .form-container .cancel {
-  background-color: red;
-  float: right;
+    background-color: red;
+    float: right;
 }
 
-.form-container .btn:hover{
-  opacity: 1;
-  border:none;
-  outline: none;
+.form-container .btn:hover {
+    opacity: 1;
+    border: none;
+    outline: none;
 }
 
-
+.notification {
+    margin-left: -900px;
+    margin-top: 130px;
+}

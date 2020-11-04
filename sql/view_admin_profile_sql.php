@@ -15,7 +15,7 @@ function update_query($connection,$id,$first_name,$last_name,$contact,$address,$
     return $result;
 }
 
-function update_email($connection,$id,$new_email){
+function update_admin_email($connection,$id,$new_email){
     $query="UPDATE admin SET email='{$new_email}'
     WHERE id={$id} AND level='admin'
     LIMIT 1";

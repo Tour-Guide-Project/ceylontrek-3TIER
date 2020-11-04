@@ -1,11 +1,11 @@
-
 body {
     margin: 0;
-    padding: 0; 
-    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    padding: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-.wrapper{
-	box-sizing: border-box;
+
+.wrapper {
+    box-sizing: border-box;
     width: 100%;
     margin-top: 100px;
     height: 100vh;
@@ -14,58 +14,66 @@ body {
     align-items: center;
     color: #fff;
 }
-.calendar{
-	box-sizing: border-box;
-    width: 37rem;
+
+.calendar {
+    box-sizing: border-box;
+    width: 70rem;
     height: 38rem;
     float: center;
-    background: rgba(0,0,0,.6);
-    box-shadow: 0 5px 25px rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .7);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
 }
-.month{
-    width: 37rem;
+
+.month {
+    width: 70rem;
     height: 11rem;
-    background-color: #556B2F ;
-    display:flex;
+    background-color: #2e004d;
+    display: flex;
     text-align: center;
     justify-content: space-between;
     align-items: center;
     padding: 0.06rem;
 }
-.month h1{
+
+.month h1 {
     font-size: 26px;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 5px;
 }
-.month i{
-    margin:20px;
+
+.month i {
+    margin: 20px;
     padding: 5px 10px 5px 10px;
     cursor: pointer;
 }
-.month i:hover{
-    background-color:#006400; 
+
+.month i:hover {
+    background-color: #023d8a;
     border-radius: 45px;
 }
-.month p{
+
+.month p {
     font-size: 16px;
 }
 
 .weekdays {
-    background-color: #006400;
+    background-color: #490c72;
     color: #fff;
     padding: 7px 0;
     display: flex;
 }
+
 .days {
-    font-weight: 18px;
+    font-size: 20px;
     padding: 10px 0;
     display: flex;
     flex-wrap: wrap;
     color: #fff;
 }
 
-.weekdays div,.days div {
+.weekdays div,
+.days div {
     text-align: center;
     width: 13.78%;
 }
@@ -79,20 +87,24 @@ body {
     align-items: center;
 }
 
-.prev_date ,.next_date {
+.prev_date,
+.next_date {
     color: #999;
- }
+}
 
 .today {
-   background-color: #556B2F;
-   color: #fff;
-   border:1px solid white;
+    background-color: #21112c;
+    color: #fff;
+    border: 1px solid white;
 }
-.today:hover{
+
+.today:hover {
     font-weight: bold;
     cursor: pointer;
 }
-.prev,.next {
+
+.prev,
+.next {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,14 +116,16 @@ body {
     transition: all 0.4s;
 }
 
-.days div:hover:not(.today):not(.prev_date):not(.next_date){
+.days div:hover:not(.today):not(.prev_date):not(.next_date) {
     cursor: pointer;
-    background-color: #BDB76B;
-    border:1px solid lightgray;
+    background-color: #905cb3;
+    border: 1px solid lightgray;
 }
- 
+
+
 /* menu bar css*/
-.travel_calendar{
-	text-decoration: underline;
-    color: red;
+
+.travel_calendar {
+    text-decoration: underline;
+    color: white;
 }

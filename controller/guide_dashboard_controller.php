@@ -3,7 +3,7 @@ session_start();?>
 <?php 
 	if (isset($_POST['edit_profile'])){
 		header('Location: ../controller/view_guide_profile_controller.php');
-		$_SESSION['level']='guide';
+		$_SESSION['level']='tourguide';
 	}
 ?>
 <?php mysqli_close($connection);?>

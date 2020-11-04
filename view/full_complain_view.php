@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-image: url('../resources/img/ct5.jpg'); background-size:cover;background-position: center center;background-attachment: fixed; background-repeat:no-repeat;">
+<body style="background: none;">
 	<?php include('../view/new_top_bar.php'); ?>
 	<div class="full_complain_view_box">
 			<form action="full_complain_view.php" method="post">
 				
 				<div class="text_box">
 					<h1>Title</h1>
+					<h3>Tourist Name : Chris Gayle</h3>
+					<h3>Reported Date : 22/03/2020</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

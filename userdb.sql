@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2020 at 08:30 AM
+-- Generation Time: Nov 04, 2020 at 10:58 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -46,7 +46,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `first_name`, `last_name`, `email`, `password`, `gender`, `address`, `contact`, `level`, `token`) VALUES
-(5, 'kavindya', 'dewindi', 'kavindyadewindi12345678@gmail.com', 'b3ed0eb2a3faa03f43add6fd6013bd75ebfd4bf2', 'Female', 'ketanwila,maliduwa,akuressa', '0762435678', 'admin', '297d9588eab9e3a48d14f45dc925bc81be0e9e0ac1cb7854df871b1c6bce0fd59a67da26bf9d43316b776375b2dc19d21893');
+(12, 'kavindya', 'devindi', 'kavindyadewindi12345678@gmail.com', 'ee24fe6c0ae6764c74312595706b1da8dba27c4e', 'female', 'ketanwila,Akuressa,Matara,Sri lanka', '0875332225', 'admin', 'bb6f4e4ec0e6383c134749d8815108e222e96810d2a091ccf122c8f84a1601dad4ac89ce932f60b73484baa06ca987e378be');
 
 -- --------------------------------------------------------
 
@@ -98,9 +98,7 @@ CREATE TABLE `tourguide` (
 --
 
 INSERT INTO `tourguide` (`id`, `first_name`, `last_name`, `email`, `password`, `gender`, `address`, `contact`, `level`, `token`) VALUES
-(3, 'sajini', 'Ahinsa', 'amal@gmail.com', '84b7d0a7fd48b2e86dd5b37f13db786bf05d4751', 'Male', 'Maliduwa,Akuressa,Matara', '8780660644', 'tourguide', '7bd95440bfa127d9a11446f88e7ba959c27df47fcbbc24f227d8d7b331dc4a37b9850235c5603f890b41f5bdb657e875044b'),
-(4, 'sajini', 'navodya', 'sajinisenarathne@gmail.com', '8fc257feb6f3836494b7130c164ebc845912d6f0', 'Female', 'ketanwila,Akuressa', '0764523678', 'tourguide', '280432c095248643876f36ed5614acbcdbbdf81a59af09819bfc5bee2f3ca4caf481052fe96c62800adde0708c4583c0f308'),
-(5, 'lakshan', 'senarathne', 'amal@gmail.com', '135142a8ac44f350bbf2747f81344f400d7e80c7', 'Male', 'ketanwila,Akuressa', '8780660644', 'tourguide', 'c4fffcc917a2349de74157a83a6e66b317b31e628aec77dd82f43c3da901362435723101b945f6a6fbfa737112cf9ccd648e');
+(15, 'sajini', 'senarathne', 'sajini@gmail.com', '8fc257feb6f3836494b7130c164ebc845912d6f0', 'female', 'Hambanthota,Srilanka', '0765376578', 'tourguide', '1c71d92690b8352e8639c584c9e5756029c18a95346b3ba01cfa25dee2962affd0c09007897612fdb9a01f385b8c9d51e80d');
 
 -- --------------------------------------------------------
 
@@ -126,9 +124,7 @@ CREATE TABLE `tourist` (
 --
 
 INSERT INTO `tourist` (`id`, `first_name`, `last_name`, `email`, `password`, `gender`, `address`, `contact`, `level`, `token`) VALUES
-(17, 'kavindya', 'sureshi', 'sureshi@gmail.com', '8874084277b85cfbbe99eec25c2a9fff6a324ca5', 'Male', 'galle,srilanka', '0875332221', 'tourist', '40f2151557ff5042274c8dafdc0c4ed6928bca7da961164905afd916a98e32ff8fd387187269075a83f0b624286895e733fd'),
-(18, 'kavindya', 'sureshi', 'sureshi@gmail.com', '8874084277b85cfbbe99eec25c2a9fff6a324ca5', 'Male', 'galle,srilanka', '0875332221', 'tourist', '332b2c3225551088b500c4092657944e3131aa367919d90b46237b290520ed7af41c7f999f384c0d3b13d34fada707f0f926'),
-(19, 'cds', 'bfg', 'nimo123@gmail.com', '41cca738850539014b36ca07c9c89b7785fb1a74', 'Male', 'kjhlkhjlkjh', 'jqbwfbqkfrb', 'tourist', 'd94ec2f9ea026c3035392c1d57054596b9b3745f980b3a30583a37238217451e353d43a9dba747a3721eda3b73b8666bff72');
+(35, 'kavindya', 'af', 'kavindya@gmail.com', '1a288fe9ef5fb2f4671f1473436c8f6243112a71', 'female', 'galle,srilanka', 'hkjhgakjghds', 'tourist', '243a1bbc420da98b21f45ead38b0983359d6c8d6e56ee482b1ab8b19e29e33aa181d789dfeabbdfde40f8a71ea4ea6d24d3b');
 
 --
 -- Indexes for dumped tables
@@ -166,25 +162,25 @@ ALTER TABLE `tourist`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `moderator`
 --
 ALTER TABLE `moderator`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tourguide`
 --
 ALTER TABLE `tourguide`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `tourist`
 --
 ALTER TABLE `tourist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

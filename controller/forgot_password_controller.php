@@ -19,7 +19,7 @@ if (isset($_POST['forgot_password'])) {
 		//save the username into the variables
 		$email=mysqli_real_escape_string($connection,$_POST['email']);
 		$result_set=forgot_password($connection,$email);
-		print_r($result_set);
+		//print_r($result_set);
 
 		if ($result_set) {
 			#//query successfull
@@ -44,15 +44,17 @@ if (isset($_POST['forgot_password'])) {
 			{
 				//user name invalid
 				$errors[]='You have not an account in this email address!';
+				header('Location:/ceylontrek-3tier/view/forgot_password.php?'.http_build_query(array('param'=>$errors)));
 			}
 					
 		}else
 		{
 			$errors[]='Database query failed';
+			header('Location:/ceylontrek-3tier/view/forgot_password.php?'.http_build_query(array('param'=>$errors)));
 		} 
 	}
 	else{
-		header('Location: /ceylontrek-3tier/view/forgot_password.php?'.http_build_query(array('param'=>$errors)));
+		header('Location:/ceylontrek-3tier/view/forgot_password.php?'.http_build_query(array('param'=>$errors)));
 	}
 
 }
