@@ -6,9 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/view_all_guide_page.css">
-	<!-- <link rel="stylesheet" type="text/css" href="../resources/css/admin_dashboard.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/guidedashboardpage.css"> -->
-	<!-- <link rel="stylesheet" href="../resources/css/pendingProfiles.css"> -->
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,8 +13,8 @@
 <body style="background:none;">
 	<?php include('../view/new_top_bar.php'); ?>
 	<div class="view_all_box">
-			<!-- <h1>Tour Request Post </h1> -->
-			<form action="tour_request_post.php" method="post">
+
+			<form action="view_all_guide_page.php" method="post">
 
 				<div class="text_box_search_bar">
 					<input type="text" name="" placeholder="Keyword.."></input>
