@@ -13,26 +13,43 @@
     if (isset($_SESSION['id'])) {
 
         $result_set = get_guides($connection);
+        //print_r($result_set);
 
         if ($result_set) {
 
-            $_SESSION['result_set'] = $result_set;
+            $rows = mysqli_num_rows($result_set);
+            $columns = mysqli_num_fields($result_set);
+            //print_r($rows);
+            //print_r($columns);
 
-            header('Location:/ceylontrek-3tier/view/view_all_guide_page.php');
+            while ($rows > 0) {
+                $result = mysqli_fetch_assoc($result_set);
 
-            // if (mysqli_num_rows($result_set) >= 1) {
+                print_r($result);
+            }
+            
+            
+            
+            // if ($rows > 0) {
             
             //     $result = mysqli_fetch_assoc($result_set);
+            //     //print_r($result);
 
-            //     while ($result) {
-            //         // pass data
-            //         $_SESSION['first_name']=$result['first_name'];
-            //         //  $_SESSION['last_name']=$result['last_name'];
-            //         $_SESSION['email']=$result['email'];
+            //     // $_SESSION['result'] = $result;
+            //     // //print_r($_SESSION['result']);
 
-            //         // print data
-            //         header('Location:/ceylontrek-3tier/view/view_all_guide_page.php');
-            //     }
+            //     // header('Location:/ceylontrek-3tier/view/view_all_guide_page.php');
+
+
+            //     // while ($result) {
+            //     //     // pass data
+            //     //     $_SESSION['first_name']=$result['first_name'];
+            //     //     //  $_SESSION['last_name']=$result['last_name'];
+            //     //     $_SESSION['email']=$result['email'];
+
+            //     //     // print data
+            //     //     header('Location:/ceylontrek-3tier/view/view_all_guide_page.php');
+            //     // }
             // }
         }
 

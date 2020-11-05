@@ -1,11 +1,7 @@
 <?php session_start();
 
-$result_set = $_SESSION['result_set'];
-
-// $first_name=$_SESSION['first_name'];
-// // $last_name=$_SESSION['last_name'];
-// $email=$_SESSION['email'];
-// //print_r($_SESSION);
+$result = $_SESSION['result'];
+//print_r($_SESSION['result']);
 ?>
 
 <!DOCTYPE html>
@@ -36,94 +32,28 @@ $result_set = $_SESSION['result_set'];
 					<div class="prow">
 
 						<?php 
-							while ($result = mysqli_fetch_assoc($result_set)) {
+							foreach ($result as $x => $guide) {
 						?>
 											
 								<div class="pcolumn">
 									<div class="pcard">
 										<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
 											<div class="pcontainer">
-												<h2><?php echo $result['first_name']; ?></h2>
-												<p><?php echo $result['email']; ?></p>
+												<h2><?php echo "$x => $guide"; ?></h2>
+												<p><?php echo $guide['email']; ?></p>
 												<p><button  class="pbutton">View Profile</button></p>
 											</div>
 									</div>
 								</div>
 
-						<?php mysqli_free_result($result_set); } ?>
+						<?php  
+							}
+						?>
 
-						 <!-- <div class="pcolumn">
-						// 	<div class="pcard">
-						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-						// 			<div class="pcontainer">
-						// 				<h2>Senal Arosh</h2>
-						// 				<p>senal@gmail.com</p>
-						// 				<p><button  class="pbutton">View Profile</button></p>
-						// 			</div>
-						// 	</div>
-						// </div>
-
-						// <div class="pcolumn">
-						// 	<div class="pcard">
-						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-						// 			<div class="pcontainer">
-						// 				<h2>Senal Arosh</h2>
-						// 				<p>senal@gmail.com</p>
-						// 				<p><button  class="pbutton">View Profile</button></p>
-						// 			</div>
-						// 	</div>
-						// </div>
-
-						// <div class="pcolumn">
-						// 	<div class="pcard">
-						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-						// 			<div class="pcontainer">
-						// 				<h2>Senal Arosh</h2>
-						// 				<p>senal@gmail.com</p>
-						// 				<p><button  class="pbutton">View Profile</button></p>
-						// 			</div>
-						// 	</div>
-						// </div>
-
-						// <div class="pcolumn">
-						// 	<div class="pcard">
-						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-						// 			<div class="pcontainer">
-						// 				<h2>Senal Arosh</h2>
-						// 				<p>senal@gmail.com</p>
-						// 				<p><button  class="pbutton">View Profile</button></p>
-						// 			</div>
-						// 	</div>
-						// </div>
-
-						// <div class="pcolumn">
-						// 	<div class="pcard">
-						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-						// 			<div class="pcontainer">
-						// 				<h2>Senal Arosh</h2>
-						// 				<p>senal@gmail.com</p>
-						// 				<p><button  class="pbutton">View Profile</button></p>
-						// 			</div>
-						// 	</div>
-						// </div>
-
-						// <div class="pcolumn">
-						// 	<div class="pcard">
-						// 		<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-						// 			<div class="pcontainer">
-						// 				<h2>Senal Arosh</h2>
-						// 				<p>senal@gmail.com</p>
-						// 				<p><button  class="pbutton">View Profile</button></p>
-						// 			</div>
-						// 	</div>
-						// </div> -->
-							
 					</div> <!-- prow -->						
 
 			    </div><!-- moderator_box -->
 
-				
-				</div>
 			</form>
 
 	</div>
