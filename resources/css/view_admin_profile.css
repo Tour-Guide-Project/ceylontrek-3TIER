@@ -90,19 +90,20 @@ a:active {
 }
 
 .reset_email button:hover {
-    color: black;
+    color: whitesmoke;
 }
 
 .reset_email button {
-    float: right;
+    margin-left: 100px;
     border: none;
     outline: none;
     padding: 10px 10px;
     background: rgba(0, 0, 0, .6);
-    margin-top: 10px;
+    margin-top: 20px;
     color: #03a9f4;
     font-size: 18px;
     transition: .3s;
+    border-radius: 10px;
 }
 
 .view_admin_profile_box p.error {
@@ -122,7 +123,7 @@ a:active {
     outline: none;
     padding: 10px 20px;
     font-size: 16px;
-    margin: 30px 5px 0 0;
+    margin: 40px 5px 0 0;
     background: #03a9f4;
     border-radius: 5px;
     color: #fff;
