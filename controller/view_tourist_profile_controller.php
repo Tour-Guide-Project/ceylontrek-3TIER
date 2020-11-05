@@ -38,13 +38,13 @@
 
             else {
                 //user not found,redirect users page
-				header('Location:/ceylontrek-3tier/view/touristDashboard.php?err=tourist_not_found');
+				header('Location:/ceylontrek-3tier/view/login.php?err=tourist_not_found');
             }
         }
 
         else {
             //query unsuccessfull, redirect users page
-			header('Location:/ceylontrek-3tier/view/touristDashboard.php?err=tourist_not_found');
+			header('Location:/ceylontrek-3tier/view/login.php?err=tourist_not_found');
         }
     }
 
