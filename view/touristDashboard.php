@@ -16,6 +16,7 @@
                 <div class="side_bar">
                     <img src="../resources/img/logo2.png" class="dashlogo">
                     <img src="../resources/img/reviewimg.jpg" class="profile" >
+                    
                     <form action="../controller/tourist_dashboard_controller.php" method="post">
                     <button class="edit" name="edit_profile"> <span>Edit Profile</span></button><br>
                     </form>

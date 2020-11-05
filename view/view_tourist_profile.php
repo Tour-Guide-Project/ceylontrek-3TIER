@@ -24,7 +24,7 @@ $contact=$_SESSION['contact'];
 	<?php include('../view/new_top_bar.php'); ?>
 	<div class="view_admin_profile_box">
 		<form action="../controller/view_tourist_profile_controller.php" method="post">
-			<h1>Edit My Profile</h1>
+			<h1>Edit Profile</h1>
 			<?php
 				if(isset($_GET['param'])){
                     $errors=$_GET['param'];
@@ -78,11 +78,13 @@ $contact=$_SESSION['contact'];
 				<div class="reset_psw">
 					<a  href="/ceylontrek-3tier/view/reset_password.php">Reset Password</a>
 				</div>	
-			
-				<div>
-					<button class="cancel" type="reset" name="cancel">Cancel</button>
-					<button class="submit" type="submit" name="submit">Update Profile</button>
-				</div>
+			    
+				<div class="reset_email">
+				<button type="submit" name="edit_email">Reset Email</button>
+			    </div>	
+
+			<button class="cancel" type="submit" name="cancel">Cancel</button>
+			<button class="submit" type="submit" name="submit">Update Profile</button>
 			
 			</form>
 			

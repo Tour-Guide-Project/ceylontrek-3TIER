@@ -38,13 +38,13 @@
 
             else {
                 //user not found,redirect users page
-				header('Location:/ceylontrek-3tier/view/touristDashboard.php?err=admin_not_found');
+				header('Location:/ceylontrek-3tier/view/touristDashboard.php?err=tourist_not_found');
             }
         }
 
         else {
             //query unsuccessfull, redirect users page
-			header('Location:/ceylontrek-3tier/view/touristDashboard.php?err=admin_not_found');
+			header('Location:/ceylontrek-3tier/view/touristDashboard.php?err=tourist_not_found');
         }
     }
 
@@ -72,23 +72,12 @@
         
 		$first_name=$_POST['first_name'];
 		$last_name=$_POST['last_name'];
-		$email=$_POST['email'];
+	    //$email=$_POST['email'];
 		$contact=$_POST['tel_no'];
 		$address=$_POST['address'];
         $gender=$_POST['gender'];
         
-        //checking if email address already exists
-        if (!$_SESSION['email'] == $email) {
-            $email=mysqli_real_escape_string($connection,$_POST['email']);//(email sanitized) escaped special charactrs,we can create legal query from this.
-            $result_set1=exist_email($connection,$email);
-
-            if ($result_set1) {
-            
-                if (mysqli_num_rows($result_set1) == 1) {
-                    $errors[]='Email address already exists';
-                }
-            }
-        }
+       
         
         // after pressed update button, add ne data to the database
         if(empty($errors)) {
@@ -102,10 +91,10 @@
             
             //email address already sanitized
             
-            $result_set2 = update_query($connection, $id, $first_name, $last_name, $contact, $address, $email, $gender);
+            $result_set2 = update_tourist_query($connection, $id, $first_name, $last_name, $contact, $address, $gender);
 
             if($result_set2){
-				header('Location:/ceylontrek-3tier/controller/view_tourist_profile_controller.php?admin-modified=true');
+				header('Location:/ceylontrek-3tier/controller/view_tourist_profile_controller.php?tourist-modified=true');
             }
 
             else{
@@ -118,9 +107,9 @@
 		}
     }
 
-    if (isset($_POST['cancel'])) {
-        header('Location: /ceylontrek-3tier/view/touristDashboard.php');
-    }
+    if (isset($_POST['edit_email'])) {
+        header('Location:/ceylontrek-3tier/controller/reset_email_controller.php');
+	}
 ?>
 
 <?php mysqli_close($connection);?>
