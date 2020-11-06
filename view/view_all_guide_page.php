@@ -22,41 +22,43 @@ $guides = $_SESSION['guides'];
 	<?php include('../view/new_top_bar.php'); ?>
 	<div class="view_all_box">
 
-			<form action="../controller/view_all_guide_controller.php" method="post">
+			<!-- <form action="../controller/view_all_guide_controller.php" method="post"> -->
 
-				<div class="text_box_search_bar">
-					<input type="text" name="" placeholder="Keyword.."></input>
-					<input type="submit" name="" value="Search"></input>
-				</div><!-- text_box_search_bar-->	
+			<div class="text_box_search_bar">
+				<input type="text" name="" placeholder="Keyword.."></input>
+				<input type="submit" name="" value="Search"></input>
+			</div><!-- text_box_search_bar-->	
 
 
-				<div class="moderator_dashboard_box">
-					<div class="prow">
+			<div class="moderator_dashboard_box">
+				<div class="prow">
 
-						<?php 
-							foreach ($guides as $guide) {
-						?>
-											
-							<div class="pcolumn">
-								<div class="pcard">
-									<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-									<div class="pcontainer">
-										<h2><?php echo $guide['first_name']; ?></h2>
-										<p><?php echo $guide['email']; ?></p>
-										<button class="pbutton" type="submit" name="view_guide">View Profile</button>
-									</div>
+					<?php 
+						foreach ($guides as $guide) {
+					?>
+										
+						<div class="pcolumn">
+							<div class="pcard">
+								<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+								<div class="pcontainer">
+									<h2><?php echo $guide['first_name']; ?></h2>
+									<p><?php echo $guide['email']; ?></p>
+									<form action="../controller/TourGuideAccountAdmin_controller.php" method="get">
+										<button class="pbutton" type="submit" name="view_guide" value="<?php echo $guide['id']; ?>">View Profile</button>
+									</form>
 								</div>
 							</div>
+						</div>
 
-						<?php  
-							}
-						?>
+					<?php  
+						}
+					?>
 
-					</div> <!-- prow -->						
+				</div> <!-- prow -->						
 
-			    </div><!-- moderator_box -->
+			</div><!-- moderator_box -->
 
-			</form>
+			<!-- </form> -->
 
 	</div>
 <?php include('../view/footer.php'); ?>

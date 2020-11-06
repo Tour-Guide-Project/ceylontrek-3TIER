@@ -8,8 +8,8 @@ $address=$_SESSION['address'];
 $contact=$_SESSION['contact'];
 //print_r($_SESSION);
 
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

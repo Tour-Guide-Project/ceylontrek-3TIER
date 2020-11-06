@@ -5,7 +5,9 @@
 <?php
 
     //print_r($_SESSION['id']);
-    
+    $guide_id = $_GET['view_guide'];
+    //print_r($guide_id);
+
     // check if a user is logged in
     if (!isset($_SESSION['id'])) {
         header('Location:/ceylontrek-3tier/view/login.php');
@@ -16,7 +18,7 @@
     if (isset($_SESSION['id'])) {
         
         // getting the user information
-        $id = mysqli_real_escape_string($connection,$_SESSION['id']);
+        $id = mysqli_real_escape_string($connection,$guide_id);
 
         $result_set = get_id_guide($connection,$id);
 
@@ -36,7 +38,7 @@
                 $_SESSION['contact']=$result['contact'];
                 
                 // print data
-                header('Location:/ceylontrek-3tier/view/view_guide_profile.php');
+                header('Location:/ceylontrek-3tier/view/TourGuideAccountAdminView.php');
             }
 
             else {
@@ -49,6 +51,11 @@
             //query unsuccessfull, redirect users page
 			header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
         }
+    }
+
+    if (isset($_POST['delete_account'])) {
+
+
     }
 
 ?>
