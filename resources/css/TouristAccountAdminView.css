@@ -101,6 +101,7 @@ textarea {
     color: #fff;
     background-color: #3e4877;
     border-color: #0062cc;
+    transition-duration: 0.5s;
 }
 
 .sectionBtn {
@@ -117,4 +118,5 @@ textarea {
     border: 1px solid transparent;
     border-radius: 0.25rem;
     cursor: pointer;
+    transition-duration: 0.5s;
 }
