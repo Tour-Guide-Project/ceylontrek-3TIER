@@ -5,7 +5,7 @@
 
 .inbox-body {
     height: auto;
-    background-image: url(../img/inboxpic.jpg);
+    background-color: rgb(153, 167, 204);
     background-size: 1500px 800px;
     margin-top: 125px;
 }
