@@ -86,7 +86,7 @@ DOCTYPE html>
 			</div>
 		</div>
 
-		<form action="../controller/TourGuideAccountAdmin_controller.php" method="post">
+		<form action="../controller/TourGuideAccountAdmin_controller.php" method="get">
 			<div class="btnCls">
 				<div class="btn">
 					<button class="sectionBtn" type="submit" name="message_user">Message User</button>

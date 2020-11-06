@@ -5,8 +5,8 @@
 <?php
 
     //print_r($_SESSION['id']);
-    $guide_id = $_GET['view_guide'];
-    //print_r($guide_id);
+    $_SESSION['guide_id'] = $_GET['view_guide'];
+    //print_r($_SESSION['guide_id']);
 
     // check if a user is logged in
     if (!isset($_SESSION['id'])) {
@@ -18,7 +18,7 @@
     if (isset($_SESSION['id'])) {
         
         // getting the user information
-        $id = mysqli_real_escape_string($connection,$guide_id);
+        $id = mysqli_real_escape_string($connection,$_SESSION['guide_id']);
 
         $result_set = get_id_guide($connection,$id);
 
@@ -53,9 +53,25 @@
         }
     }
 
-    if (isset($_POST['delete_account'])) {
+    if (isset($_GET['delete_account'])) {
 
+        //print_r($guide_id);
 
+        // getting the user information
+        $id = mysqli_real_escape_string($connection,$_SESSION['guide_id']);
+
+        $result_set = delete_guide($connection,$id);
+        //print_r($result_set);
+
+        if ($result_set) {
+            
+            header('Location:/ceylontrek-3tier/controller/view_all_guide_controller.php');
+        }
+
+        else {
+            //query unsuccessfull, redirect users page
+			header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+        }
     }
 
 ?>
