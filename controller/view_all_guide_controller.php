@@ -41,5 +41,9 @@
         }
     }
 
+    if (isset($_POST['view_guide'])) {
+        header('Location:/ceylontrek-3tier/controller/TourGuideAccountAdmin_controller.php');
+	}
+
 ?>
 <?php mysqli_close($connection);?>

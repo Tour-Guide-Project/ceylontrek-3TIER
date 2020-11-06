@@ -93,7 +93,7 @@ $contact=$_SESSION['contact'];
 				<button class="submit" type="submit" name="submit">Update Profile</button>
 			</div>
 			
-			</form>
+		</form>
 			
 	</div><!-- view_admin_profile_box -->
 

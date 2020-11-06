@@ -2,17 +2,17 @@
 <html>
 <head>
 	<title>Tour Guide Account Admin View</title>
-	<link rel="stylesheet" type="text/css" href="css/TouristAccountAdminView.css">
-	<link rel="stylesheet" type="text/css" href="css/TourGuideAccountAdminView.css">
-	<link rel="stylesheet" href="css/top_bar.css">
-    <link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/TouristAccountAdminView.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/TourGuideAccountAdminView.css">
+	<link rel="stylesheet" href="../resources/css/top_bar.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body style="background-color:grey;">
 
-	<?php include('inc/new_top_bar.php');?>
+	<?php include('../view/new_top_bar.php');?>
 
 	<div class="con">
 
@@ -38,14 +38,14 @@
 							<input type="text" name="fName" value="Sulakshanee Theja" readonly>
 						</div>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-25">
 							<label for="dob" class="lbl">Date Of Birth</label>
 						</div>
 						<div class="col-75">
 							<input type="text" name="dob" value="11.08.1997" readonly>
 						</div>
-					</div>
+					</div> -->
 					<div class="row">
 						<div class="col-25">
 							<label for="gender" class="lbl">Gender</label>
@@ -62,20 +62,20 @@
 							<input type="text" name="address">
 						</div>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-25">
 							<label for="nic" class="lbl">NIC Number</label>
 						</div>
 						<div class="col-75">
 							<input type="text" name="nic">
 						</div>
-					</div>
+					</div> -->
 					<div class="row">
 						<div class="col-25">
-							<label for="regNumber" class="lbl">Registration Number</label>
+							<label for="conNumber" class="lbl">Contact Number</label>
 						</div>
 						<div class="col-75">
-							<input type="text" name="regNumber">
+							<input type="text" name="conNumber">
 						</div>
 					</div>
 					<div class="row">
@@ -103,7 +103,7 @@
 		</div>
 	</div>
 
-<?php include('inc/footer.php');?>
+<?php include('../view/footer.php');?>
 
 </body>
 </html>

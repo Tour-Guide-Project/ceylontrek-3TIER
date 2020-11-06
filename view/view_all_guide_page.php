@@ -21,7 +21,7 @@ $guides = $_SESSION['guides'];
 	<?php include('../view/new_top_bar.php'); ?>
 	<div class="view_all_box">
 
-			<form action="view_all_guide_page.php" method="post">
+			<form action="../controller/view_all_guide_controller.php" method="post">
 
 				<div class="text_box_search_bar">
 					<input type="text" name="" placeholder="Keyword.."></input>
@@ -36,16 +36,16 @@ $guides = $_SESSION['guides'];
 							foreach ($guides as $guide) {
 						?>
 											
-								<div class="pcolumn">
-									<div class="pcard">
-										<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-											<div class="pcontainer">
-												<h2><?php echo $guide['first_name']; ?></h2>
-												<p><?php echo $guide['email']; ?></p>
-												<p><button  class="pbutton">View Profile</button></p>
-											</div>
+							<div class="pcolumn">
+								<div class="pcard">
+									<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+									<div class="pcontainer">
+										<h2><?php echo $guide['first_name']; ?></h2>
+										<p><?php echo $guide['email']; ?></p>
+										<button class="pbutton" type="submit" name="view_guide">View Profile</button>
 									</div>
 								</div>
+							</div>
 
 						<?php  
 							}
