@@ -8,7 +8,7 @@
                 padding: 8px 0;
                 color: black;
                 margin-top: 130px;
-                margin-left: 20px;
+                margin-left: 10px;
                 /* font-family: lato; */
                 border-radius: 5px;
             }
@@ -101,23 +101,23 @@
             }
             
             .sortby {
-                margin-left: 375px;
+                margin-left: 320px;
                 margin-top: 130px;
-                width: 1050px;
+                width: 1010px;
                 height: 80px;
                 background: #90A4B1;
                 border-radius: 5px;
             }
             
             .sortby button {
-                margin-right: 8px;
+                margin-right: 5px;
                 background-color: #2f375b;
                 /* Green background */
                 border: 1px solid green;
                 /* Green border */
                 color: white;
                 /* White text */
-                padding: 12px 24px;
+                padding: 12px 20px;
                 /* Some padding */
                 cursor: pointer;
                 /* Pointer/hand icon */
@@ -150,8 +150,8 @@
             
             .sortby h2 {
                 /* font-family: lato; */
-                margin-top: 15px;
-                margin-left: 30px;
+                margin-top: 25px;
+                margin-left: 10px;
                 font-weight: 5px;
                 font-size: 30px;
             }
@@ -163,10 +163,10 @@
                 border-radius: 5px;
                 overflow: hidden;
                 height: 300px;
-                width: 1050px;
+                width: 1000px;
                 padding-top: 10px;
                 margin-top: 20px;
-                margin-left: 375px;
+                margin-left: 330px;
                 margin-bottom: 10px;
             }
             /* 	guide details  */
@@ -250,7 +250,6 @@
                 position: relative;
                 overflow: hidden;
                 height: auto;
-                float: left;
                 width: 35%;
                 display: inline-block;
                 padding-left: 25px;
