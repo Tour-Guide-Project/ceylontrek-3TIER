@@ -44,7 +44,6 @@
     padding: 30px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     border: 0;
-    width: 60%;
     height: 80px;
     background-color: whitesmoke;
     margin-left: 0px;
@@ -68,8 +67,9 @@
     float: right;
     width: 1000px;
     background-color: transparent;
-    margin-right: 100px;
+    margin-right: 150px;
     margin-bottom: 30px;
+    margin-left: 0%;
     /* overflow: hidden; */
 }
 

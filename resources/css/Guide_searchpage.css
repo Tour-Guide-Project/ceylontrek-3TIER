@@ -19,7 +19,7 @@
         padding: 20px 20px;
         width: 1250px;
         float: left;
-        margin-left: 50px;
+        margin-left: 30px;
         margin-top: 150px;
     }
     
@@ -31,6 +31,7 @@
         font-size: 30px;
         letter-spacing: 2px;
         padding-bottom: 30px;
+        font-family: lato;
     }
     
     .search {
@@ -89,7 +90,7 @@
     .seeall-button {
         width: 300px;
         height: 50px;
-        background-color: #2f375b;
+        background-color: #314c6e;
         float: left;
         margin-left: 500px;
         border: none;
@@ -98,10 +99,11 @@
         font-size: 18px;
         margin-top: -50px;
         border-radius: 10px;
+        transition-duration: 0.4s;
         margin-bottom: 20px;
     }
     
     .seeall-button:hover {
-        background-color: #044c66;
+        background-color: #0e042b;
         cursor: pointer;
     }
