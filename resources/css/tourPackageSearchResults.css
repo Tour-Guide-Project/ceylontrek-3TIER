@@ -5,10 +5,10 @@
     border-radius: 5px;
     overflow: hidden;
     height: 300px;
-    width: 1050px;
+    width: 970px;
     padding-top: 10px;
     margin-top: 20px;
-    margin-left: 375px;
+    margin-left: 350px;
     margin-bottom: 20px;
 }
 
@@ -112,7 +112,6 @@
     position: relative;
     overflow: hidden;
     height: auto;
-    float: left;
     width: 35%;
     display: inline-block;
     padding-left: 25px;
