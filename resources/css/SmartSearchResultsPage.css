@@ -61,14 +61,14 @@ body {
 
 .viewButton:hover {
     color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
+    background-color: #0b3664;
+    /* border-color: #0062cc; */
 }
 
 .viewButton {
     color: #fff;
-    background-color: #2f375b;
-    border-color: #007bff;
+    background-color: #0f3c3f;
+    /* border-color: #007bff; */
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -79,4 +79,5 @@ body {
     border-radius: 10px;
     cursor: pointer;
     width: 100px;
+    transition-duration: 0.5s;
 }
