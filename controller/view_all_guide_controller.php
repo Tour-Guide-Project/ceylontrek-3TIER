@@ -33,28 +33,6 @@
             $_SESSION['guides'] = $guides;
             header('Location:/ceylontrek-3tier/view/view_all_guide_page.php');
             
-            
-            // if ($rows > 0) {
-            
-            //     $result = mysqli_fetch_assoc($result_set);
-            //     //print_r($result);
-
-            //     // $_SESSION['result'] = $result;
-            //     // //print_r($_SESSION['result']);
-
-            //     // header('Location:/ceylontrek-3tier/view/view_all_guide_page.php');
-
-
-            //     // while ($result) {
-            //     //     // pass data
-            //     //     $_SESSION['first_name']=$result['first_name'];
-            //     //     //  $_SESSION['last_name']=$result['last_name'];
-            //     //     $_SESSION['email']=$result['email'];
-
-            //     //     // print data
-            //     //     header('Location:/ceylontrek-3tier/view/view_all_guide_page.php');
-            //     // }
-            // }
         }
 
         else {
