@@ -2,6 +2,7 @@
 
 $guides = $_SESSION['guides'];
 //print_r($guides);
+//print_r($_SESSION['id']);
 
 ?>
 
