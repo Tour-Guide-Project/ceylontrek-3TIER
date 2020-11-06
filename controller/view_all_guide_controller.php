@@ -8,7 +8,8 @@
         header('Location:/ceylontrek-3tier/view/login.php');
     }
 
-    $errors=array();
+    $errors = array();
+    $guides = array();
 
     if (isset($_SESSION['id'])) {
 
@@ -22,12 +23,15 @@
             //print_r($rows);
             //print_r($columns);
 
-            while ($rows > 0) {
-                $result = mysqli_fetch_assoc($result_set);
-
-                print_r($result);
+            for ($i=0; $i < $rows; $i++) { 
+                $result = mysqli_fetch_array($result_set,MYSQLI_ASSOC);
+                //print_r($result);
+                $guides[] = $result;
             }
-            
+
+            //print_r($guides);
+            $_SESSION['guides'] = $guides;
+            header('Location:/ceylontrek-3tier/view/view_all_guide_page.php');
             
             
             // if ($rows > 0) {

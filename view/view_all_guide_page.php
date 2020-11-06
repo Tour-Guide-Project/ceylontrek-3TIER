@@ -1,7 +1,8 @@
 <?php session_start();
 
-$result = $_SESSION['result'];
-//print_r($_SESSION['result']);
+$guides = $_SESSION['guides'];
+//print_r($guides);
+
 ?>
 
 <!DOCTYPE html>
@@ -32,14 +33,14 @@ $result = $_SESSION['result'];
 					<div class="prow">
 
 						<?php 
-							foreach ($result as $x => $guide) {
+							foreach ($guides as $guide) {
 						?>
 											
 								<div class="pcolumn">
 									<div class="pcard">
 										<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
 											<div class="pcontainer">
-												<h2><?php echo "$x => $guide"; ?></h2>
+												<h2><?php echo $guide['first_name']; ?></h2>
 												<p><?php echo $guide['email']; ?></p>
 												<p><button  class="pbutton">View Profile</button></p>
 											</div>
