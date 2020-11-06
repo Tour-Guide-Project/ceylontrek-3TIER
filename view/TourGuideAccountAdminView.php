@@ -38,14 +38,14 @@
 							<input type="text" name="fName" value="Sulakshanee Theja" readonly>
 						</div>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-25">
 							<label for="dob" class="lbl">Date Of Birth</label>
 						</div>
 						<div class="col-75">
 							<input type="text" name="dob" value="11.08.1997" readonly>
 						</div>
-					</div>
+					</div> -->
 					<div class="row">
 						<div class="col-25">
 							<label for="gender" class="lbl">Gender</label>
@@ -62,20 +62,20 @@
 							<input type="text" name="address">
 						</div>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-25">
 							<label for="nic" class="lbl">NIC Number</label>
 						</div>
 						<div class="col-75">
 							<input type="text" name="nic">
 						</div>
-					</div>
+					</div> -->
 					<div class="row">
 						<div class="col-25">
-							<label for="regNumber" class="lbl">Registration Number</label>
+							<label for="conNumber" class="lbl">Contact Number</label>
 						</div>
 						<div class="col-75">
-							<input type="text" name="regNumber">
+							<input type="text" name="conNumber">
 						</div>
 					</div>
 					<div class="row">
