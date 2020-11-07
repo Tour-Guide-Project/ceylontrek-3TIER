@@ -69,7 +69,8 @@ body {
     position: relative;
     /* overflow: hidden; */
     z-index: 1;
-    margin-top: 180px;
+    margin-top: 140px;
+    margin-bottom: 40px;
     margin-left: 10px;
     background: #E8B860;
     /* overflow-x: hidden; */
@@ -218,7 +219,7 @@ body {
     height: auto;
     margin-left: 330px;
     padding-bottom: 30px;
-    margin-top: -470px;
+    margin-top: -480px;
     margin-bottom: 20px;
 }
 

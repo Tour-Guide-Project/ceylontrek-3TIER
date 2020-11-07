@@ -234,6 +234,7 @@ input[type="submit"]:hover {
 
 .full_tour_request_post_view_box .text_box p {
     margin-bottom: 10px;
+    padding: 10px;
 }
 
 .full_tour_request_post_view_box .msg,

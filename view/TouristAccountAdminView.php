@@ -27,7 +27,7 @@
 							<label for="fName" class="lbl">Full Name</label>
 						</div>
 						<div class="col-75">
-							<input type="text" name="fName" value="Sulakshanee Theja" readonly>
+							<input type="text" name="fName" value="" readonly>
 						</div>
 					</div>
 					<div class="row">
@@ -35,7 +35,7 @@
 							<label for="dob" class="lbl">Date Of Birth</label>
 						</div>
 						<div class="col-75">
-							<input type="text" name="dob" value="11.08.1997" readonly>
+							<input type="text" name="dob" value="" readonly>
 						</div>
 					</div>
 					<div class="row">
@@ -43,7 +43,7 @@
 							<label for="gender" class="lbl">Gender</label>
 						</div>
 						<div class="col-75">
-							<input type="text" name="gender" value="Female" readonly>
+							<input type="text" name="gender" value="" readonly>
 						</div>
 					</div>
 					<div class="row">
@@ -75,7 +75,7 @@
 							<label for="email" class="lbl">Email</label>
 						</div>
 						<div class="col-75">
-							<input type="text" name="email" value="sulatheja8@gmail.com" readonly>
+							<input type="text" name="email" value="" readonly>
 						</div>
 					</div>
 				</form>
