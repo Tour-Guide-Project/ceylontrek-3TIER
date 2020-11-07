@@ -30,6 +30,7 @@
                 $result = mysqli_fetch_assoc($result_set);
 
                 // pass data
+                $_SESSION['guide_id']=$result['id'];
                 $_SESSION['first_name']=$result['first_name'];
 				$_SESSION['last_name']=$result['last_name'];
 				$_SESSION['email']=$result['email'];
@@ -43,20 +44,21 @@
 
             else {
                 //user not found,redirect users page
-				header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+				header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found1');
             }
         }
 
         else {
             //query unsuccessfull, redirect users page
-			header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+			header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found2');
         }
     }
 
     if (isset($_POST['delete_account'])) {
 
         // getting the user information
-        $result_set2 = delete_guide($connection,$id);
+        $g_id = mysqli_real_escape_string($connection,$_SESSION['guide_id']);
+        $result_set2 = delete_guide($connection,$g_id);
 
         if ($result_set2) {         
             header('Location:/ceylontrek-3tier/controller/view_all_guide_controller.php');
@@ -64,7 +66,7 @@
 
         else {
             //query unsuccessfull, redirect users page
-			header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+            header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
         }
     }
 

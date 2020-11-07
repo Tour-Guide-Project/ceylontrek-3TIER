@@ -31,7 +31,7 @@ function get_guides($connection){
 }
 
 function delete_guide($connection,$id){
-    $query = "DELETE * FROM tourguide WHERE id={$id} AND level='tourguide'";
+    $query = "DELETE FROM tourguide WHERE id={$id}";
 
     $result = mysqli_query($connection,$query);
     return $result;

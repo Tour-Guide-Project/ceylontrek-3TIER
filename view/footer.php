@@ -1,7 +1,7 @@
 
     <footer class="footer-distributed">
             <div class="footer-left">
-                <a href="#"><img src="img/home/logo2.png" alt=""></a>
+                <a href="#"><img src="../resources/img/home/logo2.png" alt=""></a>
                 <p class="footer-links">
                     <a href="#" class="link-1">Home</a>
         
