@@ -1,3 +1,15 @@
+<?php session_start();
+
+$first_name=$_SESSION['first_name'];
+$last_name=$_SESSION['last_name'];
+$email=$_SESSION['email'];
+$gender=$_SESSION['gender'];
+$address=$_SESSION['address'];
+$contact=$_SESSION['contact'];
+//print_r($_SESSION);
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,78 +41,63 @@
 
 		<div class="formCls">
 			<div class="formClsCls">
-				<form>
-					<div class="row">
-						<div class="col-25">
-							<label for="fName" class="lbl">Full Name</label>
-						</div>
-						<div class="col-75">
-							<input type="text" name="fName" value="" readonly>
-						</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="fName" class="lbl">Full Name</label>
 					</div>
-					<div class="row">
-						<div class="col-25">
-							<label for="dob" class="lbl">Date Of Birth</label>
-						</div>
-						<div class="col-75">
-							<input type="text" name="dob" value="" readonly>
-						</div>
+					<div class="col-75">
+						<input type="text" name="fName" <?php echo 'value="'.$first_name.'"'; ?> readonly>
 					</div>
-					<div class="row">
-						<div class="col-25">
-							<label for="gender" class="lbl">Gender</label>
-						</div>
-						<div class="col-75">
-							<input type="text" name="gender" value="" readonly>
-						</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="gender" class="lbl">Gender</label>
 					</div>
-					<div class="row">
-						<div class="col-25">
-							<label for="address" class="lbl">Address</label>
-						</div>
-						<div class="col-75">
-							<input type="text" name="address">
-						</div>
+					<div class="col-75">
+						<input type="text" name="gender" <?php echo 'value="'.$last_name.'"'; ?> readonly>
 					</div>
-					<div class="row">
-						<div class="col-25">
-							<label for="nic" class="lbl">NIC Number</label>
-						</div>
-						<div class="col-75">
-							<input type="text" name="nic">
-						</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="address" class="lbl">Address</label>
 					</div>
-					<div class="row">
-						<div class="col-25">
-							<label for="regNumber" class="lbl">Registration Number</label>
-						</div>
-						<div class="col-75">
-							<input type="text" name="regNumber">
-						</div>
+					<div class="col-75">
+						<input type="text" name="address" <?php echo 'value="'.$address.'"'; ?> readonly>
 					</div>
-					<div class="row">
-						<div class="col-25">
-							<label for="email" class="lbl">Email</label>
-						</div>
-						<div class="col-75">
-							<input type="text" name="email" value="" readonly>
-						</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="conNumber" class="lbl">Contact Number</label>
 					</div>
-				</form>
+					<div class="col-75">
+						<input type="text" name="conNumber" <?php echo 'value="'.$contact.'"'; ?> readonly>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="email" class="lbl">Email</label>
+					</div>
+					<div class="col-75">
+						<input type="text" name="email" <?php echo 'value="'.$email.'"'; ?> readonly>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 
 		<div class="btnCls">
-			<div class="btn">
-				<button class="sectionBtn">Message User</button>
-			</div>
-			<div class="btn">
-				<button class="sectionBtn">Reset Password</button>
-			</div>
-			<div class="btn">
-				<button class="sectionBtn">Delete Account</button>
-			</div>
-		</div>
+			<form action="../controller/TourGuideAccountAdmin_controller.php" method="post">
+				<div class="btn">
+					<button class="sectionBtn" type="submit" name="message_user">Message User</button>
+				</div>
+				<div class="btn">
+					<button class="sectionBtn" type="submit" name="reset_password">Reset Password</button>
+				</div>
+				<div class="btn">
+					<button class="sectionBtn" type="submit" name="delete_account">Delete Account</button>
+				</div>
+			</form>
+		</div>			
 	</div>
 
 <?php include('../view/footer.php');?>
