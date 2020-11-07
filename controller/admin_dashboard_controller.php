@@ -8,7 +8,7 @@ session_start();?>
 	}
 
 	if(isset($_POST['submit_tourist'])){
-		header('Location: ../view/view_all_guide_page.php');
+		header('Location: ../controller/view_all_guide_controller.php');
 		//$_SESSION['level']='tourist';
 	}
 
