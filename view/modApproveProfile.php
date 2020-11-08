@@ -5,8 +5,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="../resources/css/tourGuideProfile.css">
     <link rel="stylesheet" href="../resources/css/modApproveProfile.css">
+   
+    
     <link rel="stylesheet" type="text/css" href="../resources/css/admin_dashboard.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/Guidedashboardpage.css">
 

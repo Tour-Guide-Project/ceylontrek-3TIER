@@ -1,4 +1,338 @@
-.content {
+/* .content {
     margin-left: -100px;
     margin-top: -75px;
+} */
+
+body {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: lato;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    border: 1px solid whitesmoke;
+    width: 275px;
+    padding: 20px 15px 0px;
+    margin: 20px auto;
+}
+
+.relative {
+    position: relative;
+}
+
+.guideInfo {
+    /* display: inline-block; */
+    margin-left: 1100px;
+    margin-top: 250px;
+    position: relative;
+}
+
+.info {
+    background-color: #DDE2DD;
+    width: 790px;
+    height: auto;
+    margin-left: 200px;
+    padding-bottom: 30px;
+    margin-top: -540px;
+    margin-bottom: 20px;
+}
+
+.client-name {
+    display: block;
+    text-align: left;
+    /* padding: 5px; */
+    font-size: 20px;
+    /* margin: 15px 0px 5px; */
+    text-transform: uppercase;
+    font-family: lato;
+    font-weight: 500;
+}
+
+.client-country {
+    display: block;
+    text-align: left;
+    /* padding: 5px; */
+    font-size: 15px;
+    /* margin: 15px 0px 5px; */
+    text-transform: uppercase;
+    font-family: lato;
+}
+
+.viewmore {
+    display: block;
+    text-align: left;
+    /* padding: 5px; */
+    font-size: 15px;
+    font-weight: bold;
+    /* margin: 15px 0px 5px; */
+}
+
+.testimonial-content {
+    padding: 5px 0px;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+    font-family: 'Farsan', cursive;
+}
+
+@media (max-width:576px) {
+    .wrapper {
+        width: 100%;
+    }
+    /* .testimonial-content {} */
+}
+
+.sidenav {
+    width: 300px;
+    height: auto;
+    position: relative;
+    /* overflow: hidden; */
+    z-index: 1;
+    margin-top: 140px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    background: #E8B860;
+    /* overflow-x: hidden; */
+    padding: 8px 0;
+    color: black;
+    border: 2px solid darkblue;
+    display: inline-block;
+    /* float: left; */
+}
+
+.main {
+    margin-left: 140px;
+    /* Same width as the sidebar + left position in px */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+* {
+    box-sizing: border-box
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    /* max-width: 1000px; */
+    height: 300px;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 75px;
+    /* display: inline-block; */
+    /* float: left; */
+    padding-top: 30px;
+    width: 640px
+}
+
+
+/* Hide the images by default */
+
+.mySlides {
+    display: none;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: 20px;
+    padding: 16px;
+    color: rgb(3, 0, 0);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.circles {
+    margin-top: 100px;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.rating {
+    color: gold;
+}
+
+.guidewrapper {
+    position: relative;
+    border: 2px solid dodgerBlue;
+    width: 300px;
+    padding: 10px 15px 0px;
+    /* margin: 100px auto; */
+}
+
+
+/* 
+.guiderelative {
+    position: relative;
+} */
+
+.avtar {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.guide-name {
+    color: black;
+    display: block;
+    text-align: center;
+    /* padding: 10px; */
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -70px;
+    text-transform: uppercase;
+}
+
+.star-rating {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.guide-content {
+    color: black;
+    padding: 5px 0px;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.checked {
+    color: orange;
+}
+
+.guide-bio {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    color: black;
+    margin-top: 0px;
+    font-family: 'Farsan', cursive;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 640px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin-top: 20px;
+    color: black;
+    margin-bottom: 50px;
+    font-family: lato;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: rgb(4, 4, 80);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.card h1 {
+    font-family: lato;
+    font-weight: 500;
 }

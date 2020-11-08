@@ -219,7 +219,7 @@ body {
     height: auto;
     margin-left: 330px;
     padding-bottom: 30px;
-    margin-top: -480px;
+    margin-top: -540px;
     margin-bottom: 20px;
 }
 
@@ -229,7 +229,7 @@ body {
 
 .guideInfo {
     /* display: inline-block; */
-    margin-left: 1130px;
+    margin-left: 1200px;
     margin-top: -1040px;
     position: relative;
 }
