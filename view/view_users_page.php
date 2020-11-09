@@ -1,7 +1,7 @@
 <?php session_start();
 
-$guides = $_SESSION['guides'];
-//print_r($guides);
+$users = $_SESSION['users'];
+//print_r($users);
 //print_r($_SESSION['id']);
 
 ?>
@@ -13,7 +13,7 @@ $guides = $_SESSION['guides'];
 	<title>View All Guide Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/view_all_guide_page.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/view_users_page.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -34,17 +34,17 @@ $guides = $_SESSION['guides'];
 				<div class="prow">
 
 					<?php 
-						foreach ($guides as $guide) {
+						foreach ($users as $user) {
 					?>
 										
 						<div class="pcolumn">
 							<div class="pcard">
 								<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
 								<div class="pcontainer">
-									<h2><?php echo $guide['first_name']; ?></h2>
-									<p><?php echo $guide['email']; ?></p>
+									<h2><?php echo $user['first_name']; ?></h2>
+									<p><?php echo $user['email']; ?></p>
 									<form action="../controller/UserAccountAdmin_controller.php" method="get">
-										<button class="pbutton" type="submit" name="view_guide" value="<?php echo $guide['id']; ?>">View Profile</button>
+										<button class="pbutton" type="submit" name="view_user" value="<?php echo $user['id']; ?>">View Profile</button>
 									</form>
 								</div>
 							</div>

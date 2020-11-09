@@ -23,4 +23,18 @@ function update_tourist_email($connection,$id,$new_email){
     $result=mysqli_query($connection,$query);
     return $result;
 }
+
+function get_tourists($connection){
+    $query = "SELECT * FROM tourist WHERE level = 'tourist' ORDER BY first_name";
+    
+    $result = mysqli_query($connection,$query);
+    return $result;
+}
+
+function delete_tourist($connection,$id){
+    $query = "DELETE FROM tourist WHERE id={$id}";
+
+    $result = mysqli_query($connection,$query);
+    return $result;
+}
 ?>
