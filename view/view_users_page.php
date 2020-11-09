@@ -25,8 +25,10 @@ $users = $_SESSION['users'];
 			<!-- <form action="../controller/view_users_controller.php" method="post"> -->
 
 			<div class="text_box_search_bar">
-				<input type="text" name="" placeholder="Keyword.."></input>
-				<input type="submit" name="" value="Search"></input>
+				<form action="../controller/view_users_admin_controller.php" method="get">
+					<input type="text" name="word" placeholder="Keyword.."></input>
+					<input type="submit" name="search" value="Search"></input>
+				</form>	
 			</div><!-- text_box_search_bar-->	
 
 

@@ -37,4 +37,11 @@ function delete_tourist($connection,$id){
     $result = mysqli_query($connection,$query);
     return $result;
 }
+
+function get_search_tourists($connection,$key_email){
+    $query = "SELECT * FROM tourist WHERE level = 'tourist' AND email LIKE '$key_email%' ORDER BY first_name";
+    
+    $result = mysqli_query($connection,$query);
+    return $result;
+}
 ?>

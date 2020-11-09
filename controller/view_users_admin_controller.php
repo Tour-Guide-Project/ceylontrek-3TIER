@@ -16,13 +16,42 @@
     if (isset($_SESSION['id'])) {
 
         if ($level == 'tourguide') {
-            $result_set = get_guides($connection);
-            //print_r($result_set);
+
+            if ($_GET['search'] || $_GET['word']) {
+
+                $key_email =  $_GET['word'];
+                
+                $key_email = htmlspecialchars($key_email);
+        
+                $key_email = mysqli_real_escape_string($connection,$key_email);
+        
+                $result_set = get_search_guides($connection,$key_email);
+            }
+
+            else {
+                $result_set = get_guides($connection);
+                //print_r($result_set);
+            }
+            
         }
 
         if ($level == 'tourist') {
-            $result_set = get_tourists($connection);
-            //print_r($result_set);
+
+            if ($_GET['search'] || $_GET['word']) {
+
+                $key_email =  $_GET['word'];
+                
+                $key_email = htmlspecialchars($key_email);
+        
+                $key_email = mysqli_real_escape_string($connection,$key_email);
+        
+                $result_set = get_search_tourists($connection,$key_email);
+            }
+            
+            else {
+                $result_set = get_tourists($connection);
+                //print_r($result_set);
+            }
         }
         
         if ($result_set) {
