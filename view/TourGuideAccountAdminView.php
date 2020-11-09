@@ -31,12 +31,12 @@ $contact=$_SESSION['contact'];
 		<div class="profileCls">
 			<img src="../resources/img/ct6.jpg" alt="user-avtar" width="100%" class="profilePic">
 
-			<div class="star-rating">
+			<!-- <div class="star-rating">
             	<span class="fa fa-star checked"></span>
             	<span class="fa fa-star checked"></span>
             	<span class="fa fa-star checked"></span>
             	<span class="fa fa-star checked"></span>
-            </div>
+            </div> -->
 		</div>
 
 		<div class="formCls">
