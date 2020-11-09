@@ -41,7 +41,7 @@
                 $_SESSION['contact']=$result['contact'];
                 
                 // print data
-                header('Location:/ceylontrek-3tier/view/TourGuideAccountAdminView.php');
+                header('Location:/ceylontrek-3tier/view/UserAccountAdminView.php');
             }
 
             else {
@@ -63,7 +63,7 @@
         $result_set2 = delete_guide($connection,$g_id);
 
         if ($result_set2) {         
-            header('Location:/ceylontrek-3tier/controller/view_all_guide_controller.php');
+            header('Location:/ceylontrek-3tier/controller/view_users_controller.php');
         }
 
         else {

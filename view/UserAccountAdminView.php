@@ -86,7 +86,7 @@ $contact=$_SESSION['contact'];
 		</div>
 
 		<div class="btnCls">
-			<form action="../controller/TourGuideAccountAdmin_controller.php" method="post">
+			<form action="../controller/UserAccountAdmin_controller.php" method="post">
 				<div class="btn">
 					<button class="sectionBtn" type="submit" name="message_user">Message User</button>
 				</div>

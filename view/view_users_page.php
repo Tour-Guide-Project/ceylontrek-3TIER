@@ -22,7 +22,7 @@ $guides = $_SESSION['guides'];
 	<?php include('../view/new_top_bar.php'); ?>
 	<div class="view_all_box">
 
-			<!-- <form action="../controller/view_all_guide_controller.php" method="post"> -->
+			<!-- <form action="../controller/view_users_controller.php" method="post"> -->
 
 			<div class="text_box_search_bar">
 				<input type="text" name="" placeholder="Keyword.."></input>
@@ -43,7 +43,7 @@ $guides = $_SESSION['guides'];
 								<div class="pcontainer">
 									<h2><?php echo $guide['first_name']; ?></h2>
 									<p><?php echo $guide['email']; ?></p>
-									<form action="../controller/TourGuideAccountAdmin_controller.php" method="get">
+									<form action="../controller/UserAccountAdmin_controller.php" method="get">
 										<button class="pbutton" type="submit" name="view_guide" value="<?php echo $guide['id']; ?>">View Profile</button>
 									</form>
 								</div>

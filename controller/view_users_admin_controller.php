@@ -31,7 +31,7 @@
 
             //print_r($guides);
             $_SESSION['guides'] = $guides;
-            header('Location:/ceylontrek-3tier/view/view_all_guide_page.php');
+            header('Location:/ceylontrek-3tier/view/view_users_page.php');
             
         }
 
@@ -42,7 +42,7 @@
     }
 
     if (isset($_POST['view_guide'])) {
-        header('Location:/ceylontrek-3tier/controller/TourGuideAccountAdmin_controller.php');
+        header('Location:/ceylontrek-3tier/controller/UserAccountAdmin_controller.php');
 	}
 
 ?>
