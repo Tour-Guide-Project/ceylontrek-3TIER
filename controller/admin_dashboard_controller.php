@@ -4,12 +4,12 @@ session_start();?>
 
 	if(isset($_POST['submit_guide'])){
 		header('Location: ../controller/view_all_guide_controller.php');
-		//$_SESSION['level']='tourguide';
+		$_SESSION['level']='tourguide';
 	}
 
 	if(isset($_POST['submit_tourist'])){
 		header('Location: ../controller/view_all_guide_controller.php');
-		//$_SESSION['level']='tourist';
+		$_SESSION['level']='tourist';
 	}
 
 	if (isset($_POST['submit_admin'])){

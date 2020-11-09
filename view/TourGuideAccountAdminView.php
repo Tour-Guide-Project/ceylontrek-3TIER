@@ -94,21 +94,22 @@ $contact=$_SESSION['contact'];
 					<button class="sectionBtn" type="submit" name="reset_password">Reset Password</button>
 				</div>
 				<div class="btn">
-					<button class="sectionBtn" type="submit" name="delete_account" onclick="return checkdelete()">Delete Account</button>
+					<button class="sectionBtn" type="submit" name="delete_account">Delete Account</button>
+					<!-- <button class="sectionBtn" type="submit" name="delete_account" onclick="return checkdelete()">Delete Account</button> -->
 				</div>
 			</form>
 		</div>			
 	</div>
 
 	<!-- JavaScript function for delete guide -->
-	<script>
+	<!-- <script>
 		function checkdelete() {
 			return Confirm("Are you sure you want to Delete this Tour-guide Account?");
 		}
-	</script>
+	</script> -->
 
 <?php include('../view/footer.php');?>
 
 </body>
-<script type="text/javascript" src="../resources/js/jscript.js"></script>
+<!-- <script type="text/javascript" src="../resources/js/jscript.js"></script> -->
 </html>

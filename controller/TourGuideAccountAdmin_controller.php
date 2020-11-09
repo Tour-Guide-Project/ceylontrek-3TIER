@@ -5,6 +5,8 @@
 <?php
 
     //print_r($_SESSION['id']);
+
+    //print_r($_SESSION['id']);
     $guide_id = $_GET['view_guide'];
     //print_r($_SESSION['guide_id']);
 
