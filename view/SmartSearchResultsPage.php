@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="btn">
-				<button class="viewButton">View</button>
+				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
 			</div>
 		</div>
 
@@ -38,7 +38,7 @@
 			</div>
 
 			<div class="btn">
-				<button class="viewButton">View</button>
+				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
 			</div>
 		</div>
 
@@ -52,7 +52,7 @@
 			</div>
 
 			<div class="btn">
-				<button class="viewButton">View</button>
+				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
 			</div>
 		</div>
 
@@ -66,7 +66,7 @@
 			</div>
 
 			<div class="btn">
-				<button class="viewButton">View</button>
+				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
 			</div>
 		</div>
 
@@ -80,7 +80,7 @@
 			</div>
 
 			<div class="btn">
-				<button class="viewButton">View</button>
+				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
 			</div>
 		</div>
 
@@ -94,7 +94,7 @@
 			</div>
 
 			<div class="btn">
-				<button class="viewButton">View</button>
+				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
 			</div>
 		</div>
 
@@ -108,7 +108,7 @@
 			</div>
 
 			<div class="btn">
-				<button class="viewButton">View</button>
+				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
 			</div>
 		</div>
 
@@ -122,7 +122,7 @@
 			</div>
 
 			<div class="btn">
-				<button class="viewButton">View</button>
+				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
 			</div>
 		</div>
 	</div>

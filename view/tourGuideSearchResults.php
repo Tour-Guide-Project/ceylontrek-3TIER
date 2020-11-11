@@ -105,7 +105,7 @@
                 <div class="control">
 
                     <!-- Start Button buying -->
-                    <button class="btn"><span> View More</span>
+                    <button class="btn"><span><a style="color:white; text-decoration:none;" href='tourGuideProfile.php'> View More</a></span>
                            
          </button>
                     <!-- End Button buying -->
@@ -137,7 +137,7 @@
             <div class="guide-details">
 
                 <!-- 	guide Name -->
-                <h1>Iranga Mudalige</h1>
+                <h1>Chathura Rathnayake</h1>
 
                 <span class="hint-star star">
           <i class="fa fa-star" aria-hidden="true"></i>
@@ -160,7 +160,7 @@
                 <div class="control">
 
                     <!-- Start Button buying -->
-                    <button class="btn"><span> View More</span>
+                    <button class="btn"><span> <a style="color:white; text-decoration:none;" href='tourGuideProfile.php'> View More</a></span>
                          
        </button>
                     <!-- End Button buying -->
@@ -177,7 +177,7 @@
 
             <div class="guide-image">
 
-                <img src="../resources/img/guideresult/2.jpg" alt="Omar Dsoky">
+                <img src="../resources/img/guideresult/1.jpg" alt="Omar Dsoky">
 
             </div>
             <!--  End guide image  -->
@@ -214,7 +214,7 @@
                 <div class="control">
 
                     <!-- Start Button buying -->
-                    <button class="btn"><span> View More</span>
+                    <button class="btn"><span> <a style="color:white; text-decoration:none;" href='tourGuideProfile.php'> View More</a></span>
                            
          </button>
                     <!-- End Button buying -->
@@ -246,7 +246,7 @@
             <div class="guide-details">
 
                 <!-- 	guide Name -->
-                <h1>Iranga Mudalige</h1>
+                <h1>Chathura Rathnayake</h1>
 
                 <span class="hint-star star">
           <i class="fa fa-star" aria-hidden="true"></i>
@@ -269,7 +269,7 @@
                 <div class="control">
 
                     <!-- Start Button buying -->
-                    <button class="btn"><span> View More</span>
+                    <button class="btn"><span> <a style="color:white; text-decoration:none;" href='tourGuideProfile.php'> View More</a></span>
                          
        </button>
                     <!-- End Button buying -->
@@ -286,7 +286,7 @@
 
             <div class="guide-image">
 
-                <img src="../resources/img/guideresult/2.jpg" alt="Omar Dsoky">
+                <img src="../resources/img/guideresult/1.jpg" alt="Omar Dsoky">
 
             </div>
             <!--  End guide image  -->

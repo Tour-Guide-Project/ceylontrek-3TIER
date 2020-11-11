@@ -33,7 +33,7 @@
    				<input class="search numoftourist" type="text" name="numoftourist" id="" placeholder="Number_Of_Tourist">
 
    			
-   				<button class="Search-btn" type="button">SEARCH</button>
+   				<button class="Search-btn" type="button"><a style="color:white; text-decoration:none;" href='tourPackageResults.php'>SEARCH</a></button>
 
                <br><br>
 
@@ -47,7 +47,7 @@
 
                </div><!--check-box-->
                  <br><br><br><br>
-                 <button class="seeall-button">SEE ALL PACKAGES</button>
+                 <button class="seeall-button"><a style="color:white; text-decoration:none;" href='tourPackageResults.php'>SEE ALL PACKAGES</a></button>
       	</div><!--form-box-->
 
 

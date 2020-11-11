@@ -15,7 +15,7 @@
 
 	<div class="con">
 
-		<button class="searchButton">Search</button>
+		<button class="searchButton"><a style="color:white; text-decoration:none;" href='SmartSearchResultsPage.php'>Search</a></button>
 			
 		<div class="boxOutdoor clearfix">
 

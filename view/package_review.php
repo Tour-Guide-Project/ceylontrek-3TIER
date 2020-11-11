@@ -14,9 +14,9 @@
 <?php include('../view/top_bar.php'); ?> 
  <div class="wrapper">
       <div class="split_left" >
-           <img src="../resources/img/reviewimg.jpg">
-           <h3>Guide name</h3>
-           <h3>Package name</h3>
+           <img src="../resources/img/guide/1.jpg">
+           <h3>Chathura Rathnayake</h3>
+           <h3>The DownSouth Adventure</h3>
       </div><!--split_left--> 
 
     

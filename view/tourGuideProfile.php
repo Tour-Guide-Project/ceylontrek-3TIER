@@ -64,7 +64,7 @@
           <a href="url" class="viewmore">View More....</a>
           </div>
 
-          <button class="loginbutton" style="width:200px; margin-right:60px"><span>View All Reviews</span></button>
+          <button class="loginbutton" style="width:200px; margin-right:60px"><span><a style="color:white; text-decoration:none;" href='Guide_all_reviews.php'>View All Reviews</a></span></button>
         
 
 
@@ -160,6 +160,17 @@
 
            <!-- start of tour packages -->
           
+
+           <div class="card">
+                <img src="../resources/img/guideProfile/packages/2.jpg" 
+                 style="width:640px ;height:380px">
+                <h1>Down South Adventure</h1>
+               
+                <p>Great Beaches, Great sea food, Great Nights..</p>
+                <p><button><a style="color:white; text-decoration:none;" href='tourPackage.php'>View Package >></a></button></p>
+                </div> 
+                
+                 
                 <div class="card">
                 <img src="../resources/img/guideProfile/packages/3.jpg"  style="width:640px ;height:380px">
                 <h1>Colombo in a Day</h1>
@@ -167,6 +178,7 @@
                 <p>Explore the Capital of three Sri Lanka in a single day..</p>
                 <p><button>View Package >></button></p>
                 </div> 
+                       
                         <div class="card">
                 <img src="../resources/img/guideProfile/packages/1.jpg"  style="width:640px ;height:380px">
                 <h1>Badulla, Bandarawela Tour and Hike</h1>
@@ -175,14 +187,7 @@
                 <p><button>View Package >></button></p>
                 </div> 
 
-                <div class="card">
-                <img src="../resources/img/guideProfile/packages/2.jpg" 
-                 style="width:640px ;height:380px">
-                <h1>Down South Adventure</h1>
-               
-                <p>Great Beaches, Great sea food, Great Nights..</p>
-                <p><button>View Package >></button></p>
-                </div> 
+                
 
 
                 <!-- end of tour packages -->

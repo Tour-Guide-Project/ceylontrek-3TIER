@@ -33,6 +33,13 @@
                         <li>
                             <a href="#">
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
+                                <span class="menu-title">Create Package Profile</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
                                 <span class="menu-title">Create tour package</span>
                             </a>
                         </li>
@@ -74,6 +81,10 @@
                     
                     <table class="table-fill">
                         <tbody class="table-hover">
+                        <tr>
+                                <td class="text-left">Guide Profile Status</td>
+                                <td class="text-left">Active</td>
+                            </tr>
                             <tr>
                                 <td class="text-left">Tours in This Month</td>
                                 <td class="text-left">5</td>

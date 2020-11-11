@@ -64,7 +64,7 @@
           <a href="url" class="viewmore">View More....</a>
           </div>
 
-          <button class="loginbutton" style="width:200px; margin-right:60px"><span>View All Reviews</span></button>
+          <button class="loginbutton" style="width:200px; margin-right:60px"><span><a style="color:white; text-decoration:none;" href='package_review.php'>View All Reviews</span></button>
         
 
 
