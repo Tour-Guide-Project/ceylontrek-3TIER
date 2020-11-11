@@ -29,9 +29,16 @@
 				$_SESSION['gender']=$result['gender'];
 				$_SESSION['address']=$result['address'];
 				$_SESSION['contact']=$result['contact'];
+				$_SESSION['image']=$result['image_path'];
+				$path=$result['image_path'];
 				//print_r($_SESSION);
 				//print_r($password);
+				if($path){
+					header('Location:/ceylontrek-3tier/view/view_admin_profile.php?path='.$path.'');
+				}
+				else{
 				header('Location:/ceylontrek-3tier/view/view_admin_profile.php');
+				}
 
 			}
 			else{

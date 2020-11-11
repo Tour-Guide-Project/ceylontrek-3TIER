@@ -18,7 +18,9 @@
 	<div class="side_bar">
         <img src="../resources/img/logo2.png" class="dashlogo">
         <img src="../resources/img/reviewimg.jpg" class="profile" >
-        <a class="edit" href="view_moderator_profile.php">Edit Profile</a><br>
+        <form action="../controller/moderator_dashboard_controller.php" method="post">
+            <button class="edit" name="edit_profile"><span>Edit Profile</span> </button><br>
+        </form>
             <div class="sidebar-menu">
               <ul>
                   <li>

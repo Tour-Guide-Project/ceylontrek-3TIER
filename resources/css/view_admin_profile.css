@@ -117,7 +117,7 @@ a:active {
     margin: 5px;
 }
 
-.submit {
+.second .submit {
     float: right;
     border: none;
     outline: none;
@@ -131,7 +131,7 @@ a:active {
     transition: .5s;
 }
 
-.cancel {
+.second .cancel {
     border: none;
     outline: none;
     float: left;
@@ -220,4 +220,80 @@ button:hover {
     padding: 5px 5px 5px 5px;
     font-size: 18px;
     margin: 5px;
+}
+
+
+/* upload image css */
+
+.upload {
+    color: black;
+    font-size: 18px;
+    margin-left: 960px;
+    margin-top: -960px;
+    /* margin: 50px auto 100px auto; */
+    display: -webkit-box;
+    /*create box with auto hight */
+    width: 400px;
+    height: 100%;
+    padding: 30px;
+    background: #ccf2ff;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.imgupload {
+    display: flex;
+}
+
+.upload .submit {
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    float: left;
+    font-size: 16px;
+    margin-left: 5px;
+    border-radius: 10px;
+    transition-duration: 0.6s;
+    background-color: rgb(9, 31, 70);
+    color: rgb(251, 249, 252);
+}
+
+.upload .reset {
+    float: right;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    margin-left: 30px;
+    border-radius: 10px;
+    transition-duration: 0.6s;
+    background-color: rgb(9, 31, 70);
+    color: rgb(251, 249, 252);
+}
+
+.upload .image_btn {
+    display: flex;
+}
+
+.upload input[type=file] {
+    outline: none;
+    width: 70%;
+    padding: 5px;
+    font-size: 16px;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: rgb(99, 127, 177);
+    color: rgb(251, 249, 252);
+    transition-duration: 0.6s;
+}
+
+.upload label {
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 70px;
+    font-weight: bold;
+}
+
+.upload input:hover {
+    cursor: pointer;
+    background-color: rgb(74, 89, 117);
 }

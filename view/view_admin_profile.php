@@ -23,7 +23,7 @@ $contact=$_SESSION['contact'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body style="background: none;">
+<body style="background-color: #ccf2ff;">
 	<?php include('../view/new_top_bar.php'); ?>
 	<div class="view_admin_profile_box">
 		<form action="../controller/view_admin_profile_controller.php" method="post">
@@ -98,8 +98,35 @@ $contact=$_SESSION['contact'];
 			
 	</div><!-- view_admin_profile_box -->
 
+	<div class="imgupload">
+	<div class="upload">
+		<form action="../controller/view_upload_image.php" method="post" enctype="multipart/form-data">
+		<div style="height:300px;width:200px;">
+		<?php
+		if(isset($_GET['path'])){
+			$path=$_GET['path'];
+			echo '<img src="'.$path.'" alt="" style="width: 200px;margin-left:60px;border-radius: 100%;">';
+		}
+		else{
+			echo '<img src="../resources/img/default.jpg" alt="" style="width: 200px;height:200px;margin-left:60px;border-radius:100%;">';
+		}
+		?>
+		</div>
+		
+		<label>Edit profile Image</label>
+		<p><input type="file" name="file"/></p>
+		<div class="image_btn">
+			<p><input class="submit" type="submit" name="submit" value="Upload Image"></p>
+			<p><input class="reset" type="submit" name="cancel" value="Remove Image"></p>
+		</div>
+		
+		</form>
+	</div>
+	</div>
+	<!-- upload image -->
 
-<?php include('../view/footer.php'); ?>
+
+<div><?php include('../view/footer.php'); ?></div>
 </body>
 <script type="text/javascript" src="../resources/js/jscript.js"></script>
 </html>
