@@ -110,7 +110,7 @@
             }
             
             .sortby button {
-                margin-right: 5px;
+                margin-right: 10px;
                 background-color: #2f375b;
                 /* Green background */
                 border: 1px solid green;
@@ -150,18 +150,11 @@
             
             .sortby h2 {
                 /* font-family: lato; */
-<<<<<<< HEAD
-                margin-top: 15px;
-                margin-left: 30px;
-=======
                 float: left;
                 margin-top: 15px;
                 margin-left: 15px;
->>>>>>> dc51fd1f71d038f3ccf80a739729e4f22138c5b5
                 font-weight: 5px;
                 font-size: 30px;
-                float: left;
-                margin-right: px;
             }
             
             .tourGuide {

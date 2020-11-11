@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Package Search Results</title>
     <link rel="stylesheet" href="../resources/css/homepage.css">
-    <link rel="stylesheet" href="../resources/css/tourPackageSearchResults.css">
     <link rel="stylesheet" href="../resources/css/tourGuideSearchResults.css">
+    <link rel="stylesheet" href="../resources/css/top_bar.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="../resources/css/tourPackageSearchResults.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -15,7 +17,7 @@
 <body style="background-color:#DDE2DD">
     <div class="container">
 
-    <?php include('../view/new_top_bar.php'); ?>
+    <div><?php include('../view/new_top_bar.php'); ?></div>
 
 
         <div class="sidenav">
@@ -59,7 +61,7 @@
 
         <div class="sortby">
             <h2 style="display: inline;">Sort By</h2>
-            <button style="margin-left: 40px;">Most Booked</button>
+            <button style="margin-left: 60px;">Most Booked</button>
             <button>Most Reviews</button>
             <button>Most Stars</button>
             <button>Least Price</button>
@@ -79,7 +81,7 @@
             <div class="package-details">
 
                 <!-- 	Package Name -->
-                <h1>The Down-South Adventure</h1>
+                <h1>The Best of Colombo</h1>
                 <h4 style ="float:left">Chathura Rathnayake</h4>
                 <h4 style="padding-left:450px">No. of Days : 4</h4>
 
@@ -94,7 +96,8 @@
 
                 <!-- Package bio -->
                 <p class="information">
-                   Explore the sandy beaches of the Down-South Sri Lanka, enjoy an authentic sea food platter by the ocean, pay a call to the amazing coral reefs and shop in the classic streets of the galle fort and much much more....
+                    I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
+                    as your travel Package and friend from Sri Lanka.
                 </p>
 
 
@@ -103,7 +106,64 @@
                 <div class="packagecontrol">
 
                     <!-- Start Button buying -->
-                    <button class="btn"><a style="color:white; text-decoration:none;" href='tourPackage.php'><span> View More</span></a>
+                    <button class="btn"><span> View More</span>
+                           
+         </button>
+                    <!-- End Button buying -->
+
+                </div>
+
+            </div>
+
+            <!-- 	End	Package details   -->
+
+
+
+            <!-- 	Start Package image & Information -->
+
+            <div class="package-image">
+
+                <img src="../resources/img/Packageresult/1.jpg" alt="Omar Dsoky">
+
+            </div>
+            <!--  End Package image  -->
+
+
+        </div>
+        <!-- tourPackage1 -->
+
+        <div class="tourPackage">
+
+            <!-- Start	Package details -->
+            <div class="package-details">
+
+                <!-- 	Package Name -->
+                <h1>The Best of Down-South</h1>
+                <h4 style ="float:left">Chathura Rathnayake</h4>
+                <h4 style="padding-left:450px">No. of Days : 4</h4>
+
+                <span class="hint-star star" >
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+          </span>
+
+
+                <!-- Package bio -->
+                <p class="information">
+                    I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
+                    as your travel Package and friend from Sri Lanka.
+                </p>
+
+
+
+                <!-- 		Control -->
+                <div class="packagecontrol">
+
+                    <!-- Start Button buying -->
+                    <button class="btn"><span> View More</span>
                            
          </button>
                     <!-- End Button buying -->
@@ -127,7 +187,7 @@
 
 
         </div>
-        <!-- tourPackage1 -->
+        <!-- tourPackage2 -->
 
         <div class="tourPackage">
 
@@ -135,7 +195,7 @@
 <div class="package-details">
 
     <!-- 	Package Name -->
-    <h1>The Down-South Adventure</h1>
+    <h1>The Best of Colombo</h1>
     <h4 style ="float:left">Chathura Rathnayake</h4>
     <h4 style="padding-left:450px">No. of Days : 4</h4>
 
@@ -150,7 +210,8 @@
 
     <!-- Package bio -->
     <p class="information">
-       Explore the sandy beaches of the Down-South Sri Lanka, enjoy an authentic sea food platter by the ocean, pay a call to the amazing coral reefs and shop in the classic streets of the galle fort and much much more....
+        I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
+        as your travel Package and friend from Sri Lanka.
     </p>
 
 
@@ -159,7 +220,7 @@
     <div class="packagecontrol">
 
         <!-- Start Button buying -->
-        <button class="btn"><a style="color:white; text-decoration:none;" href='tourPackage.php'><span> View More</span></a>
+        <button class="btn"><span> View More</span>
                
 </button>
         <!-- End Button buying -->
@@ -176,7 +237,7 @@
 
 <div class="package-image">
 
-    <img src="../resources/img/Packageresult/2.jpg" alt="Omar Dsoky">
+    <img src="../resources/img/Packageresult/1.jpg" alt="Omar Dsoky">
 
 </div>
 <!--  End Package image  -->
@@ -184,7 +245,6 @@
 
 </div>
 <!-- tourPackage1 -->
-
 
 <div class="tourPackage">
 
@@ -192,7 +252,7 @@
 <div class="package-details">
 
     <!-- 	Package Name -->
-    <h1>The Down-South Adventure</h1>
+    <h1>The Best of Down-South</h1>
     <h4 style ="float:left">Chathura Rathnayake</h4>
     <h4 style="padding-left:450px">No. of Days : 4</h4>
 
@@ -207,7 +267,8 @@
 
     <!-- Package bio -->
     <p class="information">
-       Explore the sandy beaches of the Down-South Sri Lanka, enjoy an authentic sea food platter by the ocean, pay a call to the amazing coral reefs and shop in the classic streets of the galle fort and much much more....
+        I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
+        as your travel Package and friend from Sri Lanka.
     </p>
 
 
@@ -216,7 +277,7 @@
     <div class="packagecontrol">
 
         <!-- Start Button buying -->
-        <button class="btn"><a style="color:white; text-decoration:none;" href='tourPackage.php'><span> View More</span></a>
+        <button class="btn"><span> View More</span>
                
 </button>
         <!-- End Button buying -->
@@ -240,9 +301,7 @@
 
 
 </div>
-<!-- tourPackage1 -->
-
-
+<!-- tourPackage2 -->
 
 <div class="tourPackage">
 
@@ -250,7 +309,7 @@
 <div class="package-details">
 
     <!-- 	Package Name -->
-    <h1>The Down-South Adventure</h1>
+    <h1>The Best of Colombo</h1>
     <h4 style ="float:left">Chathura Rathnayake</h4>
     <h4 style="padding-left:450px">No. of Days : 4</h4>
 
@@ -265,7 +324,8 @@
 
     <!-- Package bio -->
     <p class="information">
-       Explore the sandy beaches of the Down-South Sri Lanka, enjoy an authentic sea food platter by the ocean, pay a call to the amazing coral reefs and shop in the classic streets of the galle fort and much much more....
+        I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
+        as your travel Package and friend from Sri Lanka.
     </p>
 
 
@@ -274,7 +334,7 @@
     <div class="packagecontrol">
 
         <!-- Start Button buying -->
-        <button class="btn"><a style="color:white; text-decoration:none;" href='tourPackage.php'><span> View More</span></a>
+        <button class="btn"><span> View More</span>
                
 </button>
         <!-- End Button buying -->
@@ -291,7 +351,7 @@
 
 <div class="package-image">
 
-    <img src="../resources/img/Packageresult/2.jpg" alt="Omar Dsoky">
+    <img src="../resources/img/Packageresult/1.jpg" alt="Omar Dsoky">
 
 </div>
 <!--  End Package image  -->
@@ -299,8 +359,6 @@
 
 </div>
 <!-- tourPackage1 -->
-
-
 
 <div class="tourPackage">
 
@@ -308,7 +366,7 @@
 <div class="package-details">
 
     <!-- 	Package Name -->
-    <h1>The Down-South Adventure</h1>
+    <h1>The Best of Down-South</h1>
     <h4 style ="float:left">Chathura Rathnayake</h4>
     <h4 style="padding-left:450px">No. of Days : 4</h4>
 
@@ -323,7 +381,8 @@
 
     <!-- Package bio -->
     <p class="information">
-       Explore the sandy beaches of the Down-South Sri Lanka, enjoy an authentic sea food platter by the ocean, pay a call to the amazing coral reefs and shop in the classic streets of the galle fort and much much more....
+        I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
+        as your travel Package and friend from Sri Lanka.
     </p>
 
 
@@ -332,7 +391,7 @@
     <div class="packagecontrol">
 
         <!-- Start Button buying -->
-        <button class="btn"><a style="color:white; text-decoration:none;" href='tourPackage.php'><span> View More</span></a>
+        <button class="btn"><span> View More</span>
                
 </button>
         <!-- End Button buying -->
@@ -356,15 +415,7 @@
 
 
 </div>
-<!-- tourPackage1 -->
-
-       
-
-
-        
-
-
-</div>
+<!-- tourPackage2 -->
 
 
 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
