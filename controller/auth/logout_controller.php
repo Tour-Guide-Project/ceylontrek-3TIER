@@ -7,7 +7,7 @@
 	session_write_close();
 
 	//move to the login page
-	header('Location: /ceylontrek-3tier/view/login.php? You  have Successfully logout');
+	header('Location: /ceylontrek-3tier/view/homepage.php? You  have Successfully logout');
 	die;
 
  ?>
