@@ -97,11 +97,11 @@ $contact=$_SESSION['contact'];
 	<div class="imgupload">
 	<div class="upload">
 		<form action="../controller/view_upload_image.php" method="post" enctype="multipart/form-data">
-		<div style="height:300px;width:200px;">
+		<div >
 		<?php
 		if(isset($_GET['path'])){
 			$path=$_GET['path'];
-			echo '<img src="'.$path.'" alt="" style="width: 200px;margin-left:60px;border-radius: 100%;">';
+			echo '<img src="'.$path.'" alt="" style="width: 200px;height:250px;margin-left:60px;border-radius: 100%;">';
 		}
 		else{
 			echo '<img src="../resources/img/default.jpg" alt="" style="width: 200px;height:200px;margin-left:60px;border-radius:100%;">';
