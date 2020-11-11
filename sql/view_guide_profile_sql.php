@@ -36,4 +36,11 @@ function delete_guide($connection,$id){
     $result = mysqli_query($connection,$query);
     return $result;
 }
+
+function get_search_guides($connection,$key_email){
+    $query = "SELECT * FROM tourguide WHERE level = 'tourguide' AND email LIKE '$key_email%' ORDER BY first_name";
+    
+    $result = mysqli_query($connection,$query);
+    return $result;
+}
 ?>

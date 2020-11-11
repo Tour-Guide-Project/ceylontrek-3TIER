@@ -52,12 +52,23 @@
 		if(!isset($_POST['first_name']) || strlen(trim($_POST['first_name']))<1){
 			$errors[]='First name is requried/Invalid!';
 		}
-
+		//check name has only a-z
+		elseif(!preg_match(("/^([a-zA-Z']+)$/"),$_POST['first_name'])){
+			$errors[]= 'First Name is Invalid';     
+		}
 		if(!isset($_POST['last_name']) || strlen(trim($_POST['last_name']))<1){
 			$errors[]='Last name is requried/Invalid!';
 		}
+		//check name has only a-z
+        elseif(!preg_match(("/^([a-zA-Z']+)$/"),$_POST['last_name'])){
+			$errors[]= 'Last Name is Invalid';     
+		}
 		if(!isset($_POST['tel_no']) || strlen(trim($_POST['tel_no']))<1){
 			$errors[]='Contact Details is requried/Invalid!';
+		}
+		//check contact details has only 0-9
+        elseif(preg_match(("/[^0-9]/"), $_POST['tel_no'])){
+			$errors[]='Invalid phone number';
 		}
 
 		if(!isset($_POST['address']) || strlen(trim($_POST['address']))<1){
