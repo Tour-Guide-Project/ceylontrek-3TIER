@@ -4,7 +4,7 @@
             <header>
                   <a href="#"><img style=" padding: 0px; width:230px; height: 95px; margin-bottom: 0px; margin-right: 0px;margin-left: 5px; margin-top:5px" src="../resources/img/logo2.png" alt=""></a>
             </header>
-            <ul class="list">
+            <ul class="list" style="width:60%">
                 <!-- <li><a href="#home">Home</a></li> -->
                 
                 <li style="margin-top: 45px; font-size:17px; margin-left:0px"><a href="#about">Tour Guides</a></li>
@@ -34,7 +34,7 @@
           
         <div class="mobnav" style="background: #2f375b;">
             <header >
-                 <a href="#"><img style=" padding: 0px; width:250px; height: 95px; margin-bottom: 0px; margin-right: 70px;margin-left: 0px; margin-top:0px" src="../resources/img/logo2.png" alt=""></a>
+                 <a href="#"><img style=" padding: 0px; width:250px; height: 95px; margin-bottom: 0px; margin-right: 70px;margin-left: 45px; margin-top:0px" src="../resources/img/logo2.png" alt=""></a>
                  <button class="dropbutton"style="width:40px; height:20px; marging-bottom:50px; margin-top:10px" onclick="(0"><i class="fa fa-bars" aria-hidden="true"></i></button>      
             </header>
             <div class="dropdown">
@@ -43,7 +43,7 @@
                     <li style="display:flex margin-top:20px">
                         <li class="fa fa-user-circle fa-2x" aria-hidden="true" style="margin-top: 2px;margin-left: 45px ;margin-bottom:15px;"></i>
                             
-                        <a style="color: #f4f4f4;padding: 1px;text-decoration: none;text-transform: uppercase; margin-top:5px; margin-left:10px;font-size:20px" href="#contact" onMouseOver="this.style.color='skyblue'" onMouseOut="this.style.color='#f4f4f4'">View Profile</a>
+                        <a style="color: #f4f4f4;padding: 1px;text-decoration: none;text-transform: uppercase; margin-top:5px; margin-left:10px;font-size:18px" href="#contact" onMouseOver="this.style.color='skyblue'" onMouseOut="this.style.color='#f4f4f4'">View Profile</a>
                         </li>
                         
                     </li>

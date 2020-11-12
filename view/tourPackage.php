@@ -7,6 +7,7 @@
     <title>Tour Packages </title>
     <link rel="stylesheet" href="../resources/css/homepage.css">
     <link rel="stylesheet" href="../resources/css/tourPackage.css">
+    <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../resources/js/guideProfile.js"></script> 
 </head>

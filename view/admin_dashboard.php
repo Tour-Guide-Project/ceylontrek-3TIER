@@ -33,7 +33,7 @@
     </div><!--side_bar-->
 
 	<div class="admin_dashboard_box">
-	
+	          
 			<form action="../controller/admin_dashboard_controller.php" method="post">
 					<button type="submit" name="submit_complain">Complains</button>
 					<button type="submit" >View Guide</button>
