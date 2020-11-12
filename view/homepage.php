@@ -27,8 +27,13 @@
                 <li style="margin-top: 30px;"><a href="calendar.php">Travel Calendar</a></li>
             </ul>
 
+<<<<<<< HEAD
             <button class="loginbutton login" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button>
             <button class="loginbutton sign_up" type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button>
+=======
+            <button class="loginbutton"  type="button" onclick="window.location='../view/login.php'"><span>Login</span></button>
+            <button class="loginbutton" id="signup" type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button>
+>>>>>>> 066c3e854757e8da805c5244de4a098c8b01b0a4
         </nav>
         <section id="home">
             <h1>Ceylon Trek</h1>
