@@ -6,6 +6,8 @@ $email=$_SESSION['email'];
 $gender=$_SESSION['gender'];
 $address=$_SESSION['address'];
 $contact=$_SESSION['contact'];
+$image_path=$_SESSION['image_path'];
+
 //print_r($_SESSION);
 
 ?>
@@ -29,7 +31,7 @@ $contact=$_SESSION['contact'];
 	<div class="con">
 
 		<div class="profileCls">
-			<img src="../resources/img/ct6.jpg" alt="user-avtar" width="100%" class="profilePic">
+			<img src="<?php echo $image_path;?>" alt="user-avtar" width="100%" class="profilePic">
 
 			<!-- <div class="star-rating">
             	<span class="fa fa-star checked"></span>
@@ -90,9 +92,9 @@ $contact=$_SESSION['contact'];
 				<div class="btn">
 					<button class="sectionBtn" type="submit" name="message_user">Message User</button>
 				</div>
-				<div class="btn">
+				<!-- <div class="btn">
 					<button class="sectionBtn" type="submit" name="reset_password">Reset Password</button>
-				</div>
+				</div> -->
 				<div class="btn">
 					<button class="sectionBtn" type="submit" name="delete_account">Delete Account</button>
 					<!-- <button class="sectionBtn" type="submit" name="delete_account" onclick="return checkdelete()">Delete Account</button> -->

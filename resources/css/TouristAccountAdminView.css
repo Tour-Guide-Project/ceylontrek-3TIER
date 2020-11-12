@@ -15,8 +15,8 @@ body {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto;
     grid-column-gap: 10%;
-    margin-top: 130px;
-    margin-bottom: 100px;
+    margin-top: 150px;
+    margin-bottom: 150px;
     border-radius: 10px;
 }
 
@@ -38,6 +38,7 @@ body {
     grid-column: 2 / 8;
     grid-row: 1;
     padding-bottom: 3%;
+    margin-top: 10px;;
 }
 
 .formClsCls {

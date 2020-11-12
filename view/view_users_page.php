@@ -37,13 +37,12 @@ $users = $_SESSION['users'];
 
 					<?php 
 						foreach ($users as $user) {
-							$path = $user['image_path'];
 					?>
 										
 						<div class="pcolumn">
 							<div class="pcard">
 								<!-- <img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%"> -->
-								<img src="<?php echo $user['image_path']; ?>" alt="" style="width:100%">
+								<img src="<?php echo $user['image_path']; ?>" alt="" style="width:100%; height:250px;">
 								<div class="pcontainer">
 									<h2><?php echo $user['first_name']; ?></h2>
 									<p><?php echo $user['email']; ?></p>

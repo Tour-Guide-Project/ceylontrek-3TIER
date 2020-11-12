@@ -48,6 +48,7 @@
 				$_SESSION['gender']=$result['gender'];
 				$_SESSION['address']=$result['address'];
                 $_SESSION['contact']=$result['contact'];
+                $_SESSION['image_path']=$result['image_path'];
                 
                 // print data
                 header('Location:/ceylontrek-3tier/view/UserAccountAdminView.php');
