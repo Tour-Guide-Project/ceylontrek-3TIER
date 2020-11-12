@@ -13,8 +13,8 @@
                 <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
                 <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="calendar.php">Travel Calendar</a></li>
             </ul>
-            <button class="loginbutton login"><span>Login</span></button>
-            <button class="loginbutton sign_up"><span>SignUp</span></button>
+            <button class="loginbutton login" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button>
+            <button class="loginbutton sign_up" type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button>
         </nav>
 
         <div class="mobnav" style="background: #2f375b; ">
@@ -38,8 +38,8 @@
                     <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
                     <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
                     <div  style=" display:flex ">
-                      <li><button class="loginbutton login" style="height:50px;"><span>Login</span></button> </li>
-                       <li><button class="loginbutton sign_up" style="height:50px; "><span>SignUp</span></button></li>
+                      <li><button class="loginbutton login" style="height:50px;" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button> </li>
+                       <li><button class="loginbutton sign_up" style="height:50px; " type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button></li>
                     </div>
                  </ul>
             </div>
