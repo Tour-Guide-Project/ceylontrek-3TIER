@@ -20,49 +20,53 @@
                     <img src="../resources/img/reviewimg.jpg" class="profile" >
                     <button class="edit"> Edit Profile</button><br>
                   <div class="sidebar-menu">
-                    <ul>
+                  <ul>
                         <li>
-                            <a href="#">
+                            <a href="Inbox.php">
                                 <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Inbox</span>
+                                <span class="menu-title">Inbox</span>
                             </a>
                         </li>
 
                         <li>
                             <a href="#">
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Create tour package</span>
+                                <span class="menu-title">Create Package Profile</span>
                             </a>
                         </li>
 
+                        <li>
+                            <a href="CreatTourPackagePage.php">
+                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
+                                <span class="menu-title">Create tour package</span>
+                            </a>
+                        </li>
 
                         <li>
-                            <a href="#">
+                            <a href="tourGuideProfile.php">
                                 <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">View My Profile</span>
+                                <span class="menu-title">View My Profile</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="guideMyPackages.php">
                                 <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">View My Tour Packages</span>
+                                <span class="menu-title">View My Tour Packages</span>
                             </a>
                         </li>
 
-
                         <li>
-                            <a href="#">
+                            <a href="guideUpcomingTours.php">
                                 <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Upcoming Tours</span>
+                                <span class="menu-title">Upcoming Tours</span>
                             </a>
                         </li>
 
-
                         <li>
-                            <a href="#">
+                            <a href="guideUpcomingTours.php">
                                 <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Previous Tours</span>
+                                <span class="menu-title">Previous Tours</span>
                             </a>
                         </li>
                     </ul>
