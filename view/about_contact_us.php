@@ -42,7 +42,7 @@
                             <form>
                                 <div style="display: flex;">
                                     <div style="float: left;">
-                                        <h4>For more information visit our Frequently Asked Questions Page <a href="">here</a> </h4>
+                                        <h4>For more information visit our Frequently Asked Questions Page <a href="faq.php">here</a> </h4>
                                         <h3>To contact us with any questions you have, fill out the form below. </h3>
                                         <label for="name">Name</label><br>
                                         <input type="text" id="name" name="name"><br>

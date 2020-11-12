@@ -1,19 +1,19 @@
 
     <footer class="footer-distributed">
             <div class="footer-left">
-                <a href="#"><img src="../resources/img/home/logo2.png" alt=""></a>
+                <a href="homepage.php"><img src="../resources/img/home/logo2.png" alt=""></a>
                 <p class="footer-links">
-                    <a href="#" class="link-1">Home</a>
+                    <a href="Guide_search_page.php" class="link-1">Tour Guides</a>
         
-                    <a href="#">Tour Guides</a>
+                    <a href="package_search_page.php">Tour Packages</a>
     
-                    <a href="#">Tour Packages</a>
+                    <a href="tour_request_post.php">Request a Tour</a>
     
-                    <a href="#">Request a Tour</a>
+                    <a href="SmartSearchCriteriaSelection.php">Smart Search</a>
         
-                    <a href="#">Smart Search</a>
+                    <a href="calendar.php">Travel Calendar</a>
         
-                    <a href="#">Travel Calendar</a>
+                    <a href="faq.php">FAQ</a>
                 </p>
     
                 <p class="footer-company-name">Ceylon Trek © 2020</p>
@@ -37,7 +37,7 @@
                 <p class="footer-company-about">
                     <span>About Ceylon Trek</span>
                     Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula           sit amet.
-                    <p ><a style="color:white;" href="#">View More >></a></p>
+                    <p ><a style="color:white;" href="about_contact_us.php">View More >></a></p>
                 </p>
             
                 <div class="footer-icons">
