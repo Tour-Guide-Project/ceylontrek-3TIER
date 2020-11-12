@@ -111,10 +111,10 @@ a {
     position: relative;
     width: 100%;
     list-style: none;
-    height: 50px;
+    height: 40px;
     font-family: lato;
-    padding-top: 15px;
-    padding-bottom: -15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 .sidebar-menu ul li:hover {
