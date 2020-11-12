@@ -36,8 +36,8 @@
 	          
 			<form action="../controller/admin_dashboard_controller.php" method="post">
 					<button type="submit" name="submit_complain">Complains</button>
-					<button type="submit" >View Guide</button>
-					<button type="submit" >View User</button>
+					<button type="submit" name="submit_guide">View All Guides</button>
+					<button type="submit" name="submit_tourist">View All Tourists</button>
 					<button type="submit" name="submit_admin" >Create Admin Account</button>
 					<button type="submit" name="submit_moderator">Create Moderator Account</button>
 					<button type="button" class="create_notification_btn" onclick="openForm()">Create Notification</button>
