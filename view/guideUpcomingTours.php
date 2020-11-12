@@ -22,6 +22,13 @@
                     <button class="edit"> Edit Profile</button><br>
                   <div class="sidebar-menu">
                   <ul>
+
+                  <li>
+                            <a href="guideDashboard.php">
+                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                                <span class="menu-title">My Dashboard</span>
+                            </a>
+                        </li>
                         <li>
                             <a href="Inbox.php">
                                 <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
@@ -37,7 +44,7 @@
                         </li>
 
                         <li>
-                            <a href="CreatTourPackagePage.php">
+                            <a href="CreateTourPackagePage.php">
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
                                 <span class="menu-title">Create tour package</span>
                             </a>

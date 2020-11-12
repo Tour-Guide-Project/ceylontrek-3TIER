@@ -113,8 +113,8 @@ a {
     list-style: none;
     height: 40px;
     font-family: lato;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .sidebar-menu ul li:hover {

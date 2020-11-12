@@ -1,11 +1,11 @@
 <html  lang="en">
     <head>
-        <title>Favourite Tour Packages</title>
+        <title>Favourite Guides</title>
         <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/Guidedashboardpage.css'>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="../resources/css/tourPackageSearchResults.css">
+    <link rel="stylesheet" href="../resources/css/tourGuideSearchResults.css">
     <link rel="stylesheet" href="../resources/css/guideMyPackages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,8 +16,8 @@
             <div class="section1"> 
             <?php include('../view/new_top_bar.php'); ?>
                 <div class="side_bar">
-                    <img src="../resources/img/home/logo2.png" class="dashlogo">
-                    <img src="../resources/img/reviewimg.jpg" class="profile" >
+                    <img src="img/home/logo2.png" class="dashlogo">
+                    <img src="img/reviewimg.jpg" class="profile" >
                     <button class="edit"> Edit Profile</button><br>
                   <div class="sidebar-menu">
                   <ul>
@@ -99,17 +99,16 @@
                
              <div class="packages">
                     
-                <div class="tourPackage">
+               
+             <div class="tourGuide">
 
-<!-- Start	Package details -->
-<div class="package-details">
+<!-- Start	Guide details -->
+<div class="guide-details">
 
-    <!-- 	Package Name -->
-    <h1>The Best of Colombo</h1>
-    <h4 style ="float:left">Chathura Rathnayake</h4>
-    <h4 style="padding-left:450px">No. of Days : 4</h4>
+    <!-- 	guide Name -->
+    <h1>Chathura Rathnayake</h1>
 
-    <span class="hint-star star" >
+    <span class="hint-star star">
 <i class="fa fa-star" aria-hidden="true"></i>
 <i class="fa fa-star" aria-hidden="true"></i>
 <i class="fa fa-star" aria-hidden="true"></i>
@@ -118,19 +117,19 @@
 </span>
 
 
-    <!-- Package bio -->
+    <!-- Guide bio -->
     <p class="information">
-        I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
-        as your travel Package and friend from Sri Lanka.
+        I'm an experienced Tour Guide who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
+        as your travel guide and friend from Sri Lanka.
     </p>
 
 
 
     <!-- 		Control -->
-    <div class="pkgcontrol">
+    <div class="control">
 
         <!-- Start Button buying -->
-        <button class="cobutton"><span> View More</span>
+        <button class="btn"><span> View More</span>
                
 </button>
         <!-- End Button buying -->
@@ -139,34 +138,32 @@
 
 </div>
 
-<!-- 	End	Package details   -->
+<!-- 	End	guide details   -->
 
 
 
-<!-- 	Start Package image & Information -->
+<!-- 	Start guide image & Information -->
 
-<div class="package-image">
+<div class="guide-image">
 
-    <img src="../resources/img/Packageresult/1.jpg" alt="Omar Dsoky">
-
-</div>
-<!--  End Package image  -->
-
+    <img src="img/guideresult/1.jpg" alt="Omar Dsoky">
 
 </div>
-<!-- tourPackage1 -->
+<!--  End guide image  -->
 
-<div class="tourPackage">
 
-<!-- Start	Package details -->
-<div class="package-details">
+</div>
+<!-- tourGuide1 -->
 
-    <!-- 	Package Name -->
-    <h1>The Best of Down-South</h1>
-    <h4 style ="float:left">Chathura Rathnayake</h4>
-    <h4 style="padding-left:450px">No. of Days : 4</h4>
+<div class="tourGuide">
 
-    <span class="hint-star star" >
+<!-- Start	Guide details -->
+<div class="guide-details">
+
+    <!-- 	guide Name -->
+    <h1>Iranga Mudalige</h1>
+
+    <span class="hint-star star">
 <i class="fa fa-star" aria-hidden="true"></i>
 <i class="fa fa-star" aria-hidden="true"></i>
 <i class="fa fa-star" aria-hidden="true"></i>
@@ -175,19 +172,73 @@
 </span>
 
 
-    <!-- Package bio -->
+    <!-- Guide bio -->
     <p class="information">
-        I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
-        as your travel Package and friend from Sri Lanka.
+        I'm an experienced Tour Guide who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
+        as your travel guide and friend from Sri Lanka.
     </p>
 
 
 
     <!-- 		Control -->
-    <div class="pkgcontrol">
+    <div class="control">
 
         <!-- Start Button buying -->
-        <button class="cobutton"><span> View More</span>
+        <button class="btn"><span> View More</span>
+             
+</button>
+        <!-- End Button buying -->
+
+    </div>
+
+</div>
+
+<!-- 	End	guide details   -->
+
+
+
+<!-- 	Start guide image & Information -->
+
+<div class="guide-image">
+
+    <img src="img/guideresult/2.jpg" alt="Omar Dsoky">
+
+</div>
+<!--  End guide image  -->
+
+
+</div>
+<!-- tourGuide2 -->
+<div class="tourGuide">
+
+<!-- Start	Guide details -->
+<div class="guide-details">
+
+    <!-- 	guide Name -->
+    <h1>Chathura Rathnayake</h1>
+
+    <span class="hint-star star">
+<i class="fa fa-star" aria-hidden="true"></i>
+<i class="fa fa-star" aria-hidden="true"></i>
+<i class="fa fa-star" aria-hidden="true"></i>
+<i class="fa fa-star-half-o" aria-hidden="true"></i>
+<i class="fa fa-star-o" aria-hidden="true"></i>
+</span>
+
+
+    <!-- Guide bio -->
+    <p class="information">
+        I'm an experienced Tour Guide who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
+        as your travel guide and friend from Sri Lanka.
+    </p>
+
+
+
+    <!-- 		Control -->
+    <div class="control">
+
+        <!-- Start Button buying -->
+        <button class="btn"><span> View More</span>
                
 </button>
         <!-- End Button buying -->
@@ -196,26 +247,22 @@
 
 </div>
 
-<!-- 	End	Package details   -->
+<!-- 	End	guide details   -->
 
 
 
-<!-- 	Start Package image & Information -->
+<!-- 	Start guide image & Information -->
 
-<div class="package-image">
+<div class="guide-image">
 
-    <img src="../resources/img/Packageresult/2.jpg" alt="Omar Dsoky">
-
-</div>
-<!--  End Package image  -->
-
+    <img src="img/guideresult/1.jpg" alt="Omar Dsoky">
 
 </div>
-<!-- tourPackage2 -->
+<!--  End guide image  -->
+
             </div>
               <!-- end of packages -->
-              
-        
+</div>
 
                 <div class="corner_buttons">
                         <div>
@@ -229,7 +276,7 @@
                 </div><!--corner_button-->
 </div>
                 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
-        <script src="../resources/js/guide dashboard.js"></script>
+        <script src="js/guide dashboard.js"></script>
 
         </div>
     </body>
