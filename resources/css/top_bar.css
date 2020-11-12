@@ -43,7 +43,7 @@ body {
 
 .navbar ul li {
     /*  margin: .01rem 1rem;*/
-    padding: 0.5rem;
+    padding: 0.3rem;
     margin-right: 1rem;
     margin-left: 0.5rem;
     margin-top: -100px;
@@ -109,70 +109,66 @@ body {
     margin-right: 50px;
 }
 
-
-.mobnav{
+.mobnav {
     width: 100%;
     z-index: 5000;
     display: none;
     margin: 0px;
     overflow: hidden;
-    position: fixed; 
+    position: fixed;
     transition: 0.5s;
     height: 84px;
-    top:0;
+    top: 0;
 }
 
-.mobnav:hover{
+.mobnav:hover {
     height: 500px;
 }
 
-.mobnav header{
+.mobnav header {
     width: 100%;
-    display: inline; 
+    display: inline;
     justify-items: center;
 }
 
-.moblist li{
+.moblist li {
     width: 100%;
     display: block;
     height: 30px;
     padding-bottom: 5px;
-    
 }
 
-.dropbutton{
+.dropbutton {
     margin-left: 20px;
     font-size: 20px;
-    outline: none; 
+    outline: none;
     background: none;
     border: 0;
     border-top: 50px;
     color: white;
     position: absolute;
-    top:20px;
+    top: 20px;
 }
 
-.moblist li a{
+.moblist li a {
     text-decoration: none;
-    text-transform: uppercase; 
-    margin-left: 50px; 
-    color:white
+    text-transform: uppercase;
+    margin-left: 50px;
+    color: white
 }
 
-.moblist li a:hover{
+.moblist li a:hover {
     color: skyblue;
 }
 
-@media screen and (max-width:600px){
-    .container1{
+@media screen and (max-width:600px) {
+    .container1 {
         width: 100%;
     }
-    
-    .mobnav{
-        display:block; 
+    .mobnav {
+        display: block;
     }
- 
-    .navbar{
+    .navbar {
         display: none;
-    }   
+    }
 }
