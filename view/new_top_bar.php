@@ -14,7 +14,7 @@
                 <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px; margin-right:0px"><a href="#contact">Travel Calendar</a></li>
             </ul>
             <div>
-                <i class="fa fa-user-circle fa-3x" aria-hidden="true" style="margin-top: 15px;margin-left: 25px ;margin-bottom:3px;"></i>
+                <i class="fa fa-user-circle fa-3x" aria-hidden="true" style="margin-top: 15px;margin-left: 25px ;margin-bottom:3px;color:white;"></i>
                 <li style=" margin-top: 5px;
                         margin-right: 10px; 
                         text-decoration: none;
