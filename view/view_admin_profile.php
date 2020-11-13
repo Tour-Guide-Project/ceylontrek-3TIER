@@ -20,7 +20,8 @@ $contact=$_SESSION['contact'];
 	<link rel="stylesheet" type="text/css" href="../resources/css/view_admin_profile.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 </head>
 
 <body style="background-color: #ccf2ff;">
@@ -63,7 +64,7 @@ $contact=$_SESSION['contact'];
 			<div class="text_box">
 				<div>
 					<label>Email Address :</label>
-					<input class="input" type="email" name="email" readonly <?php echo 'value="'.$email.'"' ;?>>
+					<input class="input email" type="email" name="email" readonly  style=" color:  #352d2d;" <?php echo 'value="'.$email.'"' ;?>>
 				</div>
 			</div><!-- text_box -->	
 		
@@ -101,7 +102,7 @@ $contact=$_SESSION['contact'];
 	<div class="imgupload">
 	<div class="upload">
 		<form action="../controller/view_upload_image.php" method="post" enctype="multipart/form-data">
-		<div>
+		<div >
 		<?php
 		if(isset($_GET['path'])){
 			$path=$_GET['path'];
@@ -114,21 +115,20 @@ $contact=$_SESSION['contact'];
 		</div>
 		
 		<label>Edit profile Image</label>
-		<p><input type="file" required="" name="file"/></p>
+		<p><input type="file" id="file" name="file"/></p>
 		<div class="image_btn">
 			<div>
 				<?php
 					if(isset($_GET['path'])){
-					$path=$_GET['path'];
-						echo '<p><input class="submit" type="submit" name="submit" value="Upload Image" ></p>';
-						echo '<p><input class="reset" type="submit" name="cancel" value="Remove Image" ></p>';
+						echo '<p><input class="submit" type="submit" id="uploadimage"  name="submit" value="Upload Image"  onclick ="AddRequired();"></p>';
+						echo '<p><input class="reset" type="submit" id="del_image"   name="cancel"  value="Remove Image" onclick ="RemoveRequired();"></p>';
 					}
 					else{
-						echo '<p><input class="submit" type="submit" name="submit" value="Upload Image" style="margin-left:70px;"></p>';
+						
+						echo '<p><input class="submit" type="submit" id="uploadimage"  name="submit"  value="Upload Image" style="margin-left:70px;"  onclick ="AddRequired();"></p>';
 					}
 				?>
 			</div>
-			
 		</div>
 		
 		</form>
@@ -139,5 +139,6 @@ $contact=$_SESSION['contact'];
 
 <div><?php include('../view/footer.php'); ?></div>
 </body>
+<script type="text/javascript" src="../resources/js/upload_img.js"></script>
 <script type="text/javascript" src="../resources/js/jscript.js"></script>
 </html>

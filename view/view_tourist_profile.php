@@ -60,7 +60,7 @@ $contact=$_SESSION['contact'];
 			<div class="text_box">
 				<div>
 					<label>Email Address :</label>
-					<input class="input" type="email" name="email"  readonly <?php echo 'value="'.$email.'"' ;?>>
+					<input class="input" type="email" name="email"  readonly style=" color:  #352d2d;"<?php echo 'value="'.$email.'"' ;?>>
 				</div>
 			</div><!-- text_box -->	
 		
@@ -93,11 +93,10 @@ $contact=$_SESSION['contact'];
 			</form>
 			
 	</div><!-- view_admin_profile_box -->
-
 	<div class="imgupload">
 	<div class="upload">
 		<form action="../controller/view_upload_image.php" method="post" enctype="multipart/form-data">
-		<div>
+		<div >
 		<?php
 		if(isset($_GET['path'])){
 			$path=$_GET['path'];
@@ -110,10 +109,20 @@ $contact=$_SESSION['contact'];
 		</div>
 		
 		<label>Edit profile Image</label>
-		<p><input type="file" name="file"/></p>
+		<p><input type="file" id="file" name="file"/></p>
 		<div class="image_btn">
-			<p><input class="submit" type="submit" name="submit" value="Upload Image"></p>
-			<p><input class="reset" type="submit" name="cancel" value="Remove Image"></p>
+			<div>
+				<?php
+					if(isset($_GET['path'])){
+						echo '<p><input class="submit" type="submit" id="uploadimage"  name="submit" value="Upload Image"  onclick ="AddRequired();"></p>';
+						echo '<p><input class="reset" type="submit" id="del_image"   name="cancel"  value="Remove Image" onclick ="RemoveRequired();"></p>';
+					}
+					else{
+						
+						echo '<p><input class="submit" type="submit" id="uploadimage"  name="submit"  value="Upload Image" style="margin-left:70px;"  onclick ="AddRequired();"></p>';
+					}
+				?>
+			</div>
 		</div>
 		
 		</form>
@@ -124,5 +133,6 @@ $contact=$_SESSION['contact'];
 
 <div><?php include('../view/footer.php'); ?></div>
 </body>
+<script type="text/javascript" src="../resources/js/upload_img.js"></script>
 <script type="text/javascript" src="../resources/js/jscript.js"></script>
 </html>
