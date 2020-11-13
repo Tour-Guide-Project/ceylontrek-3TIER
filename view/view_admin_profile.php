@@ -114,10 +114,21 @@ $contact=$_SESSION['contact'];
 		</div>
 		
 		<label>Edit profile Image</label>
-		<p><input type="file" name="file"/></p>
+		<p><input type="file" required="" name="file"/></p>
 		<div class="image_btn">
-			<p><input class="submit" type="submit" name="submit" value="Upload Image"></p>
-			<p><input class="reset" type="submit" name="cancel" value="Remove Image"></p>
+			<div>
+				<?php
+					if(isset($_GET['path'])){
+					$path=$_GET['path'];
+						echo '<p><input class="submit" type="submit" name="submit" value="Upload Image" ></p>';
+						echo '<p><input class="reset" type="submit" name="cancel" value="Remove Image" ></p>';
+					}
+					else{
+						echo '<p><input class="submit" type="submit" name="submit" value="Upload Image" style="margin-left:70px;"></p>';
+					}
+				?>
+			</div>
+			
 		</div>
 		
 		</form>

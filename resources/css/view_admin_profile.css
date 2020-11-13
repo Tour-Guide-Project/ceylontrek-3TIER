@@ -247,11 +247,11 @@ button:hover {
 
 .upload .submit {
     outline: none;
-    width: 100%;
+    margin-right: 0;
+    width: 50%;
     padding: 5px;
     float: left;
     font-size: 16px;
-    margin-left: 5px;
     border-radius: 10px;
     transition-duration: 0.6s;
     background-color: rgb(9, 31, 70);
@@ -262,17 +262,19 @@ button:hover {
     float: right;
     outline: none;
     padding: 5px;
+    width: 50%;
+    margin-right: 0;
     font-size: 16px;
-    margin-left: 30px;
     border-radius: 10px;
     transition-duration: 0.6s;
     background-color: rgb(9, 31, 70);
     color: rgb(251, 249, 252);
 }
 
-.upload .image_btn {
-    display: flex;
-}
+
+/* .upload .image_btn {
+    width: 100%;
+} */
 
 .upload input[type=file] {
     outline: none;
@@ -280,6 +282,7 @@ button:hover {
     padding: 5px;
     font-size: 16px;
     margin: 15px;
+    margin-left: 35px;
     border-radius: 10px;
     background-color: rgb(99, 127, 177);
     color: rgb(251, 249, 252);
