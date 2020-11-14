@@ -12,6 +12,7 @@
     }
     $level=$_SESSION['level'];
     $errors=array();
+    $path=$_SESSION['image'];
 
     if(isset($_SESSION['id'])) {
 
@@ -79,22 +80,26 @@
                 
 			    if($_SESSION['level']=='admin') {
                     $result_set3=update_admin_email($connection,$id,$new_email);
-				    header('Location:/ceylontrek-3tier/controller/view_admin_profile_controller.php?adminemail-modified=true');
+                    $_SESSION['email']=$_POST['new_email'];
+				    header('Location:/ceylontrek-3tier/view/view_admin_profile.php?admin-modified=true&path='.$path.'');
                 }
 
                 if($_SESSION['level']=='moderator') {
                     $result_set3=update_moderator_email($connection,$id,$new_email);
-				    header('Location:/ceylontrek-3tier/controller/view_moderator_profile_controller.php?moderatoremail-modified=true');
+                    $_SESSION['email']=$_POST['new_email'];
+				    header('Location:/ceylontrek-3tier/view/view_moderator_profile.php?moderator-modified=true&path='.$path.'');
                 }
 
                  if($_SESSION['level']=='tourist') {
                     $result_set3=update_tourist_email($connection,$id,$new_email);
-				     header('Location:/ceylontrek-3tier/controller/view_tourist_profile_controller.php?admin-modified=true');
+                    $_SESSION['email']=$_POST['new_email'];
+				    header('Location:/ceylontrek-3tier/view/view_tourist_profile.php?tourist-modified=true&path='.$path.'');
                 }
 
                 if($_SESSION['level']=='tourguide') {
                     $result_set3=update_guide_email($connection,$id,$new_email);
-				    header('Location:/ceylontrek-3tier/controller/view_guide_profile_controller.php?guideemail-modified=true');
+                    $_SESSION['email']=$_POST['new_email'];
+				    header('Location:/ceylontrek-3tier/view/view_guide_profile.php?guide-modified=true&path='.$path.'');
                 }
 
                 else {

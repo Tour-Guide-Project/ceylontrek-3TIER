@@ -136,7 +136,11 @@ $contact=$_SESSION['contact'];
 	</div>
 	<!-- upload image -->
 
-
+<?php
+if (isset($_GET['admin-modified'])){
+	echo "<script>alert('Updated Successfully!');</script>";
+}
+?>
 <div><?php include('../view/footer.php'); ?></div>
 </body>
 <script type="text/javascript" src="../resources/js/upload_img.js"></script>

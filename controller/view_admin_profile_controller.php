@@ -101,7 +101,13 @@
 			$result_set2=update_query($connection,$id,$first_name,$last_name,$contact,$address,$gender);
 
 			if($result_set2){
-				header('Location:/ceylontrek-3tier/controller/view_admin_profile_controller.php?admin-modified=true');
+				$_SESSION['first_name']=$_POST['first_name'];
+				$_SESSION['last_name']=$_POST['last_name'];
+				$_SESSION['contact']=$_POST['tel_no'];
+				$_SESSION['address']=$_POST['address'];
+				$_SESSION['gender']=$_POST['gender'];
+				$_SESSION['email']=$_POST['email'];
+				header('Location:/ceylontrek-3tier/view/view_admin_profile.php?admin-modified=true&path='.$path.'');
             }
             else{
 				$errors[]='Failed to modify the record.';

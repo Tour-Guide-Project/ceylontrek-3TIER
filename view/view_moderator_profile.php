@@ -130,7 +130,12 @@ $contact=$_SESSION['contact'];
 	</div>
 	</div>
 	<!-- upload image -->
-
+	
+<?php
+if (isset($_GET['moderator-modified'])){
+	echo "<script>alert('Updated Successfully!');</script>";
+}
+?>
 
 <div><?php include('../view/footer.php'); ?></div>
 </body>

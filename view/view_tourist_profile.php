@@ -130,6 +130,11 @@ $contact=$_SESSION['contact'];
 	</div>
 	<!-- upload image -->
 
+<?php
+if (isset($_GET['tourist-modified'])){
+	echo "<script>alert('Updated Successfully!');</script>";
+}
+?>
 
 <div><?php include('../view/footer.php'); ?></div>
 </body>

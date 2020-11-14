@@ -109,7 +109,13 @@
             $result_set2 = update_tourist_query($connection, $id, $first_name, $last_name, $contact, $address, $gender);
 
             if($result_set2){
-				header('Location:/ceylontrek-3tier/controller/view_tourist_profile_controller.php?tourist-modified=true');
+				$_SESSION['first_name']=$_POST['first_name'];
+				$_SESSION['last_name']=$_POST['last_name'];
+				$_SESSION['contact']=$_POST['tel_no'];
+				$_SESSION['address']=$_POST['address'];
+				$_SESSION['gender']=$_POST['gender'];
+				$_SESSION['email']=$_POST['email'];
+				header('Location:/ceylontrek-3tier/view/view_tourist_profile.php?tourist-modified=true&path='.$path.'');
             }
 
             else{
