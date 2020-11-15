@@ -163,9 +163,18 @@ input[type="submit"]:hover {
     border-radius: 15px;
 }
 
+.form-container h1{
+    color:black;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
 .form-container label {
-    font-size: 18px;
+    font-size: 15px;
     color: black;
+    width: 100%;
+    margin-top: 15px;
 }
 
 .form-container input {
@@ -178,6 +187,17 @@ input[type="submit"]:hover {
     padding: 10px;
     margin: 5px 0 22px 0;
 }
+.form-container input {
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #DCDCDC;
+    height: 15px;
+    padding: 10px;
+    margin: 5px 0 13px 0;
+}
+
 
 .form-container textarea {
     font-size: 16px;
