@@ -30,6 +30,31 @@
             <button class="loginbutton"  type="button" onclick="window.location='../view/login.php'"><span>Login</span></button>
             <button class="loginbutton" id="signup" type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button>
         </nav>
+
+
+        <div class="mobnav" style="background: rgba(0, 0, 0, 0.7); ">
+            <header >
+                 <a href="homepage.php"><img style=" padding: 0px; width:250px; height: 95px; margin-bottom: 0px; margin-right: 70px;margin-left: 40px; margin-top:0px" src="../resources/img/logo2.png" alt=""></a>
+                 <button class="dropbutton"style="width:40px; height:20px; marging-bottom:50px; margin-top:10px" onclick="(0"><i class="fa fa-bars" aria-hidden="true"></i></button>      
+            </header>
+            <div class="dropdown">
+                
+                <ul class="moblist">                  
+                    
+                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
+                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
+                    <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="tour_request_post.php">Request a Tour</a></li>
+                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                    <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
+                    <div  style=" display:flex ">
+                      <li><button class="loginbutton login" style="height:50px;" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button> </li>
+                       <li><button class="loginbutton sign_up" style="height:50px; " type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button></li>
+                    </div>
+                 </ul>
+            </div>
+
+         </div>
+
         <section id="home">
             <h1>Ceylon Trek</h1>
             <p class="lead">Travel Sri Lanka</p>
