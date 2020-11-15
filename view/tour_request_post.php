@@ -71,16 +71,31 @@
 	</div><!-- create_request_btn -->
 
 	<div class="form-popup" id="myForm">
-  		<form action="tour_request_post.php" class="form-container">
-   			<label for="title"><b>Title</b></label>
-    		<input type="text" placeholder="Enter title here.." name="title" required>
+	<form action="../controller/create_new_request_controller.php" class="form-container" method="post">
+			   <h1>Create Your Tour Request</h1>
 
-    		<label for="keywords"><b>Keywords</b></label>
-    		<input type="text" placeholder="Enter keyword here.." name="keywords" required>
+               <div>
+			        <label style="margin-right:82px" for="title"><b>Title :</b></label>
+                    <input type="text" placeholder="Enter any Title for your post here.." name="title" required>
+			   </div>
+			   
+			   <div>
+                    <label style="margin-right:70px" for="places"><b>Places :</b></label>
+                    <input  type="text" placeholder="Enter Distric/Place name here.." name="places" required>
+			   </div>
+				
+			   <div>
+               <label style="margin-right:30px" for="no_of_days"><b>NO Of Days :</b></label>
+               <input type="text" placeholder="Enter number of dates" name="no_of_days" required>
+			   </div>
 
-    		<label for="details"><b>Custom Tour Request</b></label>
-    		<textarea rows = "4" cols = "20" name = "details" style="resize: vertical;height:100px;" placeholder="Enter details here..."></textarea>
+			   <div>
+               <label for="requested_date"><b>Requested Date :</b></label>
+               <input type="date" placeholder="DD/MM/YYYY" name="requested_date" required>
+			   </div>
 
+               <label for="details"><b>Activities :</b></label>
+    		   <textarea rows = "4" cols = "20" name = "activities" style="resize: vertical;height:100px;" placeholder="Enter Activites & Other details here..."></textarea>
     		<button type="submit" class="btn">Post</button>
     		<button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
   		</form>
