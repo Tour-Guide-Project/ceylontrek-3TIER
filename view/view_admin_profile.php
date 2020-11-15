@@ -81,7 +81,7 @@ $contact=$_SESSION['contact'];
 
 			<div class="first">
 				<div class="reset_psw">
-					<a  href="/ceylontrek-3tier/view/reset_password.php">Reset Password</a>
+					<a  href="/ceylontrek-3tier/controller/view_reset_password_controller.php">Reset Password</a>
 				</div>
 
 				<div class="reset_email">

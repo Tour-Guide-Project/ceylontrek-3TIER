@@ -23,4 +23,11 @@ function update_admin_email($connection,$id,$new_email){
     $result=mysqli_query($connection,$query);
     return $result;
 }
+function update_admin_password($connection,$id,$hashed_password,$newtoken){
+    $query="UPDATE admin SET password='{$hashed_password}',token='{$newtoken}' 
+	WHERE id='{$id}' AND level='admin' Limit 1";
+
+	$result=mysqli_query($connection,$query);
+	return $result;
+}
 ?>

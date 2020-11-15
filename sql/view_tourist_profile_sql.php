@@ -23,6 +23,13 @@ function update_tourist_email($connection,$id,$new_email){
     $result=mysqli_query($connection,$query);
     return $result;
 }
+function update_tourist_password($connection,$id,$hashed_password,$newtoken){
+    $query="UPDATE tourist SET password='{$hashed_password}',token='{$newtoken}' 
+	WHERE id='{$id}' Limit 1";
+
+	$result=mysqli_query($connection,$query);
+	return $result;
+}
 
 function get_tourists($connection){
     $query = "SELECT * FROM tourist WHERE level = 'tourist' ORDER BY first_name";

@@ -22,6 +22,13 @@ function update_guide_email($connection,$id,$new_email){
     $result=mysqli_query($connection,$query);
     return $result;
 }
+function update_guide_password($connection,$id,$hashed_password,$newtoken){
+    $query="UPDATE tourguide SET password='{$hashed_password}',token='{$newtoken}' 
+	WHERE id='{$id}' Limit 1";
+
+	$result=mysqli_query($connection,$query);
+	return $result;
+}
 
 function get_guides($connection){
     $query = "SELECT * FROM tourguide WHERE level = 'tourguide' ORDER BY first_name";

@@ -22,4 +22,11 @@ function update_moderator_email($connection,$id,$new_email){
     $result=mysqli_query($connection,$query);
     return $result;
 }
+function update_moderator_password($connection,$id,$hashed_password,$newtoken){
+    $query="UPDATE moderator SET password='{$hashed_password}',token='{$newtoken}' 
+	WHERE id='{$id}' Limit 1";
+
+	$result=mysqli_query($connection,$query);
+	return $result;
+}
 ?>

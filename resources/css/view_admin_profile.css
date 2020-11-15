@@ -300,3 +300,25 @@ button:hover {
     cursor: pointer;
     background-color: rgb(74, 89, 117);
 }
+
+.eye {
+    display: flex;
+    float: right;
+}
+
+.eye i {
+    margin-top: 15px;
+    color: rgb(52, 104, 124);
+}
+
+#hide1 {
+    display: none;
+}
+
+#hide-1 {
+    display: none;
+}
+
+#hides1 {
+    display: none;
+}
