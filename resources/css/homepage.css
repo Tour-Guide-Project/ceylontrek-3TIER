@@ -47,7 +47,8 @@ body {
 
 .navbar ul li {
     margin: 0 1rem;
-    padding: 1rem;
+    padding-left: 0.5rem;
+    padding-top: 1.3rem;
 }
 
 .navbar ul li a {
@@ -473,5 +474,70 @@ section#travelCalendar p {
     }
     .footer-distributed .footer-center i {
         margin-left: 0;
+    }
+}
+
+
+.mobnav {
+    width: 100%;
+    z-index: 5000;
+    display: none;
+    margin: 0px;
+    overflow: hidden;
+    position: fixed;
+    transition: 0.5s;
+    height: 84px;
+    top: 0;
+}
+
+.mobnav:hover {
+    height: 500px;
+}
+
+.mobnav header {
+    width: 100%;
+    display: inline;
+    justify-items: center;
+}
+
+.moblist li {
+    width: 100%;
+    display: block;
+    height: 30px;
+    padding-bottom: 5px;
+}
+
+.dropbutton {
+    margin-left: 20px;
+    font-size: 20px;
+    outline: none;
+    background: none;
+    border: 0;
+    border-top: 50px;
+    color: white;
+    position: absolute;
+    top: 20px;
+}
+
+.moblist li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 50px;
+    color: white
+}
+
+.moblist li a:hover {
+    color: skyblue;
+}
+
+@media screen and (max-width:600px) {
+    .container1 {
+        width: 100%;
+    }
+    .mobnav {
+        display: block;
+    }
+    .navbar {
+        display: none;
     }
 }
