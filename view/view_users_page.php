@@ -44,7 +44,7 @@ $users = $_SESSION['users'];
 								<!-- <img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%"> -->
 								<img src="<?php echo $user['image_path']; ?>" alt="" style="width:100%; height:250px;">
 								<div class="pcontainer">
-									<h2><?php echo $user['first_name']; ?></h2>
+									<h2><?php echo $user['first_name'] , " " , $user['last_name']; ?></h2>
 									<p><?php echo $user['email']; ?></p>
 									<form action="../controller/UserAccountAdmin_controller.php" method="get">
 										<button class="pbutton" type="submit" name="view_user" value="<?php echo $user['id']; ?>">View Profile</button>
