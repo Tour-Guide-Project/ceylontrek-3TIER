@@ -74,7 +74,7 @@
 			$errors[]= 'Last Name is Invalid';     
 		}
 		if(!isset($_POST['tel_no']) || strlen(trim($_POST['tel_no']))<1){
-			$errors[]='Contact Details is requried/Invalid!';
+			$errors[]='Contact Details are requried/Invalid!';
 		}
 		//check contact details has only 0-9
         elseif(preg_match(("/[^0-9]/"), $_POST['tel_no'])){
@@ -104,16 +104,11 @@
             
             //email address already sanitized
             
-            $result_set2 = update_guide_query($connection, $id, $first_name, $last_name, $contact, $address, $gender);
+			$result_set2 = update_guide_query($connection, $id, $first_name, $last_name, $contact, $address, $gender);
+			
 
             if($result_set2){
-				$_SESSION['first_name']=$_POST['first_name'];
-				$_SESSION['last_name']=$_POST['last_name'];
-				$_SESSION['contact']=$_POST['tel_no'];
-				$_SESSION['address']=$_POST['address'];
-				$_SESSION['gender']=$_POST['gender'];
-				$_SESSION['email']=$_POST['email'];
-				header('Location:/ceylontrek-3tier/view/view_guide_profile.php?guide-modified=true&path='.$path.'');
+				header('Location:/ceylontrek-3tier/controller/view_guide_profile_controller.php?guide-modified=true');
             }
 
             else{
@@ -131,6 +126,5 @@
         header('Location:/ceylontrek-3tier/controller/reset_email_controller.php');
 	}
 
-
-?>
-<?php mysqli_close($connection);?>
+	?>
+  <?php mysqli_close($connection);?>

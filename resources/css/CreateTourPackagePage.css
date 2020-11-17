@@ -47,7 +47,7 @@ input[type=text],
 select,
 textarea {
     width: 100%;
-    padding: 1.5%;
+    padding: 1%;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
@@ -64,6 +64,7 @@ textarea {
 .lbl {
     padding: 10% 10% 5% 0;
     display: inline-block;
+    font-size: 17.5px;
 }
 
 .submitCls {
@@ -74,13 +75,13 @@ textarea {
     color: #fff;
     background-color: #2f375b;
     border-color: #007bff;
-    padding: 2.5% 2.5% 2.5% 2.5%;
+    padding: 2% 2% 2% 2%;
     text-align: center;
     text-decoration: none;
     border: none;
     display: inline;
     margin-top: 0;
-    font-size: 18px;
+    font-size: 15px;
     border: 1px solid transparent;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -97,12 +98,12 @@ textarea {
     color: #fff;
     background-color: #2f375b;
     border-color: #007bff;
-    padding: 2.5% 2.5% 2.5% 2.5%;
+    padding: 2% 2% 2% 2%;
     text-align: center;
     text-decoration: none;
     border: none;
     display: inline;
-    font-size: 18px;
+    font-size: 17px;
     border: 1px solid transparent;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -136,4 +137,12 @@ textarea {
 .agreed1 input {
     width: 20px;
     height: 20px;
+}
+
+.haveVehicle {
+    font-size: 17.5px;
+}
+
+.vehicle {
+    display: none;
 }

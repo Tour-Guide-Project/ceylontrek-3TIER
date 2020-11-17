@@ -19,16 +19,18 @@
                 <img src="../resources/img/reviewimg.jpg" class="profile" >
                 <form action="../controller/guide_dashboard_controller.php" method="post">
                     <button class="edit" name="edit_profile"><span>Edit Profile</span> </button><br>
-                </form>
+               
                   
                 <div class="sidebar-menu">
                     <ul>
 
-                    <li>
+                    <li>    
+                            
                             <a href="guideDashboard.php">
                                 <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
                                 <span class="menu-title">My Dashboard</span>
-                            </a>
+                            </a> 
+                            
                         </li>
                     
                         <li>
@@ -39,9 +41,9 @@
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a >
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">Create Package Profile</span>
+                                <input type="submit" name="profile" value="tour guide" >
                             </a>
                         </li>
 
@@ -82,7 +84,7 @@
                     </ul>
                 </div><!--sidebar-manu-->        
             </div><!--side_bar-->
-
+            </form>
             <div class="content">
                 <div class="schedule">
                     <h1>CeylonTrek Guide Dashboard</h1><br>
