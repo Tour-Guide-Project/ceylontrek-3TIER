@@ -28,14 +28,14 @@
 
                     <li>
                             <a href="touristDashboard.php">
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                                <span class="menu-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
                                 <span class="menu-title">My Dashboard</span>
                             </a>
                         </li>
                         <li>
                             <a href="Inbox.php">
                                 <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                                <span class="manu-title">Inbox</span>
+                                <spn class="manu-title">Inbox</span>
                             </a>
                         </li>
 
@@ -71,6 +71,14 @@
                                 <spn class="manu-title">Previous Tours</span>
                             </a>
                         </li>
+
+                        <li>
+                            <a href="../controller/my_all_request_controller.php">
+                                <span class="menu-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                                <spn class="manu-title">My All Request</span>
+                            </a>
+                        </li>
+
                     </ul>
                   </div><!--sidebar-manu-->        
                 </div><!--side_bar-->
