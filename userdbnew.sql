@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2020 at 10:36 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.6
+-- Generation Time: Nov 18, 2020 at 07:34 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `userdbnew`
+-- Database: `userdb`
 --
 
 -- --------------------------------------------------------
@@ -56,7 +55,7 @@ INSERT INTO `admin` (`id`, `first_name`, `last_name`, `email`, `password`, `gend
 --
 
 CREATE TABLE `cancellation` (
-  `custom_booking_id` varchar(10) NOT NULL,
+  `custom_booking_id` int(11) NOT NULL,
   `package_booking_id` varchar(10) NOT NULL,
   `guide_booking_id` varchar(10) NOT NULL,
   `has_paid_fine` char(1) NOT NULL,
@@ -67,11 +66,28 @@ CREATE TABLE `cancellation` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `custom_post`
+--
+
+CREATE TABLE `custom_post` (
+  `post_id` int(11) NOT NULL,
+  `tourist_id` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `activities` varchar(50) NOT NULL,
+  `places` varchar(50) NOT NULL,
+  `day_no` date NOT NULL,
+  `no_of_days` int(10) NOT NULL,
+  `requested_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `custom_tour_request_book`
 --
 
 CREATE TABLE `custom_tour_request_book` (
-  `custom_booking_id` varchar(10) NOT NULL,
+  `custom_booking_id` int(11) NOT NULL,
   `guide_id` int(10) NOT NULL,
   `tourist_id` int(10) NOT NULL,
   `post_id` varchar(50) NOT NULL,
@@ -88,14 +104,25 @@ CREATE TABLE `custom_tour_request_book` (
 --
 
 CREATE TABLE `custom_tour_request_post` (
-  `post_id` varchar(10) NOT NULL,
-  `tourist_id` int(10) NOT NULL,
-  `activities` varchar(50) NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `tourist_id` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `activities` varchar(500) NOT NULL,
   `places` varchar(50) NOT NULL,
-  `day_no` date NOT NULL,
+  `day_no` datetime NOT NULL,
   `no_of_days` int(10) NOT NULL,
   `requested_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `custom_tour_request_post`
+--
+
+INSERT INTO `custom_tour_request_post` (`post_id`, `tourist_id`, `title`, `activities`, `places`, `day_no`, `no_of_days`, `requested_date`) VALUES
+(1000006, 44, 'my trip', 'join 15 peoples with me .\r\nwe  think to visit historical places. ', 'Polonnaruwa', '2020-11-18 19:00:53', 10, '2021-02-26'),
+(1000007, 44, 'janindu with family members', 'join 5 adults and  3 children\r\nwe hope to  travel  beautiful areas in badulla.\r\ncan you join with us please  contact me.', 'badulla', '2020-11-18 19:13:13', 20, '2021-10-22'),
+(1000008, 44, 'my trip', 'join 8 adults and  3 children\r\nwe hope to  travel  beautiful areas in badulla.\r\ncan you join with us please  contact me.', 'jaffna', '2020-11-18 19:31:47', 12, '2021-10-13'),
+(1000009, 44, 'janindu\'s  trip', 'join 5 adults and  3 children\r\n\r\n', 'Kandy', '2020-11-18 19:33:22', 12, '2021-05-06');
 
 -- --------------------------------------------------------
 
@@ -194,7 +221,7 @@ INSERT INTO `moderator` (`id`, `first_name`, `last_name`, `email`, `password`, `
 --
 
 CREATE TABLE `personal_calendar` (
-  `custom_booking_id` varchar(10) NOT NULL,
+  `custom_booking_id` int(11) NOT NULL,
   `package_booking_id` varchar(10) NOT NULL,
   `guide_booking_id` varchar(10) NOT NULL,
   `time` datetime NOT NULL,
@@ -294,7 +321,9 @@ CREATE TABLE `tourist` (
 --
 
 INSERT INTO `tourist` (`id`, `first_name`, `last_name`, `email`, `password`, `gender`, `address`, `contact`, `level`, `token`, `image_path`) VALUES
-(41, 'sajith', 'madushanka', 'sajith@gmail.com', '1a288fe9ef5fb2f4671f1473436c8f6243112a71', 'male', 'Maliduwa,Akuressa,Matara', '0764523678', 'tourist', '864838c4d55950357ff0509149d0dce51b11d27b21a965468cae18ef2d2145e64707b93c5f9248bd96b9f8eb2f0400db18fc', '../resources/images/IMG-20170824-WA0000.jpg');
+(41, 'sajith', 'madushanka', 'sajith@gmail.com', '1a288fe9ef5fb2f4671f1473436c8f6243112a71', 'male', 'Maliduwa,Akuressa,Matara', '0764523678', 'tourist', '864838c4d55950357ff0509149d0dce51b11d27b21a965468cae18ef2d2145e64707b93c5f9248bd96b9f8eb2f0400db18fc', '../resources/images/IMG-20170824-WA0000.jpg'),
+(43, 'Madu', 'Chamod', 'madu@gmail.com', '5c1b6aa2e4598d3b342e4895b8dedce2e47aa39e', 'male', 'galle', '0728354245', 'tourist', '44ab07d7ec0342828ae5804477753a4bb00f1151b0a2032f041ce0539bd22425c6c782fe5d9b1c1990fc0cfbfddabb39baef', ''),
+(44, 'piyumi', 'Dulanjali', 'piyumidulanjali1998@gmail.com', '5c1b6aa2e4598d3b342e4895b8dedce2e47aa39e', 'female', 'galle', '0728354245', 'tourist', '3f486f5bdb095abe33a99cebcabf60b1f0347952a8d2e415b54c18998c5987ab362e016aaa778e0050a44a074881cabfc148', '');
 
 -- --------------------------------------------------------
 
@@ -393,6 +422,12 @@ ALTER TABLE `cancellation`
   ADD KEY `guide_booking_id` (`guide_booking_id`);
 
 --
+-- Indexes for table `custom_post`
+--
+ALTER TABLE `custom_post`
+  ADD PRIMARY KEY (`post_id`);
+
+--
 -- Indexes for table `custom_tour_request_book`
 --
 ALTER TABLE `custom_tour_request_book`
@@ -405,8 +440,7 @@ ALTER TABLE `custom_tour_request_book`
 -- Indexes for table `custom_tour_request_post`
 --
 ALTER TABLE `custom_tour_request_post`
-  ADD PRIMARY KEY (`post_id`,`tourist_id`),
-  ADD KEY `tourist_id` (`tourist_id`);
+  ADD PRIMARY KEY (`post_id`);
 
 --
 -- Indexes for table `emergency_contact`
@@ -527,6 +561,18 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
+-- AUTO_INCREMENT for table `custom_post`
+--
+ALTER TABLE `custom_post`
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `custom_tour_request_post`
+--
+ALTER TABLE `custom_tour_request_post`
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000010;
+
+--
 -- AUTO_INCREMENT for table `moderator`
 --
 ALTER TABLE `moderator`
@@ -542,7 +588,7 @@ ALTER TABLE `tourguide`
 -- AUTO_INCREMENT for table `tourist`
 --
 ALTER TABLE `tourist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- Constraints for dumped tables
@@ -552,7 +598,7 @@ ALTER TABLE `tourist`
 -- Constraints for table `cancellation`
 --
 ALTER TABLE `cancellation`
-  ADD CONSTRAINT `cancellation_ibfk_1` FOREIGN KEY (`custom_booking_id`) REFERENCES `custom_tour_request_book` (`custom_booking_id`),
+  ADD CONSTRAINT `cancellation_ibfk_1` FOREIGN KEY (`custom_booking_id`) REFERENCES `custom_tour_request_post` (`post_id`),
   ADD CONSTRAINT `cancellation_ibfk_2` FOREIGN KEY (`package_booking_id`) REFERENCES `tour_package_book` (`package_booking_id`),
   ADD CONSTRAINT `cancellation_ibfk_3` FOREIGN KEY (`guide_booking_id`) REFERENCES `guide_book` (`guide_booking_id`);
 
@@ -562,13 +608,7 @@ ALTER TABLE `cancellation`
 ALTER TABLE `custom_tour_request_book`
   ADD CONSTRAINT `custom_tour_request_book_ibfk_1` FOREIGN KEY (`guide_id`) REFERENCES `tourguide` (`id`),
   ADD CONSTRAINT `custom_tour_request_book_ibfk_2` FOREIGN KEY (`tourist_id`) REFERENCES `tourist` (`id`),
-  ADD CONSTRAINT `custom_tour_request_book_ibfk_3` FOREIGN KEY (`post_id`) REFERENCES `custom_tour_request_post` (`post_id`);
-
---
--- Constraints for table `custom_tour_request_post`
---
-ALTER TABLE `custom_tour_request_post`
-  ADD CONSTRAINT `custom_tour_request_post_ibfk_1` FOREIGN KEY (`tourist_id`) REFERENCES `tourist` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `custom_tour_request_book_ibfk_3` FOREIGN KEY (`custom_booking_id`) REFERENCES `custom_tour_request_post` (`post_id`);
 
 --
 -- Constraints for table `emergency_contact`
@@ -602,7 +642,7 @@ ALTER TABLE `guide_tourist_chat`
 --
 ALTER TABLE `personal_calendar`
   ADD CONSTRAINT `personal_calendar_ibfk_1` FOREIGN KEY (`guide_id`) REFERENCES `tourguide` (`id`),
-  ADD CONSTRAINT `personal_calendar_ibfk_2` FOREIGN KEY (`custom_booking_id`) REFERENCES `custom_tour_request_book` (`custom_booking_id`),
+  ADD CONSTRAINT `personal_calendar_ibfk_2` FOREIGN KEY (`custom_booking_id`) REFERENCES `custom_tour_request_post` (`post_id`),
   ADD CONSTRAINT `personal_calendar_ibfk_3` FOREIGN KEY (`package_booking_id`) REFERENCES `tour_package_book` (`package_booking_id`),
   ADD CONSTRAINT `personal_calendar_ibfk_4` FOREIGN KEY (`guide_booking_id`) REFERENCES `guide_book` (`guide_booking_id`);
 
