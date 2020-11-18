@@ -15,10 +15,10 @@ body {
     box-sizing: border-box;
     box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
     border-radius: 10px;
-    position: relative;
     margin-top: 130px;
     margin-left: 100px;
     margin-bottom: 100px;
+    position: relative;
 }
 
 .text_box_search_bar {
@@ -26,6 +26,7 @@ body {
     left: 5%;
     width: 600px;
 }
+
 
 .text_box_search_bar input {
     position: relative;
@@ -88,7 +89,7 @@ input[type="submit"]:hover {
     color: whitesmoke;
 }
 
-.text_box p {
+/*.text_box p {
     padding: 6px;
 }
 
@@ -97,11 +98,14 @@ input[type="submit"]:hover {
     font-size: 16px;
     color: #fff;
     outline: none;
+    width: 900px;
+   
     margin-top: 20px;
     background-color: #3a4357;
     padding: 10px 10px 10px 10px;
     border-radius: 15px;
     position: center;
+    overflow: hidden;
 }
 
 .text_box button {
@@ -119,13 +123,12 @@ input[type="submit"]:hover {
 
 .text_box button:hover {
     background-color: #414c7e;
-}
+}*/
 
 .create_request_btn button {
     color: #fff;
     background-color: #2f375b;
     font-size: 18px;
-    border-radius: 20px;
     outline: none;
     border: none;
     padding: 20px 25px 20px 25px;
@@ -161,14 +164,15 @@ input[type="submit"]:hover {
     box-sizing: border-box;
     box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
     border-radius: 15px;
+    
 }
-
 .form-container h1{
     color:black;
     font-size: 25px;
     text-align: center;
     padding-bottom: 5px;
 }
+
 
 .form-container label {
     font-size: 15px;
@@ -178,16 +182,6 @@ input[type="submit"]:hover {
 }
 
 .form-container input {
-    font-size: 16px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color: #DCDCDC;
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 22px 0;
-}
-.form-container input {
     font-size: 15px;
     border-radius: 10px;
     border: none;
@@ -195,18 +189,20 @@ input[type="submit"]:hover {
     background-color: #DCDCDC;
     height: 15px;
     padding: 10px;
-    margin: 5px 0 13px 0;
+    margin: 5px 0 22px 0;
+}
+.form-container div input{
+    width: 62%;
 }
 
-
 .form-container textarea {
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 10px;
     border: none;
     outline: none;
     width: 100%;
     background-color: #DCDCDC;
-    padding: 10px;
+    padding: 5px;
     margin: 5px 0 22px 0;
     /*padding-bottom: 80px;*/
 }
@@ -234,7 +230,7 @@ input[type="submit"]:hover {
 
 
 /*view more page css*/
-
+/*
 .full_tour_request_post_view_box {
     margin: 150px auto 20px auto;
     display: -webkit-box;
@@ -283,10 +279,68 @@ input[type="submit"]:hover {
     background-color: #228B22;
     font-weight: bold;
 }
-
+*/
 
 /*menu bar styles*/
 
 .container .request_tour {
     text-decoration: underline;
+}
+
+.errmsg{
+    margin: 5px;
+    color: red;
+}
+.allposts{
+    display: block;
+    max-height: 1000px;
+    overflow-x: auto;
+    margin-top: 50px;
+    width: 950px;
+    height: 765px;
+}
+
+.allposts ul{
+    width: 850px;
+    height: 200px;
+    margin-top: 15px;
+    background-color: rgb(219, 211, 219);
+    color: black;
+    list-style: none;
+    padding-top: 20px;
+    display: block;
+}
+
+.allposts ul  li{
+    width: 800px;
+    height:15px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    display:inline-flex;
+    justify-content: start;
+}
+
+.allposts ul h3{
+    text-align: center;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.allposts ul li .fa{
+    margin-right: 20px;
+}
+
+.allposts ul button {
+    float: right;
+    height: 45px;
+    background-color: rgb(57, 9, 102);
+    width: 120px;
+    margin-right: 20px;
+    padding: 5px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.allposts ul button a{
+    color: white;
 }
