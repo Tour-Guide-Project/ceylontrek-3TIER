@@ -31,7 +31,14 @@ $image_path=$_SESSION['image_path'];
 	<div class="con">
 
 		<div class="profileCls">
-			<img src="<?php echo $image_path;?>" alt="user-avtar" width="100%" class="profilePic">
+			<?php
+				if ($image_path) {
+					echo '<img src="'.$image_path.'" alt="user-avtar" width="100%" class="profilePic">';
+				}
+				else {
+					echo '<img src="../resources/img/default.jpg" alt="user-avtar" width="100%" class="profilePic">';
+				}
+			?>
 
 			<!-- <div class="star-rating">
             	<span class="fa fa-star checked"></span>

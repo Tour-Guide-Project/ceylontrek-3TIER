@@ -41,8 +41,16 @@ $users = $_SESSION['users'];
 										
 						<div class="pcolumn">
 							<div class="pcard">
-								<!-- <img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%"> -->
-								<img src="<?php echo $user['image_path']; ?>" alt="" style="width:100%; height:250px;">
+								<?php
+									if ($user['image_path']) {
+										echo '<img src="'.$user['image_path'].'" alt="" style="width:100%; height:250px;">';
+									}
+
+									else {
+										echo '<img src="../resources/img/default.jpg" alt="" style="width:100%; height:250px;">';
+									}
+								?>
+								
 								<div class="pcontainer">
 									<h2><?php echo $user['first_name'] , " " , $user['last_name']; ?></h2>
 									<p><?php echo $user['email']; ?></p>
