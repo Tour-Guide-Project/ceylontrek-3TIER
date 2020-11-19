@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceylon Trek - Home</title>
     <link rel="stylesheet" href="../resources/css/homepage.css">
-    <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <img src="img/home/fish1.jpg" alt=""> -->
 </head>
@@ -23,7 +22,7 @@
                 </li>
                 <li style="margin-top: 30px; padding-left:0.8rem"><a href="Guide_search_page.php">Tour Guides</a></li>
                 <li style="margin-top: 30px;"><a href="package_search_page.php">Tour Packages</a></li>
-                <li style="margin-top: 30px;"><a href="tour_request_post.php">Request a Tour</a></li>
+                <li style="margin-top: 30px;"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
                 <li style="margin-top: 30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
                 <li style="margin-top: 30px;"><a href="calendar.php">Travel Calendar</a></li>
             </ul>
@@ -44,7 +43,7 @@
                     
                     <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
                     <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
-                    <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="tour_request_post.php">Request a Tour</a></li>
+                    <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
                     <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
                     <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
                     <div  style=" display:flex ">
