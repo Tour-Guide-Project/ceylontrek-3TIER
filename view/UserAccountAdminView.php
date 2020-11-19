@@ -15,7 +15,7 @@ $image_path=$_SESSION['image_path'];
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tour Guide Account Admin View</title>
+	<title>User Account Admin View</title>
 	<link rel="stylesheet" type="text/css" href="../resources/css/TouristAccountAdminView.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/TourGuideAccountAdminView.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
@@ -88,7 +88,7 @@ $image_path=$_SESSION['image_path'];
 		</div>
 
 		<div class="btnCls">
-			<form action="../controller/UserAccountAdmin_controller.php" method="post">
+			<!-- <form action="../controller/UserAccountAdmin_controller.php" method="post"> -->
 				<div class="btn">
 					<button class="sectionBtn" type="submit" name="message_user">Message User</button>
 				</div>
@@ -96,19 +96,29 @@ $image_path=$_SESSION['image_path'];
 					<button class="sectionBtn" type="submit" name="reset_password">Reset Password</button>
 				</div> -->
 				<div class="btn">
-					<button class="sectionBtn" type="submit" name="delete_account">Delete Account</button>
-					<!-- <button class="sectionBtn" type="submit" name="delete_account" onclick="return checkdelete()">Delete Account</button> -->
+					<!-- <button class="sectionBtn" type="submit" name="delete_account">Delete Account</button> -->
+					<button class="sectionBtn" onclick="deleteUser()"> Delete Account </button>
+					<!-- <p id="test"></p> -->
 				</div>
-			</form>
+			<!-- </form> -->
 		</div>			
 	</div>
 
 	<!-- JavaScript function for delete guide -->
-	<!-- <script>
-		function checkdelete() {
-			return Confirm("Are you sure you want to Delete this Tour-guide Account?");
+	<script>
+		function deleteUser() {
+			//var txt;
+			var r = confirm("Are you sure you want to Delete this Tour-guide Account?");
+			if (r == true) {
+				// txt = "ok";
+				window.location.href = '/ceylontrek-3tier/controller/delete_user_controller.php';
+			}else{
+				window.location.href = '/ceylontrek-3tier/view/UserAccountAdminView.php';
+			}
+
+			// document.getElementById("test").innerHTML = txt;
 		}
-	</script> -->
+	</script>
 
 <?php include('../view/footer.php');?>
 
