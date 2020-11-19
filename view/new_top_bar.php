@@ -9,7 +9,7 @@
                 
                 <li style="margin-top: 45px; font-size:17px; margin-left:0px"><a href="Guide_search_page.php">Tour Guides</a></li>
                 <li style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="package_search_page.php">Tour Packages</a></li>
-                <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="tour_request_post.php">Request a Tour</a></li>
+                <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
                 <li style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
                 <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px; margin-right:0px"><a href="calendar.php">Travel Calendar</a></li>
             </ul>
@@ -49,7 +49,7 @@
                     </li>
                     <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
                     <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
-                    <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="tour_request_post.php">Request a Tour</a></li>
+                    <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
                     <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
                     <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
                     <li style="height: 60px" ><button onclick="window.location='/ceylontrek-3tier/controller/auth/logout_controller.php'" class="loginbutton sign_out" style="margin-top:10px; margin-left:20px;"><span>Sign Out</span></button></li>
