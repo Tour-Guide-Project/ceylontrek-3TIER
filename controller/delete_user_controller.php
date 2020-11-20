@@ -5,18 +5,18 @@
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\view_tourist_profile_sql.php'); ?>
 <?php
 
-    $level = $_SESSION['level'];
+    $user_level = $_SESSION['user_level'];
     print_r($level);
 
     // getting the user information
     $U_id = mysqli_real_escape_string($connection,$_SESSION['user_id']);
 
-    if ($level == 'tourguide') {
+    if ($user_level == 'tourguide') {
         $result_set2 = delete_guide($connection,$U_id);
         //print_r($result_set2);
     }
 
-    if ($level == 'tourist') {
+    if ($user_level == 'tourist') {
         $result_set2 = delete_tourist($connection,$U_id);
         //print_r($result_set2);
     }

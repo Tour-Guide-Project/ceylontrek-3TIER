@@ -9,13 +9,13 @@
         header('Location:/ceylontrek-3tier/view/login.php');
     }
 
-    $level = $_SESSION['level'];
+    $user_level = $_SESSION['user_level'];
     $errors = array();
     $users = array();
 
     if (isset($_SESSION['id'])) {
 
-        if ($level == 'tourguide') {
+        if ($user_level == 'tourguide') {
 
             if ($_GET['search'] || $_GET['word']) {
 
@@ -35,7 +35,7 @@
             
         }
 
-        if ($level == 'tourist') {
+        if ($user_level == 'tourist') {
 
             if ($_GET['search'] || $_GET['word']) {
 
