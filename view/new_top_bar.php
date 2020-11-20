@@ -21,7 +21,7 @@
                         display:block;
                         width: 100%;
                        ">
-                    <a style="color: #f4f4f4;padding: 1px;text-decoration: none;text-transform: uppercase;" href="#contact" onMouseOver="this.style.color='skyblue'" onMouseOut="this.style.color='#f4f4f4'">View Profile</a>
+                    <a href="/ceylontrek-3tier/controller/new_top_bar_controller.php" style="color: #f4f4f4;padding: 1px;text-decoration: none;text-transform: uppercase;" href="#contact" onMouseOver="this.style.color='skyblue'" onMouseOut="this.style.color='#f4f4f4'">View Profile</a>
                 </li>
             </div>
 
