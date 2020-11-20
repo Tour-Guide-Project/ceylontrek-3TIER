@@ -41,18 +41,18 @@ body {
 .navbar ul {
     display: flex;
     list-style: none;
-    width: 80%;
+    width: 100%;
     justify-content: center;
 }
 
 .navbar ul li {
-    margin: 0.5rem;
-    padding-left: 0.2rem;
-    padding-top: 0.3rem;
+    padding: 0.3rem;
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+    margin-top: -100px;
 }
 
 .navbar ul li a {
-    font-size: 17px;
     text-decoration: none;
     text-transform: uppercase;
     color: #f4f4f4;

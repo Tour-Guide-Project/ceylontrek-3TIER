@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceylon Trek - Home</title>
     <link rel="stylesheet" href="../resources/css/homepage.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <img src="img/home/fish1.jpg" alt=""> -->
 </head>
@@ -14,23 +15,21 @@
     <div class="container">
 
 
-        <nav class="navbar">
+        <nav class="navbar"  style="background: rgba(0, 0, 0, 0.7); ">
             <ul>
                 <!-- <li><a href="#home">Home</a></li> -->
-                <li style=" padding: 0px; width:200px; height: 75px; margin-bottom: 0px; margin-right: 40px; ">
-                    <a href="homepage.php"><img src="../resources/img/home/logo2.png" alt=""></a>
+                <li style=" padding: 0px; width:200px; height: 75px; margin-bottom: 0px; margin-right: 40px;margin-left: 3px; margin-top:0">
+                    <a href="homepage.php"><img src="../resources/img/logo2.png" alt=""></a>
                 </li>
-                <li style="margin-top: 30px; padding-left:0.8rem"><a href="Guide_search_page.php">Tour Guides</a></li>
-                <li style="margin-top: 30px;"><a href="package_search_page.php">Tour Packages</a></li>
-                <li style="margin-top: 30px;"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-                <li style="margin-top: 30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
-                <li style="margin-top: 30px;"><a href="calendar.php">Travel Calendar</a></li>
+                <li style="margin-top: 45px; font-size:17px; margin-left:20px;margin-top:30px;"><a href="Guide_search_page.php">Tour Guides</a></li>
+                <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="package_search_page.php">Tour Packages</a></li>
+                <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
+                <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="calendar.php">Travel Calendar</a></li>
             </ul>
-
-            <button class="loginbutton"  type="button" onclick="window.location='../view/login.php'"><span>Login</span></button>
-            <button class="loginbutton" id="signup" type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button>
+            <button class="loginbutton login" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button>
+            <button class="loginbutton sign_up" type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button>
         </nav>
-
 
         <div class="mobnav" style="background: rgba(0, 0, 0, 0.7); ">
             <header >
@@ -54,6 +53,8 @@
             </div>
 
          </div>
+
+        
 
         <section id="home">
             <h1>Ceylon Trek</h1>
