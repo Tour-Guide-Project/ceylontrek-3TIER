@@ -114,7 +114,7 @@
 			}
 		}
 		else{
-			header('Location: /ceylontrek-3tier/view/view_admin_profile.php?'.http_build_query(array('param'=>$errors)));
+			header('Location: /ceylontrek-3tier/view/view_admin_profile.php?'.http_build_query(array('param'=>$errors)).'&path='.$path.'');
 		}
 		
 	}

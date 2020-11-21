@@ -110,6 +110,14 @@ $contact=$_SESSION['contact'];
 		</div>
 		
 		<label>Edit profile Image</label>
+		<?php
+				if(isset($_GET['param_img'])){
+                    $error_img=$_GET['param_img'];
+				    foreach ($error_img as $errors_img) {
+					    echo '<p style= "color:red; padding:5px;  margin-left:40px;" class="error">'.$errors_img.'</p>';
+				    }
+			    }
+		?>
 		<p><input type="file" id="file" name="file"/></p>
 		<div class="image_btn">
 			<div>
