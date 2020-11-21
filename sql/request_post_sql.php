@@ -40,10 +40,18 @@
         return $result;
     }
 
-    function get_post_details($connection,$post_id,$id){
-        $query= "SELECT * FROM custom_tour_request_post WHERE post_id='{$post_id}' AND tourist_id='{$id}' ";
+    function get_post_details($connection,$post_id){
+        $query= "SELECT * FROM custom_tour_request_post WHERE post_id='{$post_id}' ";
         $update_result = mysqli_query($connection, $query);
 
         return $update_result;
     }
+    
+    function update_request($connection,$post_id,$title,$activities,$places,$day_no,$no_of_days,$requested_date){
+    $query="UPDATE custom_tour_request_post SET title='{$title}' , activities='{$activities}' , places='{$places}', day_no='{$day_no}', no_of_days='{$no_of_days}', requested_date='{$requested_date}' WHERE post_id='{$post_id}' LIMIT 1";
+    $update_post=mysqli_query($connection, $query);
+
+        return $update_post;
+    }
+
 ?>

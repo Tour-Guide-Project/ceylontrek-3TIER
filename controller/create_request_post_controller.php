@@ -4,18 +4,38 @@
 
 <?php 
 
-       //check the user has been logged into the website          
+       //check the user has been logged into the website   
+  // if (isset($_GET['p_create'])){     
        if (!isset($_SESSION['id'])) {
-        header('Location:/ceylontrek-3tier/view/login.php');
-     }
+          header('Location:/ceylontrek-3tier/view/login.php');
+         }
+    //  }
 
-     
-    //checking post button pressed
-    if(isset($_POST['submit'])){
+    
+       
+        //checking post button pressed
+        if(isset($_POST['submit'])){
+                  
+            if (isset($_SESSION['id'])){
 
-       if (isset($_SESSION['id'])){
-         
-           $errors=array();
+               if(!isset($_POST['title']) || strlen(trim($_POST['title']))<1){
+                  $errors[]='title is requried/Invalid!';
+               }
+               if(!isset($_POST['places']) || strlen(trim($_POST['places']))<1){
+                  $errors[]='places is requried/Invalid!';
+               }
+               if(!isset($_POST['no_of_days']) || strlen(trim($_POST['no_of_days']))<1){
+                  $errors[]='number is requried/Invalid!';
+               }
+               //check number has only 0-9
+               elseif(preg_match(("/[^0-9]/"), $_POST['no_of_days'])){
+                  $errors[]='Invalid number';
+               }
+               if(!isset($_POST['activities']) || strlen(trim($_POST['activities']))<1){
+                  $errors[]='activities is requried/Invalid!';
+               }
+               
+            $errors=array();
              // get tourist id 
             $tourist_id =mysqli_real_escape_string($connection,$_SESSION['id']);
             
@@ -31,7 +51,7 @@
             
 
            //add post details to database
-        if(empty($errors)){ 
+         if(empty($errors)){ 
 
             // no errors found .. addding record..
             $title= mysqli_real_escape_string($connection,$_POST['title']);          
@@ -43,21 +63,21 @@
             
             $result_request= request($connection,$tourist_id,$title,$activities,$places,$day_no,$no_of_days,$requested_date);
 
-            // After add the post redirect to tour_request_post page
-            if($result_request){
-                 header('Location:/ceylontrek-3tier/view/tour_request_post.php?add_post=true'); 
-                //if query was failed
-            }else{
-                $errors[]="failed to post";
-            }
+                      // After add the post redirect to tour_request_post page
+                     if($result_request){
+                        header('Location:/ceylontrek-3tier/controller/tour_request_post_controller.php?add_post=true'); 
+                     //if query was failed
+                     }else{
+                        $errors[]="failed to post";
+                     }
+          }else{
+           header('Location:/ceylontrek-3tier/controller/tour_request_post_controller.php?failed to post'); 
+          }           
+      }
 
-        }else{
-           header('Location:/ceylontrek-3tier/view/tour_request_post.php?failed to post'); 
-        }
-
-    }
-  }else{
-    header('Location:/ceylontrek-3tier/view/tour_request_post.php?failed to post');
-  }
+    }else{
+      header('Location:/ceylontrek-3tier/controller/tour_request_post_controller.php?failed to post'); 
+    }  
+  
 ?>
 <?php mysqli_close($connection);?>

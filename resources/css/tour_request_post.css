@@ -9,7 +9,7 @@ body {
     /* display: -webkit-box;
     /*create box with auto hight */
     width: 1000px;
-    height: 900px;
+    height: 1000px;
     padding: 40px;
     background: rgba(0, 0, 0, .6);
     box-sizing: border-box;
@@ -228,61 +228,6 @@ input[type="submit"]:hover {
     opacity: 1;
 }
 
-
-/*view more page css*/
-/*
-.full_tour_request_post_view_box {
-    margin: 150px auto 20px auto;
-    display: -webkit-box;
-    width: 800px;
-    padding: 40px;
-    background: #C0C0C0;
-    box-sizing: border-box;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
-    border-radius: 10px;
-}
-
-.full_tour_request_post_view_box .text_box h1 {
-    font-size: 25px;
-    color: #2E8B57;
-    text-align: center;
-}
-
-.full_tour_request_post_view_box .text_box p {
-    margin-bottom: 10px;
-    padding: 10px;
-}
-
-.full_tour_request_post_view_box .msg,
-.report {
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 20px;
-    font-size: 18px;
-    padding: 10px 10px;
-    border: none;
-    cursor: pointer;
-    width: 30%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    opacity: 0.8;
-    float: left;
-}
-
-.full_tour_request_post_view_box .report {
-    float: right;
-}
-
-.full_tour_request_post_view_box button:hover {
-    opacity: 1;
-    margin-top: 10px;
-    background-color: #228B22;
-    font-weight: bold;
-}
-*/
-
-/*menu bar styles*/
-
 .container .request_tour {
     text-decoration: underline;
 }
@@ -333,14 +278,19 @@ input[type="submit"]:hover {
 .allposts ul button {
     float: right;
     height: 45px;
-    background-color: rgb(57, 9, 102);
+    background-color: rgb(44, 44, 94);
     width: 120px;
     margin-right: 20px;
     padding: 5px;
     margin-bottom: 5px;
     color: white;
+    outline: none;
+    border: none;
 }
 
+.allposts ul button:hover{
+    background: rgb(19, 19, 65);
+}
 .allposts ul button a{
     color: white;
 }

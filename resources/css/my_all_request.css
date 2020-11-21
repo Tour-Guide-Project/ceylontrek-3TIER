@@ -248,7 +248,7 @@ body {
 
 
 /* The popup form of create new request- hidden by default */
-.myposts ul div .form-popup {
+.myposts ul  .form-popup {
     display: none;
     position: fixed;
     top: 50%;
@@ -260,8 +260,8 @@ body {
 /* update form css*/
 .update-form {
     margin: 60px auto 20px auto;
-    width: 500px;
-    height: 600px;
+    width: 520px;
+    height: 680px;
     padding: 50px;
     background: #F0F8FF;
     box-sizing: border-box;

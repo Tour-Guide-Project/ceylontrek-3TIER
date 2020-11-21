@@ -2,8 +2,6 @@
 //get the session value for varible
 $mylist = $_SESSION['mylist'];
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,6 +90,8 @@ $mylist = $_SESSION['mylist'];
                 </div><!--side_bar-->
 
 	<div class="post_box">
+
+
 			
 			<form action="my_all_requests.php"  method="post">	
                 <h3 style="color:black; font-size:30px; text-align:center; margin-top:0px; margin-left:20px; position:relative;">.......YOUR ALL REQUEST POSTS.......</h3>			
@@ -108,46 +108,13 @@ $mylist = $_SESSION['mylist'];
 							<li><i class='fa fa-clone' aria-hidden='true'></i>NO Of Dates :<?php echo $mylist_element['no_of_days']; ?></li>
 							<li><i class='fa fa-map-marker' aria-hidden='true'  style="margin-right:25px"></i>Places :<?php echo $mylist_element['places']; ?></li>
 							<li><i class='fa fa-futbol-o' aria-hidden='true'></i>Activities & Other Details :<?php echo $mylist_element['activities']; ?></li>
-							<button name='post_delete' style="color:white"><a href="../controller/my_all_request_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>" 
+							<button name='post_delete' style="color:white"><a  style="text-decoration:none" href="../controller/my_all_request_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>" 
 							  onclick="return confirm('Delete Post?');">DELETE</a></button>
 							  <div>
-							  <a href="../controller/update_post_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>"><button name='post_update' onclick="openForm()" class="update">UPDATE</button></a>
 
-
-							       <div class="form-popup" id="myForm">
-								
-
-	                                   <div class="update-form"> <!--update form start-->
-			                                     <h1>Update Your Tour Request</h1>
-
-                                                          <div>
-			                                                  <label style="margin-right:82px" for="title"><b>Title :</b></label>
-                                                              <input type="text" placeholder="Enter any Title for your post here.." name="title"  required >
-			                                             </div>
-			   
-			                                              <div>
-                                                               <label style="margin-right:70px" for="places"><b>Places :</b></label>
-                                                               <input  type="text" placeholder="Enter Distric/Place name here.." name="places" required>                                                                                                                       
-			                                             </div>                                                                                                                       
-				                                                                                                                       
-			                                              <div>                                                                                                                       
-                                                                <label style="margin-right:30px" for="no_of_days"><b>NO Of Days :</b></label>                                                                                                                       
-                                                                <input type="text" placeholder="Enter number of dates" name="no_of_days"  required>                                                                                                                       
-			                                             </div>                                                                                                                       
-                                                                                                                       
-			                                              <div>                                                                                                                       
-                                                                 <label for="requested_date"><b>Requested Date :</b></label>                                                                                                                       
-                                                                 <input type="date" placeholder="DD/MM/YYYY" name="requested_date"  required>                                                                                                                       
-			                                              </div>                                                                                                                       
-                                                                                                                       
-                                                                 <label for="details"><b>Activities :</b></label>                                                                                                                       
-    		                                                     <textarea rows = "4" cols = "20" name = "activities" style="resize: vertical;height:100px;" placeholder="Enter Activites & Other details here..."  ></textarea>                                                                                                                       
-																 
-																 <a href="../controller/update_post_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>"><button type="submit" class="btn" name="update_now" id="submit" >Update post</button></a>                                                                                                                       
-    		                                                     <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>                                                                                                                       
-									    </div> <!--update form end-->   
-									                                                                                                                      
-	                                </div><!---form-popup-->
+							  <a type="button" style="text-decoration:none" href="../controller/update_post_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>"><button type="button" name='post_update' onclick="openForm()" class="update">UPDATE</button></a>                                  
+						
+                                
 						     </div>
 						</ul>
 				  <?php
@@ -160,7 +127,7 @@ $mylist = $_SESSION['mylist'];
 	</div><!-- post_box -->
 
 	<div class="add_request_btn">
-        <a href="tour_request_post.php"><button>Add new post</button></a>
+        <a href="../controller/tour_request_post_controller.php"><button>Add new post</button></a>
 	</div><!-- create_request_btn -->
 	
 <script>

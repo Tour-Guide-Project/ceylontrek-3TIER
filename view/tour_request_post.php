@@ -44,7 +44,7 @@ $lists = $_SESSION['list'];
 							<li><i class='fa fa-calendar' aria-hidden='true'></i>Requested Date :<?php echo $list_element['requested_date']; ?></li>
 							<li><i class='fa fa-clone' aria-hidden='true'></i>NO Of Dates :<?php echo $list_element['no_of_days']; ?></li>
 							<li><i class='fa fa-map-marker' aria-hidden='true'style="margin-right:25px" ></i>Places :<?php echo $list_element['places']; ?></li>
-							<button name='viewmore'><a href='../controller/full_tour_request_post_view_controller.php?post_id=<?php echo $list_element['post_id']; ?>'>View More &raquo</a></button>
+							<button name='viewmore'><a style="text-decoration:none"  href='../controller/full_tour_request_post_view_controller.php?post_id=<?php echo $list_element['post_id']; ?>'>View More &raquo</a></button>
 						  </ul>
 
 
@@ -58,10 +58,12 @@ $lists = $_SESSION['list'];
 
 	</div><!-- tour_request_post_box -->
 
+    <form action="tour_request_post.php"  method="post">
 	<div class="create_request_btn">
-		<button onclick="openForm()" name="p_create"> Create New Request</button>
+		<button type="button"  name="p_create"  id="p_create" onclick="openForm()" > Create New Request</button>
 	</div><!-- create_request_btn -->
-
+    </form>
+	
 	<div class="form-popup" id="myForm">
 	<form action="../controller/create_request_post_controller.php" class="form-container" method="post">
 			   <h1>Create Your Tour Request</h1>
@@ -88,20 +90,21 @@ $lists = $_SESSION['list'];
 
                <label for="details"><b>Activities :</b></label>
     		   <textarea rows = "4" cols = "20" name = "activities" style="resize: vertical;height:100px;" placeholder="Enter Activites & Other details here..."></textarea>
-    		<button type="submit" class="btn" name="submit" id="submit" >Post</button>
+    		 <button type="submit" class="btn" name="submit" id="submit" onclick="return confirm('Add your post?');">Post</button>
     		<button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
   		</form>
 	</div>
 
-<script>
-	function openForm() {
-  		document.getElementById("myForm").style.display = "block";
-	}
-
-	function closeForm() {
-  		document.getElementById("myForm").style.display = "none";
-	}
-</script>
+	<script>
+     function openForm() {
+       
+         document.getElementById('myForm').style.display = 'block';
+     }
+   
+     function closeForm() {
+         document.getElementById('myForm').style.display = 'none';
+     }
+   </script>
 <?php include('../view/footer.php'); ?>
 </body>
 <script type="text/javascript" src="../resources/js/jscript.js"></script>
