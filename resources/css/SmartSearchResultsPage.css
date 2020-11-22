@@ -81,3 +81,11 @@ body {
     width: 100px;
     transition-duration: 0.5s;
 }
+
+
+/* header underline */
+
+.smart_search {
+    text-decoration: underline;
+    color: white;
+}

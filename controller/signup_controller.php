@@ -58,6 +58,11 @@ if (isset($_POST['submit'])) {
 	if(empty($errors)){
 
         $result_set2=signup($connection);
+
+        $result_set3=get_id($connection,$email,$level);
+        $record=mysqli_fetch_assoc($result_set3);
+        $_SESSION['id']=$record['id'];
+
         echo "<script>alert('Welcome ceylon-trek!');</script>";
 
                 if ($level=='tourist'){
@@ -83,6 +88,16 @@ if (isset($_POST['submit'])) {
                         header('Location: /ceylontrek-3tier/view/create_admin_and_moderator_account.php?'.http_build_query(array('param'=>$errors)));
                 }
                 
+        }
+}
+
+if(isset($_POST['cancel'])){
+        $level=$_SESSION['level'];
+        if($level=='tourist'|| $level=='tourguide'){
+                header('Location:/ceylontrek-3tier/view/signup_selection_page.php');
+        }
+        if($level=='admin'|| $level=='moderator'){
+                header('Location: /ceylontrek-3tier/view/admin_dashboard.php');
         }
 }
 ?>

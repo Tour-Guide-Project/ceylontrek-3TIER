@@ -1,4 +1,4 @@
-
+<?php session_start();?>
 <!doctype html>
 <html>
     <head>
@@ -6,12 +6,19 @@
         <link rel='stylesheet'  href='../resources/css/inbox.css'>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../resources/css/top_bar.css">
+        <link rel="stylesheet" href="../resources/css/new_top_bar.css">
         <link rel="stylesheet" href="../resources/css/footer.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body class="inbox-body">
-    <?php include('../view/top_bar.php'); ?> 
+    <?php 
+    if (!isset($_SESSION['id'])){
+        include('../view/top_bar.php');
+    }else{
+        include('../view/new_top_bar.php');
+    }
+    ?> 
         <div id="new-message">
              <p class="msg-header"> New message</p>
              <p class="msg-body">

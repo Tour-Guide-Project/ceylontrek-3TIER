@@ -1,6 +1,6 @@
 <?php
 function signup($connection){
-
+//
     //get values in to variables
 		$first_name=$_POST['first_name'];
 		$last_name=$_POST['last_name'];
@@ -37,6 +37,15 @@ function exist_email($connection,$email){
 			
 	$result=mysqli_query($connection,$query);
 	return $result;
+}
+
+//get_id 
+function get_id($connection,$email,$level){
+	$query="SELECT id FROM $level WHERE email='{$email}' LIMIT 1";
+	
+	$result=mysqli_query($connection,$query);
+	return $result;
+
 }
 
 ?>

@@ -12,11 +12,18 @@ $fullpost=$_SESSION['fullpost'];
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/full_tour_request_view.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
+	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body style="background-image: url('../resources/img/ct5.jpg'); background-size:cover;background-position: center center;background-attachment: fixed; background-repeat:no-repeat;">
-	<?php include('../view/top_bar.php'); ?>
+	<?php 
+    if (!isset($_SESSION['id'])){
+        include('../view/top_bar.php');
+    }else{
+        include('../view/new_top_bar.php');
+    }
+    ?> 
 	<div class="full_tour_request_post_view_box">
 			<form action="..\controller\full_tour_request_post_view_controller.php" method="GET" >
 				
