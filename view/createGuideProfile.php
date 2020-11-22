@@ -24,12 +24,15 @@
                   <div class="sidebar-menu">
                   <ul>
 
-                  <li>
+                    <li>    
+                            
                             <a href="guideDashboard.php">
                                 <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
                                 <span class="menu-title">My Dashboard</span>
-                            </a>
+                            </a> 
+                            
                         </li>
+                    
                         <li>
                             <a href="Inbox.php">
                                 <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
@@ -38,9 +41,9 @@
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a >
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">Create Package Profile</span>
+                                <input type="submit" name="profile" value="Create My Profile" >
                             </a>
                         </li>
 
@@ -84,7 +87,7 @@
              <div class="content">
                
                 <div class="con">
-		<form action="../controller/createGuideProfile_controller.php" method="post">
+		<form action="../controller/createGuideProfile_controller.php" method="post" enctype="multipart/form-data">
         <div>
         <?php
                 $gRegNo ='';
@@ -154,10 +157,12 @@
 			
 			<div class="row">
 				<div class="col-25">
-					<label for="imageUpload" class="lbl">Upload NIC image :</br>(side 1)</label>
+					<label for="imageUpload1" class="lbl">Upload NIC image :</br>(side 1)</label>
 				</div>
 				<div class="col-75">
-					<input type="submit" name="imageUpload" value="Upload Image">
+                
+                    <input type="file"   name="file[]" >
+					
 				</div>
             </div>
             <div class="row">
@@ -165,7 +170,7 @@
 					<label for="imageUpload" class="lbl">Upload NIC image :</br>(side 2)</label>
 				</div>
 				<div class="col-75">
-					<input type="submit" name="imageUpload" value="Upload Image">
+                <input type="file"   name="file[]" >
 				</div>
             </div>
             

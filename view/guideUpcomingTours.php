@@ -19,6 +19,7 @@
                 <div class="side_bar">
                     <img src="../resources/img/home/logo2.png" class="dashlogo">
                     <img src="../resources/img/reviewimg.jpg" class="profile" >
+                    <form action="../controller/guide_dashboard_controller.php" method="post">
                     <button class="edit"> Edit Profile</button><br>
                   <div class="sidebar-menu">
                   <ul>
@@ -37,9 +38,9 @@
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a>
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">Create Package Profile</span>
+                                <input type="submit" name="profile" value="Create My Profile" >
                             </a>
                         </li>
 
@@ -80,6 +81,7 @@
                     </ul>
                   </div><!--sidebar-manu-->        
                 </div><!--side_bar-->
+                    </form>
 
                 <div class="calendar">
                 <div class="guidecalender">

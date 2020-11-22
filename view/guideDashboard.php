@@ -43,7 +43,7 @@
                         <li>
                             <a >
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <input type="submit" name="profile" value="tour guide" >
+                                <input type="submit" name="profile" value="Create My Profile" >
                             </a>
                         </li>
 

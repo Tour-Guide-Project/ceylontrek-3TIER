@@ -154,6 +154,21 @@ a {
     text-align: start;
 }
 
+.sidebar-menu input[type=submit] {
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: start;
+    font-family: lato;
+    border: none;
+    font-size: 16px;
+}
+
 .schedule {
     background-color: rgba(0, 0, 0, 0.3);
     float: left;
