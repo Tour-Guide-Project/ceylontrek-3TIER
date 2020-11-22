@@ -115,16 +115,16 @@
     if(isset($_POST['cancel']))
 	{
         if($_SESSION['level']=='admin'){
-            header('Location:/ceylontrek-3tier/view/view_admin_profile.php');
+            header('Location:/ceylontrek-3tier/view/view_admin_profile.php?path='.$path.'');
         }
         if($_SESSION['level']=='moderator'){
-            header('Location:/ceylontrek-3tier/view/view_moderator_profile.php');
+            header('Location:/ceylontrek-3tier/view/view_moderator_profile.php?path='.$path.'');
         }
         if($_SESSION['level']=='tourguide'){
-            header('Location:/ceylontrek-3tier/view/view_guide_profile.php');
+            header('Location:/ceylontrek-3tier/view/view_guide_profile.php?path='.$path.'');
         }
         if($_SESSION['level']=='tourist'){
-            header('Location:/ceylontrek-3tier/view/view_tourist_profile.php');
+            header('Location:/ceylontrek-3tier/view/view_tourist_profile.php?path='.$path.'');
         }
 		
 	}
