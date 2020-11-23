@@ -24,25 +24,11 @@
 	<div class="con">
 		<div class="section">
 			<div class="image">
-				<img src="../resources/img/tree.jpg" alt="Paris" style="width:70%;">
+				<img src="../resources/img/SmartSearchResult/hik.jpg" alt="Paris" style="width:70%; height:100px">
 			</div>
 
-			<div>
-				<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka</p>
-			</div>
-
-			<div class="btn">
-				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="image">
-				<img src="../resources/img/tree.jpg" alt="Paris" style="width:70%;">
-			</div>
-
-			<div>
-				<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka</p>
+			<div class="paragraph">
+				<p>Hikkaduwa is a long beautiful beach providing excellent opportunity for surfing, swimming and snorkelling.</p>
 			</div>
 
 			<div class="btn">
@@ -52,25 +38,11 @@
 
 		<div class="section">
 			<div class="image">
-				<img src="../resources/img/tree.jpg" alt="Paris" style="width:70%;">
+				<img src="../resources/img/SmartSearchResult/sigiriya.jpg" alt="Paris" style="width:70%; height:100px">
 			</div>
 
-			<div>
-				<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka</p>
-			</div>
-
-			<div class="btn">
-				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="image">
-				<img src="../resources/img/tree.jpg" alt="Paris" style="width:70%;">
-			</div>
-
-			<div>
-				<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka</p>
+			<div class="paragraph">
+				<p>Sigiriya or Sinhagiri is an ancient rock fortress and one of the most valuable historical mouments of Sri Lanka located in Mathale.</p>
 			</div>
 
 			<div class="btn">
@@ -80,25 +52,11 @@
 
 		<div class="section">
 			<div class="image">
-				<img src="../resources/img/tree.jpg" alt="Paris" style="width:70%;">
+				<img src="../resources/img/SmartSearchResult/arugambay.jpg" alt="Paris" style="width:70%; height:100px">
 			</div>
 
-			<div>
-				<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka</p>
-			</div>
-
-			<div class="btn">
-				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="image">
-				<img src="../resources/img/tree.jpg" alt="Paris" style="width:70%;">
-			</div>
-
-			<div>
-				<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka</p>
+			<div class="paragraph">
+				<p>Arugam Bay is a bay situated in Sri Lanka's southeast coast, and a historic settlement of the ancient Batticaloa.</p>
 			</div>
 
 			<div class="btn">
@@ -108,11 +66,11 @@
 
 		<div class="section">
 			<div class="image">
-				<img src="../resources/img/tree.jpg" alt="Paris" style="width:70%;">
+				<img src="../resources/img/SmartSearchResult/temple.jpg" alt="Paris" style="width:70%; height:100px">
 			</div>
 
-			<div>
-				<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka</p>
+			<div  class="paragraph"> 
+				<p>Sri Dalada Maligawa or the Temple of the Sacred Tooth Relic is a Buddhist temple in the city of Kandy, Sri Lanka.</p>
 			</div>
 
 			<div class="btn">
@@ -122,11 +80,39 @@
 
 		<div class="section">
 			<div class="image">
-				<img src="../resources/img/tree.jpg" alt="Paris" style="width:70%;">
+				<img src="../resources/img/SmartSearchResult/gallefort.jpg" alt="Paris" style="width:70%; height:100px">
 			</div>
 
-			<div>
-				<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka</p>
+			<div class="paragraph">
+				<p>Galle Fort or the Dutch Fort is a Portuguese fortress which was built in 1588 at the bay of Galle on the southwestern coast of Sri Lanka.</p>
+			</div>
+
+			<div class="btn">
+				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="image">
+				<img src="../resources/img/SmartSearchResult/hortan.jpg" alt="Paris" style="width:70%; height:100px">
+			</div>
+
+			<div class="paragraph">
+				<p>Horton Plains National Park is a protected area in the central highlands of Sri Lanka and is covered by montane grassland and cloud forest.</p>
+			</div>
+
+			<div class="btn">
+				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="image">
+				<img src="../resources/img/SmartSearchResult/hakgala.jpg" alt="Paris" style="width:70%; height:100px">
+			</div>
+
+			<div class="paragraph">
+				<p>Hakgala Botanical Garden is the second largest garden among the five botanical gardens in Sri Lanka situated Nuwara Eliya.</p>
 			</div>
 
 			<div class="btn">

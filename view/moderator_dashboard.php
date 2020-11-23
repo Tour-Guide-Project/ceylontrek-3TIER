@@ -86,7 +86,7 @@
 							
 			<div class="pcolumn">
 				<div class="pcard">
-					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%; height:300px;">
 						<div class="pcontainer">
 							<h2>Senal Arosh</h2>
 							<p>Pending Profile</p>
@@ -98,11 +98,11 @@
 
 			<div class="pcolumn">
 				<div class="pcard">
-					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+					<img src="../resources/img/guide/2.jpg" alt="Jane" style="width:100%; height:300px;">
 						<div class="pcontainer">
-							<h2>Senal Arosh</h2>
+							<h2>Kamal Amarakon</h2>
 							<p>Pending Profile</p>
-							<p>senal@gmail.com</p>
+							<p>kamal123@gmail.com</p>
 							<p><button  class="pbutton">View Profile</button></p>
 						</div>
 				</div>
@@ -110,11 +110,11 @@
 
 			<div class="pcolumn">
 				<div class="pcard">
-					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+					<img src="../resources/img/guide/5.jpg" alt="Jane" style="width:100%; height:300px;">
 						<div class="pcontainer">
-							<h2>Senal Arosh</h2>
+							<h2>Darshan Ravindu</h2>
 							<p>Pending Profile</p>
-							<p>senal@gmail.com</p>
+							<p>ravindar@gmail.com</p>
 							<p><button  class="pbutton">View Profile</button></p>
 						</div>
 				</div>
@@ -122,11 +122,11 @@
 
 			<div class="pcolumn">
 				<div class="pcard">
-					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+					<img src="../resources/img/guide/4.jpg" alt="Jane" style="width:100%; height:300px;">
 						<div class="pcontainer">
-							<h2>Senal Arosh</h2>
+							<h2>Nimal Sepala</h2>
 							<p>Pending Profile</p>
-							<p>senal@gmail.com</p>
+							<p>sepalasepala@gmail.com</p>
 							<p><button  class="pbutton">View Profile</button></p>
 						</div>
 				</div>
@@ -134,35 +134,11 @@
 
 			<div class="pcolumn">
 				<div class="pcard">
-					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
+					<img src="../resources/img/guide/3.jpg" alt="Jane" style="width:100%; height:300px;">
 						<div class="pcontainer">
-							<h2>Senal Arosh</h2>
+							<h2>Adhithya Bandara</h2>
 							<p>Pending Profile</p>
-							<p>senal@gmail.com</p>
-							<p><button  class="pbutton">View Profile</button></p>
-						</div>
-				</div>
-			</div>
-
-			<div class="pcolumn">
-				<div class="pcard">
-					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-						<div class="pcontainer">
-							<h2>Senal Arosh</h2>
-							<p>Pending Profile</p>
-							<p>senal@gmail.com</p>
-							<p><button  class="pbutton">View Profile</button></p>
-						</div>
-				</div>
-			</div>
-
-			<div class="pcolumn">
-				<div class="pcard">
-					<img src="../resources/img/guide/1.jpg" alt="Jane" style="width:100%">
-						<div class="pcontainer">
-							<h2>Senal Arosh</h2>
-							<p>Pending Profile</p>
-							<p>senal@gmail.com</p>
+							<p>adhikuru@gmail.com</p>
 							<p><button  class="pbutton">View Profile</button></p>
 						</div>
 				</div>

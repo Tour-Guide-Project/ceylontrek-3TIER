@@ -24,15 +24,15 @@
 	<div class="con">
 		<h1 class="ttl"><b>Hikkaduwa</b></h1>
 		<div class="image">
-			<img src="../resources/img/1.jpg" alt="Paris" style="width:60%;">
+			<img src="../resources/img/SmartSearchResult/hik.jpg" alt="Paris" style="width:60%;">
 		</div>
 
 		<div>
-			<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka. Hikkaduwa is one of the most beautiful place in Sri Lanka. Hikkaduwa is one of the most beautiful place in Sri Lanka. Hikkaduwa is one of the most beautiful place in Sri Lanka.</p>
+			<p class="paragraph">Hikkaduwa is a long beautiful beach providing excellent opportunity for surfing, swimming and snorkelling. This was replaced by tourism when its golden sandy beaches were discovered.</p>
 
-			<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka. Hikkaduwa is one of the most beautiful place in Sri Lanka. Hikkaduwa is one of the most beautiful place in Sri Lanka. Hikkaduwa is one of the most beautiful place in Sri Lanka.</p>
+			<p class="paragraph">Hikkaduwa is a small town on the south coast of Sri Lanka located in the Southern Province, about 17 km (11 mi) north-west of Galle and 98 km (61 mi) south of Colombo.</p>
 
-			<p class="paragraph">Hikkaduwa is one of the most beautiful place in Sri Lanka. Hikkaduwa is one of the most beautiful place in Sri Lanka.</p>
+			<p class="paragraph">Hikkaduwa Coral Sanctuary - located a few hundred metres offshore. The sanctuary has approximately seventy varieties of multi-coloured corals.Hikkaduwa is one of the most beautiful place in Sri Lanka.</p>
 		</div>
 	</div>
 

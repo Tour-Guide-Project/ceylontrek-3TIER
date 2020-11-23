@@ -28,6 +28,9 @@ body {
 }
 
 .section {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 2%;
     width: 100%;
     height: 100%;
     background: rgba(231, 209, 151, 0.64);
@@ -41,7 +44,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 .image img {
@@ -49,14 +52,16 @@ body {
 }
 
 .paragraph {
+    /* height: 100px; */
     text-align: center;
-    margin-bottom: 5%;
+    /* margin-bottom: 10%; */
 }
 
 .btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3%;
 }
 
 .viewButton:hover {
@@ -73,7 +78,7 @@ body {
     text-align: center;
     text-decoration: none;
     border: none;
-    display: inline;
+    /* display: inline; */
     font-size: 16px;
     border: 1px solid transparent;
     border-radius: 10px;
