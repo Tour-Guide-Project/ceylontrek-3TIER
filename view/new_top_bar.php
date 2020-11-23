@@ -35,7 +35,7 @@
         <div class="mobnav" style="background: #2f375b;">
             <header >
                  <a href="homepage.php"><img style=" padding: 0px; width:250px; height: 95px; margin-bottom: 0px; margin-right: 70px;margin-left: 45px; margin-top:0px" src="../resources/img/logo2.png" alt=""></a>
-                 <button class="dropbutton"style="width:40px; height:20px; marging-bottom:50px; margin-top:10px" onclick="(0"><i class="fa fa-bars" aria-hidden="true"></i></button>      
+                 <button class="dropbutton"style="width:40px; height:20px; marging-bottom:50px; margin-top:10px" onclick="(0)"><i class="fa fa-bars" aria-hidden="true"></i></button>      
             </header>
             <div class="dropdown">
                 

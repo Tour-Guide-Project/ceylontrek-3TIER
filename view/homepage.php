@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,45 +15,101 @@
 <body>
     <div class="container">
 
-
-        <nav class="navbar"  style="background: rgba(0, 0, 0, 0.7); ">
-            <ul>
-                <!-- <li><a href="#home">Home</a></li> -->
-                <li style=" padding: 0px; width:200px; height: 75px; margin-bottom: 0px; margin-right: 40px;margin-left: 3px; margin-top:0">
-                    <a href="homepage.php"><img src="../resources/img/logo2.png" alt=""></a>
-                </li>
-                <li style="margin-top: 45px; font-size:17px; margin-left:20px;margin-top:30px;"><a href="Guide_search_page.php">Tour Guides</a></li>
-                <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="package_search_page.php">Tour Packages</a></li>
-                <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-                <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
-                <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="calendar.php">Travel Calendar</a></li>
-            </ul>
-            <button class="loginbutton login" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button>
-            <button class="loginbutton sign_up" type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button>
+    <?php 
+    if (!isset($_SESSION['id'])){ ?>
+       <nav class="navbar"  style="background: rgba(0, 0, 0, 0.7); ">
+       <ul>
+           <!-- <li><a href="#home">Home</a></li> -->
+           <li style=" padding: 0px; width:200px; height: 75px; margin-bottom: 0px; margin-right: 40px;margin-left: 3px; margin-top:0">
+               <a href="homepage.php"><img src="../resources/img/logo2.png" alt=""></a>
+           </li>
+           <li style="margin-top: 45px; font-size:17px; margin-left:20px;margin-top:30px;"><a href="Guide_search_page.php">Tour Guides</a></li>
+           <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="package_search_page.php">Tour Packages</a></li>
+           <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
+           <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+           <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="calendar.php">Travel Calendar</a></li>
+       </ul>
+       <button class="loginbutton login" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button>
+       <button class="loginbutton sign_up" type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button>
         </nav>
 
         <div class="mobnav" style="background: rgba(0, 0, 0, 0.7); ">
-            <header >
-                 <a href="homepage.php"><img style=" padding: 0px; width:250px; height: 95px; margin-bottom: 0px; margin-right: 70px;margin-left: 40px; margin-top:0px" src="../resources/img/logo2.png" alt=""></a>
-                 <button class="dropbutton"style="width:40px; height:20px; marging-bottom:50px; margin-top:10px" onclick="(0"><i class="fa fa-bars" aria-hidden="true"></i></button>      
-            </header>
-            <div class="dropdown">
+        <header >
+             <a href="homepage.php"><img style=" padding: 0px; width:250px; height: 95px; margin-bottom: 0px; margin-right: 70px;margin-left: 40px; margin-top:0px" src="../resources/img/logo2.png" alt=""></a>
+             <button class="dropbutton"style="width:40px; height:20px; marging-bottom:50px; margin-top:10px" onclick="(0)"><i class="fa fa-bars" aria-hidden="true"></i></button>      
+        </header>
+        <div class="dropdown">
+            
+            <ul class="moblist">                  
                 
-                <ul class="moblist">                  
-                    
-                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
-                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
-                    <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
-                    <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
-                    <div  style=" display:flex ">
-                      <li><button class="loginbutton login" style="height:50px;" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button> </li>
-                       <li><button class="loginbutton sign_up" style="height:50px; " type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button></li>
-                    </div>
-                 </ul>
+                <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
+                <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
+                <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
+                <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
+                <div  style=" display:flex ">
+                  <li><button class="loginbutton login" style="height:50px;" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button> </li>
+                   <li><button class="loginbutton sign_up" style="height:50px; " type="button" onclick="window.location='../view/signup_selection_page.php'"><span>SignUp</span></button></li>
+                </div>
+             </ul>
+        </div>
+
+        </div>
+
+    <?php }else{ ?>
+        <nav class="navbar"  style="background: rgba(0, 0, 0, 0.7); ">
+       <ul>
+           <!-- <li><a href="#home">Home</a></li> -->
+           <li style=" padding: 0px; width:200px; height: 75px; margin-bottom: 0px; margin-right: 40px;margin-left: 3px; margin-top:0">
+               <a href="homepage.php"><img src="../resources/img/logo2.png" alt=""></a>
+           </li>
+           <li style="margin-top: 45px; font-size:17px; margin-left:20px;margin-top:30px;"><a href="Guide_search_page.php">Tour Guides</a></li>
+           <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="package_search_page.php">Tour Packages</a></li>
+           <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
+           <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+           <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="calendar.php">Travel Calendar</a></li>
+       </ul>
+            <div style="margin-right: 10px;">
+                <i class="fa fa-user-circle fa-3x" aria-hidden="true" style="margin-top: 15px;margin-left: 20px ;margin-bottom:3px;color:white;"></i>
+                <li style=" margin-top: 5px;
+                        margin-right: 10px; 
+                        text-decoration: none;
+                        display:block;
+                        width: 120%;
+                       ">
+                    <a href="/ceylontrek-3tier/controller/new_top_bar_controller.php" style="color: #f4f4f4;padding: 1px;text-decoration: none;text-transform: uppercase;"  onMouseOver="this.style.color='skyblue'" onMouseOut="this.style.color='#f4f4f4'">View Profile</a>
+                </li>
             </div>
 
-         </div>
+            <button onclick="window.location='/ceylontrek-3tier/controller/auth/logout_controller.php'" class="loginbutton sign_out" style="margin-right:50px; margin-left:20px; width:160px;"><span>Sign Out</span></button>
+        </nav>
+
+        <div class="mobnav" style="background: rgba(0, 0, 0, 0.7); ">
+        <header >
+             <a href="homepage.php"><img style=" padding: 0px; width:250px; height: 95px; margin-bottom: 0px; margin-right: 70px;margin-left: 40px; margin-top:0px" src="../resources/img/logo2.png" alt=""></a>
+             <button class="dropbutton"style="width:40px; height:20px; marging-bottom:50px; margin-top:10px" onclick="(0)"><i class="fa fa-bars" aria-hidden="true"></i></button>      
+        </header>
+        <div class="dropdown">
+            
+            <ul class="moblist">                  
+                
+                <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
+                <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
+                <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
+                <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
+                <div  style=" display:flex ">
+                <li style="height: 60px" ><button onclick="window.location='/ceylontrek-3tier/controller/auth/logout_controller.php'" class="loginbutton sign_out" style="margin-top:10px; margin-left:20px;"><span>Sign Out</span></button></li>
+                </div>
+             </ul>
+        </div>
+
+        </div>
+        
+    <?php } 
+    ?>
+       
+        
 
         
 
@@ -65,7 +122,7 @@
             <h1>Tour Guides</h1>
             <p class="lead" style="float: left;">Sri Lankans are world-renowned for their hospitality. So are our Tour Guides.<br> Ceylon Trek offers the best and the most experienced Tour Guides available in Sri Lanka. <br>For your safety, we choose only the registered Tour Guides of the
                 SriLankan Tourism Beaurae.<br> Reserve our Guides to get the most out of Sri Lanka. </p>
-            <button class="loginbutton" style="width: 250px; margin-left: 350px; margin-top: 10px; font-size: 1.25rem; height: 70px;"><span><a style="color:white; text-decoration:none;" href='Guide_search_page.php'>Explore Tour Guides</a></span></button>
+            <button class="loginbutton" style="width: 300px; margin-left: 350px; margin-top: 10px; font-size: 1.25rem; height: 70px;"><span><a style="color:white; text-decoration:none;" href='Guide_search_page.php'>Explore Tour Guides</a></span></button>
 
 
 
