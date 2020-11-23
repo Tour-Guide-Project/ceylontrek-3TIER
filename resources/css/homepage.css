@@ -4,7 +4,7 @@
 }
 
 body {
-    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
     background: #333;
     color: #fff;
     height: 100vh;
@@ -87,7 +87,6 @@ section#home {
 
 section#home h1 {
     color: #322a60;
-    font-family: Pacifico;
     font-weight: lighter;
     font-size: 90px;
     margin-top: 100px;

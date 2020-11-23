@@ -8,6 +8,7 @@
     <title>Ceylon Trek - Home</title>
     <link rel="stylesheet" href="../resources/css/homepage.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <img src="img/home/fish1.jpg" alt=""> -->
 </head>
@@ -114,7 +115,7 @@
         
 
         <section id="home">
-            <h1>Ceylon Trek</h1>
+            <h1 style="font-family: Pacifico;">Ceylon Trek</h1>
             <p class="lead">Travel Sri Lanka</p>
         </section>
         <section id="tourGuide">
