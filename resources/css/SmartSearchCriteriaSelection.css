@@ -96,3 +96,11 @@ body {
     width: 15px;
     height: 15px;
 }
+
+
+/* header underline */
+
+.smart_search {
+    text-decoration: underline;
+    color: white;
+}

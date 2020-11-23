@@ -51,11 +51,11 @@
 			</div><!-- text_box -->	
 		
 			<div>
-				<input class="input_radio" type="radio" name="gender" required="" value="male">
+				<input class="input_radio" type="radio" name="gender" id="gender" value="male">
 				<label>Male</label>
 			</div><!-- label -->
 			<div>
-				<input class="input_radio" type="radio" name="gender" required="" value="female">
+				<input class="input_radio" type="radio" name="gender"  id="gender" value="female">
 				<label>Female</label>
 			</div><!-- label -->	
 
@@ -88,12 +88,12 @@
 			</div><!-- text_box -->	
 
 			<div class="check_signup">
-				<input type="checkbox" id="check" name="signup" required="">
+				<input type="checkbox" id="check" name="signup" >
   				<label for="check"> "I accept the Terms of Service "or" I accept the privacy statement" Click here the indicate that you have read and agree to the terms presented in the Terms and Conditions agreement.</label>
 			</div>
 			
-			<button class="cancel" type="cancel" name="cancel">Cancel</button>
-			<button class="submit" type="submit" name="submit">Create Account</button>
+			<button class="cancel"  type="cancel" name="cancel" onclick ="RemoveRequired();">Cancel</button>
+			<button class="submit" type="submit" name="submit" onclick ="AddRequired();">Create Account</button>
 
 			<p>Already have an account? <a href="../view/login.php">Log In</a></p>
 			
@@ -104,5 +104,6 @@
 <?php include('../view/footer.php'); ?>
 </body>
 <script type="text/javascript" src="../resources/js/jscript.js"></script>
+<script type="text/javascript" src="../resources/js/signup.js"></script>
 </html>
 

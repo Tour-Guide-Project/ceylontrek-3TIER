@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +6,7 @@
   
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="../resources/css/top_bar.css">
+   <link rel="stylesheet" href="../resources/css/new_top_bar.css">
    <link rel="stylesheet" href="../resources/css/footer.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/guide_searchpage.css">
@@ -12,7 +14,13 @@
     <meta charset="utf-8">
 </head>
 <body>
-<?php include('../view/top_bar.php'); ?> 
+<?php 
+    if (!isset($_SESSION['id'])){
+        include('../view/top_bar.php');
+    }else{
+        include('../view/new_top_bar.php');
+    }
+    ?>
    <div class="header" >
 
    

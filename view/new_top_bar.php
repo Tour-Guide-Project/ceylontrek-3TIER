@@ -7,10 +7,10 @@
             <ul class="list" style="width:60%">
                 <!-- <li><a href="#home">Home</a></li> -->
                 
-                <li style="margin-top: 45px; font-size:17px; margin-left:0px"><a href="Guide_search_page.php">Tour Guides</a></li>
-                <li style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="package_search_page.php">Tour Packages</a></li>
+                <li class="tour_guide" style="margin-top: 45px; font-size:17px; margin-left:0px"><a href="Guide_search_page.php">Tour Guides</a></li>
+                <li class="tour_package" style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="package_search_page.php">Tour Packages</a></li>
                 <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-                <li style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                <li class="smart_search" style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
                 <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px; margin-right:0px"><a href="calendar.php">Travel Calendar</a></li>
             </ul>
             <div>
@@ -21,7 +21,7 @@
                         display:block;
                         width: 100%;
                        ">
-                    <a href="/ceylontrek-3tier/controller/new_top_bar_controller.php" style="color: #f4f4f4;padding: 1px;text-decoration: none;text-transform: uppercase;" href="#contact" onMouseOver="this.style.color='skyblue'" onMouseOut="this.style.color='#f4f4f4'">View Profile</a>
+                    <a href="/ceylontrek-3tier/controller/new_top_bar_controller.php" style="color: #f4f4f4;padding: 1px;text-decoration: none;text-transform: uppercase;"  onMouseOver="this.style.color='skyblue'" onMouseOut="this.style.color='#f4f4f4'">View Profile</a>
                 </li>
             </div>
 
@@ -47,10 +47,10 @@
                         </li>
                         
                     </li>
-                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
-                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
+                    <li class="tour_guide" style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
+                    <li class="tour_package" style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
                     <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                    <li class="smart_search" style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
                     <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
                     <li style="height: 60px" ><button onclick="window.location='/ceylontrek-3tier/controller/auth/logout_controller.php'" class="loginbutton sign_out" style="margin-top:10px; margin-left:20px;"><span>Sign Out</span></button></li>
                  </ul>

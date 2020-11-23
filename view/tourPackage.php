@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="../resources/css/tourPackage.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../resources/js/guideProfile.js"></script> 
 </head>
@@ -17,7 +19,13 @@
     <div class="container">
 
 
-    <?php include('../view/new_top_bar.php'); ?>
+    <?php 
+    if (!isset($_SESSION['id'])){
+        include('../view/top_bar.php');
+    }else{
+        include('../view/new_top_bar.php');
+    }
+    ?> 
 
 
         <div class="sidenav">

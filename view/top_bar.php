@@ -7,10 +7,10 @@
                 <li style=" padding: 0px; width:200px; height: 75px; margin-bottom: 0px; margin-right: 40px;margin-left: 3px; margin-top:0">
                     <a href="homepage.php"><img src="../resources/img/logo2.png" alt=""></a>
                 </li>
-                <li style="margin-top: 45px; font-size:17px; margin-left:20px;margin-top:30px;"><a href="Guide_search_page.php">Tour Guides</a></li>
-                <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="package_search_page.php">Tour Packages</a></li>
+                <li class="tour_guide" style="margin-top: 45px; font-size:17px; margin-left:20px;margin-top:30px;"><a href="Guide_search_page.php">Tour Guides</a></li>
+                <li class="tour_package" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="package_search_page.php">Tour Packages</a></li>
                 <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-                <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                <li class="smart_search" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
                 <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="calendar.php">Travel Calendar</a></li>
             </ul>
             <button class="loginbutton login" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button>
@@ -32,10 +32,10 @@
                         </li>
                         
                     </li>
-                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
-                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
+                    <li class="tour_guide" style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
+                    <li class="tour_package" style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
                     <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-                    <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                    <li class="smart_search" style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
                     <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
                     <div  style=" display:flex ">
                       <li><button class="loginbutton login" style="height:50px;" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button> </li>

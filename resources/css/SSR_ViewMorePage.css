@@ -49,3 +49,11 @@ body {
     margin-bottom: 2%;
     font-family: lato;
 }
+
+
+/* header underline */
+
+.smart_search {
+    text-decoration: underline;
+    color: white;
+}

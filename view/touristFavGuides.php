@@ -1,9 +1,11 @@
+<?php session_start();?>
 <html  lang="en">
     <head>
         <title>Favourite Guides</title>
         <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/Guidedashboardpage.css'>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
+    <link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="../resources/css/tourGuideSearchResults.css">
     <link rel="stylesheet" href="../resources/css/guideMyPackages.css">
@@ -14,7 +16,12 @@
     <body class="body">
     <div class="dashnav"></div>
             <div class="section1"> 
-            <?php include('../view/new_top_bar.php'); ?>
+            <?php 
+    if (!isset($_SESSION['id'])){
+        include('../view/top_bar.php');
+    }else{
+        include('../view/new_top_bar.php');
+    }?>
                 <div class="side_bar">
                     <img src="img/home/logo2.png" class="dashlogo">
                     <img src="img/reviewimg.jpg" class="profile" >

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +8,20 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/signup.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
+	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body style="background:none;">
-	<?php include('../view/new_top_bar.php'); ?>
+
+	<?php 
+    if (!isset($_SESSION['id'])){
+        include('../view/top_bar.php');
+    }else{
+        include('../view/new_top_bar.php');
+    }
+    ?> 
 	<div class="signup_box">
 		<form action="/ceylontrek-3tier/controller/signup_controller.php" method="post">
 			<h1>Create Account</h1>
@@ -51,11 +60,11 @@
 			</div><!-- text_box -->	
 		
 			<div>
-				<input class="input_radio" type="radio" name="gender" required="" value="male">
+				<input class="input_radio" type="radio" name="gender" id="gender" value="male">
 				<label>Male</label>
 			</div><!-- label -->
 			<div>
-				<input class="input_radio" type="radio" name="gender" required="" value="female">
+				<input class="input_radio" type="radio" name="gender" id="gender" value="female">
 				<label>Female</label>
 			</div><!-- label -->	
 
@@ -87,8 +96,8 @@
 				</div>
 			</div><!-- text_box -->	
 			
-			<button class="cancel" type="cancel" name="cancel">Cancel</button>
-			<button class="submit" type="submit" name="submit">Create Account</button>
+			<button class="cancel" type="cancel" name="cancel" onclick ="RemoveRequired();">Cancel</button>
+			<button class="submit" type="submit" name="submit" onclick ="AddRequired();">Create Account</button>
 
 			<p>Already have an account? <a href="http://localhost/ceylontrek-3tier/view/login.php">Log In</a></p>
 			
@@ -99,5 +108,6 @@
 <?php include('../view/footer.php'); ?>
 </body>
 <script type="text/javascript" src="../resources/js/jscript.js"></script>
+<script type="text/javascript" src="../resources/js/signup.js"></script>
 </html>
 

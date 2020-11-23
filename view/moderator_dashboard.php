@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +10,18 @@
 	<link rel="stylesheet" type="text/css" href="../resources/css/guidedashboardpage.css">
 	<link rel="stylesheet" href="../resources/css/pendingProfiles.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
+	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body style="background:none;">
-	<?php include('../view/new_top_bar.php'); ?>
+<?php 
+    if (!isset($_SESSION['id'])){
+        include('../view/top_bar.php');
+    }else{
+        include('../view/new_top_bar.php');
+    }
+    ?> 
 
 	<div class="side_bar">
         <img src="../resources/img/logo2.png" class="dashlogo">

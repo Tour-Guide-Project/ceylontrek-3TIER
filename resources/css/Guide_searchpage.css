@@ -107,3 +107,9 @@
         background-color: #0e042b;
         cursor: pointer;
     }
+    /* header underline */
+    
+    .tour_guide {
+        text-decoration: underline;
+        color: white;
+    }
