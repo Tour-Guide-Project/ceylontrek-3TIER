@@ -108,7 +108,7 @@
 			
 
             if($result_set2){
-				header('Location:/ceylontrek-3tier/controller/view_guide_profile_controller.php?guide-modified=true');
+				header('Location:/ceylontrek-3tier/view/view_guide_profile.php?guide-modified=true&path='.$path.'');
             }
 
             else{
