@@ -9,5 +9,10 @@ session_start();?>
 		header('Location: ../controller/createGuideProfile_controller.php');
 		$_SESSION['level']='tourguide';
 	}
+	if (isset($_POST['package'])){
+		header('Location: ../controller/createTourPackage_controller.php');
+		$_SESSION['level']='tourguide';
+	}
+
 ?>
 <?php mysqli_close($connection);?>

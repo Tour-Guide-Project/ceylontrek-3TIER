@@ -48,9 +48,9 @@
                         </li>
 
                         <li>
-                            <a href="CreateTourPackagePage.php">
+                            <a>
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">Create tour package</span>
+                                <input type="submit" name="package" value="Create Tour Package" >
                             </a>
                         </li>
 

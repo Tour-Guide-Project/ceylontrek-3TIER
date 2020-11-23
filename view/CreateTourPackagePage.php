@@ -112,36 +112,64 @@
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="maxNoOfMembers" class="lbl">Maximum No : Of Members </label>
+					<label for="maxNoOfMembers" class="lbl">Maximum No. Of Members </label>
 				</div>
 				<div class="col-75">
 					<input type="text" name="maxNoOfMembers">
 				</div>
 			</div>
-			<div class="row">
+
+            <div class="row">
 				<div class="col-25">
-					<label for="imageUpload" class="lbl">Image Upload :</label>
+					<label for="maxNoOfMembers" class="lbl">Price ($) :</label>
 				</div>
 				<div class="col-75">
-					<input type="submit" name="imageUpload" value="Upload Image">
+					<input type="text" name="price">
 				</div>
 			</div>
+			
 			<div class="row">
 				<div class="col-25">
 					<label for="enterDescription" class="lbl">Description:</label>
 				</div>
 				<div class="col-75">
-					<textarea name="enterDescription" style="height: 100px"></textarea>
+					<textarea name="enterDescription" style="height: 500px"></textarea>
 				</div>
 			</div>
-			<div class="row">
+
+            <div class="row">
 				<div class="col-25">
-					<label for="enterDescription" class="lbl">Schedule :</label>
+					<label for="imageUpload" class="lbl">Select Main Image :</label>
 				</div>
 				<div class="col-75">
-					<textarea name="enterDescription" style="height: 250px"></textarea>
+                <input type="file"   name="file[]" >
 				</div>
 			</div>
+            <div class="row">
+				<div class="col-25">
+					<label for="imageUpload" class="lbl">Select Image 2 :</label>
+				</div>
+				<div class="col-75">
+                <input type="file"   name="file[]" >
+				</div>
+			</div>
+            <div class="row">
+				<div class="col-25">
+					<label for="imageUpload" class="lbl">Select Image 3 :</label>
+				</div>
+				<div class="col-75">
+                <input type="file"   name="file[]" >
+				</div>
+			</div>
+            <div class="row">
+				<div class="col-25">
+					<label for="imageUpload" class="lbl">Select Image 4 :</label>
+				</div>
+				<div class="col-75">
+                <input type="file"   name="file[]" >
+				</div>
+			</div>
+			
 			<div class="agreeCls">
 				<div class="agreed1">
 					<input type="checkbox" name="agree">
