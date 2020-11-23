@@ -154,6 +154,13 @@ a {
     text-align: start;
 }
 
+.side_bar input[type=submit] {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: white;
+}
+
 .schedule {
     background-color: rgba(0, 0, 0, 0.3);
     float: left;

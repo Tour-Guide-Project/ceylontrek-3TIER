@@ -51,14 +51,14 @@
                         <li>
                             <a >
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <input type="submit" name="profile" value="Create My Profile" >
+                                <input type="submit" name="profile" value="  Create My Profile" >
                             </a>
                         </li>
 
                         <li>
                             <a>
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <input type="submit" name="package" value="Create Tour Package" >
+                                <input type="submit" name="package" value="  Create Tour Package" >
                             </a>
                         </li>
 

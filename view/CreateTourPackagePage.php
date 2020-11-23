@@ -88,18 +88,47 @@
                     </ul>
                   </div><!--sidebar-manu-->        
                 </div><!--side_bar-->
-                <form>
+                </form>
              <div class="content">
                
                 <div class="con">
-		<form>
+		<form  action="../controller/createTourPackage_controller.php"  method="post" enctype="multipart/form-data" >
         <div>
+        <?php 
+
+            
+            $title='';
+            $duration='';
+            $destinations='';
+            $maxMembers='';
+            $price='';
+            $description='';
+
+            if(isset($_GET['param'])){
+                $errors=$_GET['param'];
+                foreach ($errors as $error) {
+                    echo '<p class="error">'.$error.'</p>';
+                }
+            }
+            if(isset($_GET['param1'])){
+                $fields=$_GET['param1'];
+                $title=$fields[0];
+                $duration=$fields[1];
+                $destinations=$fields[2];
+                $maxMembers=$fields[3];
+                $price=$fields[4];
+                $description=$fields[5];
+                            }
+        
+        
+        ?>
+        <!-- end of php -->
 			<div class="row">
 				<div class="col-25">
 					<label for="title" class="lbl">Title :</label>
 				</div>
 				<div class="col-75">
-					<input type="text" name="title">
+					<input type="text" name="title"   <?php echo 'value="'.$title.'"'; ?>>
 				</div>
 			</div>
 			<div class="row">
@@ -107,7 +136,7 @@
 					<label for="duration" class="lbl">Duration :</label>
 				</div>
 				<div class="col-75">
-					<input type="text" name="duration">
+					<input type="text" name="duration"   <?php echo 'value="'.$duration.'"'; ?>>
 				</div>
 			</div>
 			<div class="row">
@@ -115,33 +144,33 @@
 					<label for="destinations" class="lbl">Destinations :</label>
 				</div>
 				<div class="col-75">
-					<input type="text" name="destinations">
+					<input type="text" name="destinations"   <?php echo 'value="'.$destinations.'"'; ?>>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="maxNoOfMembers" class="lbl">Maximum No. Of Members </label>
+					<label for="maxMembers" class="lbl">Maximum No. Of Members </label>
 				</div>
 				<div class="col-75">
-					<input type="text" name="maxNoOfMembers">
+					<input type="text" name="maxMembers"   <?php echo 'value="'.$maxMembers.'"'; ?>>
 				</div>
 			</div>
 
             <div class="row">
 				<div class="col-25">
-					<label for="maxNoOfMembers" class="lbl">Price ($) :</label>
+					<label for="price" class="lbl">Price ($) :</label>
 				</div>
 				<div class="col-75">
-					<input type="text" name="price">
+					<input type="text" name="price"   <?php echo 'value="'.$price.'"'; ?>>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-25">
-					<label for="enterDescription" class="lbl">Description:</label>
+					<label for="description" class="lbl">Description:</label>
 				</div>
 				<div class="col-75">
-					<textarea name="enterDescription" style="height: 500px"></textarea>
+					<textarea name="description" style="height: 500px"> <?php echo "$description"; ?></textarea>
 				</div>
 			</div>
 
@@ -150,7 +179,7 @@
 					<label for="imageUpload" class="lbl">Select Main Image :</label>
 				</div>
 				<div class="col-75">
-                <input type="file"   name="file[]" >
+                <input type="file"   name="file[0]" >
 				</div>
 			</div>
             <div class="row">
@@ -158,7 +187,7 @@
 					<label for="imageUpload" class="lbl">Select Image 2 :</label>
 				</div>
 				<div class="col-75">
-                <input type="file"   name="file[]" >
+                <input type="file"   name="file[1]" >
 				</div>
 			</div>
             <div class="row">
@@ -166,7 +195,7 @@
 					<label for="imageUpload" class="lbl">Select Image 3 :</label>
 				</div>
 				<div class="col-75">
-                <input type="file"   name="file[]" >
+                <input type="file"   name="file[2]" >
 				</div>
 			</div>
             <div class="row">
@@ -174,7 +203,7 @@
 					<label for="imageUpload" class="lbl">Select Image 4 :</label>
 				</div>
 				<div class="col-75">
-                <input type="file"   name="file[]" >
+                <input type="file"   name="file[3]" >
 				</div>
 			</div>
 			

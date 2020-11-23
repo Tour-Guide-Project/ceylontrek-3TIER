@@ -168,7 +168,7 @@
                 <div class="control">
 
                     <!-- Start Button buying -->
-                    <button class="btn"><span> View More</span>
+                    <button class="btn"><span> <a href="tourGuideProfile.php">View More</a></span>
                          
        </button>
                     <!-- End Button buying -->
