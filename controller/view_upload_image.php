@@ -76,18 +76,23 @@ if(isset($_POST['submit'])){
     
 }
 if(isset($_POST['cancel'])){
-    if($level=='admin'){
-        header('Location:/ceylontrek-3tier/view/view_admin_profile.php?removeprofileimage=true');
+    $result_set3=delete_image($connection,$id,$level);
+    $path='../resources/img/default.jpg';
+    if($result_set3){
+        if($level=='admin'){
+            header('Location:/ceylontrek-3tier/view/view_admin_profile.php?removeprofileimage=true&path='.$path.'');
+        }
+        if($level=='moderator'){
+            header('Location:/ceylontrek-3tier/view/view_moderator_profile.php?removeprofileimage=true&path='.$path.'');
+        }
+        if($level=='tourguide'){
+            header('Location:/ceylontrek-3tier/view/view_guide_profile.php?removeprofileimage=true&path='.$path.'');
+        }
+        if($level=='tourist'){
+            header('Location:/ceylontrek-3tier/view/view_tourist_profile.php?removeprofileimage=true&path='.$path.'');
+        }
     }
-    if($level=='moderator'){
-        header('Location:/ceylontrek-3tier/view/view_moderator_profile.php?removeprofileimage=true');
-    }
-    if($level=='tourguide'){
-        header('Location:/ceylontrek-3tier/view/view_guide_profile.php?removeprofileimage=true');
-    }
-    if($level=='tourist'){
-        header('Location:/ceylontrek-3tier/view/view_tourist_profile.php?removeprofileimage=true');
-    }
+    
    
 }
 

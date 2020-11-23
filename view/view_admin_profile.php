@@ -116,7 +116,7 @@ $contact=$_SESSION['contact'];
 			echo '<img src="'.$path.'" alt="" style="width: 200px;height:250px;margin-left:60px;border-radius: 100%;">';
 		}
 		else{
-			echo '<img src="../resources/img/default.jpg" alt="" style="width: 200px;height:200px;margin-left:60px;border-radius:100%;">';
+			echo '<img src="../resources/img/default.jpg" alt="" style="width: 200px;height:250px;margin-left:60px;border-radius:100%;">';
 		}
 		?>
 		</div>
@@ -134,7 +134,10 @@ $contact=$_SESSION['contact'];
 		<div class="image_btn">
 			<div>
 				<?php
-					if(isset($_GET['path'])){
+					if($_GET['path']=='../resources/img/default.jpg'){
+						echo '<p><input class="submit" type="submit" id="uploadimage"  name="submit"  value="Upload Image" style="margin-left:70px;"  onclick ="AddRequired();"></p>';
+					}
+					elseif(isset($_GET['path'])){
 						echo '<p><input class="submit" type="submit" id="uploadimage"  name="submit" value="Upload Image"  onclick ="AddRequired();"></p>';
 						echo '<p><input class="reset" type="submit" id="del_image"   name="cancel"  value="Remove Image" onclick ="RemoveRequired();"></p>';
 					}

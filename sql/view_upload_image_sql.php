@@ -13,4 +13,11 @@ function get_image($connection,$id,$level){
     $result=mysqli_query($connection,$query);
     return $result;
 }
+function delete_image($connection,$id,$level){
+    $Query="UPDATE $level SET image_path='../resources/img/default.jpg' WHERE id={$id} AND level='{$level}'
+         LIMIT 1";
+
+        $result=mysqli_query($connection,$Query); 
+        return $result;
+}
 ?>
