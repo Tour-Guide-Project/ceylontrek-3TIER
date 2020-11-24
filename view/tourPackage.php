@@ -210,12 +210,13 @@
 
             <div class="guide-bio">
                 <p><b><h4></h4></b></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ipsum quis ab dignissimos fuga quidem cumque maxime veritatis illum, iure, necessitatibus asperiores eius? Laborum veniam quod delectus fuga sit soluta.</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio quam quis aut debitis, corporis ex at dolore tempore, deleniti repellendus sed sequi. Sequi labore accusantium vel iste pariatur enim officiis?</p>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto tempora ad corrupti, et aperiam consectetur ullam consequuntur corporis omnis eius cumque veniam sapiente voluptatum ab est laborum tempore reiciendis nesciunt.</p>
-                <p>So choose me as your Tour Guide to travel in the Paradise Island.</p>
-
+                <p>Lets explore the golden beaches of Sri Lanka, have an authentic sea food platter at a 4 star restaurent by the sea and have some classy shopping in the classic outlets at the Galle Fort</p>
+                <p><b>Day 1:</b></br> Breakfast at hotel. Exploring the Galle fort.Shopping. Lunch at a Four star hotel. Evening exploring Galle. Dinner at Galle Fort </p>
+                <p><b>Day 2:</b></br>Breakfast at hotel. Boat ride exploring Coral reefs. Lunch at a four star hotel. Evening on your own. Dinner at hotel.</p>
+                <p><b>Day 3:</b></br>Breakfast at hotel. Full day at Unawatuna Beach. Lunch and Dinner at Hotel</p>
+                <p><b>Day 4:</b></br>Breakfast at hotel. Tuk Tuk ride around Matara. Lunch at Matara. Evening at Tangalle Beach.</p>
+                <p>Tour can be customized according to your will. Please contact me for more details.</p>
+                <p><b>About Me: </b>I'm an experienced Tour Guide who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me as your travel guide and friend from Sri Lanka.</p>
             </div>
 
           

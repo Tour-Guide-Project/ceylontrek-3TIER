@@ -36,7 +36,7 @@
             <div class="footer-right">
                 <p class="footer-company-about">
                     <span>About Ceylon Trek</span>
-                    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula           sit amet.
+                    Ceylon Trek is your companion to find you a great tour in Sri Lanka.
                     <p ><a style="color:white;" href="about_contact_us.php">View More >></a></p>
                 </p>
             

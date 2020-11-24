@@ -75,21 +75,21 @@
            
 
 
-             <button class="accordion"> Will my tour group tour or private tour?</button>
+             <button class="accordion"> Can i organise a custom tour?</button>
              <div class="answer">
                       <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
              </div><!--answer-->
 
 
 
-             <button class="accordion"> Will my tour group tour or private tour?</button>
+             <button class="accordion"> Can i Complain about tour guides?</button>
              <div class="answer">
                       <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
              </div><!--answer-->
 
 
 
-             <button class="accordion"> Will my tour group tour or private tour?</button>
+             <button class="accordion"> Will i have to pay an advance fee?</button>
              <div class="answer">
                       <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
              </div><!--answer-->
@@ -100,28 +100,28 @@
         <div class="section" id="section2">
          
          <h3>User Accounts FAQ</h3>
-          <button class="accordion"> Will my tour group tour or private tour?</button>
+          <button class="accordion"> What to do if i forget my password?</button>
+          <div class="answer">
+                   <p>You can change your password with the reset link provided to you in your email.</p>
+          </div><!--answer-->
+
+
+
+          <button class="accordion"> Can i change my email?</button>
           <div class="answer">
                    <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
           </div><!--answer-->
 
 
 
-          <button class="accordion"> Will my tour group tour or private tour?</button>
+          <button class="accordion"> How to reset my password?</button>
           <div class="answer">
                    <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
           </div><!--answer-->
 
 
 
-          <button class="accordion"> Will my tour group tour or private tour?</button>
-          <div class="answer">
-                   <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
-          </div><!--answer-->
-
-
-
-          <button class="accordion"> Will my tour group tour or private tour?</button>
+          <button class="accordion"> What if my account is disabled?</button>
           <div class="answer">
                    <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
           </div><!--answer-->     
@@ -130,28 +130,28 @@
      <div class="section" id="section3">
       <div class="section3">
       <h3>Tour payments FAQ</h3>
-       <button class="accordion"> Will my tour group tour or private tour?</button>
+       <button class="accordion"> What currency shall i be using in payment?</button>
        <div class="answer">
                 <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
        </div><!--answer-->
 
 
 
-       <button class="accordion"> Will my tour group tour or private tour?</button>
+       <button class="accordion"> What if the tour guide charges more?</button>
        <div class="answer">
                 <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
        </div><!--answer-->
 
 
 
-       <button class="accordion"> Will my tour group tour or private tour?</button>
+       <button class="accordion"> Can i use my Visa card to make payments?</button>
        <div class="answer">
                 <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
        </div><!--answer-->
 
 
 
-       <button class="accordion"> Will my tour group tour or private tour?</button>
+       <button class="accordion"> Should i tip the tour guide?</button>
        <div class="answer">
                 <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
        </div><!--answer-->
@@ -169,21 +169,21 @@
 
 
 
-    <button class="accordion"> Will my tour group tour or private tour?</button>
+    <button class="accordion"> how can i choose dates to travel Sri Lanka?</button>
     <div class="answer">
              <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
     </div><!--answer-->
 
 
 
-    <button class="accordion"> Will my tour group tour or private tour?</button>
+    <button class="accordion"> What if i dont know where to travel?</button>
     <div class="answer">
              <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
     </div><!--answer-->
 
 
 
-    <button class="accordion"> Will my tour group tour or private tour?</button>
+    <button class="accordion"> How to use the request post ?</button>
     <div class="answer">
              <p>All our Sri Lanka Tours are private tours which means we will have this tour arranged only for you and your family/friends.</p>
     </div><!--answer-->

@@ -8,7 +8,7 @@
     <title>Tour Guide Profile</title>
     <link rel="stylesheet" href="../resources/css/homepage.css">
     <link rel="stylesheet" href="../resources/css/tourGuideProfile.css">
-    <link rel="stylesheet" href="../resources/css/top_bar.css">
+    <!-- <link rel="stylesheet" href="../resources/css/top_bar.css"> -->
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -163,7 +163,8 @@
 
             <div class="guide-bio">
                 <p><b><h4>Hello! Bonjour! Guten tag! Ayubowan!! I'm Chathura Rathnayake</h4></b></p>
-                <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                <p >I'm an experienced Tour Guide who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me as your travel guide and friend from Sri Lanka.</p>
+                <p>Services offered by me:</br>1.Wild Life Tours </br>2.Round Trip tours</br>3.Custom Tour Packages</br>4.Coral reef watching<br>5.whale watching boat rides.</p>
                 <p>So choose me as your Tour Guide to travel in the Paradise Island.</p>
                 <h2 style="margin-top: 20px;  font-weight:bold;">Tour Packages offered by Chathura :</h2>
             </div>
