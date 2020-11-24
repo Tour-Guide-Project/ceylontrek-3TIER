@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Package Search Results</title>
-    <link rel="stylesheet" href="../resources/css/homepage.css">
+    <!-- <link rel="stylesheet" href="../resources/css/homepage.css"> -->
     <link rel="stylesheet" href="../resources/css/tourGuideSearchResults.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/new_top_bar.css">
