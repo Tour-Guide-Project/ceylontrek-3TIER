@@ -9,7 +9,13 @@
         header('Location:/ceylontrek-3tier/view/login.php');
     }
 
-    $user_level = $_SESSION['user_level'];
+    if ($_SESSION['level']=='admin') {
+        $user_level = $_SESSION['user_level'];
+    }
+    else{
+        $user_level = $_GET['user_level'];
+    }
+    
     $errors = array();
     $users = array();
 
