@@ -26,26 +26,35 @@
         <img src="../resources/img/reviewimg.jpg" class="profile" >
         <button class="edit"> Edit Profile</button><br>
             <div class="sidebar-menu">
-              <ul>
+			<ul>
+			  <li>
+                        <a href="moderator_dashboard.php">
+                            <span class="menu-icon"><i class="fa fa-folder-open fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">My Dashboard</span>
+                        </a>
+                    </li>
                   <li>
-                      <a href="#">
+                      <a href="inbox.php">
                           <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
                           <span class="menu-title">Inbox</span>
                       </a>
                   </li>
 
                    <li>
-                       <a href="#">
-                           <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                           <span class="menu-title">Create tour package</span>
+                       <a href="complains_page.php">
+                           <span class="menu-icon"><i class="fa fa-question-circle fa-1x" aria-hidden="true"></i></span>
+                           <span class="menu-title">Complains</span>
                        </a>
                    </li>
 
 
+                   
+
+
                     <li>
                         <a href="#">
-                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">View Tour Package</span>
+                            <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">View all Guides</span>
                         </a>
                     </li>
 
@@ -53,18 +62,10 @@
                     <li>
                         <a href="#">
                             <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">Upcoming Tours</span>
+                            <span class="menu-title">View all Tourists</span>
                         </a>
                     </li>
-
-
-                    <li>
-                        <a href="#">
-                            <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">Previous Tours</span>
-                        </a>
-                    </li>
-                    </ul>
+              </ul>
             </div><!--sidebar-manu-->        
     </div><!--side_bar-->
 

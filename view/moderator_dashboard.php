@@ -31,27 +31,28 @@
         </form>
             <div class="sidebar-menu">
               <ul>
+			  <li>
+                        <a href="moderator_dashboard.php">
+                            <span class="menu-icon"><i class="fa fa-folder-open fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">My Dashboard</span>
+                        </a>
+                    </li>
                   <li>
-                      <a href="#">
+                      <a href="inbox.php">
                           <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
                           <span class="menu-title">Inbox</span>
                       </a>
                   </li>
 
                    <li>
-                       <a href="#">
+                       <a href="complains_page.php">
                            <span class="menu-icon"><i class="fa fa-question-circle fa-1x" aria-hidden="true"></i></span>
                            <span class="menu-title">Complains</span>
                        </a>
                    </li>
 
 
-                    <li>
-                        <a href="#">
-                            <span class="menu-icon"><i class="fa fa-folder-open fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">Pending Profiles</span>
-                        </a>
-                    </li>
+                   
 
 
                     <li>
@@ -91,7 +92,7 @@
 							<h2>Senal Arosh</h2>
 							<p>Pending Profile</p>
 							<p>senal@gmail.com</p>
-							<p><button  class="pbutton">View Profile</button></p>
+							<p><button  class="pbutton"><a href="modApproveProfile.php">View Profile</button></p>
 						</div>
 				</div>
 			</div>

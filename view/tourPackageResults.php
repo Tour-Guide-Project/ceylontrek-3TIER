@@ -89,7 +89,7 @@
             <div class="package-details">
 
                 <!-- 	Package Name -->
-                <h1>The Best of Colombo</h1>
+                <h1>The Down South Adventure</h1>
                 <h4 style ="float:left">Chathura Rathnayake</h4>
                 <h4 style="padding-left:450px">No. of Days : 4</h4>
 
@@ -104,8 +104,7 @@
 
                 <!-- Package bio -->
                 <p class="information">
-                    I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
-                    as your travel Package and friend from Sri Lanka.
+                   Lets explore the golden beaches of Sri Lanka, have an authentic sea food platter at a 4 star restaurent by the sea and have some classy shopping in the classic outlets at the Galle Fort.
                 </p>
 
 
@@ -114,7 +113,7 @@
                 <div class="packagecontrol">
 
                     <!-- Start Button buying -->
-                    <button class="btn"><span> <a href="tourpackage.php">View More</a></span>
+                    <button class="btn"><span> <a href="tourpackage.php" style="color:white; text-decoration:none;">View More</a></span>
                            
          </button>
                     <!-- End Button buying -->
@@ -131,7 +130,7 @@
 
             <div class="package-image">
 
-                <img src="../resources/img/Packageresult/1.jpg" alt="Omar Dsoky">
+                <img src="../resources/img/Packageresult/2.jpg" alt="Omar Dsoky">
 
             </div>
             <!--  End Package image  -->
@@ -146,9 +145,9 @@
             <div class="package-details">
 
                 <!-- 	Package Name -->
-                <h1>The Best of Down-South</h1>
-                <h4 style ="float:left">Chathura Rathnayake</h4>
-                <h4 style="padding-left:450px">No. of Days : 4</h4>
+                <h1>Colombo in a Day</h1>
+                <h4 style ="float:left">Saman Dissanayake</h4>
+                <h4 style="padding-left:450px">No. of Days : 1</h4>
 
                 <span class="hint-star star" >
             <i class="fa fa-star" aria-hidden="true"></i>
@@ -188,7 +187,7 @@
 
             <div class="package-image">
 
-                <img src="../resources/img/Packageresult/2.jpg" alt="Omar Dsoky">
+                <img src="../resources/img/Packageresult/1.jpg" alt="Omar Dsoky">
 
             </div>
             <!--  End Package image  -->
@@ -203,8 +202,8 @@
 <div class="package-details">
 
     <!-- 	Package Name -->
-    <h1>The Best of Colombo</h1>
-    <h4 style ="float:left">Chathura Rathnayake</h4>
+    <h1>The Best of Anuradhapura</h1>
+    <h4 style ="float:left">Deeghayu Fernando</h4>
     <h4 style="padding-left:450px">No. of Days : 4</h4>
 
     <span class="hint-star star" >
@@ -218,8 +217,7 @@
 
     <!-- Package bio -->
     <p class="information">
-        I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
-        as your travel Package and friend from Sri Lanka.
+        Let's explore the first and greatest capital city of Sri Lanka, Anuradhapura. A tour filled with ruins, shrines, temples, lakes and excitement.
     </p>
 
 
@@ -245,7 +243,7 @@
 
 <div class="package-image">
 
-    <img src="../resources/img/Packageresult/1.jpg" alt="Omar Dsoky">
+    <img src="../resources/img/Packageresult/3.jpg" alt="Omar Dsoky">
 
 </div>
 <!--  End Package image  -->
@@ -260,9 +258,9 @@
 <div class="package-details">
 
     <!-- 	Package Name -->
-    <h1>The Best of Down-South</h1>
-    <h4 style ="float:left">Chathura Rathnayake</h4>
-    <h4 style="padding-left:450px">No. of Days : 4</h4>
+    <h1>Sigiriya Hike</h1>
+    <h4 style ="float:left">Iranga Mudalige</h4>
+    <h4 style="padding-left:450px">No. of Days : 1</h4>
 
     <span class="hint-star star" >
 <i class="fa fa-star" aria-hidden="true"></i>
@@ -275,8 +273,7 @@
 
     <!-- Package bio -->
     <p class="information">
-        I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
-        as your travel Package and friend from Sri Lanka.
+       Explore Sigiriya in one day with a hike to Sigiriya, a visit to the Sigiriya museum and lunch in an exclusive 4 star restaurent.
     </p>
 
 
@@ -302,7 +299,7 @@
 
 <div class="package-image">
 
-    <img src="../resources/img/Packageresult/2.jpg" alt="Omar Dsoky">
+    <img src="../resources/img/Packageresult/4.jpg" alt="Omar Dsoky">
 
 </div>
 <!--  End Package image  -->
@@ -311,119 +308,7 @@
 </div>
 <!-- tourPackage2 -->
 
-<div class="tourPackage">
 
-<!-- Start	Package details -->
-<div class="package-details">
-
-    <!-- 	Package Name -->
-    <h1>The Best of Colombo</h1>
-    <h4 style ="float:left">Chathura Rathnayake</h4>
-    <h4 style="padding-left:450px">No. of Days : 4</h4>
-
-    <span class="hint-star star" >
-<i class="fa fa-star" aria-hidden="true"></i>
-<i class="fa fa-star" aria-hidden="true"></i>
-<i class="fa fa-star" aria-hidden="true"></i>
-<i class="fa fa-star-half-o" aria-hidden="true"></i>
-<i class="fa fa-star-o" aria-hidden="true"></i>
-</span>
-
-
-    <!-- Package bio -->
-    <p class="information">
-        I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
-        as your travel Package and friend from Sri Lanka.
-    </p>
-
-
-
-    <!-- 		Control -->
-    <div class="packagecontrol">
-
-        <!-- Start Button buying -->
-        <button class="btn"><span> View More</span>
-               
-</button>
-        <!-- End Button buying -->
-
-    </div>
-
-</div>
-
-<!-- 	End	Package details   -->
-
-
-
-<!-- 	Start Package image & Information -->
-
-<div class="package-image">
-
-    <img src="../resources/img/Packageresult/1.jpg" alt="Omar Dsoky">
-
-</div>
-<!--  End Package image  -->
-
-
-</div>
-<!-- tourPackage1 -->
-
-<div class="tourPackage">
-
-<!-- Start	Package details -->
-<div class="package-details">
-
-    <!-- 	Package Name -->
-    <h1>The Best of Down-South</h1>
-    <h4 style ="float:left">Chathura Rathnayake</h4>
-    <h4 style="padding-left:450px">No. of Days : 4</h4>
-
-    <span class="hint-star star" >
-<i class="fa fa-star" aria-hidden="true"></i>
-<i class="fa fa-star" aria-hidden="true"></i>
-<i class="fa fa-star" aria-hidden="true"></i>
-<i class="fa fa-star-half-o" aria-hidden="true"></i>
-<i class="fa fa-star-o" aria-hidden="true"></i>
-</span>
-
-
-    <!-- Package bio -->
-    <p class="information">
-        I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
-        as your travel Package and friend from Sri Lanka.
-    </p>
-
-
-
-    <!-- 		Control -->
-    <div class="packagecontrol">
-
-        <!-- Start Button buying -->
-        <button class="btn"><span> View More</span>
-               
-</button>
-        <!-- End Button buying -->
-
-    </div>
-
-</div>
-
-<!-- 	End	Package details   -->
-
-
-
-<!-- 	Start Package image & Information -->
-
-<div class="package-image">
-
-    <img src="../resources/img/Packageresult/2.jpg" alt="Omar Dsoky">
-
-</div>
-<!--  End Package image  -->
-
-
-</div>
-<!-- tourPackage2 -->
 
 
 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
