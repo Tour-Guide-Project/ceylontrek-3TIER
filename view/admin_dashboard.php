@@ -31,7 +31,7 @@
             <div class="sidebar-menu">
               <ul>
                   <li>
-                      <a href="#">
+                      <a href="Inbox.php">
                           <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
                           <span class="menu-title">Inbox</span>
                       </a>

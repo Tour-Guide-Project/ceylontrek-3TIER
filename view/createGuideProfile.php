@@ -139,7 +139,7 @@
 			?>
 			<div class="row">
 				<div class="col-25">
-					<label for="gRegNo" class="lbl">Guide Reg. Number :</label>
+					<label for="gRegNo" class="lbl">Guide Reg. Number:</label>
 				</div>
 				<div class="col-75">
 					<input type="text" name="gRegNo" <?php echo 'value="'.$gRegNo.'"'; ?> >
@@ -183,7 +183,7 @@
             
             <div class="row">
 				<div class="col-25">
-					<label for="languages" class="lbl">Fluent Languages :</label>
+					<label for="languages" class="lbl">Fluent Languages:</label>
 				</div>
 				<div class="col-75" >
 					<input type="text" name="languages" <?php echo 'value="'.$languages.'"'; ?>>
@@ -192,7 +192,7 @@
             
             <div class="row">
 				<div class="col-25">
-					<label for="experience" class="lbl">Years of Experience :</label>
+					<label for="experience" class="lbl">Years of Experience:</label>
 				</div>
 				<div class="col-75" >
 					<input type="text" name="experience" <?php echo 'value="'.$experience.'"'; ?>>
@@ -211,7 +211,7 @@
             <div class="row">
             
             <label for="haveVehicle" class="haveVehicle" > I have my own vehicle for tourism purposes</label>
-            <input type="checkbox"  name="haveVehicle"  id="haveVehicle" style="margin-top:5%; width:15px; height:15px; font-size=17.5px;" onclick="vehicleFunction()">
+            <input type="checkbox"  name="haveVehicle"  id="haveVehicle" style="margin-top:5%; width:15px; height:15px; font-size:17.5px;" onclick="vehicleFunction()">
 			</div>
 
             

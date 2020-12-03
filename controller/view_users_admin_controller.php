@@ -13,7 +13,9 @@
         $user_level = $_SESSION['user_level'];
     }
     else{
-        $user_level = $_GET['user_level'];
+        $_SESSION['user_level']=$_GET['user_level'];
+        $user_level = $_GET['user_level'];  
+
     }
     
     $errors = array();

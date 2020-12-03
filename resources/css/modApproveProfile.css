@@ -336,3 +336,7 @@ body {
     font-family: lato;
     font-weight: 500;
 }
+
+.mobbtn {
+    display: inline;
+}

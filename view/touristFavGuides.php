@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../resources/css/tourGuideSearchResults.css">
     <link rel="stylesheet" href="../resources/css/guideMyPackages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body class="body">
@@ -23,8 +22,8 @@
         include('../view/new_top_bar.php');
     }?>
                 <div class="side_bar">
-                    <img src="img/home/logo2.png" class="dashlogo">
-                    <img src="img/reviewimg.jpg" class="profile" >
+                    <img src="../resources/img/home/logo2.png" class="dashlogo">
+                    <img src="../resources/img/reviewimg.jpg" class="profile" >
                     <button class="edit"> Edit Profile</button><br>
                   <div class="sidebar-menu">
                   <ul>
@@ -161,7 +160,7 @@
 
 <div class="guide-image">
 
-    <img src="img/guideresult/1.jpg" alt="Omar Dsoky">
+    <img src="../resources/img/guideresult/1.jpg" alt="Omar Dsoky">
 
 </div>
 <!--  End guide image  -->
@@ -216,7 +215,7 @@
 
 <div class="guide-image">
 
-    <img src="img/guideresult/2.jpg" alt="Omar Dsoky">
+    <img src="../resources/img/guideresult/2.jpg" alt="Omar Dsoky">
 
 </div>
 <!--  End guide image  -->
@@ -270,7 +269,7 @@
 
 <div class="guide-image">
 
-    <img src="img/guideresult/1.jpg" alt="Omar Dsoky">
+    <img src="../resources/img/guideresult/1.jpg" alt="Omar Dsoky">
 
 </div>
 <!--  End guide image  -->
@@ -291,7 +290,7 @@
                 </div><!--corner_button-->
 </div>
                 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
-        <script src="js/guide dashboard.js"></script>
+                <script src="../resources/js/guide dashboard.js"></script>
 
         </div>
     </body>

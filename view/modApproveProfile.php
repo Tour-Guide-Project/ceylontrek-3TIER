@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="../resources/css/modApproveProfile.css">
-   
-    
     <link rel="stylesheet" type="text/css" href="../resources/css/admin_dashboard.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/Guidedashboardpage.css">
 
@@ -105,10 +103,12 @@
             </div>
            
             </div>
-            <button class="loginbutton" style="height:65px; margin-right:115px"><span>Decline Profile</span></button>
-            <button class="loginbutton"style="height:65px; margin-left:0px"><span>Approve Profile</span></button>
-            <button class="loginbutton"style="height:65px; margin-left:0px; margin-right:285px; margin-top:10px"><span>Message Guide</span></button>
-</div>
+            <div class="mobbtn">
+            <button class="loginbutton" style="width:80%; height:65px; margin-right:35px"><span>Decline Profile</span></button>
+            <button class="loginbutton"style="width:80%; height:65px;  margin-right:35px;"><span>Approve Profile</span></button>
+            <button class="loginbutton"style="width:80%; height:65px;  margin-right:35px;"><span>Message Guide</span></button>
+            </div>
+        </div>
 
          <!-- end of guide info -->
 

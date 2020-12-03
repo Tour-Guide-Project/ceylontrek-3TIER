@@ -217,7 +217,7 @@
 
                 <div class="corner_buttons">
                         <div>
-                            <button class="cobutton" style="width:275px"><i class="fa fa-credit-card" aria-hidden="true" ></i>Make System Payment</button>
+                            <button class="cobutton" style="width:275px"><i class="fa fa-credit-card" aria-hidden="true" ></i>Pay System fee</button>
                         </div>
 
                         <div>
