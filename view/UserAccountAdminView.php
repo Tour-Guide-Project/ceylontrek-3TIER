@@ -27,13 +27,13 @@ $image_path=$_SESSION['image_path'];
 
 <body style="background-color:grey;">
 
-<?php 
-    if (!isset($_SESSION['id'])){
-        include('../view/top_bar.php');
-    }else{
-        include('../view/new_top_bar.php');
-    }
-    ?> 
+	<?php 
+		if (!isset($_SESSION['id'])){
+			include('../view/top_bar.php');
+		}else{
+			include('../view/new_top_bar.php');
+		}
+	?> 
 
 	<div class="con">
 
@@ -109,11 +109,17 @@ $image_path=$_SESSION['image_path'];
 				<!-- <div class="btn">
 					<button class="sectionBtn" type="submit" name="reset_password">Reset Password</button>
 				</div> -->
-				<div class="btn">
-					<!-- <button class="sectionBtn" type="submit" name="delete_account">Delete Account</button> -->
-					<button class="sectionBtn" onclick="deleteUser()"> Delete Account </button>
-					<!-- <p id="test"></p> -->
-				</div>
+				<?php 
+					if ($_SESSION['level'] == 'admin') {
+				?>
+					<div class="btn">
+						<!-- <button class="sectionBtn" type="submit" name="delete_account">Delete Account</button> -->
+						<button class="sectionBtn" onclick="deleteUser()"> Delete Account </button>
+						<!-- <p id="test"></p> -->
+					</div>
+				<?php 
+					} 
+				?>
 			<!-- </form> -->
 		</div>			
 	</div>
