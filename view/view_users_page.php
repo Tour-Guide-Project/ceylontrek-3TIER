@@ -29,54 +29,54 @@ $users = $_SESSION['users'];
     ?> 
 	<div class="view_all_box">
 
-			<!-- <form action="../controller/view_users_controller.php" method="post"> -->
+		<!-- <form action="../controller/view_users_controller.php" method="post"> -->
 
-			<div class="text_box_search_bar">
-				<form action="../controller/view_users_admin_controller.php" method="get">
-					<input type="text" name="word" placeholder="Keyword.."></input>
-					<input type="submit" name="search" value="Search"></input>
-				</form>	
-			</div><!-- text_box_search_bar-->	
+		<div class="text_box_search_bar">
+			<form action="../controller/view_users_admin_controller.php" method="get">
+				<input type="text" name="word" placeholder="Keyword.."></input>
+				<input type="submit" name="search" value="Search"></input>
+			</form>	
+		</div><!-- text_box_search_bar-->	
 
 
-			<div class="moderator_dashboard_box">
-				<div class="prow">
+		<div class="moderator_dashboard_box">
+			<div class="prow">
 
-					<?php 
-						foreach ($users as $user) {
-					?>
-										
-						<div class="pcolumn">
-							<div class="pcard">
-								<?php
-									if ($user['image_path']) {
-										echo '<img src="'.$user['image_path'].'" alt="" style="width:100%; height:250px;">';
-									}
+				<?php 
+					foreach ($users as $user) {
+				?>
+									
+					<div class="pcolumn">
+						<div class="pcard">
+							<?php
+								if ($user['image_path']) {
+									echo '<img src="'.$user['image_path'].'" alt="" style="width:100%; height:250px;">';
+								}
 
-									else {
-										echo '<img src="../resources/img/default.jpg" alt="" style="width:100%; height:250px;">';
-									}
-								?>
-								
-								<div class="pcontainer">
-									<h2><?php echo $user['first_name'] , " " , $user['last_name']; ?></h2>
-									<p><?php echo $user['email']; ?></p>
-									<form action="../controller/UserAccountAdmin_controller.php" method="get">
-										<button class="pbutton" type="submit" name="view_user" value="<?php echo $user['id']; ?>">View Profile</button>
-									</form>
-								</div>
+								else {
+									echo '<img src="../resources/img/default.jpg" alt="" style="width:100%; height:250px;">';
+								}
+							?>
+							
+							<div class="pcontainer">
+								<h2><?php echo $user['first_name'] , " " , $user['last_name']; ?></h2>
+								<p><?php echo $user['email']; ?></p>
+								<form action="../controller/UserAccountAdmin_controller.php" method="get">
+									<button class="pbutton" type="submit" name="view_user" value="<?php echo $user['id']; ?>">View Profile</button>
+								</form>
 							</div>
 						</div>
+					</div>
 
-					<?php  
-						}
-					?>
+				<?php  
+					}
+				?>
 
-				</div> <!-- prow -->						
+			</div> <!-- prow -->						
 
-			</div><!-- moderator_box -->
+		</div><!-- moderator_box -->
 
-			<!-- </form> -->
+		<!-- </form> -->
 
 	</div>
 <?php include('../view/footer.php'); ?>

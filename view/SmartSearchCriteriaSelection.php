@@ -23,7 +23,7 @@
 
 	<div class="con">
 
-		<button class="searchButton"><a style="color:white; text-decoration:none;" href='SmartSearchResultsPage.php'>Search</a></button>
+		<button class="searchButton" id="btn">Search</button>
 			
 		<div class="boxOutdoor clearfix">
 
@@ -34,37 +34,37 @@
 			<div class="box">
 				<div class="checkbox1">
 					<label class="cont">
-						<input type="checkbox" > Bicycle Tour
+						<input type="checkbox" name="checkActivity" value="Bicycle Tour"> Bicycle Tour
 					</label>
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Go-Cart racing
+						<input type="checkbox" name="checkActivity" value="Go-Cart Racing"> Go-Cart Racing
 					</label>
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Kite Surfing
+						<input type="checkbox" name="checkActivity" value="Kite Surfing"> Kite Surfing
 					</label>
 				</div>	
 
 				<div class="checkbox1">
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Hiking
+						<input type="checkbox" name="checkActivity" value="Hiking"> Hiking
 					</label>
 					<label class="cont">
-						<input type="checkbox" > Deep Sea Fishing
+						<input type="checkbox" name="checkActivity" value="Deep Sea Fishing"> Deep Sea Fishing
 					</label>
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Surfing
+						<input type="checkbox" name="checkActivity" value="Surfing"> Surfing
 					</label>
 				</div>	
 
 				<div class="checkbox1">	
 					<label class="cont">
-						<input type="checkbox" > Whale watching
+						<input type="checkbox" name="checkActivity" value="Whale Watching"> Whale Watching
 					</label>	
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Golf
+						<input type="checkbox" name="checkActivity" value="Golf"> Golf
 					</label>
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Rock Climbing
+						<input type="checkbox" name="checkActivity" value="Rock Climbing"> Rock Climbing
 					</label>
 				</div>
 			</div>
@@ -80,42 +80,63 @@
 
 				<div class="checkbox1">
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Museums
+						<input type="checkbox" name="checkActivity" value="Museums"> Museums
 					</label>
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Billiards
+						<input type="checkbox" name="checkActivity" value="Billiardsg"> Billiards
 					</label>
 					<label class="cont">
-						<input type="checkbox" > Mosques
+						<input type="checkbox" name="checkActivity" value="Mosques"> Mosques
 					</label>
 				</div>	
 
 				<div class="checkbox1">
 					<label class="cont">
-						<input type="checkbox" > Spa
+						<input type="checkbox" name="checkActivity" value="Spa"> Spa
 					</label>
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Tea Tasting
+						<input type="checkbox" name="checkActivity" value="Tea Tasting"> Tea Tasting
 					</label>
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Churches
+						<input type="checkbox" name="checkActivity" value="Churches"> Churches
 					</label>
 				</div>	
 
 				<div class="checkbox1">	
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Casino
+						<input type="checkbox" name="checkActivity" value="Casino"> Casino
 					</label>	
 					<label class="cont">
-						<input type="checkbox" checked="checked"> Temples
+						<input type="checkbox" name="checkActivity" value="Temples"> Temples
 					</label>
 					<label class="cont">
-						<input type="checkbox" > Hindu Shrines
+						<input type="checkbox" name="checkActivity" value="Hindu Shrines"> Hindu Shrines
 					</label>
 				</div>
 			</div>
 		</div>
+		<!-- <p id="demo"></p> -->
 	</div>
+
+	<!-- JavaScript function for checked -->
+	<script src="./ceylontrek-3TIER/resources/js/checkboxes.js">
+
+
+		/*function check() {
+			var coffee = document.getElementsByName("checkActivity")[0].value;
+			document.getElementById("demo").innerHTML = coffee;
+			var i;
+			var activities = [];
+			for (i = 0; i < coffee.length; i++) {
+				if (coffee[i].checked) {
+					activities[i] = coffee[i];
+				}
+			}
+			$_SESSION['activities'] = activities;
+			//var x = document.getElementsByName("checkActivity").value;
+			window.location.href = '/ceylontrek-3tier/controller/SSresult_controller.php';
+		}*/
+	</script>
 
 <?php include('../view/footer.php');?>
 </body>
