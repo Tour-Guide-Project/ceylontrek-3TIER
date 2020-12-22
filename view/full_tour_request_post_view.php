@@ -37,11 +37,12 @@ $fullpost=$_SESSION['fullpost'];
 						 ?>
 						 
 						 <ul>
+							<h5><?php echo $fullpost_element['day_no']; ?></h5>
 							<h3><?php echo $fullpost_element['title']; ?></h3>
 							<li><i class='fa fa-calendar' aria-hidden='true'></i>Requested Date :<?php echo $fullpost_element['requested_date']; ?></li>
 							<li><i class='fa fa-clone' aria-hidden='true'></i>NO Of Dates :<?php echo $fullpost_element['no_of_days']; ?></li>
 							<li><i class='fa fa-map-marker' aria-hidden='true'  style="margin-right:25px"></i>Places :<?php echo $fullpost_element['places']; ?></li>
-							<li><i class='fa fa-futbol-o' aria-hidden='true'></i>Activities & Other Details :<?php echo $fullpost_element['activities']; ?></li>
+							<li style="height:auto"><i class='fa fa-futbol-o' aria-hidden='true'></i>Activities & Other Details :<br><textarea rows ="10" cols = "50" style="background:transparent; border:none; outline:none"><?php echo $fullpost_element['activities']; ?></textarea></li>
 							
 						</ul>
 

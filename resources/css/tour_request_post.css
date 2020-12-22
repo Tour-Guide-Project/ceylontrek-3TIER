@@ -89,42 +89,6 @@ input[type="submit"]:hover {
     color: whitesmoke;
 }
 
-/*.text_box p {
-    padding: 6px;
-}
-
-.text_box {
-    float: left;
-    font-size: 16px;
-    color: #fff;
-    outline: none;
-    width: 900px;
-   
-    margin-top: 20px;
-    background-color: #3a4357;
-    padding: 10px 10px 10px 10px;
-    border-radius: 15px;
-    position: center;
-    overflow: hidden;
-}
-
-.text_box button {
-    margin-top: 10px;
-    float: right;
-    font-size: 16px;
-    color: whitesmoke;
-    padding: 10px;
-    background-color: #0b174b;
-    border-radius: 10px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-}
-
-.text_box button:hover {
-    background-color: #414c7e;
-}*/
-
 .create_request_btn button {
     color: #fff;
     background-color: #2f375b;
@@ -217,6 +181,7 @@ input[type="submit"]:hover {
     width: 30%;
     opacity: 0.8;
     float: left;
+    outline: none;
 }
 
 .form-container .cancel {
@@ -228,6 +193,10 @@ input[type="submit"]:hover {
     opacity: 1;
 }
 
+.form-container .ok{
+    background-color: rgb(21, 21, 77);
+    float: right;
+}
 .container .request_tour {
     text-decoration: underline;
 }
@@ -247,7 +216,7 @@ input[type="submit"]:hover {
 
 .allposts ul{
     width: 850px;
-    height: 200px;
+    height: 230px;
     margin-top: 15px;
     background-color: rgb(219, 211, 219);
     color: black;
@@ -263,6 +232,11 @@ input[type="submit"]:hover {
     margin-left: 80px;
     display:inline-flex;
     justify-content: start;
+}
+.allposts ul h5{
+    text-align: right;
+    margin: 3px;
+    padding-right: 10px;
 }
 
 .allposts ul h3{
@@ -293,4 +267,10 @@ input[type="submit"]:hover {
 }
 .allposts ul button a{
     color: white;
+}
+
+.error{
+    height: 300px;
+    
+    color: black;
 }

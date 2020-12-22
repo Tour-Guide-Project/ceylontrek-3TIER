@@ -198,14 +198,14 @@ body {
 
 .myposts ul{
     width: 900px;
-    height: auto;
+    height: 500px;
     margin-top: 15px;
     background-color: rgb(241, 237, 241);
     color: black;
     list-style: none;
     padding-top: 20px;
     display: block;
-    padding-bottom: 100px;
+    padding-bottom: 30px;
 }
 
 .myposts ul  li{
@@ -217,9 +217,21 @@ body {
     justify-content: start;
 }
 
+/*.myposts ul  li  textarea{
+    height: 300px;
+}*/
+
 .myposts ul li .fa{
     margin-right: 20px;
 }
+
+
+.myposts ul h5{
+    text-align: right;
+    margin: 3px;
+    padding-right: 10px;
+}
+
 .myposts ul h3{
     text-align: center;
     margin-bottom: 5px;
@@ -257,7 +269,7 @@ body {
     z-index: 100000;
 }
 
-/* update form css*/
+/* update form css
 .update-form {
     margin: 60px auto 20px auto;
     width: 520px;
@@ -337,6 +349,6 @@ body {
     outline: none;
     border: none;
     cursor: pointer;
-}
+}*/
 
 

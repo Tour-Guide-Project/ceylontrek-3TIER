@@ -16,10 +16,19 @@
          $all_post=get_searched_posts($connection,$search_post);
 
        
-    }else{  // process to display the all posts
+    }elseif($_POST['old_submit']){  // process to display the all posts
+
+        $all_post=get_old_posts($connection);
+
+    }elseif($_POST['new_submit']){  // process to display the all posts
 
         $all_post=get_all_posts($connection);
+
+    }else{
+        $all_post=get_all_posts($connection);
     }
+
+
     
     
 

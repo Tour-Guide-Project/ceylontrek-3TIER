@@ -14,6 +14,7 @@
         //   $id = mysqli_real_escape_string($connection,$_SESSION['id']);
      
            if(isset($_GET['post_id'])){
+
                $post_id=mysqli_real_escape_string($connection,$_GET['post_id']);
               // print_r($post_id);
                $result=get_post_details($connection,$post_id);
@@ -31,7 +32,7 @@
                     $_SESSION['u_no_of_days']=$u_result['no_of_days'];
                     $_SESSION['u_places']=$u_result['places'];
                     $_SESSION['u_activities']=$u_result['activities'];
-                  //  print_r($_SESSION['u_post_id']);
+                 
 
                     header('Location:/ceylontrek-3tier/view/update_post.php');
                     
@@ -43,40 +44,42 @@
                }
           }
 
-         
-         
-         
-
-          //checking post button pressed
+    //checking post button pressed
      if(isset($_POST['update_now'])){
-           
-     //if(isset($_POST['post_id'])){
+           //  print_r($p_id);
+
           $errors=array();
 
-           $tourist_id =mysqli_real_escape_string($connection,$_SESSION['id']);
-           $post_id=mysqli_real_escape_string($connection,$_POST['post_id']);
-
-          // print_r($post_id);
-            if(!isset($_POST['title']) || strlen(trim($_POST['title']))<1){
-               $errors[]='title is requried/Invalid!';
-            }
-            if(!isset($_POST['places']) || strlen(trim($_POST['places']))<1){
-               $errors[]='places is requried/Invalid!';
-            }
-            if(!isset($_POST['no_of_days']) || strlen(trim($_POST['no_of_days']))<1){
-               $errors[]='number is requried/Invalid!';
-            }
-            //check number has only 0-9
-            elseif(preg_match(("/[^0-9]/"), $_POST['no_of_days'])){
-               $errors[]='Invalid number';
-            }
-            if(!isset($_POST['activities']) || strlen(trim($_POST['activities']))<1){
-               $errors[]='activities is requried/Invalid!';
-            }
            //get post created date and time
            $day_no=date('Y/m/d H:i:sa');
-           
+                  
+       
+              if(empty($_POST['title']) ){
+                 $errors[]='* Title is requried/Invalid!';
+              }
+              if(empty($_POST['places']) ){
+                 $errors[]='* Places is requried/Invalid!';
+              }
+              if(empty($_POST['requested_date']) ){
+                 $errors[]='* Requested date is requried';
+              }else{
+                 if($_POST['requested_date']>$day_no){
+                    $errors[]='* invalid';
+                 }
+              }
+              if(empty($_POST['no_of_days']) ){
+                 $errors[]='* Number of days is requried!';
+              }
+              //check number has only 0-9
+              elseif(preg_match(("/[^0-9]/"), $_POST['no_of_days'])){
+                 $errors[]='*please use the  0-9 number only for number of days';
+              }
+              if(empty($_POST['activities']) ){
+                 $errors[]='* activities is requried/Invalid!';
+              }
+              
            //Assign data to varibles
+           $post_id=$_POST['p_id'];
            $title=$_POST['title'];
            $activities=$_POST['activities'];
            $places=$_POST['places'];
@@ -89,6 +92,7 @@
           if(empty($errors)){ 
 
            // no errors found .. addding record..
+           $post_id= mysqli_real_escape_string($connection,$_POST['p_id']);
            $title= mysqli_real_escape_string($connection,$_POST['title']);          
            $activities= mysqli_real_escape_string($connection,$_POST['activities']);
            $places= mysqli_real_escape_string($connection,$_POST['places']);
@@ -97,23 +101,27 @@
 
            
            $result_request1=update_request($connection,$post_id,$title,$activities,$places,$day_no,$no_of_days,$requested_date);
-
+          
 
            // After add the post redirect to tour_request_post page
            if($result_request1){                     
-               header('Location:/ceylontrek-3tier/controller/my_all_request_controller.php?update_post=true'); 
+            $_SESSION['u_title']=$_POST['title'];
+            $_SESSION['u_places']=$_POST['places'];
+            $_SESSION['u_no_of_days']=$_POST['no_of_days'];
+            $_SESSION['u_requested_date']=$_POST['requested_date'];
+            $_SESSION['u_activities']=$_POST['activities'];
+            $updated='Update succsessfuly';
+            header('Location:/ceylontrek-3tier/view/afterupdatedpost.php?updated');
                //if query was failed
            }else{
-                $errors[]="Query failed";
+            header('Location:/ceylontrek-3tier/view/update_post.php?Not_updated');
            }
 
       }else{
-          header('Location:/ceylontrek-3tier/controller/my_all_request_controller.php?database_query_failed');
+         header('Location:/ceylontrek-3tier/view/update_post.php? '.http_build_query(array('param'=>$errors)));
       }
-  /*   }else{
-          header('Location:/ceylontrek-3tier/controller/my_all_request_controller.php?update_post=true');
-     }*/
-    }
   
+    }
+   
 
 ?>

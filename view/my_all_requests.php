@@ -110,17 +110,19 @@ $mylist = $_SESSION['mylist'];
 						 ?>
 						 
 						<ul>
+                            <h5><?php echo $mylist_element['day_no']; ?></h5>
 							<h3><?php echo $mylist_element['title']; ?></h3>
 							<li><i class='fa fa-calendar' aria-hidden='true'></i>Requested Date :<?php echo $mylist_element['requested_date']; ?></li>
 							<li><i class='fa fa-clone' aria-hidden='true'></i>NO Of Dates :<?php echo $mylist_element['no_of_days']; ?></li>
-							<li><i class='fa fa-map-marker' aria-hidden='true'  style="margin-right:25px"></i>Places :<?php echo $mylist_element['places']; ?></li>
-							<li><i class='fa fa-futbol-o' aria-hidden='true'></i>Activities & Other Details :<?php echo $mylist_element['activities']; ?></li>
-							<button name='post_delete' style="color:white"><a  style="text-decoration:none" href="../controller/my_all_request_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>" 
-							  onclick="return confirm('Delete Post?');">DELETE</a></button>
-							  <div>
+                            <li><i class='fa fa-map-marker' aria-hidden='true'  style="margin-right:25px"></i>Places :<?php echo $mylist_element['places']; ?></li>
+                            
+                            <li style="height:200px;"><i class='fa fa-futbol-o' aria-hidden='true'></i>Activities & Other Details :<textarea rows ="10" cols = "70" style="background:transparent; border:none; outline:none"><?php echo $mylist_element['activities']; ?></textarea></li>
 
+							
+							  <div >
+                              <button name='post_delete' style="color:white"><a  style="text-decoration:none" href="../controller/my_all_request_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>" 
+							  onclick="return confirm('Delete Post?');">DELETE</a></button>
 							  <a type="button" style="text-decoration:none" href="../controller/update_post_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>"><button type="button" name='post_update' onclick="openForm()" class="update">UPDATE</button></a>                                  
-						
                                 
 						     </div>
 						</ul>

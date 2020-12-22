@@ -26,11 +26,13 @@ session_start();
 	<?php include('../view/new_top_bar.php'); ?>
 	          
 	<div class="form-popup" id="myForm" style="display:block; position:relative; top:43%; z-index:1; margin-bottom:200px">
-	<form action="../controller/update_post_controller.php" class="form-container"  style="box-shadow:none; border:1px solid black" method="POST">
+    <form action="../controller/update_post_controller.php" class="form-container"  style="box-shadow:none; border:1px solid black" method="POST">
+    <h6 style="color:red"> Update successfully</h6>
 	            <div>
                <input type="text" name="p_id" readonly style="color:black ; background:transparent;"<?php echo 'value="'.$post_id.'"'; ?> required>
 			   </div>
-			   <h1>Update Your Tour Request</h1>
+               <h1>Update Your Tour Request</h1>
+               
 			    <?php
 				if(isset($_GET['param'])){
                     $errors=$_GET['param'];
@@ -66,7 +68,7 @@ session_start();
     		   <textarea rows = "4" cols = "20" name = "activities" style="resize: vertical;height:100px;" placeholder="Enter Activites & Other details here..."><?php echo $activities ;?></textarea>
                 
 			   <button type="submit" class="btn" name="update_now" id="update_now" onclick="return confirm('update  post?');"><a  style="text-decoration:none; color:white" >UPDATE</a></button>			   
-    		   <button type="reset" class="btn cancel" ><a style="text-decoration:none; color:white" href="../controller/my_all_request_controller.php">Cancel</a></button>
+    		   <button type="reset" class="btn ok" ><a style="text-decoration:none; color:white" href="../controller/my_all_request_controller.php">OK</a></button>
   		</form>
 	</div>
 
