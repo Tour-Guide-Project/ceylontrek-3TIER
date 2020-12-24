@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: lato;
+}
+
+
+/* The popup form of create event */
+
+.form-popup_event {
+    margin: 80px auto 10px auto;
+    display: -webkit-box;
+    /*create box with auto hight */
+    width: 500px;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.form-popup_event1 {
+    margin: 150px auto 100px auto;
+    display: -webkit-box;
+    /*create box with auto hight */
+    width: 500px;
+    margin-left: 400px;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.form-container {
+    margin: 60px auto 100px auto;
+    width: 600px;
+    padding: 50px;
+    background: #F0F8FF;
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+}
+
+.form-container h1 {
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.form-container label {
+    font-size: 15px;
+    color: black;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.form-container input {
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 85%;
+    background-color: #DCDCDC;
+    height: 15px;
+    padding: 10px;
+    margin: 5px 0 22px -5px;
+}
+
+.form-container textarea {
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: #DCDCDC;
+    padding: 5px;
+    margin: 5px 0 22px 0;
+    /*padding-bottom: 80px;*/
+}
+
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.8;
+    float: left;
+}
+
+.form-container .cancel {
+    background-color: red;
+    float: right;
+}
+
+.form-container .btn:hover {
+    opacity: 1;
+}
+
+p.error {
+    position: relative;
+    outline: none;
+    margin: 20px;
+    color: red;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.event_addmore {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edits {
+    margin-top: -15px;
+    color: black;
+}
+
+.edits .editbtn {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(122, 163, 158);
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.edits .editbtn:hover {
+    /* font-size: 16px; */
+    outline: none;
+    border: none;
+    background-color: rgb(115, 126, 123);
+}
+
+p.addevent {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 10px;
+}

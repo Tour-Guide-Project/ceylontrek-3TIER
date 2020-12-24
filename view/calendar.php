@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php require_once('C:\xampp\htdocs\ceylontrek-3tier\config\connection.php'); 
+session_start();?>
+<?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\calendar_sql.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +12,7 @@
     <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
+    <script type="text/javascript" src="../resources/js/jquery.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -22,7 +25,7 @@
     }
     ?> 
 
-    <div class="wrapper">
+    <div class="wrapper" id="wrapp">
         <div class="calendar">
             <div class="month">
                 <i class="fa fa-caret-left  fa-3x" class="prev"  onclick="moveDate('prev')" aria-hidden="true"></i>
@@ -48,7 +51,81 @@
             </div>
         </div>
     </div>
+
+
+    <!-- popup form -->
+    <div class="form-popup" id="myForm">
+	<form action="calendar.php" class="form-container" method="post">
+        <h1>Events</h1>
+            <div id="event_id">
+
+            </div>
+    
+            <div>
+                <button type="button" class="btn" onclick="closeForm()">Cancel</button>
+            </div>
+  		</form>
+    </div>
+    
+     <!-- view more popup form -->
+     <!-- <div class="form-popup" id="myForm2">
+	    <form action="calendar.php" class="form-container" method="post">
+            <h1>Events</h1>
+            <div>
+               <label for="date"><b>Start Date :</b></label>
+               <input style="width:100%;"  type="date" name="startdate" value="" >
+            </div>
+
+            <div>
+               <label for="date"><b>End Date :</b></label>
+               <input style="width:100%;"  type="date"  name="enddate" value="" >
+            </div>
+               
+            <div>
+               <label for="details"><b>Events:</b></label>
+               <input style="width:100%;" type="text"  name="events" value="" >
+            </div>
+
+
+            <label for="details"><b>Add More :</b></label>
+            <textarea rows = "4" cols = "20" name = "details" style="resize: vertical;height:100px;"></textarea>
+               
+            <div>
+                <button type="button" class="btn" onclick="closeForm2()">Cancel</button>
+            </div>
+  		</form>
+	</div> -->
+
+
     <script>
+        //popup form open
+        function openForm() {
+            document.getElementById('myForm').style.display = 'block';
+            document.getElementById('wrapp').style.filter= 'blur(1px)';
+        }
+        //popup form cancel
+        function closeForm() {
+            document.getElementById('myForm').style.display = 'none';
+            document.getElementById('wrapp').style.filter= 'blur(0px)';
+            $("div").remove(".event_addmore");
+            
+        }
+        //popup form open
+        function openForm2(x) {
+            console.log(document.getElementById(x));
+            document.getElementById(x).style.display = 'block';
+            //document.getElementById('wrapp').style.filter= 'blur(1px)';
+        }
+        //popup form cancel
+        function closeForm2(x) {
+            document.getElementById(x).style.display = 'none';
+            //document.getElementById('wrapp').style.filter= 'blur(0px)';
+          
+            
+        }
+
+
+
         //get date =>get the date
         //get day => get the index of the day
         var dt = new Date();//create Date object as date
@@ -106,11 +183,75 @@
             for (let i = 1; i <= endDate; i++) {
                 //check the current month is equal to the month in p tag
                 if (i == today.getDate() && dt.getMonth() == today.getMonth() && dt.getFullYear() == today.getFullYear()){
-                    days += "<div class='today'>" + i + "</div>";
+                    days += "<div class='today' id="+i+">" + i + "</div>";
                 } 
-                else
-                    days += "<div>" + i + "</div>";
+                else{
+                
+                    days += "<div id="+i+">" + i + "</div>";
+                   
+                }
+                let startdate=dt.getFullYear()+"-"+(dt.getMonth()+1)+"-"+i;
+
+                var z=1000;
+                //console.log(startdate);
+                    $(document).ready(function(){
+                        function events(){
+                            date= startdate;
+                            $.ajax({
+                                url:"../controller/calandar_query.php",
+                                method:"POST",
+                                data:{date:date},
+                                dataType:"json",
+                                success:function(data){
+                                    if(data.count>0){
+                                        document.getElementById(i).style.backgroundColor='#4373a0';
+                                        document.getElementById(i).classList.add('has-event');
+                                        //console.log(data);
+                                        document.getElementById(i).addEventListener('click',(e)=>{
+                                            openForm();
+                                            //console.log(data.startdate[0]);
+                                            
+                                            for(var j=0;j<data.results.length;j++){
+                                                id=data.id[j];
+                                                // startdate=data.startdate[j];
+                                                // enddate=data.enddate[j];
+                                                // details=data.details[j];
+                                                //console.log(data.enddate[j]);
+                                                s=data.results[j];
+                                                document.getElementById('event_id').innerHTML +='<div class="event_addmore"><h3>'+s+'</h3><div class="view_more" >'+
+                                                '<button type="button" class="view"  onClick="openForm2('+z+');">view more</button></div></div>'+
+                                                '<div class="form-popup form-container" id='+z+'><form action="calendar.php"  method="post">'+
+                                                '<h1>Events</h1>'+
+                                                '<div><label for="date"><b>Start Date :</b></label><input  style="width:100%;" readonly   value="'+data.startdate[j]+'" ></div>'+
+                                                '<div><label for="date"><b>End Date :</b></label><input  style="width:100%;"  readonly   value="'+data.enddate[j]+'" ></div>'+
+                                                '<div><label for="details"><b>Events:</b></label><input   style="width:100%;" readonly   value="'+data.results[j]+'" ></div>'+
+                                                '<label for="details"><b>Add More :</b></label><textarea   rows = "4" cols = "20" name = "details" style="resize: vertical;height:100px;" readonly>'+data.details[j]+'</textarea>'+
+                                                '<div><button type="button" class="btn" onclick="closeForm2('+z+')">Cancel</button></div>'+
+                                                '</form></div>';
+
+                                                z++;
+
+                                            }
+
+                                            
+                                        });
+
+                                        
+
+                                    }
+                                    
+                                }
+                               
+                            })
+                        }
+                        events();
+
+                    })
+                  
+
             }//create days of the each month
+           
+
 
             for (let j = 1; j <= nextDays; j++) 
             {
@@ -130,6 +271,9 @@
             }
             renderDate();
         }
+
+        
+       
     </script>
 
 <?php include('../view/footer.php'); ?>

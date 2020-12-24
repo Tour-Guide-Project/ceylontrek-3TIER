@@ -8,7 +8,7 @@ body {
     box-sizing: border-box;
     width: 100%;
     margin-top: 80px;
-    height: 88vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,9 +16,11 @@ body {
 }
 
 .calendar {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     box-sizing: border-box;
     width: 70rem;
-    height: 32rem;
+    height: 34rem;
     float: center;
     background: rgba(0, 0, 0, .7);
     box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
@@ -93,13 +95,13 @@ body {
 }
 
 .today {
-    background-color: #21112c;
-    color: #fff;
-    border: 1px solid white;
+    background-color: #764994;
+    color: black;
+    font-weight: bold;
+    border: 3px solid rgb(78, 11, 11);
 }
 
 .today:hover {
-    font-weight: bold;
     cursor: pointer;
 }
 
@@ -116,10 +118,130 @@ body {
     transition: all 0.4s;
 }
 
-.days div:hover:not(.today):not(.prev_date):not(.next_date) {
+.has-event {
     cursor: pointer;
+}
+
+
+/* .days div:hover:not(.today):not(.prev_date):not(.next_date) {
     background-color: #905cb3;
     border: 1px solid lightgray;
+} */
+
+
+/* The popup form of create new request- hidden by default */
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000000;
+}
+
+.form-container {
+    margin: 60px auto 20px auto;
+    width: 500px;
+    padding: 10px 50px 50px 50px;
+    background: #F0F8FF;
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+}
+
+.form-container h1 {
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.event_addmore {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.view_more {
+    color: black;
+}
+
+.view_more .view {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(122, 163, 158);
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.view_more .view:hover {
+    /* font-size: 16px; */
+    outline: none;
+    border: none;
+    background-color: rgb(115, 126, 123);
+}
+
+.form-container h3 {
+    font-size: 16px;
+    font-weight: normal;
+    color: black;
+    background-color: rgb(141, 158, 158);
+    padding: 8px;
+    width: 75%;
+    border-radius: 5px;
+}
+
+.form-container .btn {
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.8;
+    background-color: red;
+    float: right;
+}
+
+.form-container .btn:hover {
+    opacity: 1;
+    border: none;
+    outline: none;
+}
+
+.form-container label {
+    font-size: 15px;
+    color: black;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.form-container input {
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 85%;
+    background-color: #DCDCDC;
+    height: 15px;
+    padding: 10px;
+    margin: 5px 0 22px -5px;
+}
+
+.form-container textarea {
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: #DCDCDC;
+    padding: 5px;
+    margin: 5px 0 22px 0;
+    /*padding-bottom: 80px;*/
 }
 
 
