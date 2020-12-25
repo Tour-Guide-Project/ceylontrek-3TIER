@@ -1,6 +1,6 @@
 <?php session_start();
 
-$short_description=$_SESSION['short_description'];
+$places=$_SESSION['places'];
 
 ?>
 
@@ -27,13 +27,17 @@ $short_description=$_SESSION['short_description'];
     ?> 
 
 	<div class="con">
+
+		<?php 
+			foreach ($places as $place) {
+		?>
+
 		<div class="section">
 			<div class="image">
 				<!-- <img src="../resources/img/SmartSearchResult/hik.jpg" alt="Paris" style="width:70%; height:100px"> -->
 				<?php
-					if(isset($_GET['path'])){
-						$path=$_GET['path'];
-						echo '<img src="'.$path.'" alt="Paris" style="width:70%; height:100px;">';
+					if($place['image_path']){
+						echo '<img src="'.$place['image_path'].'" alt="Paris" style="width:70%; height:100px;">';
 					}
 					else{
 						echo '<img src="../resources/img/default.jpg" alt="" style="width: 200px;height:250px;margin-left:60px;border-radius:100%;">';
@@ -44,7 +48,7 @@ $short_description=$_SESSION['short_description'];
 			<div class="paragraph">
 				<p>
 					<?php
-						echo '$short_description';
+						echo $place['short_description'];
 					?>
 				</p>
 			</div>
@@ -53,6 +57,10 @@ $short_description=$_SESSION['short_description'];
 				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
 			</div>
 		</div>
+
+		<?php  
+			}
+		?>
 
 		<!-- <div class="section">
 			<div class="image">

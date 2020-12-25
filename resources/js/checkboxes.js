@@ -3,6 +3,7 @@ function getSelectedCheckboxValues(name) {
     var values = [];
     checkboxes.forEach((checkbox) => {
         values.push(checkbox.value);
+        
     });
     //return values;
     $.ajax({ 

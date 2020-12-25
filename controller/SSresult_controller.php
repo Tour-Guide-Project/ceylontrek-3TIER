@@ -1,40 +1,38 @@
+<?php session_start(); ?>
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\config\connection.php'); ?>
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\smart_search_sql.php'); ?>
 <?PHP
 
+    $places = array();
+    $j = 0;
+
     if (isset($_POST['values'])) {
 
-        //echo "trhja";
-
         $activities = $_POST['values'];
+        // var_dump($activities);
 
         foreach ($activities as $activity){
 
-            //print_r($activity);
+            //var_dump($activity);
             $activity = mysqli_real_escape_string($connection,$activity);
             $result_set = search_activity($connection,$activity);
 
             if ($result_set) {
 
-                if (mysqli_num_rows($result_set) == 1) {
+                $rows = mysqli_num_rows($result_set);
 
-                    // user found retrieve data
-                    $result = mysqli_fetch_assoc($result_set);
-
-                    // pass data
-                    //$_SESSION['image_path']=$result['image_path'];
-                    $_SESSION['short_description']=$result['short_description'];
-                    $path=$result['image_path'];
-                    //print_r($_SESSION);
-                    //print_r($password);
-                    if($path){
-                        header('Location:/ceylontrek-3tier/view/SmartSearchResultsPage.php?path='.$path.'');
-                    }
-                    else{
-                        header('Location:/ceylontrek-3tier/view/SmartSearchResultsPage.php');
-                    }
+                for ($i=$j; $i < ($j+$rows); $i++) { 
+                    $result = mysqli_fetch_array($result_set,MYSQLI_ASSOC);
+                    // print_r($result);
+                    $places[] = $result;
                 }
+
+                $j = $rows;
             }            
         }
+        // print_r($places);
+        $_SESSION['places'] = $places;
+        header('Location:/ceylontrek-3tier/view/SmartSearchResultsPage.php');
     }
 ?>
+ <?php mysqli_close($connection);?>
