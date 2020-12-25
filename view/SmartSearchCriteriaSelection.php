@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
 	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -115,28 +116,11 @@
 				</div>
 			</div>
 		</div>
-		<!-- <p id="demo"></p> -->
+		<div id="result"></div>
 	</div>
 
 	<!-- JavaScript function for checked -->
-	<script src="./ceylontrek-3TIER/resources/js/checkboxes.js">
-
-
-		/*function check() {
-			var coffee = document.getElementsByName("checkActivity")[0].value;
-			document.getElementById("demo").innerHTML = coffee;
-			var i;
-			var activities = [];
-			for (i = 0; i < coffee.length; i++) {
-				if (coffee[i].checked) {
-					activities[i] = coffee[i];
-				}
-			}
-			$_SESSION['activities'] = activities;
-			//var x = document.getElementsByName("checkActivity").value;
-			window.location.href = '/ceylontrek-3tier/controller/SSresult_controller.php';
-		}*/
-	</script>
+	<script src="/ceylontrek-3TIER/resources/js/checkboxes.js"></script>
 
 <?php include('../view/footer.php');?>
 </body>

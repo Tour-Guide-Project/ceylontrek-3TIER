@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php session_start();
+
+$short_description=$_SESSION['short_description'];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,11 +29,24 @@
 	<div class="con">
 		<div class="section">
 			<div class="image">
-				<img src="../resources/img/SmartSearchResult/hik.jpg" alt="Paris" style="width:70%; height:100px">
+				<!-- <img src="../resources/img/SmartSearchResult/hik.jpg" alt="Paris" style="width:70%; height:100px"> -->
+				<?php
+					if(isset($_GET['path'])){
+						$path=$_GET['path'];
+						echo '<img src="'.$path.'" alt="Paris" style="width:70%; height:100px;">';
+					}
+					else{
+						echo '<img src="../resources/img/default.jpg" alt="" style="width: 200px;height:250px;margin-left:60px;border-radius:100%;">';
+					}
+				?>
 			</div>
 
 			<div class="paragraph">
-				<p>Hikkaduwa is a long beautiful beach providing excellent opportunity for surfing, swimming and snorkelling.</p>
+				<p>
+					<?php
+						echo '$short_description';
+					?>
+				</p>
 			</div>
 
 			<div class="btn">
@@ -36,7 +54,7 @@
 			</div>
 		</div>
 
-		<div class="section">
+		<!-- <div class="section">
 			<div class="image">
 				<img src="../resources/img/SmartSearchResult/sigiriya.jpg" alt="Paris" style="width:70%; height:100px">
 			</div>
@@ -118,7 +136,7 @@
 			<div class="btn">
 				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
 <?php include('../view/footer.php');?>
