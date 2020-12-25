@@ -10,7 +10,6 @@ $places=$_SESSION['places'];
 	<title>Smart Search Results Page</title>
 	<link rel="stylesheet" type="text/css" href="../resources/css/smartSearchResultsPage.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
-	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +33,7 @@ $places=$_SESSION['places'];
 
 		<div class="section">
 			<div class="image">
-				<!-- <img src="../resources/img/SmartSearchResult/hik.jpg" alt="Paris" style="width:70%; height:100px"> -->
+				<!-- <img src="../resources/img/SmartSearchResult/hik.jpg" alt="" style="width:70%; height:100px"> -->
 				<?php
 					if($place['image_path']){
 						echo '<img src="'.$place['image_path'].'" alt="Paris" style="width:70%; height:100px;">';
@@ -54,97 +53,15 @@ $places=$_SESSION['places'];
 			</div>
 
 			<div class="btn">
-				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
+				<form action="../controller/SSviewmore_controller.php" method="get">
+					<button class="viewButton" style="color:white; text-decoration:none;" type="submit" name="view_place" value="<?php echo $place['place_name']; ?>">View</a></button>
+				</form>
 			</div>
 		</div>
 
 		<?php  
 			}
 		?>
-
-		<!-- <div class="section">
-			<div class="image">
-				<img src="../resources/img/SmartSearchResult/sigiriya.jpg" alt="Paris" style="width:70%; height:100px">
-			</div>
-
-			<div class="paragraph">
-				<p>Sigiriya or Sinhagiri is an ancient rock fortress and one of the most valuable historical mouments of Sri Lanka located in Mathale.</p>
-			</div>
-
-			<div class="btn">
-				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="image">
-				<img src="../resources/img/SmartSearchResult/arugambay.jpg" alt="Paris" style="width:70%; height:100px">
-			</div>
-
-			<div class="paragraph">
-				<p>Arugam Bay is a bay situated in Sri Lanka's southeast coast, and a historic settlement of the ancient Batticaloa.</p>
-			</div>
-
-			<div class="btn">
-				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="image">
-				<img src="../resources/img/SmartSearchResult/temple.jpg" alt="Paris" style="width:70%; height:100px">
-			</div>
-
-			<div  class="paragraph"> 
-				<p>Sri Dalada Maligawa or the Temple of the Sacred Tooth Relic is a Buddhist temple in the city of Kandy, Sri Lanka.</p>
-			</div>
-
-			<div class="btn">
-				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="image">
-				<img src="../resources/img/SmartSearchResult/gallefort.jpg" alt="Paris" style="width:70%; height:100px">
-			</div>
-
-			<div class="paragraph">
-				<p>Galle Fort or the Dutch Fort is a Portuguese fortress which was built in 1588 at the bay of Galle on the southwestern coast of Sri Lanka.</p>
-			</div>
-
-			<div class="btn">
-				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="image">
-				<img src="../resources/img/SmartSearchResult/hortan.jpg" alt="Paris" style="width:70%; height:100px">
-			</div>
-
-			<div class="paragraph">
-				<p>Horton Plains National Park is a protected area in the central highlands of Sri Lanka and is covered by montane grassland and cloud forest.</p>
-			</div>
-
-			<div class="btn">
-				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="image">
-				<img src="../resources/img/SmartSearchResult/hakgala.jpg" alt="Paris" style="width:70%; height:100px">
-			</div>
-
-			<div class="paragraph">
-				<p>Hakgala Botanical Garden is the second largest garden among the five botanical gardens in Sri Lanka situated Nuwara Eliya.</p>
-			</div>
-
-			<div class="btn">
-				<button class="viewButton"><a style="color:white; text-decoration:none;" href='SSR_ViewMorePage.php'>View</a></button>
-			</div>
-		</div> -->
 	</div>
 
 <?php include('../view/footer.php');?>

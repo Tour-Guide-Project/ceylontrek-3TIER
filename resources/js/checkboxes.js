@@ -11,9 +11,9 @@ function getSelectedCheckboxValues(name) {
         url: "/ceylontrek-3TIER/controller/SSresult_controller.php", 
         data: { values : values},
         //dataType: "json",
-        // success: function() { 
-        // 	alert("Success"); 
-        // } 
+        success: function() { 
+        	window.location = "/ceylontrek-3tier/view/SmartSearchResultsPage.php" 
+        } 
     });
 }
 
