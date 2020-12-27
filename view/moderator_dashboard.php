@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/admin_dashboard.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/guidedashboardpage.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/Guidedashboardpage.css">
 	<link rel="stylesheet" href="../resources/css/pendingProfiles.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
 	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
@@ -78,13 +78,13 @@
 	</div><!--side_bar-->
 
 	<div class="notification">
-	<form action="moderator_dashboard.php" method="post">
+	<form action="../controller/moderator_dashboard_controller.php" method="post">
 			
 		<button type="button" style="margin-left:1000px; " class="cobutton" onclick="openForm()">Create Notification</button>
+		<button class="cobutton" name="create_place">Create Place</button>
 		
 	</form>
 	</div>
-
 	
 	<div class="moderator_dashboard_box">
 		<div class="prow">

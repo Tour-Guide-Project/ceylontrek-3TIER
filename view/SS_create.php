@@ -52,12 +52,12 @@
                             <label for="image_upload" class="lbl">Upload Image :</label>
                         </div>
                         <div class="col-75">
-                            <input type="file"   name="file[0]" >
+                            <input type="file"   name="image_upload">
                         </div>
                     </div>
                     <div class="submitCls">
                         <!-- <input type="submit" name="createPackage" value="Create Package"> -->
-                        <button class="btnbtn" id="btn">Create Place</button>
+                        <button class="btnbtn" name="place_create">Create Place</button>
                     </div>
                 </form>
             </div>

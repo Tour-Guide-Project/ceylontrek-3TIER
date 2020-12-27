@@ -299,6 +299,7 @@ a {
 }
 
 .cobutton {
+    display: inline-block;
     transform: translateY(0px);
     transition: 0.3s linear;
     background: #2f375b;
@@ -312,10 +313,10 @@ a {
     margin-top: 0px;
     font-family: lato;
     transition: transform 0.3s;
-    display: inline-block;
     padding: 15px 25px;
     font-size: 18px;
     margin: 0;
+    margin-right: 15px;
 }
 
 .cobutton:hover {
