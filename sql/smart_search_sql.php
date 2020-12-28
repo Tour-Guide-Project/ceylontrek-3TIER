@@ -15,8 +15,8 @@ function search_place($connection,$place_name){
     return $result;
 }
 
-function create_place($connection , $place_name , $short_description , $long_description){
-    $query = "INSERT INTO smartsearch(place_name , long_description , short_description) VALUES('{$place_name}' , '{$long_description}' , '{$short_description}')";
+function create_place($connection , $place_name , $short_description , $long_description , $image_path){
+    $query = "INSERT INTO smartsearch(place_name , long_description , short_description , image_path) VALUES('{$place_name}' , '{$long_description}' , '{$short_description}' , '{$image_path}')";
 
     $result = mysqli_query($connection,$query);
     return $result;
@@ -37,7 +37,7 @@ function select_activity_id($connection , $activity){
 }
 
 function update_connection($connection , $activity_id , $place_id){
-    $query = "INSERT INTO activity_place VALUES('{$activity_id} , '{$place_id}'";
+    $query = "INSERT INTO activity_place(activity_id , place_id) VALUES({$activity_id} , {$place_id})";
 
     $result = mysqli_query($connection,$query);
     return $result;

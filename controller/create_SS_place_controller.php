@@ -30,6 +30,7 @@
             $place_name = $_POST['place_name'];
             $short_description = $_POST['short_description'];
             $long_description = $_POST['long_description'];
+            $image_upload = $_POST['image_upload'];
 
             if(empty($errors)) {
                 
@@ -37,22 +38,33 @@
                 $short_description = mysqli_real_escape_string($connection,$short_description);
                 $long_description = mysqli_real_escape_string($connection,$long_description);
 
-                $result_set = create_place($connection , $place_name , $short_description , $long_description);
+                $result_set = create_place($connection , $place_name , $short_description , $long_description , $image_upload);
 
-                $place_id = select_place_id($connection , $place_name);
+                $result = select_place_id($connection , $place_name);
+                $result = mysqli_fetch_assoc($result);
+                $place_id = $result['place_id'];
+                //var_dump($place_id);
+                //print_r($place_id);
 
                 if(isset($_POST["activities"])) { 
                     // Retrieving each selected option 
-                    foreach ($_POST['activities'] as $activity){  
+                    foreach ($_POST['activities'] as $activity){
+                        //print_r($activity);
 
-                        $activity_id = select_activity_id($connection , $activity);
+                        $activity = mysqli_real_escape_string($connection,$activity);
 
-                        $result_set2 = update_connection($connection , $activity_id , $place_id); 
+                        $result_1 = select_activity_id($connection,$activity);
+                        $result_1 = mysqli_fetch_assoc($result_1);
+                        $activity_id = $result_1['activity_id'];
+                        print_r($activity_id);
+                        //var_dump($activity_id);
+
+                        $result_set2 = update_connection($connection,$activity_id,$place_id); 
                     }    
                 }
 
                 if($result_set && $result_set2){
-                    header('Location:/ceylontrek-3tier/view/view_guide_profile.php');
+                    header('Location:/ceylontrek-3tier/view/SS_create.php');
                 }
     
                 else{
