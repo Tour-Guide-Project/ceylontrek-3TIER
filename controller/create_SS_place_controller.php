@@ -38,6 +38,30 @@
                 $long_description = mysqli_real_escape_string($connection,$long_description);
 
                 $result_set = create_place($connection , $place_name , $short_description , $long_description);
+
+                $place_id = select_place_id($connection , $place_name);
+
+                if(isset($_POST["activities"])) { 
+                    // Retrieving each selected option 
+                    foreach ($_POST['activities'] as $activity){  
+
+                        $activity_id = select_activity_id($connection , $activity);
+
+                        $result_set2 = update_connection($connection , $activity_id , $place_id); 
+                    }    
+                }
+
+                if($result_set && $result_set2){
+                    header('Location:/ceylontrek-3tier/view/view_guide_profile.php');
+                }
+    
+                else{
+                    $errors[]='Failed to add the record.';
+                }
+            }
+
+            else{
+                header('Location: /ceylontrek-3tier/view/SS_create.php?'.http_build_query(array('param'=>$errors)).'&path='.$path.'');
             }
 
         }

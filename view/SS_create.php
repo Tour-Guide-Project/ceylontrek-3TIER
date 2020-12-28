@@ -22,7 +22,15 @@
     
         <div class="content">
             <div class="con">
-                <form  action="../controller/createTourPackage_controller.php"  method="post" enctype="multipart/form-data" >
+                <form  action="../controller/create_SS_place_controller.php"  method="post">
+                    <?php
+                        if(isset($_GET['param'])){
+                            $errors=$_GET['param'];
+                            foreach ($errors as $error) {
+                                echo '<p class="error">'.$error.'</p>';
+                            }
+                        }
+                    ?>
                     <div class="row">
                         <div class="col-25">
                             <label for="place_name" class="lbl">Name Of Place :</label>
@@ -53,6 +61,33 @@
                         </div>
                         <div class="col-75">
                             <input type="file"   name="image_upload">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="activities" class="lbl">Choose Activities:</label>
+                        </div>
+                        <div class="col-75">
+                            <select style="height: 150px; width: 200px;" name="activities[]" id="activities" multiple>
+                                <option value="bicycle_tour">Bicycle Tour</option>
+                                <option value="hiking">Hiking</option>
+                                <option value="whale_watching">Whale Watching</option>
+                                <option value="go_cart_racing">Go-Cart Racing</option>
+                                <option value="deep_sea_fishing">Deep Sea Fishing</option>
+                                <option value="golf">Golf</option>
+                                <option value="kite_surfing">Kite Surfing</option>
+                                <option value="surfing">Surfing</option>
+                                <option value="rock_climbing">Rock Climbing</option>
+                                <option value="museums">Museums</option>
+                                <option value="spa">Spa</option>
+                                <option value="casino">Casino</option>
+                                <option value="billiards">Billiards</option>
+                                <option value="tea_tasting">Tea Tasting</option>
+                                <option value="temples">Temples</option>
+                                <option value="mosques">Mosques</option>
+                                <option value="churches">Churches</option>
+                                <option value="hindu_shrines">Hindu Shrines</option>
+                            </select>
                         </div>
                     </div>
                     <div class="submitCls">
