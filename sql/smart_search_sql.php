@@ -1,10 +1,10 @@
 <?php
 function search_activity($connection,$activity){
-    $query = "SELECT smartsearch.place_name , smartsearch.image_path , smartsearch.short_description
-    FROM actvity
-    INNER JOIN activity_place ON actvity.activity_id = activity_place.activity_id
-    WHERE actvity.activity = '{$activity}'
-    INNER JOIN smartsearch ON activity_place.place_id = smartsearch.place_id";
+    $query = "SELECT DISTINCT(smartsearch.place_name) , smartsearch.image_path , smartsearch.short_description
+    FROM activities 
+    INNER JOIN activity_place ON activities.activity_id = activity_place.activity_id 
+    INNER JOIN smartsearch ON activity_place.place_id = smartsearch.place_id
+    WHERE activities.activity = '{$activity}'";
 
     $result = mysqli_query($connection,$query);
     //print_r($result);

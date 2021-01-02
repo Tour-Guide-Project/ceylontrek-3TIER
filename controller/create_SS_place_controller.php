@@ -9,6 +9,7 @@
     }
 
     $errors=array();
+    $target_path="../resources/img/SmartSearchResult/";
 
     if (isset($_SESSION['id'])) {
         
@@ -30,7 +31,36 @@
             $place_name = $_POST['place_name'];
             $short_description = $_POST['short_description'];
             $long_description = $_POST['long_description'];
-            $image_upload = $_POST['image_upload'];
+            $image_upload = $target_path.basename($_POST['image_upload']);
+
+                    //$image_upload = $target_path.basename($_FILES['image_upload']['name']);
+                    //$imageFileType = strtolower(pathinfo($image_upload,PATHINFO_EXTENSION));
+
+                    // Check if image file is a actual image or fake image
+                    // $check = getimagesize($_FILES['image_upload']['tmp_name']);
+                    // if($check !== false) {
+                    // $errors[] = "File is an image - " . $check["mime"] . ".";
+                    // } else {
+                    // $errors[] = "File is not an image.";
+                    // }
+
+                    // Check file size
+                    // if ($_FILES["fileToUpload"]["size"] > 500000) {
+                    //     $errors[] = "Sorry, your file is too large.";
+                    // }
+
+                    // Allow certain file formats
+                    // if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+                    //     $errors[] = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                    // }
+
+                    // if everything is ok, try to upload file
+                    // if (move_uploaded_file($_FILES['image_upload']['tmp_name'], $image_upload)) {
+                    //     //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                    // } 
+                    // else {
+                    //     $errors[] = "Sorry, there was an error uploading your file.";
+                    // }
 
             //checking if place already exists
             $place_name = mysqli_real_escape_string($connection,$place_name);
