@@ -8,8 +8,13 @@
         header('Location:/ceylontrek-3tier/view/login.php');
     }
 
+    if (isset($_POST['create_place'])){
+		header('Location: ../view/SS_create.php');
+		$_SESSION['level']='moderator';
+	}
+
     $errors=array();
-    $target_path="../resources/img/SmartSearchResult/";
+    //$target_path="../resources/img/SmartSearchResult/";
 
     if (isset($_SESSION['id'])) {
         
@@ -31,7 +36,7 @@
             $place_name = $_POST['place_name'];
             $short_description = $_POST['short_description'];
             $long_description = $_POST['long_description'];
-            $image_upload = $target_path.basename($_POST['image_upload']);
+            $image_upload = $_POST['image_upload'];
 
                     //$image_upload = $target_path.basename($_FILES['image_upload']['name']);
                     //$imageFileType = strtolower(pathinfo($image_upload,PATHINFO_EXTENSION));

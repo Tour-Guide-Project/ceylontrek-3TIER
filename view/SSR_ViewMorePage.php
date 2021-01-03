@@ -32,8 +32,13 @@ $long_description = $_SESSION['long_description'];
 		</div>
 
 		<div>
-			<p class="paragraph"><?php echo "     $long_description"; ?></p>
+			<p class="paragraph"><?php echo "$long_description"; ?></p>
 		</div>
+	</div>
+
+	<div class="submitCls">
+		<button class="btnbtn" name="place_edit">Edit Place</button>
+		<button class="btnbtn" name="place_delete">Delete Place</button>
 	</div>
 
 <?php include('../view/footer.php');?>

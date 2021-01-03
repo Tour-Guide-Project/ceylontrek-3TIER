@@ -23,7 +23,12 @@
 
 	<div class="con">
 
-		<button class="searchButton" id="btn">Search</button>
+		<div class="searchB">
+			<form action="../controller/create_SS_place_controller.php" method="post">
+				<button class="searchButton" style="margin-right: 68%;" name="create_place">Create Place</button>
+				<button class="searchButton" id="btn">Search</button>
+			</form>
+		</div>
 			
 		<div class="boxOutdoor clearfix">
 

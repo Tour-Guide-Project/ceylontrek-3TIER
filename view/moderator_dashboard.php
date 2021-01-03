@@ -81,7 +81,7 @@
 	<form action="../controller/moderator_dashboard_controller.php" method="post">
 			
 		<button type="button" style="margin-left:1000px; " class="cobutton" onclick="openForm()">Create Notification</button>
-		<button class="cobutton" name="create_place">Create Place</button>
+		<!-- <button class="cobutton" name="create_place">Create Place</button> -->
 		
 	</form>
 	</div>

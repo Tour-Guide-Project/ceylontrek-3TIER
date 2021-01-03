@@ -6,9 +6,9 @@ session_start();?>
 		$_SESSION['level']='moderator';
 	}
 
-	if (isset($_POST['create_place'])){
-		header('Location: ../view/SS_create.php');
-		$_SESSION['level']='moderator';
-	}
+	// if (isset($_POST['create_place'])){
+	// 	header('Location: ../view/SS_create.php');
+	// 	$_SESSION['level']='moderator';
+	// }
 ?>
 <?php mysqli_close($connection);?>

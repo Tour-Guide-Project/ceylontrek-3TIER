@@ -57,3 +57,34 @@ body {
     text-decoration: underline;
     color: white;
 }
+
+.submitCls {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitCls .btnbtn {
+    /* width: 30%; */
+    color: #fff;
+    background-color: #2f375b;
+    border-color: #007bff;
+    padding: 1% 1% 1% 1%;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    display: inline;
+    font-size: 17px;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.submitCls .btnbtn:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
