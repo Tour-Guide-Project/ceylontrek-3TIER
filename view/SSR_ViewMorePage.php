@@ -36,10 +36,16 @@ $long_description = $_SESSION['long_description'];
 		</div>
 	</div>
 
-	<div class="submitCls">
-		<button class="btnbtn" name="place_edit">Edit Place</button>
-		<button class="btnbtn" name="place_delete">Delete Place</button>
-	</div>
+	<?php 
+		if ($_SESSION['level'] == 'moderator') {
+	?>
+		<div class="submitCls">
+			<button class="btnbtn" name="place_edit">Edit Place</button>
+			<button class="btnbtn" name="place_delete">Delete Place</button>
+		</div>
+	<?php 
+		}
+	?>
 
 <?php include('../view/footer.php');?>
 

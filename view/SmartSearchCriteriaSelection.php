@@ -15,7 +15,8 @@
 
 <?php 
     if (!isset($_SESSION['id'])){
-        include('../view/top_bar.php');
+		include('../view/top_bar.php');
+		$_SESSION['level'] = 'noUser';
     }else{
         include('../view/new_top_bar.php');
     }
@@ -25,8 +26,15 @@
 
 		<div class="searchB">
 			<form action="../controller/create_SS_place_controller.php" method="post">
-				<button class="searchButton" style="margin-right: 68%;" name="create_place">Create Place</button>
-				<button class="searchButton" id="btn">Search</button>
+				<?php 
+					if ($_SESSION['level'] == 'moderator') {
+				?>
+					<button class="searchButton" name="create_place">Create Place</button>
+				<?php 
+					}
+				?>
+
+				<button class="searchButton" style="margin-left: 70%;"  id="btn">Search</button>
 			</form>
 		</div>
 			
