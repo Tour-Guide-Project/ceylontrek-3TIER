@@ -1,6 +1,6 @@
 <?php
-function search_activity($connection,$activity){
-    $query = "SELECT DISTINCT(smartsearch.place_name) , smartsearch.image_path , smartsearch.short_description
+function search_smart($connection,$activity){
+    $query = "SELECT smartsearch.place_name , smartsearch.image_path , smartsearch.short_description
     FROM activities 
     INNER JOIN activity_place ON activities.activity_id = activity_place.activity_id 
     INNER JOIN smartsearch ON activity_place.place_id = smartsearch.place_id
@@ -11,8 +11,19 @@ function search_activity($connection,$activity){
     return $result;
 }
 
+function search_activities($connection,$place_id){
+    $query = "SELECT activities.activity
+    FROM activity_place
+    INNER JOIN activities ON activity_place.activity_id = activities.activity_id
+    WHERE activity_place.place_id = '{$place_id}'";
+
+    $result = mysqli_query($connection,$query);
+    //print_r($result);
+    return $result;
+}
+
 function search_place($connection,$place_name){
-    $query = "SELECT place_name , image_path , long_description FROM smartsearch WHERE place_name='{$place_name}'";
+    $query = "SELECT * FROM smartsearch WHERE place_name='{$place_name}'";
 
     $result = mysqli_query($connection,$query);
     //print_r($result);
@@ -47,10 +58,4 @@ function update_connection($connection,$activity_id,$place_id){
     return $result;
 }
 
-function exist_place($connection,$place_name){
-    $query = "SELECT * FROM smartsearch WHERE place_name = '{$place_name}'";
-
-    $result = mysqli_query($connection,$query);
-    return $result;
-}
 ?>

@@ -15,7 +15,7 @@
 
             //var_dump($activity);
             $activity = mysqli_real_escape_string($connection,$activity);
-            $result_set = search_activity($connection,$activity);
+            $result_set = search_smart($connection,$activity);
             //var_dump($result_set);
 
             if ($result_set) {

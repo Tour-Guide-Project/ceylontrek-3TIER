@@ -25,17 +25,20 @@
 	<div class="con">
 
 		<div class="searchB">
-			<form action="../controller/create_SS_place_controller.php" method="post">
-				<?php 
-					if ($_SESSION['level'] == 'moderator') {
-				?>
-					<button class="searchButton" name="create_place">Create Place</button>
-				<?php 
-					}
-				?>
-
-				<button class="searchButton" style="margin-left: 70%;"  id="btn">Search</button>
-			</form>
+			<?php 
+				if ($_SESSION['level'] == 'moderator') {
+			?>
+				<div>
+					<form action="../controller/SS_controller.php" method="post">
+						<button class="searchButton" name="create_place">Create Place</button>		
+					</form>
+				</div>
+			<?php 
+				}
+			?>
+				<div>
+					<button class="searchButton" style="margin-left: 70%;"  id="btn">Search</button>
+				</div>
 		</div>
 			
 		<div class="boxOutdoor clearfix">

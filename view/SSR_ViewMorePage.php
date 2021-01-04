@@ -40,8 +40,10 @@ $long_description = $_SESSION['long_description'];
 		if ($_SESSION['level'] == 'moderator') {
 	?>
 		<div class="submitCls">
-			<button class="btnbtn" name="place_edit">Edit Place</button>
-			<button class="btnbtn" name="place_delete">Delete Place</button>
+			<form action="../controller/SS_controller.php" method="POST">
+				<button class="btnbtn" name="edit_place">Edit Place</button>
+				<button class="btnbtn" name="delete_place">Delete Place</button>
+			</form>
 		</div>
 	<?php 
 		}

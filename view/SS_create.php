@@ -22,7 +22,7 @@
     
         <div class="content">
             <div class="con">
-                <form  action="../controller/create_SS_place_controller.php"  method="post">
+                <form  action="../controller/SS_create_place_controller.php"  method="post">
                     <?php
                         if(isset($_GET['param'])){
                             $errors=$_GET['param'];
