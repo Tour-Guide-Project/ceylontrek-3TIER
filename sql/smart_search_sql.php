@@ -58,4 +58,12 @@ function update_connection($connection,$activity_id,$place_id){
     return $result;
 }
 
+function all_activities($connection){
+    $query = "SELECT activity FROM activities";
+
+    $result = mysqli_query($connection,$query);
+    //print_r($result);
+    return $result;
+}
+
 ?>

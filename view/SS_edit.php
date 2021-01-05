@@ -1,9 +1,13 @@
 <?php session_start();
+    $place_name = $_SESSION['place_name'];
+    $image_path = $_SESSION['image_path'];
+    $short_description = $_SESSION['short_description'];
+    $long_description = $_SESSION['long_description'];
     $all_activities = $_SESSION['all_activities'];
 ?>
 <html  lang="en">
 <head>
-    <title>Create Smart Search Place</title>
+    <title>Edit Smart Search Place</title>
     <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/Guidedashboardpage.css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
@@ -38,7 +42,7 @@
                             <label for="place_name" class="lbl">Name Of Place :</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="place_name">
+                            <input type="text" name="place_name" <?php echo 'value="'.$place_name.'"'; ?>>
                         </div>
                     </div>
                     <div class="row">
@@ -46,7 +50,7 @@
                             <label for="short_description" class="lbl">Short Description about Place :</label>
                         </div>
                         <div class="col-75">
-                            <textarea name="short_description" style="height: 100px"></textarea>
+                            <textarea name="short_description" style="height: 100px"> <?php echo $short_description; ?> </textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -54,12 +58,12 @@
                             <label for="long_description" class="lbl">Long Description about Place :</label>
                         </div>
                         <div class="col-75">
-                            <textarea name="long_description" style="height: 200px"></textarea>
+                            <textarea name="long_description" style="height: 200px"> <?php echo $long_description; ?> </textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-25">
-                            <label for="image_upload" class="lbl">Upload Image :</label>
+                            <label for="image_upload" class="lbl">Uploaded Image :</label>
                         </div>
                         <div class="col-75">
                             <input type="file"   name="image_upload">
@@ -67,10 +71,11 @@
                     </div>
                     <div class="row">
                         <div class="col-25">
-                            <label for="activities" class="lbl">Choose Activities:</label>
+                            <label for="activities" class="lbl">Choose New Activities:</label>
                         </div>
                         <div class="col-75">
                             <select style="height: 150px; width: 200px;" name="activities[]" id="activities" multiple>
+                                
                                 <?php
                                     foreach ($all_activities as $activity) {
                                 ?>
@@ -84,7 +89,7 @@
                     </div>
                     <div class="submitCls">
                         <!-- <input type="submit" name="createPackage" value="Create Package"> -->
-                        <button class="btnbtn" name="place_create">Create Place</button>
+                        <button class="btnbtn" name="place_edit">Edit Place</button>
                     </div>
                 </form>
             </div>

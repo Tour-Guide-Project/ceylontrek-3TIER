@@ -11,6 +11,7 @@
 
     $errors=array();
     $activities = array();
+    $all_activities = array();
 
     if (isset($_SESSION['id'])) {
 
@@ -40,14 +41,36 @@
 
                 if ($activity_result_set) {
 
-                    foreach ($activity_result_set as $activity) {
-                        $activities[] = $activity;
+                    $rows = mysqli_num_rows($activity_result_set);
+                    //print_r($rows);
+
+                    for ($i=0; $i < $rows; $i++) { 
+                        $result = mysqli_fetch_assoc($activity_result_set);
+                        //print_r($result);
+                        $activities[] = $result;
                     }
+
                     //print_r($activities);
                     $_SESSION['activities'] = $activities;
-                }  
+                }
 
-				//header('Location:/ceylontrek-3tier/view/SS_create.php');
+                $activity_set = all_activities($connection);
+                if ($activity_set) {
+
+                    $rows = mysqli_num_rows($activity_set);
+                    //print_r($rows);
+
+                    for ($i=0; $i < $rows; $i++) { 
+                        $result = mysqli_fetch_assoc($activity_set);
+                        //print_r($result);
+                        $all_activities[] = $result;
+                    }
+
+                    //print_r($all_activities);
+                    $_SESSION['all_activities'] = $all_activities;
+                }
+
+				header('Location:/ceylontrek-3tier/view/SS_edit.php');
             }
 
             else{
