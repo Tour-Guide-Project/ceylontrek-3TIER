@@ -3,6 +3,7 @@
     $image_path = $_SESSION['image_path'];
     $short_description = $_SESSION['short_description'];
     $long_description = $_SESSION['long_description'];
+    $activities = $_SESSION['activities'];
     $all_activities = $_SESSION['all_activities'];
 ?>
 <html  lang="en">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/SS_create.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/SS_edit.css">
 </head>
 
 <body class="body">
@@ -70,25 +72,41 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-25">
-                            <label for="activities" class="lbl">Choose New Activities:</label>
+                        <div class="col-50-left">
+                            <div class="col-50-left">
+                                <label for="activity" class="lbl">Choosed Activities :</label>
+                            </div>
+                            <?php
+                                foreach ($activities as $act) {
+                            ?>
+                                <div class="col-50-right-b">
+                                    <input <?php echo 'value="'.$act['activity'].'"'; ?> readonly>
+                                </div>
+                            <?php
+                                }
+                            ?>
                         </div>
-                        <div class="col-75">
-                            <select style="height: 150px; width: 200px;" name="activities[]" id="activities" multiple>
-                                
-                                <?php
-                                    foreach ($all_activities as $activity) {
-                                ?>
-                                    <option value="<?php echo $activity['activity']; ?>"><?php echo $activity['activity']; ?></option>
-                                
-                                <?php
-                                    }
-                                ?>
-                            </select>
+                        <div class="col-50-right">
+                            <div class="col-50-left">
+                                <label for="activities" class="lbl">Add New Activities :</label>
+                            </div>
+                            <div class="col-50-right-b">
+                                <select style="height: 150px; width: 200px;" name="activities[]" id="activities" multiple>
+                                    <?php
+                                        foreach ($all_activities as $activity) {
+                                    ?>
+                                        <option value="<?php echo $activity['activity']; ?>"><?php echo $activity['activity']; ?></option>
+                                    
+                                    <?php
+                                        }
+                                    ?>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="submitCls">
                         <!-- <input type="submit" name="createPackage" value="Create Package"> -->
+                        <button class="btnbtn" style="margin-right: 5%;" name="cancel">Cancel</button>
                         <button class="btnbtn" name="place_edit">Edit Place</button>
                     </div>
                 </form>

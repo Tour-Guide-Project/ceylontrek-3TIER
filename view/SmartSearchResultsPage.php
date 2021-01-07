@@ -1,6 +1,7 @@
 <?php session_start();
 
-$places=$_SESSION['places'];
+$places = $_SESSION['places'];
+$activities = $_SESSION['activities'];
 
 ?>
 
@@ -23,47 +24,59 @@ $places=$_SESSION['places'];
     }else{
         include('../view/new_top_bar.php');
     }
-    ?> 
-
-	<div class="con">
-
-		<?php 
-			foreach ($places as $place) {
-		?>
-
-		<div class="section">
-			<div class="image">
-				<!-- <img src="../resources/img/SmartSearchResult/hik.jpg" alt="" style="width:70%; height:100px"> -->
-				<?php
-					if($place['image_path']){
-						echo '<img src="'.$place['image_path'].'" alt="Paris" style="width:70%; height:100px;">';
-					}
-					else{
-						echo '<img src="../resources/img/default.jpg" alt="" style="width: 200px;height:250px;margin-left:60px;border-radius:100%;">';
-					}
-				?>
-			</div>
-
-			<div class="paragraph">
-				<p>
-					<?php
-						echo $place['short_description'];
-					?>
-				</p>
-			</div>
-
-			<div class="btn">
-				<form action="../controller/SSviewmore_controller.php" method="get">
-					<button class="viewButton" style="color:white; text-decoration:none;" type="submit" name="view_place" value="<?php echo $place['place_name']; ?>">View</a></button>
-				</form>
-			</div>
+?> 
+<div class="main">
+<?php
+	foreach ($places as $key=>$placess) {
+?>
+	<div class="second">
+		<div class="title">
+			<h1><?php echo $key; ?></h1>
 		</div>
 
-		<?php  
-			}
-		?>
-	</div>
+		<div class="con">
 
+			<?php
+				foreach ($placess as $place) {
+			?>
+
+				<div class="section">
+					<div class="image">
+						<!-- <img src="../resources/img/SmartSearchResult/hik.jpg" alt="" style="width:70%; height:100px"> -->
+						<?php
+							if($place['image_path']){
+								echo '<img src="'.$place['image_path'].'" alt="Paris" style="width:70%; height:100px;">';
+							}
+							else{
+								echo '<img src="../resources/img/default.jpg" alt="" style="width: 200px;height:250px;margin-left:60px;border-radius:100%;">';
+							}
+						?>
+					</div>
+
+					<div class="paragraph">
+						<p>
+							<?php
+								echo $place['short_description'];
+							?>
+						</p>
+					</div>
+
+					<div class="btn">
+						<form action="../controller/SSviewmore_controller.php" method="get">
+							<button class="viewButton" style="color:white; text-decoration:none;" type="submit" name="view_place" value="<?php echo $place['place_name']; ?>">View</a></button>
+						</form>
+					</div>
+				</div>
+
+			<?php 
+				}
+			?>
+		</div>
+	</div>
+<?php 
+	}
+?>
+</div>
 <?php include('../view/footer.php');?>
 
 </body>

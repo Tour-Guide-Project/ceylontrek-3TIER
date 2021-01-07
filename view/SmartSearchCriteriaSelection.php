@@ -24,11 +24,11 @@
 
 	<div class="con">
 
-		<div class="searchB">
+		<div class="optionB">
 			<?php 
 				if ($_SESSION['level'] == 'moderator') {
 			?>
-				<div>
+				<div class="createB">
 					<form action="../controller/SS_controller.php" method="post">
 						<button class="searchButton" name="create_place">Create Place</button>		
 					</form>
@@ -36,8 +36,8 @@
 			<?php 
 				}
 			?>
-				<div>
-					<button class="searchButton" style="margin-left: 70%;"  id="btn">Search</button>
+				<div class="searchB">
+					<button class="searchButton" style="float: right;"  id="btn">Search</button>
 				</div>
 		</div>
 			

@@ -3,8 +3,9 @@
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\smart_search_sql.php'); ?>
 <?PHP
 
-    $places = array();
+    $act = array();
     $j = 0;
+    $k = 0;
 
     if (isset($_POST['values'])) {
 
@@ -22,18 +23,17 @@
 
                 $rows = mysqli_num_rows($result_set);
 
-                for ($i=$j; $i < ($j+$rows); $i++) { 
+                for ($i=0; $i < ($rows); $i++) { 
                     $result = mysqli_fetch_array($result_set,MYSQLI_ASSOC);
                     // print_r($result);
-                    $places[] = $result;
+                    $places[$activity][] = $result;
                 }
-
-                $j = $rows;
-            }            
+            }  
+            $j++;          
         }
         // print_r($places);
         $_SESSION['places'] = $places;
-        header('Location:/ceylontrek-3tier/view/SmartSearchResultsPage.php');
+        //header('Location:/ceylontrek-3tier/view/SmartSearchResultsPage.php');
     }
 ?>
- <?php mysqli_close($connection);?>
+<?php mysqli_close($connection);?>

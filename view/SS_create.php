@@ -82,9 +82,10 @@
                             </select>
                         </div>
                     </div>
-                    <div class="submitCls">
+                    <div class="submitCls" style="float: right;">
                         <!-- <input type="submit" name="createPackage" value="Create Package"> -->
-                        <button class="btnbtn" name="place_create">Create Place</button>
+                        <button class="btnbtn" style="margin-right: 5%;" name="cancel">Cancel</button>
+                        <button class="btnbtn" style="width: 130px;" name="place_create">Create Place</button>
                     </div>
                 </form>
             </div>

@@ -23,8 +23,8 @@ $long_description = $_SESSION['long_description'];
     }else{
         include('../view/new_top_bar.php');
     }
-    ?> 
-
+?> 
+	
 	<div class="con">
 		<h1 class="ttl"><b><?php echo "$place_name"; ?></b></h1>
 		<div class="image">
@@ -34,20 +34,20 @@ $long_description = $_SESSION['long_description'];
 		<div>
 			<p class="paragraph"><?php echo "$long_description"; ?></p>
 		</div>
-	</div>
 
-	<?php 
+		<?php 
 		if ($_SESSION['level'] == 'moderator') {
-	?>
-		<div class="submitCls">
-			<form action="../controller/SS_controller.php" method="POST">
-				<button class="btnbtn" name="edit_place">Edit Place</button>
-				<button class="btnbtn" name="delete_place">Delete Place</button>
-			</form>
-		</div>
-	<?php 
-		}
-	?>
+		?>
+			<div class="submitCls">
+				<form action="../controller/SS_controller.php" method="POST">
+					<button class="btnbtn" name="edit_place">Edit Place</button>
+					<button class="btnbtn" name="delete_place">Delete Place</button>
+				</form>
+			</div>
+		<?php 
+			}
+		?>
+	</div>
 
 <?php include('../view/footer.php');?>
 

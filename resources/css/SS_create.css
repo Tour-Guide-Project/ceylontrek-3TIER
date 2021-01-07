@@ -14,7 +14,7 @@
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, .5);
     border-radius: 15px;
-    padding: 1% 5% 3% 5%;
+    padding: 1% 5% 1% 5%;
     margin-top: 40px;
     margin-left: 20%;
     margin-bottom: 2%;
@@ -76,7 +76,7 @@ textarea {
 
 
 .submitCls .btnbtn {
-    /* width: 30%; */
+    width: 120px;
     color: #fff;
     background-color: #2f375b;
     border-color: #007bff;
@@ -84,15 +84,22 @@ textarea {
     text-align: center;
     text-decoration: none;
     border: none;
-    display: inline;
+    /* display: inline; */
     font-size: 17px;
     border: 1px solid transparent;
     border-radius: 0.5rem;
     cursor: pointer;
+    margin-top: 2%;
 }
 
 .submitCls .btnbtn:hover {
     color: #fff;
     background-color: #0069d9;
     border-color: #0062cc;
+}
+
+/* header underline */
+.smart_search {
+    text-decoration: underline;
+    color: white;
 }

@@ -20,12 +20,12 @@
         <div class="mobnav" style="background: #2f375b; ">
             <header >
                  <a href="homepage.php"><img style=" padding: 0px; width:250px; height: 95px; margin-bottom: 0px; margin-right: 70px;margin-left: 40px; margin-top:0px" src="../resources/img/logo2.png" alt=""></a>
-                 <button class="dropbutton"style="width:40px; height:20px; marging-bottom:50px; margin-top:10px" onclick="(0"><i class="fa fa-bars" aria-hidden="true"></i></button>      
+                 <button class="dropbutton"style="width:40px; height:20px; marging-bottom:50px; margin-top:10px" onclick="(0)"><i class="fa fa-bars" aria-hidden="true"></i></button>      
             </header>
             <div class="dropdown">
                 
                 <ul class="moblist">                  
-                    <li style="display:flex margin-top:20px">
+                    <li style="display:flex; margin-top:20px;">
                         <li class="fa fa-user-circle fa-2x" aria-hidden="true" style="margin-top: 2px;margin-left: 45px ;margin-bottom:15px;"></i>
                             
                         <a style="color: #f4f4f4;padding: 1px;text-decoration: none;text-transform: uppercase; margin-top:5px; margin-left:10px;font-size:18px" href="#" onMouseOver="this.style.color='skyblue'" onMouseOut="this.style.color='#f4f4f4'">View Profile</a>
