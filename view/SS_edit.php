@@ -30,7 +30,7 @@
     
         <div class="content">
             <div class="con">
-                <form  action="../controller/SS_create_place_controller.php"  method="post">
+                <form  action="../controller/SS_edit_place_controller.php"  method="post">
                     <?php
                         if(isset($_GET['param'])){
                             $errors=$_GET['param'];
@@ -74,24 +74,10 @@
                     <div class="row">
                         <div class="col-50-left">
                             <div class="col-50-left">
-                                <label for="activity" class="lbl">Choosed Activities :</label>
-                            </div>
-                            <?php
-                                foreach ($activities as $act) {
-                            ?>
-                                <div class="col-50-right-b">
-                                    <input <?php echo 'value="'.$act['activity'].'"'; ?> readonly>
-                                </div>
-                            <?php
-                                }
-                            ?>
-                        </div>
-                        <div class="col-50-right">
-                            <div class="col-50-left">
-                                <label for="activities" class="lbl">Add New Activities :</label>
+                                <label for="activities" class="lbl">Select Activities :</label>
                             </div>
                             <div class="col-50-right-b">
-                                <select style="height: 150px; width: 200px;" name="activities[]" id="activities" multiple>
+                                <select style="height: 150px; width: 170px;" name="activities[]" id="activities" multiple>
                                     <?php
                                         foreach ($all_activities as $activity) {
                                     ?>
@@ -103,8 +89,44 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-50-right">
+                            <div class="col-50-left">
+                                <label for="activity" class="lbl">Current Activities :</label>
+                            </div>
+                            <div class="col-50-right-b">
+                                <?php
+                                    foreach ($activities as $act) {
+                                ?>
+                                    <!-- <input <?php echo 'value="'.$act['activity'].'"'; ?> readonly> -->
+                                    <label class="lbl_current" for=""><?php echo $act['activity']; ?></label>
+                                <?php
+                                    }
+                                ?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="submitCls">
+                    <div class="row">
+                        <div class="col-50-left">
+                            <div class="col-50-left">
+                                <label for="new_activity" class="lbl">Add New Activity :</label>
+                            </div>
+                            <div class="col-50-right-b">
+                                <input type="text" style="width: 170px;" name="new_activity">
+                            </div>
+                        </div>
+                        <div class="col-50-right">
+                            <div class="col-50-left">
+                                <label for="activity" class="lbl">New Activity Type :</label>
+                            </div>
+                            <div class="col-50-right-b">
+                                <select style="height: 40px; width: 170px;" name="type" id="type">
+                                    <option value="out">Outdoor Activity</option>
+                                    <option value="in">Indoor Activity</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submitCls" style="float: right;">
                         <!-- <input type="submit" name="createPackage" value="Create Package"> -->
                         <button class="btnbtn" style="margin-right: 5%;" name="cancel">Cancel</button>
                         <button class="btnbtn" name="place_edit">Edit Place</button>

@@ -39,17 +39,19 @@ $activities = $_SESSION['activities'];
 			<?php
 				foreach ($placess as $place) {
 			?>
-
 				<div class="section">
+					<div class="place">
+						<h2> <?php echo $place['place_name'];?> </h2>
+					</div>
 					<div class="image">
 						<!-- <img src="../resources/img/SmartSearchResult/hik.jpg" alt="" style="width:70%; height:100px"> -->
 						<?php
 							if($place['image_path']){
 								echo '<img src="'.$place['image_path'].'" alt="Paris" style="width:70%; height:100px;">';
 							}
-							else{
-								echo '<img src="../resources/img/default.jpg" alt="" style="width: 200px;height:250px;margin-left:60px;border-radius:100%;">';
-							}
+							// else{
+							// 	echo '<img src="../resources/img/default.jpg" alt="" style="width: 200px;height:250px;margin-left:60px;border-radius:100%;">';
+							// }
 						?>
 					</div>
 

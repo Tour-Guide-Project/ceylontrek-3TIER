@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php session_start();
+	$criterias_out = $_SESSION['criterias_out'];
+	$criterias_in = $_SESSION['criterias_in'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +23,7 @@
     }else{
         include('../view/new_top_bar.php');
     }
-    ?> 
+?> 
 
 	<div class="con">
 
@@ -41,52 +44,32 @@
 				</div>
 		</div>
 			
-		<div class="boxOutdoor clearfix">
+		<div class="boxmain clearfix">
 
 			<div class="name1">
 				<h2>Outdoor Activities</h2>
 			</div>
 
 			<div class="box">
-				<div class="checkbox1">
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Bicycle Tour"> Bicycle Tour
-					</label>
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Go-Cart Racing"> Go-Cart Racing
-					</label>
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Kite Surfing"> Kite Surfing
-					</label>
-				</div>	
 
-				<div class="checkbox1">
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Hiking"> Hiking
-					</label>
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Deep Sea Fishing"> Deep Sea Fishing
-					</label>
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Surfing"> Surfing
-					</label>
-				</div>	
+				<?php
+					//$criterias_out = $_GET['criterias_out'];
 
-				<div class="checkbox1">	
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Whale Watching"> Whale Watching
-					</label>	
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Golf"> Golf
-					</label>
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Rock Climbing"> Rock Climbing
-					</label>
-				</div>
+					foreach ($criterias_out as $c_out) {
+				?>
+					<div class="checkbox1">
+						<label class="cont">
+							<input type="checkbox" name="checkActivity" <?php echo 'value="'.$c_out['activity'].'"'; ?> >
+							<?php echo $c_out['activity'];?>
+						</label>
+					</div>
+				<?php
+					}
+				?>
 			</div>
 		</div>
 
-		<div class="boxIndoor clearfix">
+		<div class="boxmain clearfix">
 
 			<div class="name1">
 				<h2>Indoor Activities</h2>
@@ -94,44 +77,23 @@
 
 			<div class="box">
 
-				<div class="checkbox1">
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Museums"> Museums
-					</label>
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Billiardsg"> Billiards
-					</label>
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Mosques"> Mosques
-					</label>
-				</div>	
+				<?php
+					//$criterias_in = $_GET['criterias_in'];
 
-				<div class="checkbox1">
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Spa"> Spa
-					</label>
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Tea Tasting"> Tea Tasting
-					</label>
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Churches"> Churches
-					</label>
-				</div>	
-
-				<div class="checkbox1">	
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Casino"> Casino
-					</label>	
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Temples"> Temples
-					</label>
-					<label class="cont">
-						<input type="checkbox" name="checkActivity" value="Hindu Shrines"> Hindu Shrines
-					</label>
-				</div>
+					foreach ($criterias_in as $c_in) {
+				?>
+					<div class="checkbox1">
+						<label class="cont">
+							<input type="checkbox" name="checkActivity" <?php echo 'value="'.$c_in['activity'].'"'; ?> >
+							<?php echo $c_in['activity'];?>
+						</label>
+					</div>
+				<?php
+					}
+				?>
 			</div>
 		</div>
-		<div id="result"></div>
+		<!-- <div id="result"></div> -->
 	</div>
 
 	<!-- JavaScript function for checked -->

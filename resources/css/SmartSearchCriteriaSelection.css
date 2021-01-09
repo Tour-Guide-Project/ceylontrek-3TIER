@@ -13,6 +13,8 @@ body {
 
 .con {
     margin-left: 10%;
+    margin-bottom: 10%;
+    /* background-color: blue; */
 }
 
 .optionB {
@@ -54,8 +56,9 @@ body {
     margin-bottom: 50px;
 }
 
-.boxOutdoor {
+.boxmain {
     width: 90%;
+    /* height: 150px; */
     margin-top: 2%;
     background: rgba(0, 0, 0, .5);
     box-sizing: border-box;
@@ -63,20 +66,11 @@ body {
     border-radius: 10px;
 }
 
-.boxIndoor {
-    width: 90%;
-    margin-top: 2%;
-    margin-bottom: 4.5%;
-    background: rgba(0, 0, 0, .6);
-    box-sizing: border-box;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
-    border-radius: 10px;
-}
-
 .name1 {
     float: left;
-    margin-top: 6%;
-    margin-left: 3%;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 10px;
 }
 
 .name1 h2 {
@@ -85,12 +79,22 @@ body {
 
 .box {
     float: right;
-    width: 70%
+    width: 70%;
+    /* height: 200%; */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* background-color: aquamarine; */
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 0px;
+    grid-column-gap: 1px;
 }
 
 .checkbox1 {
     margin: 2.5%;
-    display: inline-block;
+    /* display: inline-block; */
+    /* background-color: brown; */
+    
 }
 
 
@@ -101,22 +105,22 @@ body {
     position: relative;
     color: white;
     cursor: pointer;
-    font-size: 18px;
-    margin: 20px 10px 20px 10px;
+    font-size: 19px;
+    margin: 15px 10px 1px 10px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
-.cont input {
+.checkbox1 input {
     width: 15px;
     height: 15px;
+    margin-right: 5px;
 }
 
 
 /* header underline */
-
 .smart_search {
     text-decoration: underline;
     color: white;

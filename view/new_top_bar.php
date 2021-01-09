@@ -10,7 +10,7 @@
                 <li class="tour_guide" style="margin-top: 45px; font-size:17px; margin-left:0px"><a href="Guide_search_page.php">Tour Guides</a></li>
                 <li class="tour_package" style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="package_search_page.php">Tour Packages</a></li>
                 <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-                <li class="smart_search" style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                <li class="smart_search" style="margin-top: 45px; font-size:17px; margin-left:-10px"><a href="../controller/SS_criteria_selection_controller.php">Smart Search</a></li>
                 <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px; margin-right:0px"><a href="calendar.php">Travel Calendar</a></li>
             </ul>
             <div>
@@ -40,7 +40,7 @@
             <div class="dropdown">
                 
                 <ul class="moblist">                  
-                    <li style="display:flex margin-top:20px">
+                    <li style="display:flex; margin-top:20px;">
                         <li class="fa fa-user-circle fa-2x" aria-hidden="true" style="margin-top: 2px;margin-left: 45px ;margin-bottom:15px;"></i>
                             
                         <a style="color: #f4f4f4;padding: 1px;text-decoration: none;text-transform: uppercase; margin-top:5px; margin-left:10px;font-size:18px" href="#contact" onMouseOver="this.style.color='skyblue'" onMouseOut="this.style.color='#f4f4f4'">View Profile</a>

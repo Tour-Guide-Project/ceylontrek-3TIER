@@ -2,8 +2,7 @@ function getSelectedCheckboxValues(name) {
     var checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
     var values = [];
     checkboxes.forEach((checkbox) => {
-        values.push(checkbox.value);
-        
+        values.push(checkbox.value); 
     });
     //return values;
     $.ajax({ 

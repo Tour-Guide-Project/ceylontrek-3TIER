@@ -5,7 +5,6 @@
 
     $act = array();
     $j = 0;
-    $k = 0;
 
     if (isset($_POST['values'])) {
 
