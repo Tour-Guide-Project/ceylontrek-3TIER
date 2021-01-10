@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../resources/css/top_bar.css">
         <link rel="stylesheet" href="../resources/css/new_top_bar.css">
         <link rel="stylesheet" href="../resources/css/footer.css">
+        <script type="text/javascript" src="../resources/js/jquery.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -135,7 +136,23 @@
                     </table>
                 </div><!--schedule-->
           
-                <div class="guidecalender">
+
+                <div class="right_side">
+                    <div class="notify">
+                        <div class="circle" id="circle"></div>
+                        <i id="bell" class="bell fa fa-bell fa-2x" aria-hidden="true"></i>
+                    </div> 
+                    <!-- bell-icon -->
+
+                    <div class="dropdown" id="dropdown">
+                        <div id="myDropdown" >
+                           
+
+                        </div>
+                    </div>
+                    <!-- drop down list -->
+
+                <div class="guidecalender" id="guidecalender">
                     <div class="month">
                         <i class="fa fa-caret-left prev" aria-hidden="true"></i>
                         <div class="date"><h2></h2><h3></h3><p></p></div>
@@ -156,6 +173,8 @@
                               
                     </div><!--days-->
                 </div><!--guidecalender-->
+                </div>
+                <!-- right_side -->
 
                 <div class="corner_buttons">
                     <div>
@@ -172,4 +191,5 @@
             <script src="../resources/js/guide dashboard.js"></script>
         </div>
     </body>
+    <script type="text/javascript" src="../resources/js/notifications_tourguide.js"></script>
 </html>

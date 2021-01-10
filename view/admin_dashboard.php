@@ -59,14 +59,33 @@
 
 	<!-- send notification popup window -->
 	<div class="form-popup" id="myForm">
-  		<form action="../view/full_complain_view.php" class="form-container">
-   			<label for="title"><b>Title</b></label>
-    		<input type="text" placeholder="Enter title here.." name="title" required>
+		<form action="../controller/create_notifications.php" class="form-container" method="post">
+
+			<?php
+				if(isset($_GET['param'])){
+					$errors=$_GET['param'];
+					
+				    foreach ($errors as $error) {
+						echo "<script>alert('$error!');</script>";
+				    }
+			    }
+			?>
+			<label for="title"><b>Select User</b></label>
+			  	<div>
+					<input class="input_radio" style="width: 20%;" type="radio" name="gender" id="gender" value="tourist" required>
+					<label>Tourist</label>
+				
+				
+					<input class="input_radio" style="width: 20%;" type="radio" name="gender"  id="gender" value="tour-guide" required>
+					<label>Tour-Guide</label>
+				</div>
+			<label for="details">Title</label>
+			<input type="text" name="title" placeholder="Enter title here..">
 
     		<label for="details"><b>Notification</b></label>
-    		<textarea rows = "4" cols = "20" name = "details" style="resize: vertical;height:100px;" placeholder="Enter Notification Details here..."></textarea>
+    		<textarea rows = "4" cols = "20" name = "notifications" style="resize: vertical;height:100px;" placeholder="Enter Notification Details here..."></textarea>
 
-    		<button type="submit" class="btn">Send</button>
+    		<button type="submit" name="notifications_btn" class="btn">Send</button>
     		<button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
   		</form>
 	</div>

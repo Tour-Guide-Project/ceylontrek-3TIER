@@ -163,3 +163,21 @@ body {
     margin-left: -900px;
     margin-top: 130px;
 }
+
+.input_radio {
+    margin-top: 10px;
+    margin-left: 9px;
+    font-size: 20px;
+    color: lightgrey;
+}
+
+.form-container p.error {
+    position: relative;
+    background-color: #92a8d1;
+    outline: none;
+    color: red;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    font-size: 18px;
+    margin: 5px;
+}

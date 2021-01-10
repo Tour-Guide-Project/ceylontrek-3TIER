@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/admin_dashboard.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/Guidedashboardpage.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/guidedashboardpage.css">
 	<link rel="stylesheet" href="../resources/css/pendingProfiles.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
 	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
@@ -78,13 +78,13 @@
 	</div><!--side_bar-->
 
 	<div class="notification">
-	<form action="../controller/moderator_dashboard_controller.php" method="post">
+	<form action="moderator_dashboard.php" method="post">
 			
 		<button type="button" style="margin-left:1000px; " class="cobutton" onclick="openForm()">Create Notification</button>
-		<!-- <button class="cobutton" name="create_place">Create Place</button> -->
 		
 	</form>
 	</div>
+
 	
 	<div class="moderator_dashboard_box">
 		<div class="prow">
@@ -96,7 +96,7 @@
 							<h2>Senal Arosh</h2>
 							<p>Pending Profile</p>
 							<p>senal@gmail.com</p>
-							<p><button  class="pbutton"><a href="modApproveProfile.php">View Profile</button></p>
+							<p><button  class="pbutton">View Profile</button></p>
 						</div>
 				</div>
 			</div>
@@ -155,15 +155,34 @@
 
 	
 <!-- send notification popup window -->
-	<div class="form-popup" id="myForm">
-  		<form action="full_complain_view.php" class="form-container">
-   			<label for="title"><b>Title</b></label>
-    		<input type="text" placeholder="Enter title here.." name="title" required>
+<div class="form-popup" id="myForm">
+		<form action="../controller/create_notifications.php" class="form-container" method="post">
+
+			<?php
+				if(isset($_GET['param'])){
+					$errors=$_GET['param'];
+					
+				    foreach ($errors as $error) {
+						echo "<script>alert('$error!');</script>";
+				    }
+			    }
+			?>
+			<label for="title"><b>Select User</b></label>
+			  	<div>
+					<input class="input_radio" style="width: 20%;" type="radio" name="gender" id="gender" value="tourist" required>
+					<label>Tourist</label>
+				
+				
+					<input class="input_radio" style="width: 20%;" type="radio" name="gender"  id="gender" value="tour-guide" required>
+					<label>Tour-Guide</label>
+				</div>
+			<label for="details">Title</label>
+			<input type="text" name="title" placeholder="Enter title here..">
 
     		<label for="details"><b>Notification</b></label>
-    		<textarea rows = "4" cols = "20" name = "details" style="resize: vertical;height:100px;" placeholder="Enter Notification Details here..."></textarea>
+    		<textarea rows = "4" cols = "20" name = "notifications" style="resize: vertical;height:100px;" placeholder="Enter Notification Details here..."></textarea>
 
-    		<button type="submit" class="btn">Send</button>
+    		<button type="submit" name="notifications_btn" class="btn">Send</button>
     		<button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
   		</form>
 	</div>
