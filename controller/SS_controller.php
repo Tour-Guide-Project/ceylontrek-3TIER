@@ -24,8 +24,8 @@
 		header('Location: ../view/SS_create.php');
 	}
 
-	if (isset($_POST['delete_place'])){
-		header('Location: ../controller/SS_delete_place_controller.php');
-	}
+	// if (isset($_POST['delete_place'])){
+	// 	header('Location: ../controller/SS_delete_place_controller.php');
+	// }
 ?>
 <?php mysqli_close($connection);?>

@@ -1,4 +1,6 @@
 <?php session_start();
+	// print_r($_SESSION['criterias_out']);
+	// print_r($_SESSION['criterias_in']);
 	$criterias_out = $_SESSION['criterias_out'];
 	$criterias_in = $_SESSION['criterias_in'];
 ?>

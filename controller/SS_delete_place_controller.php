@@ -13,18 +13,18 @@
 
     if ($result_set1) {
 
-        $place_name = mysqli_real_escape_string($connection,$place_name);
-        $result_set2 = delete_place($connection,$place_name);
+        //$place_name = mysqli_real_escape_string($connection,$place_name);
+        $result_set2 = delete_place($connection,$place_id);
         //print_r($result_set);
         
         if ($result_set2) {         
-            header('Location:/ceylontrek-3tier/view/SmartSearchCriteriaSelection.php');
+            header('Location:/ceylontrek-3tier/controller/SS_criteria_selection_controller.php');
         }
 
-        else {
-            //query unsuccessfull, redirect users page
-            header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
-        }
+        // else {
+        //     //query unsuccessfull, redirect users page
+        //     header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+        // }
     }
 ?>
 <?php mysqli_close($connection);?>

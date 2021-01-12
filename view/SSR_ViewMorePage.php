@@ -1,7 +1,7 @@
 <?php session_start();
-$place_name = $_SESSION['place_name'];
-$image_path = $_SESSION['image_path'];
-$long_description = $_SESSION['long_description'];
+	$place_name = $_SESSION['place_name'];
+	$image_path = $_SESSION['image_path'];
+	$long_description = $_SESSION['long_description'];
 ?>
 
 <!DOCTYPE html>
@@ -27,9 +27,22 @@ $long_description = $_SESSION['long_description'];
 ?> 
 	
 	<div class="con">
-		<h1 class="ttl"><b><?php echo "$place_name"; ?></b></h1>
+		<?php
+			// $place_name = $_GET['place_name'];
+			// //print_r($place_name);
+			// $image_path = $_GET['image_path'];
+			// $long_description = $_GET['long_description'];
+		?>
+		<h1 class="ttl"><b> <?php echo "$place_name"; ?></b></h1>
 		<div class="image">
-			<img <?php echo 'src="'.$image_path.'"'; ?> alt="Paris" style="width:60%;">
+			<?php
+				if($image_path){
+					echo '<img src="'.$image_path.'" alt="" style="width:60%; height:350px;">';
+				}
+				else{
+					echo '<img src="../resources/img/SmartSearchResult/default.jpg" alt="" style="width:60%; height:350px;">';
+				}
+			?>
 		</div>
 
 		<div>
@@ -41,8 +54,8 @@ $long_description = $_SESSION['long_description'];
 		?>
 			<div class="submitCls">
 				<div>
-					<form action="../controller/SS_edit_place_controller.php" method="POST">
-						<button class="btnbtn" name="edit_place">Edit Place</button>
+					<form action="../controller/SS_edit_place_controller.php" method="get">
+						<button class="btnbtn" name="edit_place" value="<?php echo $place_name;?>" >Edit Place</button>
 					</form>
 				</div>
 				<div>

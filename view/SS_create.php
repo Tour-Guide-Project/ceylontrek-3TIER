@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/SS_create.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/SS_edit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="body">
@@ -25,7 +26,7 @@
     
         <div class="content">
             <div class="con">
-                <form  action="../controller/SS_create_place_controller.php"  method="post">
+                <form  action="../controller/SS_create_place_controller.php"  method="post" enctype="multipart/form-data">
                     <?php
                         if(isset($_GET['param'])){
                             $errors=$_GET['param'];
@@ -63,7 +64,7 @@
                             <label for="image_upload" class="lbl">Upload Image :</label>
                         </div>
                         <div class="col-75">
-                            <input type="file"   name="image_upload">
+                            <input type="file" name="file" id="file">
                         </div>
                     </div>
                     <div class="row">
@@ -75,9 +76,8 @@
                                 <select style="height: 150px; width: 170px;" name="activities[]" id="activities" multiple>
                                     <?php
                                         foreach ($all_activities as $activity) {
-                                    ?> -->
+                                    ?>
                                         <option value="<?php echo $activity['activity']; ?>"><?php echo $activity['activity']; ?></option>
-                                    
                                     <?php
                                         }
                                     ?>
@@ -117,7 +117,6 @@
             <!-- form -->
         </div>
         <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
-
     </div>
 </body>
 </html>

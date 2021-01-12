@@ -21,3 +21,19 @@ btn.addEventListener('click', (event) => {
     //alert(getSelectedCheckboxValues('checkActivity'));
     getSelectedCheckboxValues('checkActivity');
 });
+
+function deleteone(activity) {
+
+    alert("hello");
+    // var activity = activity;
+    // $.ajax({ 
+    //     type: "POST", 
+    //     url: "/ceylontrek-3TIER/controller/SS_deleteone_controller.php", 
+    //     data: { activity : activity},
+    //     //dataType: "json",
+    //     success: function() { 
+    //     	window.location = "/ceylontrek-3tier/view/SmartSearchResultsPage.php" 
+    //     } 
+    // });
+
+}

@@ -40,9 +40,9 @@ function search_place($connection,$place_name){
     return $result;
 }
 
-function create_place($connection,$place_name,$short_description,$long_description,$image_path){
-    $query = "INSERT INTO smartsearch(place_name , long_description , short_description , image_path)
-    VALUES('{$place_name}' , '{$long_description}' , '{$short_description}' , '{$image_path}')";
+function create_place($connection,$place_name,$short_description,$long_description){
+    $query = "INSERT INTO smartsearch(place_name , long_description , short_description)
+    VALUES('{$place_name}' , '{$long_description}' , '{$short_description}')";
 
     $result = mysqli_query($connection,$query);
     return $result;
@@ -100,12 +100,22 @@ function delete_connection($connection,$place_id){
     return $result;
 }
 
-function delete_place($connection,$place_name){
-    $query = "DELETE FROM smartsearch WHERE place_name='{$place_name}'";
+function delete_place($connection,$place_id){
+    $query = "DELETE FROM smartsearch WHERE place_id='{$place_id}'";
 
     $result = mysqli_query($connection,$query);
     //print_r($result);
     return $result;
 }
 
+function upload_place_image($connection,$place_name,$target_path){
+    $query = "UPDATE smartsearch SET image_path='{$target_path}' WHERE place_name='{$place_name}'";
+
+    $result=mysqli_query($connection,$query); 
+    return $result;
+}
+
+// function get_image(){
+
+// }
 ?>
