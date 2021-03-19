@@ -43,10 +43,22 @@
 						</a>
 					</li>
 					<li>
-						<a href="complains_page.php">
+                    <form action="../controller/complain_controller.php" method="post">
+						<a href="">
 							<span class="menu-icon"><i class="fa fa-question-circle fa-1x" aria-hidden="true"></i></span>
-							<span class="menu-title">Complains</span>
+							<button type="submit" style=" 
+								display: block;
+								padding: 0 10px;
+								height: 40px;
+								font-size: medium;
+								background:none;
+								outline:none;
+								border:none;
+								color:white;
+								line-height: 40px;
+								text-align: start;" name="complain_button" >Complain</button>
 						</a>
+					</form>
 					</li>
                     <li>
                         <a href="../controller/view_users_admin_controller.php?user_level=tourguide">
