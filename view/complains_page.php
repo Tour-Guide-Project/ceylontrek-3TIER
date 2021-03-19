@@ -134,6 +134,12 @@
 			<script>window.location='../view/moderator_dashboard.php' </script>
 	<?php }?>
 
+	<!-- //moderaotor has checked complaint alert  -->
+	<?php 
+		if(isset($_GET['checked'])){?>
+			<script>alert('You have Checked This Complaint!!!');</script>
+	<?php }?>
+
 
 <?php include('../view/footer.php'); ?>
 </body>

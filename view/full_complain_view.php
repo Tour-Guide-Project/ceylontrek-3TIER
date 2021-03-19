@@ -42,6 +42,12 @@
 							$status=$_GET['report_status'];
 							if($status==0){?>
 							<button type="button" name="report_admin" class="report" onclick="window.location='/ceylontrek-3tier/controller/complain_controller.php?report_id=<?php echo $record['complain_id'];?>'">Report Admin</button>
+							
+							<div class="tooltip">
+  								<span class="tooltiptext">If you get action to this complain,please Tick..</span>
+								<button type="button" onclick="window.location='/ceylontrek-3tier/controller/complain_controller.php?checked_id=<?php echo $record['complain_id'];?>'"><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i></button>
+							</div>
+							
 						<?php }else{?>
 						<button type="button" name="report_admin" class="alreadyreport" disabled>Already Reported</button>
 					<?php }}?>

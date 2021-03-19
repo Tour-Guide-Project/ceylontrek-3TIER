@@ -157,6 +157,30 @@ if(isset($_GET['report_id'])){
     }  
 }
 
+
+ //check if you  click checked  button or not
+ if(isset($_GET['checked_id'])){
+    $checked_id=$_GET['checked_id'];
+
+    $result_set5=delete_checked_complain($connection,$checked_id);
+        
+    if($result_set5){
+        
+        $result_set3=get_complain_details($connection);
+
+        if($result_set3){
+            $record=array();
+
+            while($row=mysqli_fetch_assoc($result_set3)){
+                $record[]=$row;      
+            }
+            $records=serialize($record);     
+        }    
+    header('Location:/ceylontrek-3tier/view/complains_page.php?checked&complaint='.$records.''); 
+                  
+    }  
+}
+
 //if click newest button
 if(isset($_POST['new_submit'])){
     $result_set1=get_newest_order($connection);

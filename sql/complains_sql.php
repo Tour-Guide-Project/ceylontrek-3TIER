@@ -57,6 +57,13 @@ function get_reported_status($connection,$complain_id){
   return $result;
 }
 
+//delete checked complaint
+function delete_checked_complain($connection,$checked_id){
+  $query="DELETE FROM complain WHERE complain_id='{$checked_id}' LIMIT 1";
+
+  $result=mysqli_query($connection,$query);
+  return $result;
+}
 
 //get newest order
 function get_newest_order($connection){
