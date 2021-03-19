@@ -97,11 +97,13 @@
 		<form action="../controller/createGuideProfile_controller.php" method="post" enctype="multipart/form-data">
         <div>
         <?php
+                $displayName='';
                 $gRegNo ='';
                 $DOB='';
                 $NIC='';
                 $languages='';
                 $experience='';
+                $bio='';
                 $enterDescription='';
                 $haveVehicle='';
                 $vRegNo='';
@@ -120,11 +122,12 @@
                 if(isset($_GET['param1'])){
                     $fields=$_GET['param1'];
                     $gRegNo = $fields[0];
-                    $DOB = $fields[1];
-                    $NIC=$fields[2];
-                    $languages=$fields[3];
-                    $experience=$fields[4];
+                    $NIC=$fields[1];
+                    $languages=$fields[2];
+                    $experience=$fields[3];
+                    $bio=$fields[4];
                     $enterDescription=$fields[5];
+                    $displayName=$fields[6];
 				    
                 }
                 if(isset($_GET['param2'])){
@@ -137,20 +140,20 @@
                     $vSeats=$vfields[5];
 			    }
 			?>
+            		<div class="row">
+				<div class="col-25">
+					<label for="displayName" class="lbl">Display Name:</label>
+				</div>
+				<div class="col-75">
+					<input type="text" name="displayName" <?php echo 'value="'.$displayName.'"'; ?> >
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-25">
 					<label for="gRegNo" class="lbl">Guide Reg. Number:</label>
 				</div>
 				<div class="col-75">
 					<input type="text" name="gRegNo" <?php echo 'value="'.$gRegNo.'"'; ?> >
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-25">
-					<label for="DOB" class="lbl">Date of Birth :</label>
-				</div>
-				<div class="col-75">
-					<input type="date" name="DOB" <?php echo 'value="'.$DOB.'"'; ?>>
 				</div>
 			</div>
 			<div class="row">
@@ -199,12 +202,54 @@
 				</div>
 			</div>
 
-			<div class="row">
+            <div class="row">
 				<div class="col-25">
-					<label for="enterDescription" class="lbl" >Description:</br>(max 500 characters)</label>
+					<label for="bio" class="lbl" >Bio:</br>(max 500 characters)</label>
 				</div>
 				<div class="col-75">
-					<textarea name="enterDescription" style="height:100px" ><?php echo "$enterDescription"; ?></textarea>
+					<textarea name="bio" style="height:100px" ><?php echo "$bio"; ?></textarea>
+				</div>
+            </div>
+
+			<div class="row">
+				<div class="col-25">
+					<label for="enterDescription" class="lbl" >Description:</br>(max 2500 characters)</label>
+				</div>
+				<div class="col-75">
+					<textarea name="enterDescription" style="height:400px" ><?php echo "$enterDescription"; ?></textarea>
+				</div>
+            </div>
+    
+            <div class="row">
+				<div class="col-25">
+					<label for="imageUpload3" class="lbl">Upload Main image :</label>
+				</div>
+				<div class="col-75">
+                <input type="file"   name="file[]" >
+				</div>
+            </div>
+            <div class="row">
+				<div class="col-25">
+					<label for="imageUpload4" class="lbl">Upload image 2:</label>
+				</div>
+				<div class="col-75">
+                <input type="file"   name="file[]" >
+				</div>
+            </div>
+            <div class="row">
+				<div class="col-25">
+					<label for="imageUpload5" class="lbl">Upload image 3 :</label>
+				</div>
+				<div class="col-75">
+                <input type="file"   name="file[]" >
+				</div>
+            </div>
+            <div class="row">
+				<div class="col-25">
+					<label for="imageUpload6" class="lbl">Upload image 4:</label>
+				</div>
+				<div class="col-75">
+                <input type="file"   name="file[]" >
 				</div>
             </div>
 

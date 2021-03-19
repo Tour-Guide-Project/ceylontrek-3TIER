@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php session_start();
+    $info=$_GET['guide_info'];
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +30,14 @@
     }
     ?> 
 
+    <?php
+        if($info['available']=="false"){
+            echo '<div class="alert">';
+            echo '<span class="closebtn" onclick="this.parentElement.style.display="none";">&times;</span>';
+            echo ''.$info['displayName'].' is not available for the dates you chose. Please try different dates.';
+            echo '</div>';
+        }
+    ?>
 
         <div class="sidenav">
             <h2 style="margin-left: 20px; margin-bottom:-20px;">Reviews</h2>
@@ -88,7 +99,7 @@
         
             <div class="guidewrapper ">
             <div class="avtar"><img src="../resources/img/guide/1.jpg" alt="user-avtar" width="100%"/></div>
-            <span class="guide-name">Chathura Rathnayake</span>
+            <span class="guide-name"><?php echo $info['displayName']?></span>
             
             <div class="star-rating">
             <span class="fa fa-star checked"></span>
@@ -101,17 +112,48 @@
             <div class="guide-content">
            <ul>
                <li>Trips Completed : 45</li>
-               <li>Years of Experience : 6</li>
+               <li>Years of Experience : <?php echo $info['experience']?></li>
                <li>Four Star Rated Tours : 30</li>
-               <li>Fluent Languages: <ul><li>English</li>
-            <li>Spanish</li>
-        <li>Dutch</li></ul></li>
+               <li>Fluent Languages: <ul><li><?php echo $info['fluent_languages']?></li>
+            
            </ul>
             </div>
            
             </div>
             <button class="loginbutton" style="height:65px; margin-left:5px"><span>Message Guide</span></button>
-            <button class="loginbutton"style="height:65px; margin-left:0px"><span>Reserve Guide</span></button>
+            <button type="button" onclick="openForm()" class="loginbutton"style="height:65px; margin-left:0px"><span>Reserve Guide</span></button>
+                    
+                   
+            
+             <!-- make reservation popup window -->
+           <div class="form-popup" id="myForm">
+              <form action="../controller/availability_controller.php" class="form-container" method="post">
+                <span><b>Arrival Date :</b></span>
+                <input type="date"  required="" id="arrivaldate" name="arrivaldate" min=<?php echo date('Y-m-d');?>>
+        
+                <span ><b>Departure  Date :</b></span>
+                <input type="date"  required="" id="departuredate" name="departuredate">
+
+                 <span ><b>No. of Tourists :</b></span>
+                <input type="number" min="0"  required="" id="tourists" name="no_of_tourists">
+        
+               
+                <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+                 <button type="submit" class="btn" name="check_availability">Check Availability</button>
+             </form>
+             </div>
+             
+        <script>
+          function openForm() {
+              document.getElementById("myForm").style.display = "block";
+         }
+
+         function closeForm() {
+             document.getElementById("myForm").style.display = "none";
+         }
+                    
+        </script>
+        <!-- make reservation popup window -->
 </div>
 
          <!-- end of guide info -->
@@ -162,11 +204,8 @@
             <!-- end of slideshow-container -->
 
             <div class="guide-bio">
-                <p><b><h4>Hello! Bonjour! Guten tag! Ayubowan!! I'm Chathura Rathnayake</h4></b></p>
-                <p >I'm an experienced Tour Guide who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me as your travel guide and friend from Sri Lanka.</p>
-                <p>Services offered by me:</br>1.Wild Life Tours </br>2.Round Trip tours</br>3.Custom Tour Packages</br>4.Coral reef watching<br>5.whale watching boat rides.</p>
-                <p>So choose me as your Tour Guide to travel in the Paradise Island.</p>
-                <h2 style="margin-top: 20px;  font-weight:bold;">Tour Packages offered by Chathura :</h2>
+                <p><?php echo $info['gdescription']?></p>
+                <h2 style="margin-top: 20px;  font-weight:bold;">Tour Packages offered by <?php echo $info['displayName']?> :</h2>
             </div>
 
            <!-- start of tour packages -->

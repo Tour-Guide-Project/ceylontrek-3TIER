@@ -9,7 +9,6 @@
 
 $errors=array();
 $gRegNo ='';
-$DOB='';
 $NIC='';
 $languages='';
 $experience='';
@@ -40,16 +39,18 @@ else{
 
 if(isset($_POST['submit'])){
                 $id=$_SESSION['id'];
+                $displayName=$_POST['displayName'];
                 $gRegNo = $_POST['gRegNo'];
-                $DOB = $_POST['DOB'];
+              
                 $NIC=$_POST['NIC'];
                 $languages=$_POST['languages'];
                 $experience=$_POST['experience'];
+                $bio=$_POST['bio'];
                 $enterDescription=$_POST['enterDescription'];
                 $haveVehicle=$_POST['haveVehicle'];
                 
 
-                $req_fields=array('gRegNo','DOB','NIC','languages','experience','enterDescription');
+                $req_fields=array('gRegNo','NIC','languages','experience','bio','enterDescription','displayName');
                 $fields=array();//array to store all the required fields
                 $vfields=array();//array to store all the vehicle details
                 foreach($req_fields as $field){
@@ -65,8 +66,11 @@ if(isset($_POST['submit'])){
                         $fields[]=$_POST[$field];
                 } //storing fields in array
 
-                if(strlen(trim($_POST['enterDescription']))>500){
+                if(strlen(trim($_POST['enterDescription']))>2500){
                     $errors[]='*The Description should be less than 500 characters';
+                }
+                if(strlen(trim($_POST['bio']))>500){
+                    $errors[]='*The bio should be less than 500 characters';
                 }
 
                 if(isset($_POST['haveVehicle'])){   
@@ -99,6 +103,13 @@ if(isset($_POST['submit'])){
                 $target_path1=$target_path.basename($id . $_FILES['file']['name'][0]);
                 $target_path2=$target_path.basename($id . $_FILES['file']['name'][1]);
 
+                $target_path_a="../resources/images/profile/";
+                $target_path3=$target_path_a.basename($id . $_FILES['file']['name'][2]);
+                $target_path4=$target_path_a.basename($id . $_FILES['file']['name'][3]);
+                $target_path5=$target_path_a.basename($id . $_FILES['file']['name'][4]);
+                $target_path6=$target_path_a.basename($id . $_FILES['file']['name'][5]);
+
+
                 $file_type1 = $_FILES['image']['type'][0];
                 $file_type2 = $_FILES['image']['type'][1];
 
@@ -116,11 +127,15 @@ if(isset($_POST['submit'])){
                 if($img_error==0){
                     $file_uploaded1 = move_uploaded_file($_FILES ['file']['tmp_name'][0],$target_path1);
                     $file_uploaded2 = move_uploaded_file($_FILES ['file']['tmp_name'][1],$target_path2);
+                    $file_uploaded3 = move_uploaded_file($_FILES ['file']['tmp_name'][2],$target_path3);
+                    $file_uploaded4 = move_uploaded_file($_FILES ['file']['tmp_name'][3],$target_path4);
+                    $file_uploaded5 = move_uploaded_file($_FILES ['file']['tmp_name'][4],$target_path5);
+                    $file_uploaded6 = move_uploaded_file($_FILES ['file']['tmp_name'][5],$target_path6);
                 }
 
-                if(!($file_uploaded2 && $file_uploaded1)){
-                    $errors[]='*Errors in image upload';
-                }
+                // if(!($file_uploaded2 && $file_uploaded1)){
+                //     $errors[]='*Errors in image upload';
+                // }
                 
 
 
@@ -141,11 +156,12 @@ if(isset($_POST['submit'])){
                         
                     if(empty($errors)){
                             $id=mysqli_real_escape_string($connection,$_SESSION['id']);
+                            $displayName=mysqli_real_escape_string($connection,$_POST['displayName']);
                             $gRegNo = mysqli_real_escape_string($connection,$_POST['gRegNo']);
-                            $DOB = mysqli_real_escape_string($connection,$_POST['DOB']);
                             $NIC=mysqli_real_escape_string($connection,$_POST['NIC']);
                             $languages=mysqli_real_escape_string($connection,$_POST['languages']);
                             $experience=mysqli_real_escape_string($connection,$_POST['experience']);
+                            $bio=mysqli_real_escape_string($connection,$_POST['bio']);
                             $enterDescription=mysqli_real_escape_string($connection,$_POST['enterDescription']);
                             
                             if(isset($_POST['haveVehicle'])){
@@ -158,7 +174,7 @@ if(isset($_POST['submit'])){
                                     $vLicense=mysqli_real_escape_string($connection,$_POST['vLicense']);
                                     $vSeats=mysqli_real_escape_string($connection,$_POST['vSeats']);
 
-                                            $result1= insert_guideinfo_query($connection,$id,$gRegNo,$DOB,$NIC,$languages,$experience,$enterDescription,$Vehicle,$target_path1,$target_path2);
+                                            $result1= insert_guideinfo_query($connection,$id,$displayName,$gRegNo,$NIC,$languages,$experience,$bio,$enterDescription,$Vehicle,$target_path1,$target_path2,$target_path3,$target_path4,$target_path5,$target_path6);
                                             $result2=insert_vehicleinfo_query($connection,$id,$vRegNo,$vType,$vMake,$vModel,$vLicense,$vSeats);
 
                                         if($result1 && $result2){
@@ -173,7 +189,7 @@ if(isset($_POST['submit'])){
                             else{
 
                                         $Vehicle=0;
-                                                $result1= insert_guideinfo_query($connection,$id,$gRegNo,$DOB,$NIC,$languages,$experience,$enterDescription,$Vehicle,$target_path1,$target_path2);
+                                                $result1= insert_guideinfo_query($connection,$id,$displayName,$gRegNo,$NIC,$languages,$experience,$bio,$enterDescription,$Vehicle,$target_path1,$target_path2,$target_path3,$target_path4,$target_path5,$target_path6);
                                             
 
                                             if($result1){

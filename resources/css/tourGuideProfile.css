@@ -331,3 +331,121 @@ body {
     font-family: lato;
     font-weight: 500;
 }
+
+/*<!-- make reservation popup window css -->*/
+
+.check_reservation label {
+    margin-left: 0;
+    font-size: 18px;
+    color: black;
+}
+
+.check_reservation {
+    /*margin-top: 10px;*/
+    display: inline-flex;
+    font-size: 14px;
+    font-color: lightgrey;
+}
+
+.check_reservation input[type=checkbox] {
+    margin-top: 10px;
+    width: 30px;
+    font-color: lightgrey;
+}
+
+
+/* The popup form of create new request- hidden by default */
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    z-index: 100000;
+    font-family: lato;
+}
+
+.form-container {
+    margin: 10px auto 10px auto;
+    width: 700px;
+    height: 300px;
+    padding: 30px;
+    background: #F0F8FF;
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+}
+
+.form-container span {
+    float: left;
+    font-size: 18px;
+    color: black;
+    padding-top: 6px;
+    padding-bottom: 5px;
+}
+
+.form-container input {
+    float: right;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #DCDCDC;
+    width: 70%;
+    padding: 6px;
+    margin: 5px;
+}
+
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 20px;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.8;
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.form-container .cancel {
+    background-color: red;
+    float: right;
+}
+
+.form-container .btn:hover {
+    opacity: 1;
+}
+
+
+ /* The alert message box */
+ .alert {
+    padding: 20px;
+    background-color: #af1106; /* Red */
+    color: white;
+    font-weight: bold;
+    margin-bottom: -50px;
+    margin-top: 100px;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  } 

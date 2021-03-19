@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +26,7 @@
    <div class="header" >
 
    
-      <form>
+      <form action="../controller/search_guide_controller.php" method="POST">
       	<div class="container">
       	<div class="form-box">
             <h1>Search Tour Guide</h1>
@@ -58,7 +60,9 @@
 
                </div><!--check-box-->
                  <br><br><br><br>
-                 <button class="seeall-button"><a style="color:white; text-decoration:none;" href='tourGuideSearchResults.php'>SEE ALL Guides</a></button>
+                 <!-- <button class="seeall-button"><a style="color:white; text-decoration:none;" href='tourGuideSearchResults.php'>SEE ALL Guides</a></button> -->
+                 <!-- <input type="button" value="SEE ALL GUIDES" name="seeAllGuides" class="seeall-button"> -->
+                <input type="submit" value="SEE ALL GUIDES" class="seeall-button" id="seeAllGuides" name="seeAllGuides">
       	</div><!--form-box-->
 
 

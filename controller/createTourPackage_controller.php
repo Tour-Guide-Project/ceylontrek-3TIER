@@ -5,7 +5,7 @@
 
 <?php
 
-$errors[]=array();
+$errors=array();
 $title='';
 $duration='';
 $destinations='';
@@ -76,9 +76,12 @@ if(strlen(trim($_POST['enterDescription']))>2500){
                 $file_uploaded3 = move_uploaded_file($_FILES ['file']['tmp_name'][2],$target_path3);
                 $file_uploaded4 = move_uploaded_file($_FILES ['file']['tmp_name'][3],$target_path4);
 
-                if(!($file_uploaded2 || $file_uploaded1) || !($file_uploaded3 || $file_uploaded4)){
-                    $errors[]='*Errors in image upload /Upload all images';
-                }
+                // if(!($file_uploaded2 || $file_uploaded1) || !($file_uploaded3 || $file_uploaded4)){
+                //     $errors[]='*Errors in image upload /Upload all images';
+                // }
+
+            
+
 
 
 
