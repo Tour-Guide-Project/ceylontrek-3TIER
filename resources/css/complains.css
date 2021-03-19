@@ -52,7 +52,7 @@ input[type="submit"] {
     outline: none;
     padding: 0 20px;
     cursor: pointer;
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 20px 20px 0 !important;
 }
 
 input[type="submit"]:hover {
@@ -71,7 +71,7 @@ input[type="submit"]:hover {
     padding: 0 20px;
     cursor: pointer;
     border-radius: 20px;
-    margin: -28px 10px 0 10px;
+    margin: -28px 10px 0 10px !important;
 }
 
 .search_bar button:hover {
@@ -82,7 +82,8 @@ input[type="submit"]:hover {
 .text_box h2 {
     text-align: center;
     font-size: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    text-decoration: underline;
     color: black;
 }
 
@@ -91,20 +92,22 @@ input[type="submit"]:hover {
 }
 
 .text_box {
-    float: left;
+    height: auto;
+    display: block;
     font-size: 16px;
     color: black;
     outline: none;
     margin-top: 20px;
     border: 1px solid lightgray;
     background-color: whitesmoke;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 40px 10px;
     border-radius: 15px;
-    position: center;
+    position: center !important;
 }
 
 .text_box button {
     margin-top: 10px;
+    margin-bottom: auto;
     float: right;
     font-size: 16px;
     color: white;
@@ -113,7 +116,7 @@ input[type="submit"]:hover {
     border-radius: 10px;
     outline: none;
     cursor: pointer;
-    border: none;
+    border: none !important;
 }
 
 .text_box button:hover {
@@ -134,7 +137,7 @@ input[type="submit"]:hover {
     left: 0;
     top: 0;
     transition: 0.5s;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .side_bar:hover {
@@ -158,13 +161,17 @@ input[type="submit"]:hover {
 
 .edit {
     float: left;
-    margin-left: 100px;
-    margin-top: 30px;
+    margin-left: 60px;
+    margin-top: 20px;
     border: 0;
     background-color: unset;
-    width: 100px;
-    height: 20px;
+    width: 200px;
+    height: 50px;
     color: white;
+    font-family: lato;
+    font-size: 20px;
+    margin-bottom: 20px;
+    outline: none;
 }
 
 .edit:hover {
@@ -174,7 +181,7 @@ input[type="submit"]:hover {
 .buttons {
     float: left;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 30px !important;
 }
 
 .button {
@@ -184,18 +191,18 @@ input[type="submit"]:hover {
     color: white;
     width: 100%;
     height: 50px;
-    text-align: center;
+    text-align: center !important;
 }
 
 .button:hover {
-    background-color: rgb(79, 76, 90);
+    background-color: rgb(79, 76, 90) !important;
 }
 
 .sidebar-menu ul {
     position: absolute;
     top: 300px;
     left: 0;
-    width: 100%;
+    width: 100% !important;
 }
 
 .sidebar-menu ul li {
@@ -203,12 +210,12 @@ input[type="submit"]:hover {
     width: 100%;
     list-style: none;
     height: 50px;
-    margin-bottom: 5px;
+    margin-bottom: 5px !important;
 }
 
 .sidebar-menu ul li:hover {
     background-color: rgb(79, 76, 90);
-    width: 100%;
+    width: 100% !important;
 }
 
 .sidebar-menu ul li a {
@@ -217,7 +224,7 @@ input[type="submit"]:hover {
     width: 100%;
     display: flex;
     text-decoration: none;
-    color: white;
+    color: white !important;
 }
 
 .sidebar-menu ul li a .menu-icon {
@@ -227,7 +234,7 @@ input[type="submit"]:hover {
     height: 40px;
     line-height: 40px;
     text-align: center;
-    margin-right: 50px;
+    margin-right: 50px !important;
 }
 
 .sidebar-menu ul li a .menu-icon .fa {
@@ -240,7 +247,7 @@ input[type="submit"]:hover {
     padding: 0 10px;
     height: 40px;
     line-height: 40px;
-    text-align: start;
+    text-align: start !important;
 }
 
 
@@ -256,7 +263,7 @@ input[type="submit"]:hover {
 }
 
 .form-container {
-    margin: -400px auto 20px auto;
+    margin: -200px auto 20px auto;
     width: 500px;
     padding: 50px;
     background: #F0F8FF;
@@ -270,29 +277,6 @@ input[type="submit"]:hover {
     color: black;
 }
 
-.form-container input {
-    font-size: 16px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color: #DCDCDC;
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 22px 0;
-}
-
-.form-container textarea {
-    font-size: 16px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    width: 100%;
-    background-color: #DCDCDC;
-    padding: 10px;
-    margin: 5px 0 22px 0;
-    /*padding-bottom: 80px;*/
-}
-
 .form-container .btn {
     background-color: #4CAF50;
     color: white;
@@ -302,12 +286,7 @@ input[type="submit"]:hover {
     cursor: pointer;
     width: 30%;
     opacity: 0.8;
-    float: left;
-}
-
-.form-container .cancel {
-    background-color: red;
-    float: right;
+    float: center;
 }
 
 .form-container .btn:hover {
@@ -331,10 +310,33 @@ input[type="submit"]:hover {
     border-radius: 10px;
 }
 
+.full_complain_view_box .text_box {
+    height: auto;
+    display: block;
+    font-size: 16px;
+    color: black;
+    outline: none;
+    margin-top: 20px;
+    border: 1px solid lightgray;
+    background-color: whitesmoke;
+    padding: 10px 10px 40px 10px;
+    border-radius: 15px;
+    position: center !important;
+}
+
 .full_complain_view_box .text_box h1 {
-    font-size: 25px;
+    font-size: 22px;
+    text-decoration: underline;
+    margin-bottom: 10px;
     color: black;
     text-align: center;
+}
+
+.full_complain_view_box .text_box h3 {
+    font-size: 18px;
+    margin-bottom: 3px;
+    color: rgb(23, 18, 36);
+    text-align: left;
 }
 
 .full_complain_view_box .text_box p {
@@ -342,8 +344,9 @@ input[type="submit"]:hover {
 }
 
 .full_complain_view_box .msg,
-.report {
-    background-color: #2f375b;
+.report,
+.alreadyreport {
+    background-color: #111d52;
     color: white;
     border-radius: 20px;
     font-size: 18px;
@@ -363,8 +366,26 @@ input[type="submit"]:hover {
     background-color: rgb(151, 0, 0);
 }
 
-.full_complain_view_box button:hover {
+.full_complain_view_box .alreadyreport {
+    cursor: none;
+    opacity: 0.3;
+    float: right;
+    background-color: rgb(151, 0, 0);
+}
+
+.full_complain_view_box .msg:hover {
     opacity: 1;
     margin-top: 10px;
-    background-color: #3d4875;
+    background-color: #445496;
+}
+
+.full_complain_view_box .report:hover {
+    opacity: 1;
+    margin-top: 10px;
+    background-color: #7e1717;
+}
+
+.all {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
 }

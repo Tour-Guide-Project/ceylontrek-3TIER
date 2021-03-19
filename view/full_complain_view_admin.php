@@ -21,7 +21,7 @@
     }
     ?> 
 	<div class="full_complain_view_box">
-			<form action="../controller/complain_controller.php" method="post">
+			<form action="../controller/complain_admin_controller.php" method="post">
 				
 				<?php 
 			    if(isset($_GET['view_complain'])){
@@ -37,14 +37,10 @@
 
 					<button class="msg">Message <?php echo $record['complainee_level'];?></button>
 
-					<?php 
-						if(isset($_GET['report_status'])){
-							$status=$_GET['report_status'];
-							if($status==0){?>
-							<button type="button" name="report_admin" class="report" onclick="window.location='/ceylontrek-3tier/controller/complain_controller.php?report_id=<?php echo $record['complain_id'];?>'">Report Admin</button>
-						<?php }else{?>
-						<button type="button" name="report_admin" class="alreadyreport" disabled>Already Reported</button>
-					<?php }}?>
+					
+					<button type="button" name="checked" class="report" onclick="window.location='/ceylontrek-3tier/controller/complain_admin_controller.php?checked_id=<?php echo $record['complain_id'];?>'">Checked</button>
+						
+				
 
 				<?php } ?>
 			</form>

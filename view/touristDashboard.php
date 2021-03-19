@@ -14,13 +14,15 @@
 
     <body class="body">
     <div class="dashnav"></div>
-            <div class="section1"> 
-            <?php 
+    <div class="section1"> 
+    <?php 
     if (!isset($_SESSION['id'])){
         include('../view/top_bar.php');
     }else{
         include('../view/new_top_bar.php');
     }?>
+
+    <div id="all" >
                 <div class="side_bar">
                     <img src="../resources/img/logo2.png" class="dashlogo">
                     <img src="../resources/img/reviewimg.jpg" class="profile" >
@@ -167,7 +169,7 @@
 
                 <div class="corner_buttons">
                         <div>
-                            <button class="cobutton" style="width:260px"><i class="fa fa-credit-card" aria-hidden="true"></i>Make a Complain</button>
+                            <button class="cobutton" type="button" style="width:260px" onclick="openForm()"><i class="fa fa-credit-card" aria-hidden="true"></i>Make a Complain</button>
                         </div>
 
                         <div>
@@ -177,6 +179,50 @@
                 </div><!--corner_button-->
             </div> <!--content -->
 
+    </div>
+
+    <!-- //complain popup form -->
+	<div class="form-popup" id="myForm">
+	    <form action="../controller/complain_controller.php" class="form-container" method="post">
+			   <h1>Make Your Complain</h1>
+			   <?php
+				if(isset($_GET['param'])){
+                    $errors=$_GET['param'];
+				    foreach ($errors as $error) {
+					    echo '<p class="error" id="errors" style="color:red ; height:10px;margin:10px">'.$error.'</p>';
+				    }
+			    }
+			   ?>
+			   
+               <div>
+			        <label  for="title"><b>Title :</b></label>
+                    <input type="text" placeholder="Enter any Title for your complain here.." name="title">
+			   </div>
+			   
+			
+
+               <label for="details"><b>Enter Your Complain :</b></label>
+    		   <textarea rows = "4" cols = "20" name = "complains" style="resize: vertical;height:100px;" placeholder="Enter Your complain here..."></textarea>
+    		 <button type="submit" class="btn" name="submit_tourist" id="submit" onclick="return confirm('If you not fill the any field , you have to fill whole form again.please check the form.  Submit your complain?');"  >Submit</button>
+    		<button  class="btn cancel" type="button" onclick="closeForms()">Cancel</button>
+  		</form>
+	</div>
+
+	<script>
+     function openForm() {   
+         document.getElementById('myForm').style.display = 'block';
+         document.getElementById('all').classList.add("all");
+     }
+     if(document.getElementById('errors')){
+        document.getElementById('myForm').style.display = 'block';
+         document.getElementById('all').classList.add("all");
+     }
+   
+     function closeForms() {
+         document.getElementById('myForm').style.display = "none";
+         document.getElementById('all').classList.remove("all");
+     }
+     </script>
 
             
 
@@ -184,9 +230,8 @@
     <div class="dashend">
         <?php include('../view/footer.php'); ?> 
     </div>
-    <script src="../resources/js/guide dashboard.js"></script>
-    </div>
 
     </body>
+    <script src="../resources/js/guide dashboard.js"></script>
     <script type="text/javascript" src="../resources/js/notifications_tourist.js"></script>
 </html>

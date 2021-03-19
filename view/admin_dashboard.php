@@ -30,6 +30,12 @@
 		</form>
             <div class="sidebar-menu">
               <ul>
+			  	<li>
+					<a href="admin_dashboard.php">
+						<span class="menu-icon"><i class="fa fa-folder-open fa-1x" aria-hidden="true"></i></span>
+						<span class="menu-title">My Dashboard</span>
+					</a>
+				</li>
                   <li>
                       <a href="Inbox.php">
                           <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
@@ -41,14 +47,15 @@
     </div><!--side_bar-->
 
 	<div class="admin_dashboard_box">
-	          
+			<form action="../controller/complain_admin_controller.php" method="post">
+				<button type="submit" name="submit_complain">Complains</button>
+			</form> 
 			<form action="../controller/admin_dashboard_controller.php" method="post">
-					<button type="submit" name="submit_complain">Complains</button>
-					<button type="submit" name="submit_guide">View All Guides</button>
-					<button type="submit" name="submit_tourist">View All Tourists</button>
-					<button type="submit" name="submit_admin" >Create Admin Account</button>
-					<button type="submit" name="submit_moderator">Create Moderator Account</button>
-					<button type="button" class="create_notification_btn" onclick="openForm()">Create Notification</button>
+				<button type="submit" name="submit_guide">View All Guides</button>
+				<button type="submit" name="submit_tourist">View All Tourists</button>
+				<button type="submit" name="submit_admin" >Create Admin Account</button>
+				<button type="submit" name="submit_moderator">Create Moderator Account</button>
+				<button type="button" class="create_notification_btn" onclick="openForm()">Create Notification</button>
 				<div class="text_box">
 					<label for="details"><b>System Statics</b></label>
     				<textarea rows = "20" cols = "20" name = "details" placeholder="system statics details here..."></textarea>
@@ -79,7 +86,7 @@
 					<input class="input_radio" style="width: 20%;" type="radio" name="gender"  id="gender" value="tour-guide" required>
 					<label>Tour-Guide</label>
 				</div>
-			<label for="details">Title</label>
+			<label for="details"><b>Title</b></label>
 			<input type="text" name="title" placeholder="Enter title here..">
 
     		<label for="details"><b>Notification</b></label>

@@ -104,7 +104,7 @@ a {
     position: absolute;
     top: 300px;
     left: 0;
-    width: 100%;
+    width: 100% !important;
 }
 
 .sidebar-menu ul li {
@@ -114,7 +114,7 @@ a {
     height: 40px;
     font-family: lato;
     padding-top: 3px;
-    padding-bottom: 3px;
+    padding-bottom: 3px !important;
 }
 
 .sidebar-menu ul li:hover {
@@ -151,14 +151,14 @@ a {
     padding: 0 10px;
     height: 40px;
     line-height: 40px;
-    text-align: start;
+    text-align: start !important;
 }
 
-.side_bar input[type=submit] {
+z .side_bar input[type=submit] {
     background-color: transparent;
     border: none;
     font-size: 16px;
-    color: white;
+    color: white !important;
 }
 
 .schedule {
@@ -319,7 +319,7 @@ a {
     display: inline-block;
     padding: 15px 25px;
     font-size: 18px;
-    margin: 0;
+    margin: 5;
 }
 
 .cobutton:hover {
@@ -566,6 +566,22 @@ td.text-right {
     font-weight: normal;
 }
 
+.dropdown-content .close {
+    float: right;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0;
+    color: rgb(207, 36, 44);
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.dropdown-content .close :hover {
+    cursor: pointer;
+    color: rgb(22, 4, 65);
+}
+
 .show {
     display: block;
 }
@@ -575,4 +591,100 @@ td.text-right {
 
 hr.solid {
     border-top: 1px solid rgb(92, 118, 119);
+}
+
+
+/* The popup form of create new request- hidden by default */
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100000;
+}
+
+.form-container {
+    margin: 60px auto 20px auto;
+    width: 500px;
+    padding: 50px;
+    background: #F0F8FF;
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+}
+
+.form-container h1 {
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.form-container label {
+    font-size: 15px;
+    color: black;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.form-container input {
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #DCDCDC;
+    height: 15px;
+    padding: 15px;
+    margin: 0 0 22px 0;
+}
+
+.form-container div input {
+    width: 100%;
+}
+
+.form-container textarea {
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: #DCDCDC;
+    padding: 5px;
+    margin: 5px 0 22px 0;
+    /*padding-bottom: 80px;*/
+}
+
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.8;
+    float: left;
+    outline: none;
+}
+
+.form-container .cancel {
+    background-color: red;
+    float: right;
+}
+
+.form-container .btn:hover {
+    opacity: 1;
+}
+
+.error {
+    margin: 5px;
+    padding: 5px;
+    color: red;
+}
+
+.all {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
 }
