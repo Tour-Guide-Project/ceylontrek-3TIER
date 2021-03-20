@@ -14,11 +14,31 @@ function search_new_profiles($connection)
 
 function guide_other_details($connection, $guide_id)
 {
-    $query = "SELECT tourguide.image_path,tourguide.first_name,tourguide.last_name,tourguide_others.government_reg_no,vehicle.vehicle_reg_no,vehicle.license_no
+    $query = "SELECT tourguide.id,tourguide.image_path,tourguide.first_name,tourguide.last_name,tourguide_others.government_reg_no,tourguide_others.haveVehicle
     FROM tourguide
     INNER JOIN tourguide_others ON tourguide.id = tourguide_others.guide_id
-    INNER JOIN vehicle ON tourguide.id = vehicle.guide_id
     WHERE tourguide.id = '{$guide_id}'";
+
+    $result = mysqli_query($connection, $query);
+    //print_r($result);
+    return $result;
+}
+
+function vehicle_details($connection, $guide_id)
+{
+    $query = "SELECT vehicle.vehicle_reg_no,vehicle.license_no
+    FROM vehicle
+    WHERE vehicle.guide_id = '{$guide_id}'";
+
+    $result = mysqli_query($connection, $query);
+    //print_r($result);
+    return $result;
+}
+
+function approve_guide($connection, $guide_id)
+{
+    $query = "UPDATE tourguide_others SET modApproved = 1
+    WHERE tourguide_others.guide_id = '{$guide_id}'";
 
     $result = mysqli_query($connection, $query);
     //print_r($result);

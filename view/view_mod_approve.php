@@ -1,6 +1,6 @@
 <?php
-if (isset($_GET['param'])) {
-    $profiles = $_GET['param'];
+if (isset($_GET['profiles'])) {
+    $profiles = $_GET['profiles'];
     //print_r($profiles);
     foreach ($profiles as $profile) {
         //print_r($profile);

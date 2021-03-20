@@ -22,24 +22,48 @@ if (isset($_SESSION['id'])) {
     $guide_id = mysqli_real_escape_string($connection, $guide_id);
     //print_r($guide_id);
 
-    $result_set = guide_other_details($connection, $guide_id);
-    // print_r($result_set);
+    $result_set1 = guide_other_details($connection, $guide_id);
+    //print_r($result_set1);
 
-    if ($result_set) {
+    if ($result_set1) {
 
-        if (mysqli_num_rows($result_set) == 1) {
+        if (mysqli_num_rows($result_set1) == 1) {
 
             // user found retrieve data
-            $result = mysqli_fetch_assoc($result_set);
-            //print_r($result);
+            $result1 = mysqli_fetch_assoc($result_set1);
+            //print_r($result1);
 
-            $details = $result;
+            if ($result1['haveVehicle'] == 1) {
 
-            header('Location:/ceylontrek-3tier/view/view_moderator_guide_others.php?' . http_build_query(array('param' => $details)));
+                $result_set2 = vehicle_details($connection, $guide_id);
+                //print_r($result_set2);
+
+                if ($result_set2) {
+
+                    if (mysqli_num_rows($result_set2) == 1) {
+
+                        // user found retrieve data
+                        $result2 = mysqli_fetch_assoc($result_set2);
+                        //print_r($result2);
+
+                        $details = array_merge($result1, $result2);
+                        //print_r($details);
+
+                        header('Location:/ceylontrek-3tier/view/view_moderator_guide_others.php?' . http_build_query(array('details' => $details)));
+                    }
+                }
+            } else {
+
+                $details = $result1;
+
+                header('Location:/ceylontrek-3tier/view/view_moderator_guide_others.php?' . http_build_query(array('details' => $details)));
+            }
         } else {
             //user not found,redirect users page
             header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found1');
         }
+
+        //header('Location:/ceylontrek-3tier/view/view_moderator_guide_others.php?' . http_build_query(array('param' => $details)));
     } else {
         //query unsuccessfull, redirect users page
         header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found2');
