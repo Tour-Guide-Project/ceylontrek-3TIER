@@ -30,61 +30,65 @@
                     <button class="edit"> Edit Profile</button><br>
                   <div class="sidebar-menu">
                   <ul>
-                  <li>
-                            <a href="guideDashboard.php">
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">My Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Inbox.php">
-                                <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                                <span class="menu-title">Inbox</span>
-                            </a>
-                        </li>
 
-                        <li>
-                        <a >
-                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <input type="submit" name="profile" value="Create My Profile" >
-                            </a>
-                        </li>
+                <li>    
+                        
+                        <a href="guideDashboard.php">
+                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">My Dashboard</span>
+                        </a> 
+                        
+                    </li>
 
-                        <li>
-                            <a>
-                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <input type="submit" name="package" value="Create a Tour Package" >
-                            </a>
-                        </li>
+                    <li>
+                        <a href="Inbox.php">
+                            <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
+                            <span class="menu-title">Inbox</span>
+                        </a>
+                    </li>
 
-                        <li>
-                            <a href="tourGuideProfile.php">
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">View My Profile</span>
-                            </a>
-                        </li>
+                    <li>
+                        <a href=createGuideProfile.php>
+                            <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Create My Profile</span>
+                        </a>
+                    </li>
 
-                        <li>
-                            <a href="guideMyPackages.php">
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">View My Tour Packages</span>
-                            </a>
-                        </li>
+                    <li>
+                        <a href="CreateTourPackagePage.php">
+                            <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Create tour package</span>
+                        </a>
+                    </li>
 
-                        <li>
-                            <a href="guideUpcomingTours.php">
-                                <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">Upcoming Tours</span>
-                            </a>
-                        </li>
+                    <li>
+                        <a href="tourGuideProfile.php">
+                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">View My Profile</span>
+                        </a>
+                    </li>
 
-                        <li>
-                            <a href="guideUpcomingTours.php">
-                                <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">Previous Tours</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <li>
+                        <a href="guideMyPackages.php">
+                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">View My Tour Packages</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="guideUpcomingTours.php">
+                            <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Upcoming Tours</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="guideUpcomingTours.php">
+                            <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Previous Tours</span>
+                        </a>
+                    </li>
+                </ul>
                   </div><!--sidebar-manu-->        
                 </div><!--side_bar-->
 </form>
@@ -240,8 +244,7 @@
                             <button class="cobutton" style="width:260px;"><i class="fa fa-credit-card" aria-hidden="true"></i>Pay System Fee</button>
                         </div>
 
-                        <div>
-                            
+                        <div>                       
                             <button class="cobutton" style="width:260px; margin-top:20px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
                         </div>
                 </div><!--corner_button-->

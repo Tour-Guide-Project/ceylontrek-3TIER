@@ -31,12 +31,15 @@
                   <div class="sidebar-menu">
                   <ul>
 
-                  <li>
+                    <li>    
+                            
                             <a href="guideDashboard.php">
                                 <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
                                 <span class="menu-title">My Dashboard</span>
-                            </a>
+                            </a> 
+                            
                         </li>
+                    
                         <li>
                             <a href="Inbox.php">
                                 <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
@@ -45,14 +48,14 @@
                         </li>
 
                         <li>
-                        <a >
+                            <a href=createGuideProfile.php>
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <input type="submit" name="profile" value="Create My Profile" >
+                                <span class="menu-title">Create My Profile</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="CreatTourPackagePage.php">
+                            <a href="CreateTourPackagePage.php">
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
                                 <span class="menu-title">Create tour package</span>
                             </a>
@@ -224,39 +227,7 @@
     <!-- form -->
                 
           
-        <div class="guidecalender">
-            <div class="month">
-                        <i class="fa fa-caret-left prev" aria-hidden="true"></i>
-                        <div class="date"><h2></h2><h3></h3><p></p></div>
-                        <i class="fa fa-caret-right next" aria-hidden="true"></i>
-                    </div><!--month-->  
-                    
-                    <div class="weekdays">
-                        <div>Sun</div>
-                        <div>Mon</div>
-                        <div>Tue</div>
-                        <div>Wed</div>
-                        <div>Thu</div>
-                        <div>Fri</div>
-                        <div>Sat</div>
-                    </div><!--weeekdays-->
-                             
-                    <div class="days">
-                              
-                    </div><!--days-->
-                </div><!--guidecalender-->
-
-                <div class="corner_buttons">
-                        <div>
-                            <button class="cobutton" style="width:275px"><i class="fa fa-credit-card" aria-hidden="true"></i>Pay System Fee</button>
-                        </div>
-
-                        <div>
-                            
-                            <button class="cobutton" style="width:275px; margin-top:20px"><i class="fa fa-phone  aria-hidden="true"></i>Contact Ceylon Treck</button>
-                        </div>
-                </div><!--corner_button-->
-        </div>
+        
                 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
         <script src="../resources/js/guide dashboard.js"></script>
 
