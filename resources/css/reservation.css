@@ -70,3 +70,21 @@ body {
     margin-right: 300px;
     margin-bottom: 50px;
   }
+
+  .agreeCls {
+    margin-top: 3%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+.agreed2 {
+    margin-left: 3%;
+}
+
+.agreed1 input {
+    width: 20px;
+    height: 20px;
+}

@@ -17,6 +17,10 @@
                 $info['available']="false";
                 header('Location:/ceylontrek-3tier/view/tourGuideProfile.php?'.http_build_query(array('guide_info'=>$info)));
             }
+            else if($_GET['reservation']=="success"){
+                $info['reservation']="success";
+                header('Location:/ceylontrek-3tier/view/tourGuideProfile.php?'.http_build_query(array('guide_info'=>$info)));
+            }
             else{
                 header('Location:/ceylontrek-3tier/view/tourGuideProfile.php?'.http_build_query(array('guide_info'=>$info)));
             }
@@ -24,7 +28,7 @@
         }
         else {
             //query unsuccessfull, redirect users page
-            header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+            header('Location:/ceylontrek-3tier/view/homepage.php?err=guide_not_found');
         }
     }
    

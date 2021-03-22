@@ -7,17 +7,18 @@
 $guide_id=$_SESSION['current_guide_id'];
     if(isset($_POST['check_availability'])){
         $arrival_date=$_POST['arrivaldate'];
-        $departure_date=$_POST['departuredate'];
         $no_of_tourists=$_POST['no_of_tourists'];
+        $departure_date=$_POST['departuredate'];
         $result = check_availability($connection, $guide_id,$arrival_date, $departure_date, $no_of_tourists);
+        
         if($result){
             echo '<script type="text/javascript">alert("Welcome ceylon-trek!");</script>';
             header('Location: /ceylontrek-3tier/controller/view_guide_ad_controller.php?view_guide='.$guide_id.'&available=false'); 
         }
         else{
             
-            echo '<script type="text/javascript">alert("Welcome ceylon-trek!");</script>';
-            header('Location: /ceylontrek-3tier/controller/view_guide_ad_controller.php?view_guide='.$guide_id.'&available=false');
+            
+            header('Location: /ceylontrek-3tier/controller/reservation_controller.php?guide_id='.$guide_id.'');
             
            
         }

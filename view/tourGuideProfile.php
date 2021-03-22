@@ -37,6 +37,12 @@
             echo ''.$info['displayName'].' is not available for the dates you chose. Please try different dates.';
             echo '</div>';
         }
+        if($info['reservation']=="success"){
+            echo '<div class="alert">';
+            echo '<span class="closebtn" onclick="this.parentElement.style.display="none";">&times;</span>';
+            echo 'You have successfully reserved '.$info['displayName'].'';
+            echo '</div>';
+        }
     ?>
 
         <div class="sidenav">
@@ -130,9 +136,12 @@
               <form action="../controller/availability_controller.php" class="form-container" method="post">
                 <span><b>Arrival Date :</b></span>
                 <input type="date"  required="" id="arrivaldate" name="arrivaldate" min=<?php echo date('Y-m-d');?>>
-        
+                <?php
+                $datetime = new DateTime('tomorrow');
+               
+                ?>
                 <span ><b>Departure  Date :</b></span>
-                <input type="date"  required="" id="departuredate" name="departuredate">
+                <input type="date"  required="" id="departuredate" name="departuredate" min=<?php  echo $datetime->format('Y-m-d H:i:s');?>>
 
                  <span ><b>No. of Tourists :</b></span>
                 <input type="number" min="0"  required="" id="tourists" name="no_of_tourists">
