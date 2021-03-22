@@ -9,273 +9,216 @@
     background-size: 1500px 800px;
     margin-top: 125px;
 }
-
-#new-message {
-    display: none;
-    box-shadow: 2px 10px 30px black;
-    width: 500px;
-    position: fixed;
-    color: #000;
-    background-color: white;
-    z-index: 2;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    border-radius: 5px;
-    overflow: auto;
-    padding: 5px;
-}
-
-.msg-header,
-.msg-footer {
-    background-color: rgb(48, 48, 104);
-    color: white;
-    padding: 5px;
-}
-
-.msg-header {
-    font-size: 15px;
-    text-align: center;
-}
-
-.msg-body {
-    padding: 5px;
-}
-
-.newmsg-input {
-    width: 95%;
-}
-
-#inbox-container {
-    /*  box-shadow: 2px 2px 10px  #000000; */
-    width: 1200px;
-    height: 500px;
-    margin: 2% auto;
-    color: black;
+.chatbox{
     background-color: whitesmoke;
-    margin-bottom: 80px;
-    border-radius: 10px;
-}
-
-#inbox-menu {
-    background-color: rgb(209, 209, 209);
-    border-bottom: 1.5px solid rgb(153, 151, 151);
-    height: 30px;
     color: black;
-    padding: 1%;
+    width: 1000px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin-left: 200px;
+    margin-bottom: 100px;
+    box-shadow:20px 20px 50px 15px grey;
+}
+.users{
+    padding: 25px 30px;
 }
 
-.img-menu {
-    float: left;
-    width: 40px;
-    height: 40px;
+.users header, .user-list a{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.chatbox img{
+    object-fit: cover;
     border-radius: 50%;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
-.sender {
-    margin-top: 5px;
-    margin-left: 80px;
+.users header .scontent, .user-list a .scontent{
+    display: flex;
+    align-items: center;
+    
 }
 
-#left-column,
-#right-column {
+.users header .scontent img{
+    width: 50px;
+    height: 50px;
+}
+
+.users header .sdetails,.user-list a .sdetails{
+    margin-left: 15px;
+    color: #000;
+}
+
+.users header .sdetails span,.user-list a .sdetails span{
+    font-size: 18px;
+    font-weight: 500px;
+}
+
+.users .search{
+    margin: 20px 0;
+    display: flex;
     position: relative;
-    float: left;
-    height: 90%;
-    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
 }
 
-#left-column {
-    width: 30%;
+.user .search .text{
+    font-size: 18px;
 }
 
-#right-column {
-    width: 69.9%;
-    border-left: 1px solid rgb(88, 88, 88);
+.users .search input{
+    
+    height: 42px;
+    width: 450px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
 }
 
-#left-col-container,
-#right-col-container {
-    width: 100%;
-    height: 99%;
-    margin: 0px auto;
-    height: 100%;
+.users .search #rlevel{
+    height: 42px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.users .search button{
+    width: 50px;
+    height: 42px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #333;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 5px 5px 5px 5px;
+}
+.user-list{
+    max-height: 500px;
+    
+    
+}
+:is(.user-list,.chat-content)::-webkit-scrollbar{
+    width: 0px;
+}
+.user-list a .scontent img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.user-list a .scontent p{
+    color: #67676a;
+}
+.user-list a{
+    margin-bottom: 15px;
+    padding-right: 15px;
+    text-decoration:none;
+}
+
+.user-list a:last-child{
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+
+.chat-area header{
+    display: flex;
+    align-items: center;
+    padding: 18px 30px;
+}
+
+.chat-area header img{
+    height: 45px;
+    width: 45px;
+    margin: 0 15px;
+}
+
+.chat-area header .back-icon{
+    font-size: 18px;
+    color: #333;
+}
+
+.chat-area header span{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.chat-content{
+    min-height: 300px;
     overflow-y: auto;
+    background: #e2e2e2;
+    padding: 10px 30px 20px 30px;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
+                inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
 }
 
-#left-col-containe {
-    margin-top: 50px;
+.chat-content .chat{
+    margin: 15px 0;
 }
 
-#right-col-container {
-    background-color: rgba(182, 182, 206, 0.993);
+.chat-content .chat p{
+    word-wrap: break-word;
+    padding: 8px 16px;
 }
 
-.msg_bar {
-    width: 100%;
-    height: 60px;
-    border: 0;
-    border-bottom: 1px solid rgb(0, 0, 0);
-}
-
-.msg_bar {
-    background-color: rgb(238, 235, 235);
-    text-align: center;
-    overflow: auto;
-}
-
-#tool-bar {
-    width: 100%;
-    height: 60px;
-    border: 0;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    background-color: rgb(221, 219, 219);
-    justify-content: start;
+.chat-content .outgoing{
     display: flex;
 }
-
-.tools .search {
-    float: left;
-    width: 120px;
-    margin-top: 20px;
-    margin-right: 40px;
-    height: 25px;
-    outline: none;
-    border: 0;
-    padding-right: 20px;
-    border-radius: 50px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    text-align: center;
+.outgoing .cdetails{
+    margin-left: auto;
+    max-width: calc(100%-200px);
+}
+.outgoing .cdetails p{
+    background: #333;
+    color: #fff;
+    border-radius: 18px 18px 0 18px;  
 }
 
-.tools .fa-search {
-    float: left;
-    border-radius: 50px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    background-color: white;
-    height: 20px;
-    width: 30px;
-    color: rgb(148, 143, 143);
-    padding: 5px 30px 0px 20px;
-    margin: 20px 0px 5px 10px;
-    font-size: 15px;
+.chat-content .incoming{
+    display: flex;
+    align-items: center;
 }
 
-.tools .fa-plus-square-o,
-.fa-trash-o {
-    margin: 25px 5px 10px 0px;
-    float: right;
-    width: auto;
+.incoming .cdetails p{
+     background: #fff;
+     color: #333;
+     border-radius: 18px 18px 18px 0;
 }
 
-.fa-plus-square-o .tooltiptext,
-.fa-trash-o .tooltiptext {
-    width: 100px;
-    height: auto;
-    visibility: hidden;
-    z-index: 5;
-    position: relative;
-    opacity: 0;
-    background-color: #555;
-    color: white;
-    transition: opacity 0.3s;
-    border-radius: 5px;
+.incoming .cdetails{
     margin-left: 5px;
-    top: -40px;
-    right: 50%;
-    text-align: center;
-    padding: 5px;
-    font-size: 10px;
+    margin-right: auto;
+    max-width: calc(100%-200px);
 }
 
-
-/* Show the tooltip text when you mouse over the tooltip container */
-
-.fa-plus-square-o:hover .tooltiptext,
-.fa-trash-o:hover .tooltiptext {
-    visibility: visible;
-    opacity: 3;
+.chat-content .typing-area{
+  
+    display: flex;
+    justify-content: space-between;
 }
 
-.msg_bar:hover {
-    background-color: rgb(216, 212, 212);
-}
-
-.msg_bar .img-msgbar {
-    float: left;
-    width: 40px;
+.typing-area input{
     height: 40px;
-    border-radius: 50%;
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-.msg_bar h5 {
-    margin-top: 20px;
-    margin-right: 150px;
-}
-
-#msg-container {
-    height: 88%;
-    overflow: auto;
-    border: 1px solid black;
-    background-image: url(../img/home/logo2.png);
-    background-repeat: space;
-    background-color: rgba(245, 245, 245, 0.397);
-}
-
-.inbox-textarea {
-    width: 100%;
-    height: 45px;
-    position: absolute;
-    margin-bottom: 5px;
-    bottom: 0;
-    border: 1px solid rgb(53, 53, 77);
-}
-
-.me-msg,
-.reply-msg {
-    border: 1px solid black;
-    height: auto;
-    width: 50%;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-.me-msg {
-    float: right;
-    border-bottom-right-radius: 0;
-    background-color: white;
-}
-
-.reply-msg {
-    float: left;
-    border-bottom-left-radius: 0;
-    background-color: rgb(250, 244, 218);
-}
-
-.rightfooter {
-    justify-content: start;
-    background-color: rgb(229, 226, 226);
-}
-
-.rightfooter .fa {
-    margin-left: 30px;
-    color: black;
-}
-
-.rightfooter .typetext {
-    width: 650px;
-    height: 30px;
-    border: 0;
+    width:850px;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    
+    border-radius: 5px 0 0 5px;
     outline: none;
-    border-radius: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 10px;
+    margin: 5px;
+}
+
+.typing-area button{
+    width: 55px;
+    height: 40px;
+    background: #333;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
 }
