@@ -43,7 +43,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Inbox.php">
+                            <a href="../controller/chat_controller.php">
                                 <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
                                 <spn class="manu-title">Inbox</span>
                             </a>
