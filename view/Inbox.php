@@ -1,4 +1,16 @@
-<?php session_start();?>
+<?php session_start();
+//get the sender details from db
+$first_name=$_SESSION['first_name'];
+$last_name=$_SESSION['last_name'];
+$img=$_SESSION['image'];
+$email=$_SESSION['email'];
+$level=$_SESSION['level'];
+$sid=$_SESSION['sid'];
+
+// load the old message recivers
+$rlist=$_SESSION['chatlist'];
+
+?>
 <!doctype html>
 <html>
     <head>
@@ -19,144 +31,58 @@
         include('../view/new_top_bar.php');
     }
     ?> 
-        <div id="new-message">
-             <p class="msg-header"> New message</p>
-             <p class="msg-body">
-                 <form style="text-align:center" method="post">
-                     <input type="text" placeholder="user_name"  name="user_name" class="newmsg-input" id="user_name"><br><br>
-                     <!--available list-->
-                     <datalist id="user"></datalist>
-                     <textarea name="message" placeholder="Write your message" class="newmsg-input"></textarea><br><br>
-                     <input type="submit" value="send" id="send" name="send"/>
-                     <button>Cancel</button>
-                 </form>
-             </p>
-             <p class="msg-footer"></p>
-        </div>
+        <div class="chatbox">
+           <section class="users">
 
-        
-        <div id="inbox-container">
-            <div id="inbox-menu">
-                <img src="../resources/img/reviewimg.jpg" class="img-menu">
-                <h4 class="sender">M.P.Abeysekara</h4>
-           </div><!--inbox-menu-->
+                <header>
+                    <!--sender deatils-->
+                    <div class="scontent">
+                        <img src=<?php echo ''.$img.''; ?> alt="" class="src">
+                        <div class="sdetails">
+                            <span><?php echo ''.$first_name.''." ".''.$last_name.''; ?></span>
+                            
+                        </div><!--sdetails-->
+                    </div><!--scontent-->
+                </header>
+                
 
-         <div id="left-column">
-                  <div id="tool-bar" class="tools">
-                    <i class="fa fa-search fa-1x" aria-hidden="true"></i>
-                    <input type="text" placeholder="Search" class="search">
-                    <i class="fa fa-trash-o" aria-hidden="true">
-                       <span class="tooltiptext">Delete</span>
-                    </i> 
-
-                    <i class="fa fa-plus-square-o" aria-hidden="true">
-                            <span class="tooltiptext">New_Contact</span>
-                    </i>
-                   
-                        
-                  </div><!--toolbar-->
-            <div id="left-col-container">
-                  <div class="msg_bar" >
-                      <img src="../resources/img/reviewimg.jpg" class="img-msgbar">
-                      <h5>Nazir</h5>
-                  </div><!--message_bar-->
-
-                  <div class="msg_bar">
-                      <img src="../resources/img/reviewimg.jpg" class="img-msgbar">
-                      <h5>Nazir</h5>
-                  </div><!--message_bar-->
-
-
-                  <div class="msg_bar" style="background-color:#b8b894">
-                      <img src="../resources/img/reviewimg.jpg" class="img-msgbar">
-                      <h5>Nazir</h5>
-                  </div><!--message_bar-->
-
-
-                  <div class="msg_bar">
-                      <img src="../resources/img/reviewimg.jpg" class="img-msgbar">
-                      <h5>Nazir</h5>
-                  </div><!--message_bar-->
-
-
-                  <div class="msg_bar">
-                      <img src="../resources/img/reviewimg.jpg" class="img-msgbar">
-                      <h5>Nazir</h5>
-                  </div><!--message_bar-->
-
-
-                  <div class="msg_bar">
-                      <img src="../resources/img/reviewimg.jpg" class="img-msgbar">
-                      <h5>Nazir</h5>
-                  </div><!--message_bar-->
-
-                  <div class="msg_bar">
-                      <img src="../resources/img/reviewimg.jpg" class="img-msgbar">
-                      <h5>Nazir</h5>
-                  </div><!--message_bar-->
-
-                  <div class="msg_bar">
-                      <img src="../resources/img/reviewimg.jpg" class="img-msgbar">
-                      <h5>Nazir</h5>
-                  </div><!--message_bar-->
-
-            </div><!--left-col-container-->
-         </div><!--left-column-->
-
-         <div id="right-column"> 
-            <div id="right-col-container"> 
-                <div id="msg-container">
-
-                    <div class="me-msg"> 
-                         <a href="#">You</a>
-                        <p>When will you come here ? </p> 
-                    </div><!--me-msg--> 
-
-
-                    <div class="reply-msg"> 
-                        <a href="#">Tourist</a>
-                        <p>Maybe next weekend</p>     
-                    </div><!--reply-msg-->
-
-
-                    <div class="me-msg"> 
-                         <a href="#">You</a>
-                        <p>When will you come here ? </p> 
-                    </div><!--me-msg--> 
-
-
-                    <div class="reply-msg"> 
-                        <a href="#">Tourist</a>
-                        <p>Maybe next weekend</p>     
-                    </div><!--reply-msg-->
+                <!--search bar for search new contact-->
+                <div class="search"> 
+                <form action="../controller/chat_search_controller.php" method="POST">
+                    <input type="text" placeholder="Enter email address to search Users" name="word">
+                    <button name="search"><i class="fa fa-search " aria-hidden="true"></i></button>  
+                </form>               
+                </div><!--search-->
 
 
 
-                    <div class="me-msg"> 
-                         <a href="#">You</a>
-                        <p>When will you come here ? </p> 
-                    </div><!--me-msg--> 
+                 <!-- msg recivers list--->
+                <div class="user-list">
+                    <?php
+                       if($rlist){
+                        foreach($rlist as $relement){
+                    ?>
+                    <a href="../controller/chatwindow_controller.php?r_mail=<?php echo $relement['email'] ?>" >
+                         <div class="scontent">
+                            <img src="<?php echo $relement['image_path']; ?>"alt="">
+                            <div class="sdetails">
+                            <span><?php echo $relement['first_name']." ".$relement['last_name'] ?></span>
+                            <!--<p>this is a message</p>-->
+                            </div><!--sdetails-->   
+                        </div><!--scontent-->
+                    </a>  
 
-
-                    <div class="reply-msg"> 
-                        <a href="#">Tourist</a>
-                        <p>Maybe next weekend</p>     
-                    </div><!--reply-msg-->
-
-
-                </div><!--msg-container-->
-
-                <div class="rightfooter">
-                    <input type="text" placeholder="Type a message" class="typetext">
-                    <i class="fa fa-paper-plane " aria-hidden="true"></i>
-                </div><!--rightfooter-->
-            </div><!--right-col-container-->
-
-         </div><!--right-column-->
-                 
-        </div><!--inbox-container-->
-        <?php include('../view/footer.php'); ?> 
+                    <?php
+                        }
+                       }
+                    ?>   
+                                         
+                </div><!--user-list-->
+           </section><!--users-->
+        </div><!--chatbox-->
+        <?php include('../view/footer.php');?> 
     </body>
+    
 </html>
 
 
