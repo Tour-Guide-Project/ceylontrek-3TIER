@@ -22,7 +22,7 @@ if ($result_set) {
         $profiles[] = $result;
     }
 
-    header('Location:/ceylontrek-3tier/view/view_mod_approve.php?' . http_build_query(array('param' => $profiles)));
+    header('Location:/ceylontrek-3tier/view/view_mod_approve.php?' . http_build_query(array('profiles' => $profiles)));
 }
 
 ?>

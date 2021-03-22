@@ -126,8 +126,13 @@
             </div>
            
             </div>
-            <button class="loginbutton" style="height:65px; margin-left:5px"><span>Message Guide</span></button>
-            <button type="button" onclick="openForm()" class="loginbutton"style="height:65px; margin-left:0px"><span>Reserve Guide</span></button>
+            <button class="loginbutton" style="height:65px; margin-left:5px;width:100%"><span>Message Guide</span></button>
+            <button type="button" onclick="openForm()" class="loginbutton"style="height:65px; margin-left:5px;width:100%"><span>Reserve Guide</span></button>
+
+            <form action="../controller/edit_guide_myprofile_controller.php" method="post">
+                <button class="loginbutton" name="editmyprofile_btn" style="height:65px; margin-left:5px;width:100%"><span>Edit My Profile</span></button>
+            </form>
+           
                     
                    
             

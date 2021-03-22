@@ -29,73 +29,74 @@
                 <img src="../resources/img/logo2.png" class="dashlogo">
                 <img src="../resources/img/reviewimg.jpg" class="profile" >
                 <form action="../controller/guide_dashboard_controller.php" method="post">
-                    <button class="edit" name="edit_profile"><span>Edit Profile</span> </button><br>
+                <button class="edit" name="edit_profile"><span>Edit Profile</span> </button><br>
                
                   
                 <div class="sidebar-menu">
-                    <ul>
+                <ul>
 
-                    <li>    
-                            
-                            <a href="guideDashboard.php">
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">My Dashboard</span>
-                            </a> 
-                            
-                        </li>
-                    
-                        <li>
-                            <a href="Inbox.php">
-                                <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                                <span class="menu-title">Inbox</span>
-                            </a>
-                        </li>
+                <li>    
+                        
+                        <a href="guideDashboard.php">
+                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">My Dashboard</span>
+                        </a> 
+                        
+                    </li>
 
-                        <li>
-                            <a >
-                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <input type="submit" name="profile" value="  Create My Profile" >
-                            </a>
-                        </li>
+                    <li>
+                        <a href="Inbox.php">
+                            <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
+                            <span class="menu-title">Inbox</span>
+                        </a>
+                    </li>
 
-                        <li>
-                            <a>
-                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <input type="submit" name="package" value="  Create Tour Package" >
-                            </a>
-                        </li>
+                    <li>
+                        <a href=createGuideProfile.php>
+                            <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Create My Profile</span>
+                        </a>
+                    </li>
 
-                        <li>
-                            <a href="tourGuideProfile.php">
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">View My Profile</span>
-                            </a>
-                        </li>
+                    <li>
+                        <a href="CreateTourPackagePage.php">
+                            <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Create tour package</span>
+                        </a>
+                    </li>
 
-                        <li>
-                            <a href="guideMyPackages.php">
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">View My Tour Packages</span>
-                            </a>
-                        </li>
+                    <li>
+                        <a href="tourGuideProfile.php">
+                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">View My Profile</span>
+                        </a>
+                    </li>
 
-                        <li>
-                            <a href="guideUpcomingTours.php">
-                                <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">Upcoming Tours</span>
-                            </a>
-                        </li>
+                    <li>
+                        <a href="guideMyPackages.php">
+                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">View My Tour Packages</span>
+                        </a>
+                    </li>
 
-                        <li>
-                            <a href="guideUpcomingTours.php">
-                                <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                                <span class="menu-title">Previous Tours</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <li>
+                        <a href="guideUpcomingTours.php">
+                            <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Upcoming Tours</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="guideUpcomingTours.php">
+                            <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Previous Tours</span>
+                        </a>
+                    </li>
+                </ul>
                 </div><!--sidebar-manu-->        
             </div><!--side_bar-->
             </form>
+            
             <div class="content">
                 <div class="schedule">
                     <h1>CeylonTrek Guide Dashboard</h1><br>

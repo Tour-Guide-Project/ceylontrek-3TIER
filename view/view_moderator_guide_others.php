@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>User Account Admin View</title>
@@ -25,8 +25,8 @@
     <div class="con">
 
         <?php
-        if (isset($_GET['param'])) {
-            $details = $_GET['param'];
+        if (isset($_GET['details'])) {
+            $details = $_GET['details'];
             //print_r($details);
         }
         ?>
@@ -45,7 +45,7 @@
             <div class="formClsCls">
                 <div class="row">
                     <div class="col-25">
-                        <label for="fName" class="lbl">Full Name</label>
+                        <label for="fName" class="lbl">Full Name -:</label>
                     </div>
                     <div class="col-75">
                         <input type="text" name="fName" <?php echo 'value="' . $details['first_name'] . ' ' . $details['last_name'] . '"'; ?> readonly>
@@ -53,67 +53,63 @@
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="g_reg_no" class="lbl">Government Register No</label>
+                        <label for="g_reg_no" class="lbl">Government Register No -:</label>
                     </div>
                     <div class="col-75">
                         <input type="text" name="g_reg_no" <?php echo 'value="' . $details['government_reg_no'] . '"'; ?> readonly>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="v_reg_no" class="lbl">Vehicle Register No</label>
+                <?php
+                if ($details['haveVehicle']) {
+                ?>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="v_reg_no" class="lbl">Vehicle Register No -:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="v_reg_no" <?php echo 'value="' . $details['vehicle_reg_no'] . '"'; ?> readonly>
+                        </div>
                     </div>
-                    <div class="col-75">
-                        <input type="text" name="v_reg_no" <?php echo 'value="' . $details['vehicle_reg_no'] . '"'; ?> readonly>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="license_no" class="lbl">License No -:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="license_no" <?php echo 'value="' . $details['license_no'] . '"'; ?> readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="license_no" class="lbl">License No</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" name="license_no" <?php echo 'value="' . $details['license_no'] . '"'; ?> readonly>
-                    </div>
-                </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
 
-        <!-- <?php
-
-                ?> -->
-
         <div class="btnCls">
-            <!-- <form action="../controller/UserAccountAdmin_controller.php" method="post"> -->
+            <form action="../controller/mod_approve_button_controller.php" method="get">
 
-            <button class="modbtn" style="width:80%; height:65px;"><span>Decline Profile</span></button>
-            <button class="modbtn" style="width:80%; height:65px;"><span>Approve Profile</span></button>
-            <button class="modbtn" style="width:80%; height:65px;"><span>Message Guide</span></button>
+                <button class="modbtn" style="width:80%; height:65px;" name="decline" value="<?php echo $details['id']; ?>" onclick="return confirm('Are you sure you want to Decline this Tour-guide details?')"><span>Decline Profile</span></button>
+                <button class="modbtn" style="width:80%; height:65px;" name="approve" value="<?php echo $details['id']; ?>" onclick="return confirm('Are you sure you want to Approve this Tour-guide details?')"><span>Approve Profile</span></button>
+                <button class="modbtn" style="width:80%; height:65px;"><span>Message Guide</span></button>
 
-            <!-- <div class="btn">
-                    <button class="sectionBtn" type="submit" name="delete_account">Delete Account</button>
-                    <button class="sectionBtn" onclick="deleteUser"> Delete Account </button>
-                    <p id="test"></p>
-                </div>
-             -->
-            <!-- </form> -->
+            </form>
         </div>
     </div>
 
     <!-- JavaScript function for delete guide -->
-    <script>
-        function deleteUser() {
+    <!-- <script>
+        function decline_profile() {
             //var txt;
-            var r = confirm("Are you sure you want to Delete this Tour-guide Account?");
+            var r = confirm("Are you sure you want to Decline this Tour-guide Profile?");
             if (r == true) {
                 // txt = "ok";
                 window.location.href = '/ceylontrek-3tier/controller/delete_user_controller.php';
             } else {
-                window.location.href = '/ceylontrek-3tier/view/UserAccountAdminView.php';
+                window.location.href = '/ceylontrek-3tier/view/view_moderator_guide_others.php';
             }
 
             // document.getElementById("test").innerHTML = txt;
         }
-    </script>
+    </script> -->
 
     <?php include('../view/footer.php'); ?>
 
