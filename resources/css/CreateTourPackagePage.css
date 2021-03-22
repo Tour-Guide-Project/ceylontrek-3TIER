@@ -217,6 +217,14 @@ textarea {
     cursor: pointer;
 }
 
+.disable {
+    opacity: 0.4;
+}
+
+.disable:hover {
+    cursor: none;
+}
+
 .error {
     color: red;
     font-size: 16px;
