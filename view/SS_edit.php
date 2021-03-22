@@ -1,12 +1,6 @@
-<?php session_start();
-    $place_name = $_SESSION['place_name'];
-    $image_path = $_SESSION['image_path'];
-    $short_description = $_SESSION['short_description'];
-    $long_description = $_SESSION['long_description'];
-    $activities = $_SESSION['activities'];
-    $all_activities = $_SESSION['all_activities'];
-?>
-<html  lang="en">
+<?php session_start(); ?>
+<html lang="en">
+
 <head>
     <title>Edit Smart Search Place</title>
     <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/Guidedashboardpage.css'>
@@ -19,33 +13,36 @@
 </head>
 
 <body class="body">
-    <div class="section1"> 
-        <?php 
-            if (!isset($_SESSION['id'])){
-                include('../view/top_bar.php');
-            }
-            else{
-                include('../view/new_top_bar.php');
-            }
-        ?> 
-    
-        <div class="content">   
+    <div class="section1">
+        <?php
+        if (!isset($_SESSION['id'])) {
+            include('../view/top_bar.php');
+        } else {
+            include('../view/new_top_bar.php');
+        }
+        ?>
+
+        <div class="content">
             <div class="con">
-                <form  action="../controller/SS_edit_place_controller.php"  method="post" enctype="multipart/form-data">
+                <form action="../controller/SS_edit_place_controller.php" method="get" enctype="multipart/form-data">
                     <?php
-                        if(isset($_GET['param'])){
-                            $errors=$_GET['param'];
-                            foreach ($errors as $error) {
-                                echo '<p class="error">'.$error.'</p>';
-                            }
+                    if (isset($_GET['param'])) {
+                        $errors = $_GET['param'];
+                        foreach ($errors as $error) {
+                            echo '<p class="error">' . $error . '</p>';
                         }
+                    }
+
+                    if (isset($_GET['details'])) {
+                        $details = $_GET['details'];
+                    }
                     ?>
                     <div class="row">
                         <div class="col-25">
                             <label for="place_name" class="lbl">Name Of Place :</label>
                         </div>
                         <div class="col-75">
-                            <input type="text" name="place_name" <?php echo 'value="'.$place_name.'"'; ?>>
+                            <input type="text" name="place_name" <?php echo 'value="' . $details['place_name'] . '"'; ?>>
                         </div>
                     </div>
                     <div class="row">
@@ -53,7 +50,7 @@
                             <label for="short_description" class="lbl">Short Description about Place :</label>
                         </div>
                         <div class="col-75">
-                            <textarea name="short_description" style="height: 100px"> <?php echo $short_description; ?> </textarea>
+                            <textarea name="short_description" style="height: 100px"> <?php echo $details['short_description']; ?> </textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -61,7 +58,7 @@
                             <label for="long_description" class="lbl">Long Description about Place :</label>
                         </div>
                         <div class="col-75">
-                            <textarea name="long_description" style="height: 200px"> <?php echo $long_description; ?> </textarea>
+                            <textarea name="long_description" style="height: 200px"> <?php echo $details['long_description']; ?> </textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -80,12 +77,17 @@
                             <div class="col-50-right-b">
                                 <select style="height: 150px; width: 170px;" name="activities[]" id="activities" multiple>
                                     <?php
+                                    if (isset($_GET['all_activities'])) {
+                                        $all_activities = $_GET['all_activities'];
+                                        //print_r($all_activities);
+
                                         foreach ($all_activities as $activity) {
                                     ?>
-                                        <option value="<?php echo $activity['activity']; ?>"><?php echo $activity['activity']; ?></option>
-                                    
+                                            <option value="<?php echo $activity['activity']; ?>"><?php echo $activity['activity']; ?></option>
+
                                     <?php
                                         }
+                                    }
                                     ?>
                                 </select>
                             </div>
@@ -96,14 +98,19 @@
                             </div>
                             <div class="col-50-right-b">
                                 <?php
+                                if (isset($_GET['activities'])) {
+                                    $activities = $_GET['activities'];
+                                    //print_r($activities);
+
                                     foreach ($activities as $act) {
                                 ?>
-                                    <label class="lbl_current" for="">
-                                        <?php echo $act['activity']; ?>
-                                        <button class="closebtn" name="delete_one" value="<?php echo $act['activity']; ?>" id="dbtn"><i class="fa fa-close"></i></button>
-                                    </label>
+                                        <label class="lbl_current" for="">
+                                            <?php echo $act['activity']; ?>
+                                            <button class="closebtn" name="delete_one" value="<?php echo $act['activity']; ?>" id="dbtn"><i class="fa fa-close"></i></button>
+                                        </label>
                                 <?php
                                     }
+                                }
                                 ?>
                             </div>
                         </div>
@@ -131,8 +138,8 @@
                     </div>
                     <div class="submitCls" style="float: right;">
                         <!-- <input type="submit" name="createPackage" value="Create Package"> -->
-                        <button class="btnbtn" style="margin-right: 5%;" name="cancel">Cancel</button>
-                        <button class="btnbtn" name="place_edit">Edit Place</button>
+                        <button class="btnbtn" style="margin-right: 5%;" name="cancel" value="<?php echo $details['place_name']; ?>">Cancel</button>
+                        <button class="btnbtn" name="place_edit" value="<?php echo $details['place_id']; ?>">Edit Place</button>
                     </div>
                 </form>
             </div>
@@ -142,4 +149,5 @@
     </div>
 </body>
 <!-- <script type="text/javascript" src="../resources/js/checkboxes.js"></script> -->
+
 </html>

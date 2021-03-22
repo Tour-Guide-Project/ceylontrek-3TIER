@@ -95,22 +95,6 @@
         </div>
     </div>
 
-    <!-- JavaScript function for delete guide -->
-    <!-- <script>
-        function decline_profile() {
-            //var txt;
-            var r = confirm("Are you sure you want to Decline this Tour-guide Profile?");
-            if (r == true) {
-                // txt = "ok";
-                window.location.href = '/ceylontrek-3tier/controller/delete_user_controller.php';
-            } else {
-                window.location.href = '/ceylontrek-3tier/view/view_moderator_guide_others.php';
-            }
-
-            // document.getElementById("test").innerHTML = txt;
-        }
-    </script> -->
-
     <?php include('../view/footer.php'); ?>
 
 </body>

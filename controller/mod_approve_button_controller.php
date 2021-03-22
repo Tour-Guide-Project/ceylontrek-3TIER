@@ -5,9 +5,6 @@
 
 <?php
 
-$guide_id = $_GET['approve'];
-// print_r($guide_id);
-
 // check if a user is logged in
 if (!isset($_SESSION['id'])) {
     header('Location:/ceylontrek-3tier/view/login.php');
@@ -19,6 +16,9 @@ $errors = array();
 if (isset($_SESSION['id'])) {
 
     if (isset($_GET['approve'])) {
+
+        $guide_id = $_GET['approve'];
+        // print_r($guide_id);
 
         // getting the user information
         $guide_id = mysqli_real_escape_string($connection, $guide_id);
