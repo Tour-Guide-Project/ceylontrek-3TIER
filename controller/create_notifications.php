@@ -45,12 +45,12 @@ if(isset($_POST['notifications_btn'])){
             $icon='fa fa-calendar';
         }
         else if($title=="request a tour"){
-            $path='/ceylontrek-3tier/view/tour_request_post.php';
+            $path='../controller/tour_request_post_controller.php';
             $icon='fa fa-pencil-square-o';
 
         }
         else if($title=="smart search"){
-            $path='/ceylontrek-3tier/view/SmartSearchResultsPage.php';
+            $path='../controller/SS_criteria_selection_controller.php';
             $icon='fa fa-picture-o';
         }
         else if($title=="tour guides"){
