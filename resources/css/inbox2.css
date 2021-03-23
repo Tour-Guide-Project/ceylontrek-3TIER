@@ -9,10 +9,11 @@
     background-size: 1500px 800px;
     margin-top: 125px;
 }
+
 .chatbox{
     background-color: whitesmoke;
     color: black;
-    width: 1000px;
+    width: 1200px;
     min-height: 500px;
     height: auto;
     border-radius: 5px;
@@ -37,15 +38,21 @@
     border-radius: 50%;
 }
 
-.users header .scontent .fa,header .sdetails .fa{
-   margin-left: 600px;
+.user-list{
+    overflow-y: auto;
 }
+
+
+.users header .scontent .fa,header .sdetails .fa{
+   margin-left: 700px;
+}
+
 
 
 .users header .scontent, .user-list a .scontent{
     display: flex;
     align-items: center;
-    
+    overflow-y: auto;
 }
 
 .users header .scontent img{
@@ -69,6 +76,7 @@
     position: relative;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .user .search .text{
@@ -103,9 +111,26 @@
     font-size: 17px;
     border-radius: 5px 5px 5px 5px;
 }
+
+
+.users .search .to_btn{
+    width: 100px;
+    height: 42px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #333;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 50px;
+}
+
+
 .user-list{
     max-height: 500px;
-    
+    padding: 10px;
+    background-color: rgb(229, 226, 226);
     
 }
 :is(.user-list,.chat-content)::-webkit-scrollbar{

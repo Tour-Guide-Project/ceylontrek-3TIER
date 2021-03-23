@@ -37,12 +37,12 @@
     }
 
 
-    elseif($_SESSION['level']=='moderator'){
+    elseif($_SESSION['level']=='moderator' || $_SESSION['level']=='admin'){
         if($_POST['search'] || $_POST['word']) {
             $search_mail =  $_POST['word'];           
             $search_mail = htmlspecialchars($search_mail);    
             $search_mail = mysqli_real_escape_string($connection,$search_mail);    
-            $result_set =  tourist_search($connection,$search_mail);
+            $result_set =  get_search_recivers($connection,$search_mail);
         }
         else{
             header('Location:/ceylontrek-3tier/view/inbox_search.php');
@@ -50,7 +50,7 @@
 
     }
 
-
+/*
     elseif($_SESSION['level']=='admin'){
         if($_POST['search'] || $_POST['word']) {
             $search_mail =  $_POST['word'];           
@@ -64,7 +64,7 @@
         }
 
     }
-
+*/
 
     
    /* if($_POST['search'] || $_POST['word']) {
@@ -101,11 +101,17 @@
         $_SESSION['s_btn']=$s_btn;
     }
 
-    if($_SESSION['level']=='admin'){
-        $s_btn[]='moderator';
+    if( $_SESSION['level']=='admin'){
+        $s_btn[0]='tourist';
+        $s_btn[1]='tourguide';
+        $s_btn[2]='moderators';
+        $s_btn[3]='admin';
        
         $_SESSION['s_btn']=$s_btn;
     }
+
+
+   
 
     if ($result_set) {
 
