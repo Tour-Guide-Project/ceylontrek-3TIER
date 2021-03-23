@@ -41,6 +41,23 @@
 						<span class="menu-title">Inbox</span>
 					</a>
 				</li>
+				<li>
+				<form action="../controller/complain_admin_controller.php" method="post">
+					<a href="">
+						<span class="menu-icon"><i class="fa fa-question-circle fa-1x" aria-hidden="true"></i></span>
+						<button type="submit" style="display: block;
+							padding: 0 10px;
+							height: 40px;
+							font-size: medium;
+							background:none;
+							outline:none;
+							border:none;
+							color:white;
+							line-height: 40px;
+							text-align: start;" name="submit_complain">Complain</button>
+					</a>
+				</form>
+				</li>
 			</ul>
 		</div><!--sidebar-manu-->        
     </div><!--side_bar-->
@@ -49,27 +66,46 @@
 	
 		<form action="../controller/complain_admin_controller.php" method="post">
 
-			<div class="text_box_search_bar">
-				<input type="text" name="complainee_name" placeholder="Enter Complainee Name.."></input>
-				<input type="submit" name="search" value="Search"></input>
-			</div><!-- text_box_search_bar-->	
+			<div style="display: block; margin-bottom:60px;">
+				<div class="text_box_search_bar">
+					<input type="text" name="complainee_name" placeholder="Enter Complainee Name.."></input>
+					<input type="submit" name="search" value="Search"></input>
+				</div><!-- text_box_search_bar-->	
 
-			<div class="search_bar">
-				<button type="submit" name="new_submit">Newest First</button>
-				<button type="submit" name="old_submit">Oldest First</button>
-			</div><!-- search_bar -->
+				<div style="display: block;margin-top:-30px;">
+					<div class="search_bar">
+						<button type="submit" name="new_submit">Newest First</button>
+						<button type="submit" name="old_submit">Oldest First</button>
+					</div><!-- search_bar -->
+					<div class="search_bars">
+						<button type="submit" name="tourist_submit">Tourist's Complaint</button>
+						<button type="submit" name="tourguide_submit">Tourguide's Complaint</button>
+					</div><!-- search_bar -->
+				</div>
+			</div>
 
 			<?php 
 			    if(isset($_GET['complaint'])){
 					$records=unserialize($_GET['complaint']);
 			
 					foreach ($records as $record) { ?>
-					
-					<div class="text_box">
-						<p><h2><?php echo $record['title'];?></h2><?php echo $record['description'];?>
-						<button type="button" name="view_more" onclick="window.location='/ceylontrek-3tier/controller/complain_admin_controller.php?id=<?php echo $record['complain_id'];?>'" >View More &raquo;</button>
-						</p>
-					</div>
+					<?php if($record['checked_status_admin']==1){?>
+						<div class="text_box" style="background-color:rgb(121, 157, 160);border-color: rgb(56, 15, 15);opacity:0.8;">
+							<i style="float:left;color:rgb(87, 31, 31)" class="fa fa-check fa-2X" aria-hidden="true"></i>
+							<h4>Checked</h4>
+							<h3 class="level"><?php echo $record['complainee_level']?>'s complaint</h3>
+							<p><h2><?php echo $record['title'];?></h2><?php echo $record['description'];?>
+							<button type="button" name="view_more" onclick="window.location='/ceylontrek-3tier/controller/complain_admin_controller.php?id=<?php echo $record['complain_id'];?>'" >View More &raquo;</button>
+							</p>
+						</div>
+					<?php }else{ ?>
+						<div class="text_box">
+							<h3 class="level"><?php echo $record['complainee_level']?>'s complaint</h3>
+							<p><h2><?php echo $record['title'];?></h2><?php echo $record['description'];?>
+							<button type="button" name="view_more" onclick="window.location='/ceylontrek-3tier/controller/complain_admin_controller.php?id=<?php echo $record['complain_id'];?>'" >View More &raquo;</button>
+							</p>
+						</div>
+					<?php }?>
 					    
 			<?php }} ?>
 			

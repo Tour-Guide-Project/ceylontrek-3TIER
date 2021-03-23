@@ -129,12 +129,12 @@ if(isset($_GET['id'])){
         $row=mysqli_fetch_assoc($result_set6) ; 
         
       
-        header('Location:/ceylontrek-3tier/view/full_complain_view.php?report_status='.$row['report_status'].'&view_complain='.$view_records.'');
+        header('Location:/ceylontrek-3tier/view/full_complain_view.php?report_status='.$row['report_status'].'&checked_status='.$row['checked_status'].'&view_complain='.$view_records.'');
     }    
 }
 
 
- //check if you  click report admin button or not
+//check if you  click report admin button or not
 if(isset($_GET['report_id'])){
     $report_id=$_GET['report_id'];
 
@@ -162,7 +162,7 @@ if(isset($_GET['report_id'])){
  if(isset($_GET['checked_id'])){
     $checked_id=$_GET['checked_id'];
 
-    $result_set5=delete_checked_complain($connection,$checked_id);
+    $result_set5=update_checked_complain($connection,$checked_id);
         
     if($result_set5){
         
@@ -201,6 +201,40 @@ if(isset($_POST['new_submit'])){
 //if click oldest button
 if(isset($_POST['old_submit'])){
     $result_set2=get_oldest_order($connection);
+
+    if($result_set2){
+        $record=array();
+
+        while($row=mysqli_fetch_assoc($result_set2)){
+            $record[]=$row;      
+        }
+        $records=serialize($record);
+        //print_r($records);
+        
+       header('Location:/ceylontrek-3tier/view/complains_page.php?complaint='.$records.'');
+
+    }
+}
+//if click tourist button
+if(isset($_POST['tourist_submit'])){
+    $result_set2=get_tourist_order($connection);
+
+    if($result_set2){
+        $record=array();
+
+        while($row=mysqli_fetch_assoc($result_set2)){
+            $record[]=$row;      
+        }
+        $records=serialize($record);
+        //print_r($records);
+        
+       header('Location:/ceylontrek-3tier/view/complains_page.php?complaint='.$records.'');
+
+    }
+}
+//if click tour guide button
+if(isset($_POST['tourguide_submit'])){
+    $result_set2=get_tourguide_order($connection);
 
     if($result_set2){
         $record=array();
