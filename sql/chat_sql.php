@@ -40,6 +40,49 @@ function get_search_recivers($connection,$key_email){
     return $searchresult;
 }
 
+
+function tourist_search($connection,$key_email){
+    $query = "SELECT * FROM tourguide WHERE  email LIKE '$key_email%' 
+              UNION SELECT * FROM moderator WHERE  email LIKE '$key_email%'               
+              ORDER BY first_name";
+    
+    $searchresult = mysqli_query($connection,$query);
+    return $searchresult;
+}
+
+function guide_search($connection,$key_email){
+    $query = "SELECT * FROM tourist WHERE  email LIKE '$key_email%' 
+              UNION SELECT * FROM moderator WHERE  email LIKE '$key_email%'               
+              ORDER BY first_name";
+    
+    $searchresult = mysqli_query($connection,$query);
+    return $searchresult;
+}
+
+
+function admin_search($connection,$key_email){
+    $query = "SELECT * FROM moderator WHERE  email LIKE '$key_email%' 
+               ORDER BY first_name";
+    
+    $searchresult = mysqli_query($connection,$query);
+    return $searchresult;
+}
+
+
+function all_tourguide($connection,$s_level){
+    $query="SELECT * FROM {$s_level}";
+    $gresult = mysqli_query($connection,$query);
+    return $gresult;
+}
+
+function all_moderator($connection){
+    $query="SELECT * FROM moderator";
+    $mresult = mysqli_query($connection,$query);
+    return $mresult;
+}
+
+
+
 //get all messages
 function get_messages($connection, $outgoing_mail,$incoming_mail){
     $query="SELECT * FROM chatbox WHERE (s_mail='{$outgoing_mail}' AND r_mail='{$incoming_mail}') 

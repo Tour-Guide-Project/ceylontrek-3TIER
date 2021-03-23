@@ -10,6 +10,7 @@ $sid=$_SESSION['sid'];
 
 // load the old mesge recivers
 $rsearch=$_SESSION['rsearch'];
+$s_btn=$_SESSION['s_btn'];
 ?>
 
 <!doctype html>
@@ -40,7 +41,8 @@ $rsearch=$_SESSION['rsearch'];
                     <div class="scontent">
                         <img src=<?php echo ''.$img.''; ?> alt="" class="src">
                         <div class="sdetails">
-                            <span><?php echo ''.$first_name.''." ".''.$last_name.''; ?></span>                          
+                            <span><?php echo ''.$first_name.''." ".''.$last_name.''; ?></span>  
+                            <i class="fa fa-users  fa-2x" aria-hidden="true"></i>                        
                         </div><!--sdetails-->
                     </div><!--scontent-->
                 </header>
@@ -50,8 +52,21 @@ $rsearch=$_SESSION['rsearch'];
                 <div class="search"> 
                 <form action="../controller/chat_search_controller.php" method="POST">
                     <input type="text" placeholder="Enter email address to search Users" name="word">
-                    <button name="search"><i class="fa fa-search " aria-hidden="true"></i></button>  
-                </form>               
+                    <button name="search" class="s_btn"><i class="fa fa-search " aria-hidden="true"></i></button> 
+                </form>  
+                
+                <?php
+                        foreach($s_btn as $s){
+                    ?>
+                <form action="../controller/search_btn_controller.php?level=<?php echo $s;?>" method="post">
+                    <button name="tourguide" class="to_btn"><?php echo $s?></button>
+                </form>
+
+                <?php
+                    
+                       }
+                ?> 
+
                 </div><!--search-->
                         
                 <!-- msg recivers list--->
