@@ -7,7 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../resources/css/admin_dashboard.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/guidedashboardpage.css">
 	<link rel="stylesheet" href="../resources/css/pendingProfiles.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
 	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
@@ -22,7 +21,7 @@
         include('../view/new_top_bar.php');
     }
     ?> 
-
+<div id="all" >
 	<div class="side_bar">
         <img src="../resources/img/logo2.png" class="dashlogo">
         <img src="../resources/img/reviewimg.jpg" class="profile" >
@@ -165,7 +164,7 @@
 
 	</div><!-- moderator_box -->
 
-	
+</div>	
 <!-- send notification popup window -->
 <div class="form-popup" id="myForm">
 		<form action="../controller/create_notifications.php" class="form-container" method="post">
@@ -180,13 +179,15 @@
 			    }
 			?>
 			<label for="title"><b>Select User</b></label>
-			  	<div>
+				<div class="radio">
 					<input class="input_radio" style="width: 20%;" type="radio" name="gender" id="gender" value="tourist" required>
-					<label>Tourist</label>
-				
-				
+					<label >Tourist</label>
+			
 					<input class="input_radio" style="width: 20%;" type="radio" name="gender"  id="gender" value="tour-guide" required>
-					<label>Tour-Guide</label>
+					<label >Tour-Guide</label>
+
+					<input class="input_radio" style="width: 20%;" type="radio" name="gender"  id="gender" value="both" required>
+					<label >Both</label>
 				</div>
 			<label for="details"><b>Title</b></label>
 			<input type="text" name="title" placeholder="Enter title here..">
@@ -202,10 +203,12 @@
 <script>
 	function openForm() {
   		document.getElementById("myForm").style.display = "block";
+		document.getElementById('all').classList.add("all");
 	}
 
 	function closeForm() {
   		document.getElementById("myForm").style.display = "none";
+		document.getElementById('all').classList.remove("all");
 	}
 </script>
 <?php include('../view/footer.php'); ?>

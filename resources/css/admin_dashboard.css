@@ -101,7 +101,7 @@ body {
 
 .form-container {
     opacity: initial;
-    margin: -400px auto 20px auto;
+    margin: -350px auto 20px auto;
     width: 500px;
     padding: 50px;
     background: #F0F8FF;
@@ -110,8 +110,19 @@ body {
     border-radius: 15px;
 }
 
+.input_radio {
+    margin-top: 10px;
+    margin-left: -20px;
+    font-size: 20px;
+    color: lightgrey;
+}
+
+.radio {
+    display: block;
+}
+
 .form-container label {
-    font-size: 18px;
+    font-size: 16px;
     color: black;
 }
 
@@ -123,7 +134,7 @@ body {
     background-color: #DCDCDC;
     width: 100%;
     padding: 10px;
-    margin: 5px 0 22px 0;
+    /* margin: 5px 0 22px 0; */
 }
 
 .form-container textarea {
@@ -165,13 +176,6 @@ body {
     margin-top: 130px;
 }
 
-.input_radio {
-    margin-top: 10px;
-    margin-left: 9px;
-    font-size: 20px;
-    color: lightgrey;
-}
-
 .form-container p.error {
     position: relative;
     background-color: #92a8d1;
@@ -181,4 +185,178 @@ body {
     padding: 5px 5px 5px 5px;
     font-size: 18px;
     margin: 5px;
+}
+
+
+/* //sidebar css */
+
+.side_bar {
+    background-color: #2f375b;
+    width: 40px;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.side_bar:hover {
+    width: 23.6%;
+}
+
+.dashlogo {
+    float: left;
+    margin-left: 30px;
+}
+
+.side_bar .profile {
+    float: left;
+    margin-left: 100px;
+    margin-top: 20px;
+    border-radius: 50%;
+    border: 3px solid blue;
+    width: 100px;
+    height: 100px;
+}
+
+.edit {
+    float: left;
+    margin-left: 60px;
+    margin-top: 20px;
+    border: 0;
+    background-color: unset;
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-family: lato;
+    font-size: 20px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.edit:hover {
+    background-color: rgb(79, 76, 90);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.edit:span {
+    padding: 20px;
+    margin-top: 50px;
+    color: white;
+}
+
+.buttons {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button {
+    float: left;
+    margin-top: 20px;
+    background-color: unset;
+    border: 0;
+    color: white;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: rgb(79, 76, 90);
+}
+
+.sidebar-menu ul {
+    position: absolute;
+    top: 300px;
+    left: 0;
+    width: 100% !important;
+}
+
+.sidebar-menu ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    height: 40px;
+    font-family: lato;
+    padding-top: 3px;
+    padding-bottom: 3px !important;
+}
+
+.sidebar-menu ul li:hover {
+    background-color: rgb(79, 76, 90);
+    width: 100%;
+}
+
+.sidebar-menu ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar-menu ul li a .menu-icon {
+    position: relative;
+    display: block;
+    min-width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-right: 50px;
+}
+
+.sidebar-menu ul li a .menu-icon .fa {
+    font-size: 20px;
+}
+
+.sidebar-menu ul li a .menu-title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: start !important;
+}
+
+.side_bar input[type=submit] {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: white !important;
+}
+
+.cobutton {
+    transform: translateY(0px);
+    transition: 0.3s linear;
+    background: #2f375b;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #eee;
+    margin-top: 0px;
+    font-family: lato;
+    transition: transform 0.3s;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 5;
+}
+
+.cobutton:hover {
+    transform: translateY(-4px);
+}
+
+.all {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
 }

@@ -11,13 +11,14 @@ function add_notification($connection,$notifications,$notification_level,$title,
     return $result_set;
 }
 
+
 function get_user_id($connection,$notify_level){
      //prepare database query
 	$query= "SELECT id FROM $notify_level"; 
     $result_set=mysqli_query($connection,$query);
     return $result_set;
-
 }
+
 
 
 ?>
