@@ -9,6 +9,7 @@ $sid=$_SESSION['sid'];
 
 // load the old message recivers
 $rlist=$_SESSION['chatlist'];
+
 ?>
 <!doctype html>
 <html>
@@ -39,14 +40,22 @@ $rlist=$_SESSION['chatlist'];
                         <img src=<?php echo ''.$img.''; ?> alt="" class="src">
                         <div class="sdetails">
                             <span><?php echo ''.$first_name.''." ".''.$last_name.''; ?></span>
-                            
-                            <a href="../controller/chat_search_controller.php"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></a>
-
-                            
+                            <i class="fa fa-comments" aria-hidden="true"></i>
+                             
                         </div><!--sdetails-->
                     </div><!--scontent-->
                 </header>
                 
+
+                <!--search bar for search new contact-->
+                <div class="search"> 
+                <form action="../controller/chat_search_controller.php" method="POST">
+                    <input type="text" placeholder="Enter email address to search Users" name="word">
+                    <button name="search"><i class="fa fa-search " aria-hidden="true"></i></button>  
+                </form>               
+                </div><!--search-->
+
+
 
                  <!-- msg recivers list--->
                 <div class="user-list">

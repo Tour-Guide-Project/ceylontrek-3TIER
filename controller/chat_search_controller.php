@@ -8,8 +8,66 @@
     }
 
      $users=array();
-     
-    if($_POST['search'] || $_POST['word']) {
+
+    if($_SESSION['level']=='tourist'){
+        if($_POST['search'] || $_POST['word']) {
+            $search_mail =  $_POST['word'];           
+            $search_mail = htmlspecialchars($search_mail);    
+            $search_mail = mysqli_real_escape_string($connection,$search_mail);    
+            $result_set =  tourist_search($connection,$search_mail);
+        }
+        else{
+            header('Location:/ceylontrek-3tier/view/inbox_search.php');
+        }
+
+    }
+
+
+    elseif($_SESSION['level']=='tourguide'){
+        if($_POST['search'] || $_POST['word']) {
+            $search_mail =  $_POST['word'];           
+            $search_mail = htmlspecialchars($search_mail);    
+            $search_mail = mysqli_real_escape_string($connection,$search_mail);    
+            $result_set =  guide_search($connection,$search_mail);
+        }
+        else{
+            header('Location:/ceylontrek-3tier/view/inbox_search.php');
+        }
+
+    }
+
+
+    elseif($_SESSION['level']=='moderator'){
+        if($_POST['search'] || $_POST['word']) {
+            $search_mail =  $_POST['word'];           
+            $search_mail = htmlspecialchars($search_mail);    
+            $search_mail = mysqli_real_escape_string($connection,$search_mail);    
+            $result_set =  tourist_search($connection,$search_mail);
+        }
+        else{
+            header('Location:/ceylontrek-3tier/view/inbox_search.php');
+        }
+
+    }
+
+
+    elseif($_SESSION['level']=='admin'){
+        if($_POST['search'] || $_POST['word']) {
+            $search_mail =  $_POST['word'];           
+            $search_mail = htmlspecialchars($search_mail);    
+            $search_mail = mysqli_real_escape_string($connection,$search_mail);    
+            $result_set =  admin_search($connection,$search_mail);
+            
+        }
+        else{
+            header('Location:/ceylontrek-3tier/view/inbox_search.php');
+        }
+
+    }
+
+
+    
+   /* if($_POST['search'] || $_POST['word']) {
 
         $search_mail =  $_POST['word'];
         
@@ -21,9 +79,36 @@
     }
     else{
         header('Location:/ceylontrek-3tier/view/inbox_search.php');
+    }*/
+
+    if($_SESSION['level']=='tourist'){
+        $s_btn[0]='tourguide';
+        $s_btn[1]='moderator';
+        $_SESSION['s_btn']=$s_btn;
+    }
+    if($_SESSION['level']=='tourguide'){
+        $s_btn[0]='tourist';
+        $s_btn[1]='moderator';
+       
+        $_SESSION['s_btn']=$s_btn;
+    }
+
+    if($_SESSION['level']=='moderator'){
+        $s_btn[0]='tourist';
+        $s_btn[1]='tourguide';
+        $s_btn[2]='admin';
+       
+        $_SESSION['s_btn']=$s_btn;
+    }
+
+    if($_SESSION['level']=='admin'){
+        $s_btn[]='moderator';
+       
+        $_SESSION['s_btn']=$s_btn;
     }
 
     if ($result_set) {
+
 
         $rows = mysqli_num_rows($result_set);
         $columns = mysqli_num_fields($result_set);

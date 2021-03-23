@@ -28,7 +28,8 @@ $remail=$_SESSION['mail'];
                     
                         <img src="<?php echo $remail['image_path']; ?>" alt="" class="src">
                         <div class="sdetails">
-                            <span><?php echo $remail['first_name']." ".$remail['last_name']; ?></span>                           
+                            <span><?php echo $remail['first_name']." ".$remail['last_name']; ?></span>  
+                            <i class="fa fa-envelope-open-o fa-2x" aria-hidden="true"></i>                         
                         </div><!--sdetails-->                    
                 </header>
 
