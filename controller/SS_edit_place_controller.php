@@ -191,6 +191,7 @@ if (isset($_SESSION['id'])) {
         $place_name = mysqli_real_escape_string($connection, $place_name);
 
         $result = delete_activity($connection, $place_name, $activity);
+        //print_r($result);
 
         if ($result_set) {
         }

@@ -139,7 +139,6 @@
                         </div>
                     </div>
                     <div class="submitCls" style="float: right;">
-                        <!-- <input type="submit" name="createPackage" value="Create Package"> -->
                         <button class="btnbtn" style="margin-right: 5%;" name="cancel" value="<?php echo $details['place_name']; ?>">Cancel</button>
                         <button class="btnbtn" name="place_edit" value="<?php echo $details['place_id']; ?>">Edit Place</button>
                     </div>

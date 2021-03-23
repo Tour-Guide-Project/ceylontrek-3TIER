@@ -50,6 +50,7 @@ function create_place($connection, $place_name, $short_description, $long_descri
     VALUES('{$place_name}' , '{$long_description}' , '{$short_description}')";
 
     $result = mysqli_query($connection, $query);
+    //print_r($result);
     return $result;
 }
 
