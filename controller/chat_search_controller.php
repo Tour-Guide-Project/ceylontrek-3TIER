@@ -104,7 +104,7 @@
     if( $_SESSION['level']=='admin'){
         $s_btn[0]='tourist';
         $s_btn[1]='tourguide';
-        $s_btn[2]='moderators';
+        $s_btn[2]='moderator]';
         $s_btn[3]='admin';
        
         $_SESSION['s_btn']=$s_btn;
