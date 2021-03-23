@@ -41,7 +41,7 @@ $s_btn=$_SESSION['s_btn'];
                     <div class="scontent">
                         <img src=<?php echo ''.$img.''; ?> alt="" class="src">
                         <div class="sdetails">
-                            <span><?php echo ''.$first_name.''." ".''.$last_name.''; ?></span>  
+                            <span><?php echo ''.$first_name.''." ".''.$last_name.''; ?>(me)</span>  
                             <i class="fa fa-users  fa-2x" aria-hidden="true"></i>                        
                         </div><!--sdetails-->
                     </div><!--scontent-->

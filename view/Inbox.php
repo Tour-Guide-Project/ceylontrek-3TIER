@@ -38,11 +38,8 @@ $rlist=$_SESSION['chatlist'];
                     <div class="scontent">
                         <img src=<?php echo ''.$img.''; ?> alt="" class="src">
                         <div class="sdetails">
-                            <span><?php echo ''.$first_name.''." ".''.$last_name.''; ?></span>
-                            
-                            <a href="../controller/chat_search_controller.php"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></a>
-
-                            
+                            <span><?php echo ''.$first_name.''." ".''.$last_name.''; ?>(me)</span>                            
+                            <a href="../controller/chat_search_controller.php"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></a>                          
                         </div><!--sdetails-->
                     </div><!--scontent-->
                 </header>
