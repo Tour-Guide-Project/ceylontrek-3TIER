@@ -179,6 +179,22 @@ if (isset($_SESSION['id'])) {
 
         header('Location:/ceylontrek-3tier/controller/SSviewmore_controller.php?view_place=' . $place_name . '&Success');
     }
+
+    if (isset($_GET['delete_one'])) {
+
+        $activity = $_GET['delete_one'];
+        $place_name = $_GET['place_name'];
+        //print_r($activity);
+        //print_r($place_name);
+
+        $activity = mysqli_real_escape_string($connection, $activity);
+        $place_name = mysqli_real_escape_string($connection, $place_name);
+
+        $result = delete_activity($connection, $place_name, $activity);
+
+        if ($result_set) {
+        }
+    }
 }
 ?>
 <?php mysqli_close($connection); ?>

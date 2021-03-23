@@ -106,7 +106,9 @@
                                 ?>
                                         <label class="lbl_current" for="">
                                             <?php echo $act['activity']; ?>
-                                            <button class="closebtn" name="delete_one" value="<?php echo $act['activity']; ?>" id="dbtn"><i class="fa fa-close"></i></button>
+                                            <button class="closebtn" name="delete_one" value="<?php echo $act['activity']; ?>" id="dbtn">
+                                                <i class="fa fa-close"></i>
+                                            </button>
                                         </label>
                                 <?php
                                     }
