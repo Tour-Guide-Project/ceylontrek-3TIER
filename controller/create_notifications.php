@@ -39,18 +39,21 @@ if(isset($_POST['notifications_btn'])){
 		if (isset($_POST['gender']) && $_POST['gender']=="tour-guide"){
 			$notification_level='tour-guide';
         }
-
+        if(isset($_POST['gender']) && $_POST['gender']=="both"){
+            $notification_level='both';
+        }
+        //set path and icon for relevant title in the popup form
         if($title=="new event"){
             $path='/ceylontrek-3tier/view/calendar.php';
             $icon='fa fa-calendar';
         }
         else if($title=="request a tour"){
-            $path='/ceylontrek-3tier/view/tour_request_post.php';
+            $path='../controller/tour_request_post_controller.php';
             $icon='fa fa-pencil-square-o';
 
         }
         else if($title=="smart search"){
-            $path='/ceylontrek-3tier/view/SmartSearchResultsPage.php';
+            $path='../controller/SS_criteria_selection_controller.php';
             $icon='fa fa-picture-o';
         }
         else if($title=="tour guides"){
@@ -61,7 +64,7 @@ if(isset($_POST['notifications_btn'])){
             $path='/ceylontrek-3tier/view/tourPackageResults.php';
             $icon='fa fa-floppy-o';
         }
-        else if($notification_level=='tourist'){
+        else if($notification_level=="tourist"){
             $path='/ceylontrek-3tier/view/touristDashboard.php';
             $icon='fa fa-eercast';
         }
@@ -72,20 +75,44 @@ if(isset($_POST['notifications_btn'])){
 
         
         if($notification_level=="tourist"){
+            //get all ids from tourists table
             $notify_level="tourist";
             $result_set1=get_user_id($connection,$notify_level);
+
+            while($row=mysqli_fetch_array($result_set1)){
+                $user_id=$row['id'];
+                $result_set=add_notification($connection,$notifications,$notification_level,$title,$time,$path,$user_id,$icon);
+            }
         }      
-        else if($notification_level='tour-guide'){
+        else if($notification_level=='tour-guide'){
+            //get all ids from tourguide table
             $notify_level="tourguide";
             $result_set1=get_user_id($connection,$notify_level);
-        }
 
-        while($row=mysqli_fetch_array($result_set1)){
-            $user_id=$row['id'];
-            $result_set=add_notification($connection,$notifications,$notification_level,$title,$time,$path,$user_id,$icon);
+            while($row=mysqli_fetch_array($result_set1)){
+                $user_id=$row['id'];
+                $result_set=add_notification($connection,$notifications,$notification_level,$title,$time,$path,$user_id,$icon);
+            }
         }
-        
+        //set both radio button
+        else if($notification_level=='both'){
+            $notify_level="tourist";
+            $result_set1=get_user_id($connection,$notify_level);
 
+            while($row=mysqli_fetch_array($result_set1)){
+                $user_id=$row['id'];
+                $result_set=add_notification($connection,$notifications,"tourist",$title,$time,'/ceylontrek-3tier/view/touristDashboard.php',$user_id,$icon);
+            }
+            $notify_level="tourguide";
+            $result_set1=get_user_id($connection,$notify_level);
+
+            while($row=mysqli_fetch_array($result_set1)){
+                $user_id=$row['id'];
+                $result_set=add_notification($connection,$notifications,"tour-guide",$title,$time,'/ceylontrek-3tier/view/guideDashboard.php',$user_id,$icon);
+            }
+
+        }         
+       
         echo "<script>alert('You successfully send Notication!');</script>";
         if($_SESSION['level']=='admin'){
             echo "<script>window.location ='/ceylontrek-3tier/view/admin_dashboard.php' </script>";

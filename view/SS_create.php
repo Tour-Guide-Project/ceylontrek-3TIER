@@ -1,7 +1,6 @@
-<?php session_start();
-    $all_activities = $_SESSION['all_activities'];
-?>
-<html  lang="en">
+<?php session_start(); ?>
+<html lang="en">
+
 <head>
     <title>Create Smart Search Place</title>
     <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/Guidedashboardpage.css'>
@@ -14,26 +13,25 @@
 </head>
 
 <body class="body">
-    <div class="section1"> 
-        <?php 
-            if (!isset($_SESSION['id'])){
-                include('../view/top_bar.php');
-            }
-            else{
-                include('../view/new_top_bar.php');
-            }
-        ?> 
-    
+    <div class="section1">
+        <?php
+        if (!isset($_SESSION['id'])) {
+            include('../view/top_bar.php');
+        } else {
+            include('../view/new_top_bar.php');
+        }
+        ?>
+
         <div class="content">
             <div class="con">
-                <form  action="../controller/SS_create_place_controller.php"  method="post" enctype="multipart/form-data">
+                <form action="../controller/SS_create_place_controller.php" method="post" enctype="multipart/form-data">
                     <?php
-                        if(isset($_GET['param'])){
-                            $errors=$_GET['param'];
-                            foreach ($errors as $error) {
-                                echo '<p class="error">'.$error.'</p>';
-                            }
+                    if (isset($_GET['param'])) {
+                        $errors = $_GET['param'];
+                        foreach ($errors as $error) {
+                            echo '<p class="error">' . $error . '</p>';
                         }
+                    }
                     ?>
                     <div class="row">
                         <div class="col-25">
@@ -75,11 +73,16 @@
                             <div class="col-50-right-b">
                                 <select style="height: 150px; width: 170px;" name="activities[]" id="activities" multiple>
                                     <?php
+                                    if (isset($_GET['all_activities'])) {
+                                        $all_activities = $_GET['all_activities'];
+                                        //print_r($all_activities);
+
                                         foreach ($all_activities as $activity) {
                                     ?>
-                                        <option value="<?php echo $activity['activity']; ?>"><?php echo $activity['activity']; ?></option>
+                                            <option value="<?php echo $activity['activity']; ?>"><?php echo $activity['activity']; ?></option>
                                     <?php
                                         }
+                                    }
                                     ?>
                                 </select>
                             </div>
@@ -106,9 +109,8 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="submitCls" style="float: right;">
-                        <!-- <input type="submit" name="createPackage" value="Create Package"> -->
                         <button class="btnbtn" style="margin-right: 5%;" name="cancel">Cancel</button>
                         <button class="btnbtn" style="width: 130px;" name="place_create">Create Place</button>
                     </div>
@@ -119,4 +121,5 @@
         <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
     </div>
 </body>
+
 </html>

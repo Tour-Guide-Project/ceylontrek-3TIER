@@ -21,7 +21,7 @@ body {
 .text_box_search_bar {
     top: 35%;
     left: 5%;
-    width: 600px;
+    width: 500px;
 }
 
 .text_box_search_bar input {
@@ -34,7 +34,7 @@ body {
 
 input[type="text"] {
     background-color: lightgray;
-    width: 300px;
+    width: 280px;
     height: 30px;
     border: none;
     outline: none;
@@ -60,6 +60,27 @@ input[type="submit"]:hover {
 }
 
 .search_bar button {
+    top: 30%;
+    background-color: #008B8B;
+    float: right;
+    color: #fff;
+    width: 150px;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 2px !important;
+}
+
+.search_bar button:hover {
+    background-color: #5F9EA0;
+}
+
+.search_bars button {
+    top: 35%;
     background-color: #008B8B;
     float: right;
     color: #fff;
@@ -68,15 +89,14 @@ input[type="submit"]:hover {
     border: none;
     outline: none;
     font-size: 18px;
-    padding: 0 20px;
+    padding: 5px;
     cursor: pointer;
     border-radius: 20px;
-    margin: -28px 10px 0 10px !important;
+    margin: 2px !important;
 }
 
-.search_bar button:hover {
+.search_bars button:hover {
     background-color: #5F9EA0;
-    font-weight: bold;
 }
 
 .text_box h2 {
@@ -407,7 +427,7 @@ input[type="submit"]:hover {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 200px;
-    background-color: rgb(3, 21, 41);
+    background-color: rgb(67, 72, 100);
     color: #fff;
     text-align: center;
     padding: 5px 0;
@@ -434,7 +454,7 @@ input[type="submit"]:hover {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: rgb(3, 21, 41) transparent transparent transparent;
+    border-color: rgb(67, 72, 100) transparent transparent transparent;
 }
 
 
@@ -456,4 +476,17 @@ input[type="submit"]:hover {
     border: none;
     padding: 5px;
     border-radius: 100%;
+}
+
+.level {
+    float: right;
+    font-size: 14px;
+    color: rgb(167, 97, 97);
+}
+
+.text_box h4 {
+    color: rgb(167, 97, 97);
+    font-size: 14px;
+    float: left;
+    font-style: oblique;
 }

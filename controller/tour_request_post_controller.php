@@ -5,6 +5,8 @@
 <?php 
 
     $list = array();
+   
+    
      // check has been written on the search or  has been pressed the search button 
      if ($_POST['search'] || $_POST['word'] ){   // process to display the searched posts
 
@@ -48,6 +50,14 @@
         $_SESSION['list'] = $list;
 
         //redirect to page
+
+        if($_SESSION['level']=='tourist'){
+            $le='1';
+            $_SESSION['le']=$le;
+        }
+        else{
+            $_SESSION['le']='0';
+        }
         header('Location:/ceylontrek-3tier/view/tour_request_post.php');
          
       

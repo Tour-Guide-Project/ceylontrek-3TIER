@@ -1,8 +1,4 @@
-<?php session_start();
-$place_name = $_SESSION['place_name'];
-$image_path = $_SESSION['image_path'];
-$long_description = $_SESSION['long_description'];
-?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -29,16 +25,16 @@ $long_description = $_SESSION['long_description'];
 
   <div class="con">
     <?php
-    // $place_name = $_GET['place_name'];
-    // //print_r($place_name);
-    // $image_path = $_GET['image_path'];
-    // $long_description = $_GET['long_description'];
+    if (isset($_GET['place'])) {
+      $place = $_GET['place'];
+      //print_r($place);
+    }
     ?>
-    <h1 class="ttl"><b> <?php echo "$place_name"; ?></b></h1>
+    <h1 class="ttl"><b> <?php echo $place['place_name']; ?></b></h1>
     <div class="image">
       <?php
-      if ($image_path) {
-        echo '<img src="' . $image_path . '" alt="" style="width:60%; height:350px;">';
+      if ($place['image_path']) {
+        echo '<img src="' . $place['image_path'] . '" alt="" style="width:60%; height:350px;">';
       } else {
         echo '<img src="../resources/img/SmartSearchResult/default.jpg" alt="" style="width:60%; height:350px;">';
       }
@@ -46,7 +42,7 @@ $long_description = $_SESSION['long_description'];
     </div>
 
     <div>
-      <p class="paragraph"><?php echo "$long_description"; ?></p>
+      <p class="paragraph"><?php echo $place['long_description']; ?></p>
     </div>
 
     <?php
@@ -55,20 +51,19 @@ $long_description = $_SESSION['long_description'];
       <div class="submitCls">
         <div>
           <form action="../controller/SS_edit_place_controller.php" method="get">
-            <button class="btnbtn" name="edit_place" value="<?php echo $place_name; ?>">Edit Place</button>
+            <button class="btnbtn" name="edit_place" value="<?php echo $place['place_name']; ?>">Edit Place</button>
           </form>
         </div>
         <div>
-          <button class="btnbtn" name="delete_place" id="delete_place">Delete Place</button>
+          <form action="../controller/SS_delete_place_controller.php" method="get">
+            <button class="btnbtn" name="delete_place" id="delete_place" value="<?php echo $place['place_id']; ?>" onclick="return confirm('Are you sure you want to Delete this place?')">Delete Place</button>
+          </form>
         </div>
       </div>
     <?php
     }
     ?>
   </div>
-
-  <!-- JavaScript function for checked -->
-  <script src="/ceylontrek-3TIER/resources/js/SS_delete_place.js"></script>
 
   <?php include('../view/footer.php'); ?>
 

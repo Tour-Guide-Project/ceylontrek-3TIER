@@ -27,7 +27,7 @@
            <li style="margin-top: 45px; font-size:17px; margin-left:20px;margin-top:30px;"><a href="Guide_search_page.php">Tour Guides</a></li>
            <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="package_search_page.php">Tour Packages</a></li>
            <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-           <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+           <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="../controller/SS_criteria_selection_controller.php">Smart Search</a></li>
            <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="calendar.php">Travel Calendar</a></li>
        </ul>
        <button class="loginbutton login" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button>

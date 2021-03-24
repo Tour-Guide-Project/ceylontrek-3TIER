@@ -1,6 +1,7 @@
 <?php session_start();
 //get the session value for varible
 $lists = $_SESSION['list'];
+$le=$_SESSION['le'];
 ?>
 
 <!DOCTYPE html>
@@ -79,9 +80,17 @@ $lists = $_SESSION['list'];
 	</div><!-- tour_request_post_box -->
 
     <form action="tour_request_post.php"  method="post">
+
+	
 	<div class="create_request_btn">
-		<button type="button"  name="p_create"  id="p_create" onclick="openForm()" > Create New Request</button>
+		<button type="button"  name="p_create"  id="p_create" onclick="openForm()"  		
+		<?php		    
+		    if ($_SESSION['le']=='0'){
+				echo 'hidden';
+			}
+		?>> Create New Request</button>
 	</div><!-- create_request_btn -->
+
     </form>
 	
 	<div class="form-popup" id="myForm">
@@ -128,6 +137,12 @@ $lists = $_SESSION['list'];
 	</div>
 
 	<script>
+     
+	 if($_SESSION['level']!='tourist'){
+		document.getElementById('myForm').hidden = "";
+	 }
+
+     
      function openForm() {
        
          document.getElementById('myForm').style.display = 'block';
