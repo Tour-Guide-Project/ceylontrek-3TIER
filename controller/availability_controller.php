@@ -4,6 +4,7 @@
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\reservation_sql.php'); ?>
 
 <?php
+
 $guide_id=$_SESSION['current_guide_id'];
     if(isset($_POST['check_availability'])){
         $arrival_date=$_POST['arrivaldate'];
@@ -11,14 +12,14 @@ $guide_id=$_SESSION['current_guide_id'];
         $departure_date=$_POST['departuredate'];
         $result = check_availability($connection, $guide_id,$arrival_date, $departure_date, $no_of_tourists);
         
-        if($result){
-            echo '<script type="text/javascript">alert("Welcome ceylon-trek!");</script>';
+        if(mysqli_num_rows($result)>0){
+        
             header('Location: /ceylontrek-3tier/controller/view_guide_ad_controller.php?view_guide='.$guide_id.'&available=false'); 
         }
         else{
-            
-            
-            header('Location: /ceylontrek-3tier/controller/reservation_controller.php?guide_id='.$guide_id.'');
+            // $info['guide_id']=$guide_id;
+           $_SESSION['reservation_guide']=$guide_id;
+            header('Location:/ceylontrek-3tier/controller/reservation_controller.php?view_guide='.$guide_id.'');
             
            
         }

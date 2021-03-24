@@ -6,8 +6,9 @@
 <?php
 $errors=array();
 
+
     $tourist_id='';
-    $guide_id='';
+   $guide_id='';
    $tourist_name=''; 
    $tourist_email='';
    $telephone_number='';
@@ -18,91 +19,118 @@ $errors=array();
    $notes='';
    $price_per_day='';
     $total_price='';
-
+    
 
 if (isset($_SESSION['id'])) {
+    
     header('Location:/ceylontrek-3tier/view/reservation.php');
+    
 }
 else{
     header('Location:/ceylontrek-3tier/view/login.php');
 }
 
-if(isset($_GET['reserve'])){
-   $tourist_id=$_SESSION['id'];
-   $guide_id=$_GET['guide_id'];
-   $tourist_name=$_GET['tourist_name']; 
-   $tourist_email=$_GET['tourist_email'];
-   $telephone_number=$_GET['tourist_phone'];
-   $no_of_adults=$_GET['total_adults'];
-   $no_of_children=$_GET['total_children'];
-   $arrival_date=$_GET['arrival'];
-   $departure_date=$_GET['departure'];
-   $notes=$_GET['special_notes'];
 
-   $req_fields=array('tourist_name','tourist_email','tourist_phone','total_adults','total_children','arrival','departure','special_notes');
-                $fields=array();//array to store all the required fields
-
-                foreach($req_fields as $field){
-                    if(empty(trim($_GET[$field]))){
-                        $errors[]='*Fill out all fields';
-                        break;
-                    
-                    }
-                } //checking required fields
-                
-                foreach($req_fields as $field){
-                    
-                        $fields[]=$_GET[$field];
-                } //storing fields in array
-
-    if(strlen(trim($_GET['special_notes']))>2500){
-                    $errors[]='*The Description should be less than 2500 characters';
-                }
-
-    if(!isset($_GET['agree'])){ //checking whether terms and conditions are agreed
-        $errors[]='*Agree to the Terms and Conditions before submiting your Reservation.';
-    }
-
-    $price_per_day= get_price($connection,$guide_id);
-    $errors[]=$price_per_day;
-    $errors[]=$guide_id;
+if(isset($_POST['submit'])){
+  
+    $tourist_id=$_SESSION['id'];
+    $guide_id=$_SESSION['reservation_guide'];
+    $tourist_name=$_POST['tourist_name']; 
+    $tourist_email=$_POST['tourist_email'];
+    $telephone_number=$_POST['tourist_phone'];
+    $no_of_adults=$_POST['total_adults'];
+    $no_of_children=$_POST['total_children'];
+    $arrival_date=$_POST['arrival'];
+    $departure_date=$_POST['departure'];
+    $notes=$_POST['special_notes'];
+  
+    $req_fields=array('tourist_name','tourist_email','tourist_phone','total_adults','total_children','arrival','departure','special_notes');
+     $fields=array();//array to store all the required fields
+     
+  
+  
+     foreach($req_fields as $field){
+         if(empty(trim($_POST[$field]))){
+             $errors[]='*Fill out all Fields';
+            break;
+         
+         }
+     } //checking required fields
     
-    // $errors[]=mysqli_num_rows($price_per_day);
-    if(!$price_per_day){
-        $errors[]='xxx';
-    }
-    $total_price= $price_per_day*$no_of_adults + ($price_per_day*$no_of_children)/2;
-
-    if(empty($errors)){
-        $tourist_id=mysqli_real_escape_string($connection,$_SESSION['id']);
-        $guide_id=mysqli_real_escape_string($connection,$_GET['guide_id']);
-       $tourist_name= mysqli_real_escape_string($connection,$_GET['tourist_name']);
-       $tourist_email=mysqli_real_escape_string($connection,$_GET['tourist_email']);
-       $telephone_number=mysqli_real_escape_string($connection,$_GET['tourist_phone']);
-       $no_of_adults=mysqli_real_escape_string($connection,$_GET['total_adults']);
-       $no_of_children=mysqli_real_escape_string($connection,$_GET['total_children']);
-       $arrival_date=mysqli_real_escape_string($connection,$_GET['arrival']);
-       $departure_date=mysqli_real_escape_string($connection,$_GET['departure']);
-       $notes=mysqli_real_escape_string($connection,$_GET['special_notes']);
-
-       $result= make_reservation_query($connection,$tourist_id,$guide_id,$tourist_name,$tourist_email,$telephone_number,$no_of_adults,$no_of_children,$arrival_date,$departure_date,$notes,$total_price);
-       if($result){
-        header('Location:/ceylontrek-3tier/controller/view_guide_ad_controller.php?view_guide='.$guide_id.'&reservation=success');
-    }
-
-    else{
-        $errors[]='Failed to modify the record.';
-    }
-    }
-
-
-       else{
-        header('Location: /ceylontrek-3tier/view/reservation.php?'.http_build_query(array('param'=>$errors,'param1'=>$fields)));
-    }
+     foreach($req_fields as $field){
+         
+             $fields[]=$_POST[$field];
+     } //storing fields in array
     
-
-    }
+  
+                 
+     if(strlen(trim($_POST['special_notes']))>2500){
+                     $errors[]='*The Description should be less than 2500 characters';
+                 }
+  
+     if(!isset($_POST['agree'])){ //checking whether terms and conditions are agreed
+         $errors[]='*Agree to the Terms and Conditions before submiting your Reservation.';
+     }
+     $fields[]=$tourist_id;
+     $fields[]=$guide_id;
+      
+    //  header('Location: /ceylontrek-3tier/view/reservation.php?'.http_build_query(array('param'=>$errors,'param1'=>$fields)));
+     $result1= get_price($connection,$guide_id);
     
+     
+     if($result1 && $no_of_adults){
+       
+         $row = mysqli_fetch_assoc($result1);
+         
+         $price_per_day=$row['price'];
+         
+         $total_price= $price_per_day*$no_of_adults + ($price_per_day*$no_of_children)/2;
+         $fields[]=$price_per_day*$no_of_adults;   
+     }
+
+     if(empty($errors)){
+         $tourist_id=mysqli_real_escape_string($connection,$_SESSION['id']);
+         $guide_id=mysqli_real_escape_string($connection,$_SESSION['reservation_guide']);;
+        $tourist_name= mysqli_real_escape_string($connection,$_POST['tourist_name']);
+        $tourist_email=mysqli_real_escape_string($connection,$_POST['tourist_email']);
+        $telephone_number=mysqli_real_escape_string($connection,$_POST['tourist_phone']);
+        $no_of_adults=mysqli_real_escape_string($connection,$_POST['total_adults']);
+        $no_of_children=mysqli_real_escape_string($connection,$_POST['total_children']);
+        $arrival_date=mysqli_real_escape_string($connection,$_POST['arrival']);
+        // $new_arrival_date = date("Y-m-d", strtotime($arrival_date));
+
+        $departure_date=mysqli_real_escape_string($connection,$_POST['departure']);
+        $notes=mysqli_real_escape_string($connection,$_POST['special_notes']);
+  
+        $result= make_reservation_query($connection,$tourist_id,$guide_id,$tourist_name,$tourist_email,$telephone_number,$no_of_adults,$no_of_children,$arrival_date,$departure_date,$notes,$total_price);
+        if($result){
+            print_r($result);
+         header('Location:/ceylontrek-3tier/controller/view_guide_ad_controller.php?view_guide='.$guide_id.'&reservation=success');
+     }
+  
+     else{
+         $errors[]='Failed to modify the record.';
+        //  print_r($errors);
+        //     print_r($fields);
+         header('Location: /ceylontrek-3tier/view/reservation.php?'.http_build_query(array('param'=>$errors,'param1'=>$fields)));
+     }
+     }
+  
+  
+        else{
+            // print_r($errors);
+            // print_r($fields);
+         header('Location: /ceylontrek-3tier/view/reservation.php?'.http_build_query(array('param'=>$errors,'param1'=>$fields)));
+     }
+     
+  
+     }
+  
+     
+  
+
+
+
 
 
 

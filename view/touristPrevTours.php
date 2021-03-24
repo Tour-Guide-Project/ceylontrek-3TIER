@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php session_start();
+$tours=array();
+if(isset($_GET['param1'])){
+    $tours=$_GET['param1'];
+}?>
+?>
 <html  lang="en">
     <head>
         <title>Previous Tours</title>
@@ -26,140 +31,83 @@
     }
     ?> 
                 <div class="side_bar">
-                    <img src="../resources/img/home/logo2.png" class="dashlogo">
+                    <img src="../resources/img/logo2.png" class="dashlogo">
                     <img src="../resources/img/reviewimg.jpg" class="profile" >
-                    <button class="edit"> Edit Profile</button><br>
+                    
+                    <form action="../controller/tourist_dashboard_controller.php" method="post">
+                    <button class="edit" name="edit_profile"> <span>Edit Profile</span></button><br>
+                    
+
+                    
+
                   <div class="sidebar-menu">
-                  <ul>
+                    <ul>
 
                     <li>
-                            <a href="touristDashboard.php">
+                        
                                 <span class="menu-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
                                 <span class="menu-title">My Dashboard</span>
-                            </a>
+                            
                         </li>
                         <li>
-                            <a href="Inbox.php">
+                           
                                 <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
                                 <spn class="manu-title">Inbox</span>
-                            </a>
+                        
                         </li>
 
                         <li>
-                            <a href="touristFavGuides.php">
+                           
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
                                 <spn class="manu-title">Favourite Guides</span>
-                            </a>
+                          
                         </li>
 
 
                         <li>
-                            <a href="touristFavPackages.php">
+                            
                                 <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
                                 <spn class="manu-title">Favourite Packages</span>
-                            </a>
+                           
                         </li>
 
                         
 
 
                         <li>
-                            <a href="upcomingTours.php">
+                          
                                 <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Upcoming Tours</span>
-                            </a>
+                                <button type="submit" name="upcoming_tours" class="menu_title sidebar_button" >View Upcoming Tours</button>
+                     
                         </li>
 
 
                         <li>
-                            <a href="touristPrevTours.php">
+                         
                                 <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Previous Tours</span>
-                            </a>
+                                <button type="submit" name="previous_tours" class="menu_title sidebar_button" >View Previous Tours</button>
+                      
                         </li>
 
                         <li>
-                            <a href="../controller/my_all_request_controller.php">
+                           
                                 <span class="menu-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                                <spn class="manu-title">My All Request</span>
-                            </a>
+                                <button type="submit" name="view_all_requests" class="menu_title sidebar_button" >View My Tour Requests</button>
+                        
                         </li>
 
                     </ul>
+                    </form>
                   </div><!--sidebar-manu-->        
                 </div><!--side_bar-->
-
-                <div class="calendar">
-                <div class="guidecalender">
-                    <div class="month">
-                        <i class="fa fa-caret-left prev" aria-hidden="true"></i>
-                        <div class="date"><h2></h2><h3></h3><p></p></div>
-                        <i class="fa fa-caret-right next" aria-hidden="true"></i>
-                    </div><!--month-->  
-                    
-                    <div class="weekdays">
-                        <div>Sun</div>
-                        <div>Mon</div>
-                        <div>Tue</div>
-                        <div>Wed</div>
-                        <div>Thu</div>
-                        <div>Fri</div>
-                        <div>Sat</div>
-                    </div><!--weeekdays-->
-                             
-                    <div class="days">
-                              
-                    </div><!--days-->
-                </div><!--guidecalender-->
-                </div>
-                <!-- end of calendar -->
+            
              <div class="content">
-               
+             <h1 class="page_title">Previous Tours</h1>
+             <?php
+            foreach($tours as $tour)
+            ?>
              <div class="packages">
                     
-                <div class="tourPackage">
-
-<!-- Start	Package details -->
-<div class="package-details">
-
-    <!-- 	Package Name -->
- 
-    <h4 style ="float:left; "><b>Guide Name: </b>Iranga Mudalige</h4>
-    <h4 style="padding-left:450px">No. of Days : 4</h4>
-    
-
-
-    <!-- Package bio -->
-    <p class="information">
-    <p style="margin-left:50px; margin-top:10px; text-align:left; margin-top:30px"><b>Start Date:</b> 23/04/2020</p>
-        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>End Date:</b> 23/04/2020</p>
-        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Payment:</b> USD 50</p>
-        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b> My Special Notes:</b> Allergy to fur. Please avoid visiting places where i contaminate with animal fur.</p>
-    </p>
-
-
-
-    <!-- 		Control -->
-    <div class="controler">
-
-        <!-- Start Button buying -->
-        <<button class="cobutton" >Contact Guide
-               
-               </button>
-               <<button class="cobutton" >Write a Review</button>
-               
-        <!-- End Button buying -->
-
-    </div>
-
-</div>
-
-<!-- 	End	Package details   -->
-
-
-
-</div>
-<!-- tourPackage1 -->
 
 <div class="tourPackage">
 
@@ -169,8 +117,9 @@
     <!-- 	Package Name -->
   
   
-    <h4 style ="float:left; "><b>Guide Name: </b> Chathura Rathnayake</h4>
-    <h4 style="padding-left:450px">No. of Days : 4</h4>
+    
+    <h4 style ="float:left; "><b>Guide Name: </b> <?php echo $tour['displayName']?></h4>
+
 
     
     
@@ -178,12 +127,13 @@
 
     <!-- Package bio -->
     <p class="information" >
-        <p style="margin-left:50px; margin-top:10px; text-align:left; margin-top:30px"><b>Start Date:</b> 23/04/2020</p>
-        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>End Date:</b> 23/04/2020</p>
-        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Payment:</b> USD 50</p>
-        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>My Special Notes:</b> I'm a Vegetarian . So please make a meal plan that will not hinder my preferences</p>
-    </p>
-
+    <p style="margin-left:50px; margin-top:10px; text-align:left; margin-top:30px"><b>Start Date:</b> <?php echo $tour['arrival_date']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>End Date:</b> <?php echo $tour['departure_date']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Adults:</b> <?php echo $tour['no_of_adults']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Children:</b> <?php echo $tour['no_of_children']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Payment ($):</b> <?php echo $tour['price']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Special Notes:</b> <?php echo $tour['notes']?></p>
+</p>
 
 
     <!-- 		Control -->

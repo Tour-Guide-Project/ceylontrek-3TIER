@@ -28,7 +28,7 @@
     ?> 
 
 <div class="reservation_form">
-<form action="../controller/reservation_controller.php" method="get">
+<form action="../controller/reservation_controller.php" method="POST">
 
   <?php
 
@@ -42,55 +42,66 @@
         $notes='';
         $price_per_day='';
           $total_price='';
+ 
 
 
-      if(isset($_GET['param'])){
-            $errors=$_GET['param'];
-      foreach ($errors as $error) {
-      echo '<p class="error" style="color:blue;">'.$error.'</p>';
-      }
-      }
-      if(isset($_GET['param1'])){
-        $errors=$_GET['param1'];
-  foreach ($errors as $error) {
-  echo '<p class="error" style="color:blue;">'.$error.'</p>';
-  }
-  }
+
+  if(isset($_GET['param'])){
+    $errors=$_GET['param'];
+foreach ($errors as $error) {
+echo '<p class="error" style="color:blue;">'.$error.'</p>';
+}
+}
+
+if(isset($_GET['param1'])){
+  $fields=$_GET['param1'];
+  $tourist_name=$fields[0];
+   $tourist_email=$fields[1];
+   $telephone_number=$fields[2];
+   $no_of_adults=$fields[3];;
+   $no_of_children=$fields[4];
+   $arrival_date=$fields[5];
+   $departure_date=$fields[6];
+   $notes=$fields[7];
+foreach ($fields as $field) {
+echo '<p class="error" style="color:blue;">'.$field.'</p>';
+}
+}
 
      
   ?>
   <div class="elem-group">
     <label for="name">Your Name</label>
-    <input type="text" id="name" name="tourist_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} >
+    <input type="text" id="name" name="tourist_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} <?php echo 'value="'.$tourist_name.'"'; ?>>
   </div>
   <div class="elem-group">
     <label for="email">Your E-mail</label>
-    <input type="email" id="email" name="tourist_email" placeholder="john.doe@email.com" >
+    <input type="text" id="email" name="tourist_email" placeholder="john.doe@email.com"<?php echo 'value="'.$tourist_email.'"'; ?> >
   </div>
   <div class="elem-group">
     <label for="phone">Your Phone</label>
-    <input type="tel" id="phone" name="tourist_phone" placeholder="498-348-3872"  >
+    <input type="text" id="phone" name="tourist_phone" placeholder="498-348-3872"  <?php echo 'value="'.$telephone_number.'"'; ?>>
   </div>
   <hr>
   <div class="elem-group inlined">
     <label for="adult">Adults</label>
-    <input type="number" id="adult" name="total_adults" placeholder="2" min="1" >
+    <input type="number" id="adult" name="total_adults"  min="1" <?php echo 'value="'.$no_of_adults.'"'; ?>>
   </div>
   <div class="elem-group inlined">
     <label for="child">Children (Less than age 12)</label>
-    <input type="number" id="child" name="total_children" placeholder="2" min="0" >
+    <input type="number" id="child" name="total_children"  min="0" <?php echo 'value="'.$no_of_children.'"'; ?>>
   </div>
   <div class="elem-group inlined">
     <label for="arrival-date">Arrival Date</label>
-    <input type="date" id="arrival-date" name="arrival"  min=<?php echo date('Y-m-d');?>>
+    <input type="date" id="arrival-date" name="arrival"  min= <?php echo date('Y-m-d H:i:s');?> <?php echo 'value="'.$arrival_date.'"'; ?>>
   </div>
   <?php
                 $datetime = new DateTime('tomorrow');
                
                 ?>
   <div class="elem-group inlined">
-    <label for="departure-date">Check-out Date</label>
-    <input type="date" id="departure-date" name="departure"  min=<?php  echo $datetime->format('Y-m-d H:i:s');?>>
+    <label for="departure-date">Departure Date</label>
+    <input type="date" id="departure-date" name="departure"  min=<?php  echo $datetime->format('Y-m-d');?> <?php echo 'value="'.$departure_date.'"'; ?>>
   </div>
   <div class="elem-group">
     <label for="package-selection">Select Tour Package</label>
@@ -104,7 +115,7 @@
   <hr>
   <div class="elem-group">
     <label for="message">Special Notes</label>
-    <textarea id="message" name="special_notes" placeholder="Tell your guide all the important details about your trip including the places you want to visit, your dietary restrictions, special needs and so on." ></textarea>
+    <textarea id="message" name="special_notes" placeholder="Tell your guide all the important details about your trip including the places you want to visit, your dietary restrictions, special needs and so on." ><?php echo ''.$notes.''; ?></textarea>
   </div>
   <div class="agreeCls">
 				<div class="agreed1">
@@ -115,7 +126,7 @@
 				</div>
 			</div>
 
-  <button type="submit" name="reserve">Reserve the Guide</button>
+  <button type="submit" name="submit">Reserve the Guide</button>
 </form>
 
 

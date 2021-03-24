@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <html  lang="en">
     <head>
         <title>Tourist  Dashboard</title>
@@ -29,7 +29,7 @@
                     
                     <form action="../controller/tourist_dashboard_controller.php" method="post">
                     <button class="edit" name="edit_profile"> <span>Edit Profile</span></button><br>
-                    </form>
+                    
 
                     
 
@@ -37,59 +37,60 @@
                     <ul>
 
                     <li>
-                            <a href="touristDashboard.php">
+                        
                                 <span class="menu-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
                                 <span class="menu-title">My Dashboard</span>
-                            </a>
+                            
                         </li>
                         <li>
-                            <a href="Inbox.php">
+                           
                                 <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
                                 <spn class="manu-title">Inbox</span>
-                            </a>
+                        
                         </li>
 
                         <li>
-                            <a href="touristFavGuides.php">
+                           
                                 <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
                                 <spn class="manu-title">Favourite Guides</span>
-                            </a>
+                          
                         </li>
 
 
                         <li>
-                            <a href="touristFavPackages.php">
+                            
                                 <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
                                 <spn class="manu-title">Favourite Packages</span>
-                            </a>
+                           
                         </li>
 
                         
 
 
                         <li>
-                            <a href="upcomingTours.php">
+                          
                                 <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Upcoming Tours</span>
-                            </a>
+                                <button type="submit" name="upcoming_tours" class="menu_title sidebar_button" >View Upcoming Tours</button>
+                     
                         </li>
 
 
                         <li>
-                            <a href="touristPrevTours.php">
+                         
                                 <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Previous Tours</span>
-                            </a>
+                                <button type="submit" name="previous_tours" class="menu_title sidebar_button" >View Previous Tours</button>
+                      
                         </li>
 
                         <li>
-                            <a href="../controller/my_all_request_controller.php">
+                           
                                 <span class="menu-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                                <spn class="manu-title">My All Request</span>
-                            </a>
+                                <button type="submit" name="view_all_requests" class="menu_title sidebar_button" >View My Tour Requests</button>
+                        
                         </li>
 
                     </ul>
+                    </form>
                   </div><!--sidebar-manu-->        
                 </div><!--side_bar-->
              <div class="content">

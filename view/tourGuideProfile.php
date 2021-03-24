@@ -37,7 +37,7 @@
             echo ''.$info['displayName'].' is not available for the dates you chose. Please try different dates.';
             echo '</div>';
         }
-        if($info['reservation']=="success"){
+        else if($info['reservation']=="success"){
             echo '<div class="alert">';
             echo '<span class="closebtn" onclick="this.parentElement.style.display="none";">&times;</span>';
             echo 'You have successfully reserved '.$info['displayName'].'';

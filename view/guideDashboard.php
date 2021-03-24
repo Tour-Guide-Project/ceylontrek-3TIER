@@ -37,60 +37,61 @@
 
                 <li>    
                         
-                        <a href="guideDashboard.php">
+                       
                             <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
                             <span class="menu-title">My Dashboard</span>
-                        </a> 
+                   
                         
                     </li>
 
                     <li>
-                        <a href="Inbox.php">
+                  
                             <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
                             <span class="menu-title">Inbox</span>
-                        </a>
+                     
                     </li>
 
                     <li>
-                        <a href=createGuideProfile.php>
+                        
                             <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">Create My Profile</span>
-                        </a>
+                            <!-- <span class="menu-title">Create My Profile</span> -->
+                            <button type="submit" name="profile" class="menu_title sidebar_button" ">Create My Profile</button>
+                        
                     </li>
 
                     <li>
-                        <a href="CreateTourPackagePage.php">
+                        
                             <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">Create tour package</span>
-                        </a>
+                            <button type="submit" name="package" class="menu_title sidebar_button" ">Create Tour Package</button>
+                        
                     </li>
 
                     <li>
-                        <a href="tourGuideProfile.php">
+                   
                             <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
                             <span class="menu-title">View My Profile</span>
-                        </a>
+                    
                     </li>
 
                     <li>
-                        <a href="guideMyPackages.php">
+                       
                             <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
                             <span class="menu-title">View My Tour Packages</span>
-                        </a>
+                        
                     </li>
 
                     <li>
-                        <a href="guideUpcomingTours.php">
+                      
                             <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">Upcoming Tours</span>
-                        </a>
+                            <button type="submit" name="upcoming_tours" class="menu_title sidebar_button" >View Upcoming Tours</button>
+                        
                     </li>
 
                     <li>
-                        <a href="guideUpcomingTours.php">
+                      
                             <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">Previous Tours</span>
-                        </a>
+                            <button type="submit" name="previous_tours" class="menu_title sidebar_button" >View Previous Tours</button>
+                        
                     </li>
                 </ul>
                 </div><!--sidebar-manu-->        
