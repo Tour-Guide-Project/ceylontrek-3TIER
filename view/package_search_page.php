@@ -24,7 +24,7 @@
    <div class="header" >
 
    
-      <form>
+      <form action="../controller/search_package_controller.php" method="POST">
       	<div class="container">
       	<div class="form-box">
             <h1>Search Tour Package</h1>
@@ -55,7 +55,7 @@
 
                </div><!--check-box-->
                  <br><br><br><br>
-                 <button class="seeall-button"><a style="color:white; text-decoration:none;" href='tourPackageResults.php'>SEE ALL PACKAGES</a></button>
+                 <input type="submit" value="SEE ALL PACKAGES" class="seeall-button" id="seeAllPackages" name="seeAllPackages">
       	</div><!--form-box-->
 
 

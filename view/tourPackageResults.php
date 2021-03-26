@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php session_start();
+$packages=$_SESSION['packages'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,177 +82,12 @@
         <!-- sortby -->
 
 
+        <?php
+            foreach($packages as $package)
+            ?>
 
 
-
-        <div class="tourPackage">
-
-            <!-- Start	Package details -->
-            <div class="package-details">
-
-                <!-- 	Package Name -->
-                <h1>The Down South Adventure</h1>
-                <h4 style ="float:left">Chathura Rathnayake</h4>
-                <h4 style="padding-left:450px">No. of Days : 4</h4>
-
-                <span class="hint-star star" >
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-          </span>
-
-
-                <!-- Package bio -->
-                <p class="information">
-                   Lets explore the golden beaches of Sri Lanka, have an authentic sea food platter at a 4 star restaurent by the sea and have some classy shopping in the classic outlets at the Galle Fort.
-                </p>
-
-
-
-                <!-- 		Control -->
-                <div class="packagecontrol">
-
-                    <!-- Start Button buying -->
-                    <button class="btn"><span> <a href="tourpackage.php" style="color:white; text-decoration:none;">View More</a></span>
-                           
-         </button>
-                    <!-- End Button buying -->
-
-                </div>
-
-            </div>
-
-            <!-- 	End	Package details   -->
-
-
-
-            <!-- 	Start Package image & Information -->
-
-            <div class="package-image">
-
-                <img src="../resources/img/Packageresult/2.jpg" alt="Omar Dsoky">
-
-            </div>
-            <!--  End Package image  -->
-
-
-        </div>
-        <!-- tourPackage1 -->
-
-        <div class="tourPackage">
-
-            <!-- Start	Package details -->
-            <div class="package-details">
-
-                <!-- 	Package Name -->
-                <h1>Colombo in a Day</h1>
-                <h4 style ="float:left">Saman Dissanayake</h4>
-                <h4 style="padding-left:450px">No. of Days : 1</h4>
-
-                <span class="hint-star star" >
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-          </span>
-
-
-                <!-- Package bio -->
-                <p class="information">
-                    I'm an experienced Tour Package who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me
-                    as your travel Package and friend from Sri Lanka.
-                </p>
-
-
-
-                <!-- 		Control -->
-                <div class="packagecontrol">
-
-                    <!-- Start Button buying -->
-                    <button class="btn"><span> View More</span>
-                           
-         </button>
-                    <!-- End Button buying -->
-
-                </div>
-
-            </div>
-
-            <!-- 	End	Package details   -->
-
-
-
-            <!-- 	Start Package image & Information -->
-
-            <div class="package-image">
-
-                <img src="../resources/img/Packageresult/1.jpg" alt="Omar Dsoky">
-
-            </div>
-            <!--  End Package image  -->
-
-
-        </div>
-        <!-- tourPackage2 -->
-
-        <div class="tourPackage">
-
-<!-- Start	Package details -->
-<div class="package-details">
-
-    <!-- 	Package Name -->
-    <h1>The Best of Anuradhapura</h1>
-    <h4 style ="float:left">Deeghayu Fernando</h4>
-    <h4 style="padding-left:450px">No. of Days : 4</h4>
-
-    <span class="hint-star star" >
-<i class="fa fa-star" aria-hidden="true"></i>
-<i class="fa fa-star" aria-hidden="true"></i>
-<i class="fa fa-star" aria-hidden="true"></i>
-<i class="fa fa-star-half-o" aria-hidden="true"></i>
-<i class="fa fa-star-o" aria-hidden="true"></i>
-</span>
-
-
-    <!-- Package bio -->
-    <p class="information">
-        Let's explore the first and greatest capital city of Sri Lanka, Anuradhapura. A tour filled with ruins, shrines, temples, lakes and excitement.
-    </p>
-
-
-
-    <!-- 		Control -->
-    <div class="packagecontrol">
-
-        <!-- Start Button buying -->
-        <button class="btn"><span> View More</span>
-               
-</button>
-        <!-- End Button buying -->
-
-    </div>
-
-</div>
-
-<!-- 	End	Package details   -->
-
-
-
-<!-- 	Start Package image & Information -->
-
-<div class="package-image">
-
-    <img src="../resources/img/Packageresult/3.jpg" alt="Omar Dsoky">
-
-</div>
-<!--  End Package image  -->
-
-
-</div>
-<!-- tourPackage1 -->
+        
 
 <div class="tourPackage">
 
@@ -258,9 +95,11 @@
 <div class="package-details">
 
     <!-- 	Package Name -->
-    <h1>Sigiriya Hike</h1>
-    <h4 style ="float:left">Iranga Mudalige</h4>
-    <h4 style="padding-left:450px">No. of Days : 1</h4>
+    <h1><?php echo $package['package_name']?></h1>
+    <h4 style="margin-top=10px">Main Destinations :<?php echo $package['destinations']?></h4>
+    <h4 style="margin-top:10px">Price :<?php echo $package['display_price']?></h4>
+    <h4 style="margin-top:10px"Maximum Number of Tourists :<?php echo $package['members']?></h4>
+    <h4 style="margin-top=10px">No. of Days : <?php echo $package['day_no']?></h4>
 
     <span class="hint-star star" >
 <i class="fa fa-star" aria-hidden="true"></i>
@@ -273,7 +112,7 @@
 
     <!-- Package bio -->
     <p class="information">
-       Explore Sigiriya in one day with a hike to Sigiriya, a visit to the Sigiriya museum and lunch in an exclusive 4 star restaurent.
+    <?php echo $package['headline']; ?> 
     </p>
 
 
@@ -282,9 +121,10 @@
     <div class="packagecontrol">
 
         <!-- Start Button buying -->
-        <button class="btn"><span> View More</span>
-               
-</button>
+        <form action="../controller/view_package_ad_controller.php" method="get">   
+                    <button class="btn" type="submit" name="view_package" value="<?php echo $package['package_id']; ?>" ><span>View More</span>
+         </button>
+         </form>
         <!-- End Button buying -->
 
     </div>

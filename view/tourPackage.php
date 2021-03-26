@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php session_start();
+$info=array();
+if(isset($_GET['guide_info'])){
+    $info=$_GET['guide_info'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +31,20 @@
         include('../view/new_top_bar.php');
     }
     ?> 
-
+<?php
+        if($info['available']=="false"){
+            echo '<div class="alert">';
+            echo '<span class="closebtn" onclick="this.parentElement.style.display="none";">&times;</span>';
+            echo ''.$info['displayName'].' is not available for the dates you chose. Please try different dates.';
+            echo '</div>';
+        }
+        else if($info['reservation']=="success"){
+            echo '<div class="alert">';
+            echo '<span class="closebtn" onclick="this.parentElement.style.display="none";">&times;</span>';
+            echo 'You have successfully reserved '.$info['displayName'].'';
+            echo '</div>';
+        }
+    ?>
 
         <div class="sidenav">
             <h2 style="margin-left: 20px;">Reviews</h2>
@@ -74,8 +92,8 @@
           <a href="url" class="viewmore">View More....</a>
           </div>
 
-          <button class="loginbutton" style="width:200px; margin-right:60px"><span><a style="color:white; text-decoration:none;" href='package_review.php'>View All Reviews</span></button>
-        
+          <!-- <button class="loginbutton" style="width:200px; margin-right:60px"><span><a style="color:white; text-decoration:none;" href='package_review.php'>View All Reviews</span></button>
+         -->
 
 
             
@@ -84,12 +102,12 @@
         </div>
         <!-- sidenav -->
 
-        <div class="guideInfo" >
+        <div class="guideInfo" style="margin-top:-700px">
             
         
             <div class="guidewrapper guiderelative">
             <div class="avtar"><img src="../resources/img/guide/1.jpg" alt="user-avtar" width="100%"/></div>
-            <span class="guide-name">Chathura Rathnayake</span>
+            <span class="guide-name"><?php echo $info['displayName']?></span>
             
             <div class="star-rating">
             <span class="fa fa-star checked"></span>
@@ -102,46 +120,37 @@
             <div class="guide-content">
            <ul>
                <li>Trips Completed : 45</li>
-               <li>Years of Experience : 6</li>
+               <li>Years of Experience : <?php echo $info['experience']?></li>
                <li>Four Star Rated Tours : 30</li>
-               <li>Fluent Languages: <ul><li>English</li>
-            <li>Spanish</li>
-        <li>Dutch</li></ul></li>
+               <li>Fluent Languages: <ul><li><?php echo $info['fluent_languages']?></li>
+            
            </ul>
             </div>
             
             </div>
-            <button class="loginbutton" style="height:65px; margin-left:5px"><span>Message Guide</span></button>
-            <button type="button" onclick="openForm()" class="loginbutton"style="height:65px; margin-left:0px"><span>Reserve Package</span></button>
+            <button class="loginbutton" style="height:65px; margin-left:5px;width:100%"><span>Message Guide</span></button>
+            <button type="button" onclick="openForm()" class="loginbutton"style="height:65px; margin-left:5px;width:100%"><span>Reserve Guide</span></button>
 
              <!-- make reservation popup window -->
-           <div class="form-popup" id="myForm">
-              <form action="tourPackage.php" class="form-container">
-                <span><b>Tour Begin Date :</b></span>
-                <input type="text"  required="">
-        
-                <span ><b>Tour End Date :</b></span>
-                <input type="text"  required="">
+             <div class="form-popup" id="myForm">
+              <form action="../controller/availability_controller.php" class="form-container" method="post">
+                <span><b>Arrival Date :</b></span>
+                <input type="date"  required="" id="arrivaldate" name="arrivaldate" min=<?php echo date('Y-m-d');?>>
+                <?php
+                $datetime = new DateTime('tomorrow');
+               
+                ?>
+                <span ><b>Departure  Date :</b></span>
+                <input type="date"  required="" id="departuredate" name="departuredate" min=<?php  echo $datetime->format('Y-m-d H:i:s');?>>
 
-                <span for="title"><b>Credit Card No :</b></span>
-                <input type="text"  required="">
+                 <span ><b>No. of Tourists :</b></span>
+                <input type="number" min="0"  required="" id="tourists" name="no_of_tourists">
         
-                <span ><b>Date Of Expiration :</b></span>
-                <input type="text"   required="">
-
-                <span ><b>CVV :</b></span>
-                <input type="text"   required="">
-
-                <div class="check_reservation">
-                    <input type="checkbox" id="check" name="reservation" required="">
-                    <label for="check"> "I accept the Terms of Service "or" I accept the privacy statement" Click here the indicate that you have read and agree to the terms presented in the Terms and Conditions agreement.</label>
-                </div>
-        
-                <button type="submit" class="btn">Submit</button>
+               
                 <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+                 <button type="submit" class="btn" name="check_availability_package">Check Availability</button>
              </form>
-          </div>
-
+             </div>
         <script>
           function openForm() {
               document.getElementById("myForm").style.display = "block";
@@ -160,7 +169,7 @@
             <div class="info">
 
             <div class="topic">
-                <p><b><h4>The Down South Adventure</h4></b></p>
+                <p><b><h4><?php echo $info['package_name']?></h4></b></p>
              
             </div>
             
@@ -210,13 +219,11 @@
 
             <div class="guide-bio">
                 <p><b><h4></h4></b></p>
-                <p>Lets explore the golden beaches of Sri Lanka, have an authentic sea food platter at a 4 star restaurent by the sea and have some classy shopping in the classic outlets at the Galle Fort</p>
-                <p><b>Day 1:</b></br> Breakfast at hotel. Exploring the Galle fort.Shopping. Lunch at a Four star hotel. Evening exploring Galle. Dinner at Galle Fort </p>
-                <p><b>Day 2:</b></br>Breakfast at hotel. Boat ride exploring Coral reefs. Lunch at a four star hotel. Evening on your own. Dinner at hotel.</p>
-                <p><b>Day 3:</b></br>Breakfast at hotel. Full day at Unawatuna Beach. Lunch and Dinner at Hotel</p>
-                <p><b>Day 4:</b></br>Breakfast at hotel. Tuk Tuk ride around Matara. Lunch at Matara. Evening at Tangalle Beach.</p>
-                <p>Tour can be customized according to your will. Please contact me for more details.</p>
-                <p><b>About Me: </b>I'm an experienced Tour Guide who has been working in the industry for almost a decade. I have completed more than 250 local tours and more than 100 international tours. With reasonable prices and high quality service you will never regret choosing me as your travel guide and friend from Sri Lanka.</p>
+                <p style="margin-top:10px"><b>Main Destinations: </b><?php echo $info['destinations']?></p>
+                <p style="margin-top:10px"><b>Maximun Number of Members: </b><?php echo $info['members']?></p>
+                <p style="margin-top:10px"><b>Price: </b><?php echo $info['display_price']?></p>
+                <p style="margin-top:10px"><b>Package Description: </b><?php echo $info['pdescription']?></p>
+                <p style="margin-top:10px"><b>About Me: </b><?php echo $info['bio']?></p>
             </div>
 
           

@@ -6,6 +6,7 @@
 <?php
 
 $guide_id=$_SESSION['current_guide_id'];
+
     if(isset($_POST['check_availability'])){
         $arrival_date=$_POST['arrivaldate'];
         $no_of_tourists=$_POST['no_of_tourists'];
@@ -19,6 +20,28 @@ $guide_id=$_SESSION['current_guide_id'];
         else{
             // $info['guide_id']=$guide_id;
            $_SESSION['reservation_guide']=$guide_id;
+            header('Location:/ceylontrek-3tier/controller/reservation_controller.php?view_guide='.$guide_id.'');
+            
+           
+        }
+    }
+
+
+    if(isset($_POST['check_availability_package'])){
+        $package_id=$_SESSION['current_package_id'];
+        $arrival_date=$_POST['arrivaldate'];
+        $no_of_tourists=$_POST['no_of_tourists'];
+        $departure_date=$_POST['departuredate'];
+        $result = check_availability($connection, $guide_id,$arrival_date, $departure_date, $no_of_tourists);
+        
+        if(mysqli_num_rows($result)>0){
+        
+            header('Location: /ceylontrek-3tier/controller/view_package_ad_controller.php?view_package='.$package_id.'&available=false'); 
+        }
+        else{
+            // $info['guide_id']=$guide_id;
+           $_SESSION['reservation_guide']=$guide_id;
+           $_SESSION['reservation_package']=$package_id;
             header('Location:/ceylontrek-3tier/controller/reservation_controller.php?view_guide='.$guide_id.'');
             
            

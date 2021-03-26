@@ -103,15 +103,7 @@ echo '<p class="error" style="color:blue;">'.$field.'</p>';
     <label for="departure-date">Departure Date</label>
     <input type="date" id="departure-date" name="departure"  min=<?php  echo $datetime->format('Y-m-d');?> <?php echo 'value="'.$departure_date.'"'; ?>>
   </div>
-  <div class="elem-group">
-    <label for="package-selection">Select Tour Package</label>
-    <select id="package-selection" name="package_preference" >
-        <option value="">Choose a Tour Package from the List if you are interested</option>
-        <option value="connecting">Connecting</option>
-        <option value="adjoining">Adjoining</option>
-        <option value="adjacent">Adjacent</option>
-    </select>
-  </div>
+
   <hr>
   <div class="elem-group">
     <label for="message">Special Notes</label>

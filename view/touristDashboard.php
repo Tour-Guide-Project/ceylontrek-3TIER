@@ -43,11 +43,7 @@
                             
                         </li>
                         <li>
-<<<<<<< HEAD
                            
-=======
-                            <a href="../controller/chat_controller.php">
->>>>>>> ea5cddb75fbcb6f940c7c18f6722200e5a932a60
                                 <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
                                 <spn class="manu-title">Inbox</span>
                         

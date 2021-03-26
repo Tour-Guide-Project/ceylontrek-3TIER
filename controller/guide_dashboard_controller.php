@@ -29,7 +29,7 @@
 				   
 					$upcomingtours[] = $result;
 			}
-		header('Location: /ceylontrek-3tier/view/guideUpcomingTours.php?'.http_build_query(array('param1'=>$upcomingtours)));
+		header('Location: /ceylontrek-3tier/view/guideUpcomingTours.php?'.http_build_query(array('param'=>$upcomingtours)));
 		$_SESSION['level']='tourguide';
 	}}
 
@@ -46,7 +46,7 @@
 				   
 					$previoustours[] = $result;
 			}
-		header('Location: /ceylontrek-3tier/view/guideUpcomingTours.php?'.http_build_query(array('param2'=>$previoustours)));
+		header('Location: /ceylontrek-3tier/view/guidePrevTours.php?'.http_build_query(array('param'=>$previoustours)));
 		$_SESSION['level']='tourguide';
 	}}
 

@@ -104,15 +104,13 @@ if(isset($_GET['param'])){
                     </form>
 
              <div class="content">
-             
-            <h1 class="page_title">Upcoming Tours</h1>
-            <?php if($tours):?>
-              
+
+            <h1 class="page_title">Previous Tours</h1>
             
              
              <div class="packages">
 
-
+             <?php if($tours):?>
 
              <?php
             foreach($tours as $tour)
@@ -167,19 +165,19 @@ if(isset($_GET['param'])){
 <!-- 	End	Package details   -->
 
 
+  
+
+
 
 </div>
 <!-- tourPackage2 -->
-
-</div>
-              <!-- end of packages -->
-
-
-
 <?php else: ?>
-<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Upcoming tours to view</h2>
-<?php endif ?>    
+<h2 style ="margin-left:400px; margin-top:50px;  " class="page_title">You do not have any Upcoming tours to view</h2>
+<?php endif ?>   
+            </div>
+              <!-- end of packages -->
               
+
         
 
                 <div class="corner_buttons">
