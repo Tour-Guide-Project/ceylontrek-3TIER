@@ -13,6 +13,7 @@ if(isset($_GET['param'])){
     <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/my_all_request.css">
     <link rel="stylesheet" href="../resources/css/guideUpcomingTours.css">
     <link rel="stylesheet" href="../resources/css/guideMyPackages.css">
     <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/Guidedashboardpage.css'>
@@ -30,78 +31,16 @@ if(isset($_GET['param'])){
         include('../view/new_top_bar.php');
     }
     ?> 
-               <div class="side_bar">
-                <img src="../resources/img/logo2.png" class="dashlogo">
-                <img src="../resources/img/reviewimg.jpg" class="profile" >
-                <form action="../controller/guide_dashboard_controller.php" method="post">
-                <button class="edit" name="edit_profile"><span>Edit Profile</span> </button><br>
-               
-                  
-                <div class="sidebar-menu">
-                <ul>
+               <?php
 
-                <li>    
-                        
-                       
-                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">My Dashboard</span>
-                   
-                        
-                    </li>
+                if($_SESSION['level']=='tourist'){
+                    include('../view/tourist_side_bar.php');
+                }
+                if($_SESSION['level']=='tourguide'){
+                    include('../view/guide_side_bar.php');
+                }
 
-                    <li>
-                  
-                            <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                            <span class="menu-title">Inbox</span>
-                     
-                    </li>
-
-                    <li>
-                        
-                            <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                            <!-- <span class="menu-title">Create My Profile</span> -->
-                            <button type="submit" name="profile" class="menu_title sidebar_button" ">Create My Profile</button>
-                        
-                    </li>
-
-                    <li>
-                        
-                            <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                            <button type="submit" name="package" class="menu_title sidebar_button" ">Create Tour Package</button>
-                        
-                    </li>
-
-                    <li>
-                   
-                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">View My Profile</span>
-                    
-                    </li>
-
-                    <li>
-                       
-                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">View My Tour Packages</span>
-                        
-                    </li>
-
-                    <li>
-                      
-                            <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                            <button type="submit" name="upcoming_tours" class="menu_title sidebar_button" ">View Upcoming Tours</button>
-                        
-                    </li>
-
-                    <li>
-                      
-                            <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                            <button type="submit" name="previous_tours" class="menu_title sidebar_button" ">View Previous Tours</button>
-                        
-                    </li>
-                </ul>
-                </div><!--sidebar-manu-->        
-            </div><!--side_bar-->
-                    </form>
+             ?>
 
              <div class="content">
              
@@ -114,16 +53,16 @@ if(isset($_GET['param'])){
 
 
 
-             <?php
-            foreach($tours as $tour)
-            ?>
-
+            
 
 
 <div class="tourPackage">
+           <?php
+            foreach($tours as $tour){
+            ?>
 
 <!-- Start	Package details -->
-<div class="package-details">
+<div class="package-details" style="border:1px solid black; background:lightblue; margin:10px">
 
     <!-- 	Package Name -->
   
@@ -166,7 +105,9 @@ if(isset($_GET['param'])){
 
 <!-- 	End	Package details   -->
 
-
+            <?php
+            }
+            ?>
 
 </div>
 <!-- tourPackage2 -->

@@ -4,6 +4,7 @@
         <title>Tourist  Dashboard</title>
         <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/Guidedashboardpage.css'>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../resources/css/my_all_request.css">
         <link rel="stylesheet" href="../resources/css/top_bar.css">
         <link rel="stylesheet" href="../resources/css/new_top_bar.css">
         <link rel="stylesheet" href="../resources/css/footer.css">
@@ -23,76 +24,18 @@
     }?>
 
     <div id="all" >
-                <div class="side_bar">
-                    <img src="../resources/img/logo2.png" class="dashlogo">
-                    <img src="../resources/img/reviewimg.jpg" class="profile" >
-                    
-                    <form action="../controller/tourist_dashboard_controller.php" method="post">
-                    <button class="edit" name="edit_profile"> <span>Edit Profile</span></button><br>
-                    
 
-                    
+          <?php
 
-                  <div class="sidebar-menu">
-                    <ul>
+                if($_SESSION['level']=='tourist'){
+                    include('../view/tourist_side_bar.php');
+                }
+                if($_SESSION['level']=='tourguide'){
+                    include('../view/guide_side_bar.php');
+                }
 
-                    <li>
-                        
-                                <span class="menu-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
-                                <span class="menu-title">My Dashboard</span>
-                            
-                        </li>
-                        <li>
-                           
-                                <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Inbox</span>
-                        
-                        </li>
-
-                        <li>
-                           
-                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Favourite Guides</span>
-                          
-                        </li>
-
-
-                        <li>
-                            
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Favourite Packages</span>
-                           
-                        </li>
-
-                        
-
-
-                        <li>
-                          
-                                <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                                <button type="submit" name="upcoming_tours" class="menu_title sidebar_button" >View Upcoming Tours</button>
-                     
-                        </li>
-
-
-                        <li>
-                         
-                                <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                                <button type="submit" name="previous_tours" class="menu_title sidebar_button" >View Previous Tours</button>
-                      
-                        </li>
-
-                        <li>
-                           
-                                <span class="menu-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                                <button type="submit" name="view_all_requests" class="menu_title sidebar_button" >View My Tour Requests</button>
-                        
-                        </li>
-
-                    </ul>
-                    </form>
-                  </div><!--sidebar-manu-->        
-                </div><!--side_bar-->
+             ?>
+    
              <div class="content">
                 <div class="schedule">
                     <h1 >Welcome to Your CeylonTrek Profile</h1><br>

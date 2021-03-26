@@ -46,7 +46,9 @@
     ?>
 
         <div class="sidenav">
-            <h2 style="margin-left: 20px; margin-bottom:-20px;">Reviews</h2>
+
+            
+            <h2 style="margin-left: 20px; margin-bottom:-20px;" >Reviews</h2>
             
             
 
@@ -55,7 +57,7 @@
           <span class="client-name">Ricky Ponting</span>
           <span class="client-country">Australia</span>
           <div class="testimonial-content">
-          Chathura was probably the best tour guide we met in Sri Lanka. His prices were great and his service was great. will meet him soon.
+           Chathura was probably the best tour guide we met in Sri Lanka. His prices were great and his service was great. will meet him soon.
           </div>
           <a href="url" class="viewmore">View More....</a>
           </div>
@@ -91,7 +93,14 @@
           <a href="url" class="viewmore">View More....</a>
           </div>
 
-          <button class="loginbutton" style="width:200px; margin-right:60px"><span><a style="color:white; text-decoration:none;" href='Guide_all_reviews.php'>View All Reviews</a></span></button>
+          
+          
+          
+          <button type="review" class="loginbutton" style="width:200px; margin-right:60px" name="review" id="review" >
+                    <a href="../controller/view_review_controller.php?guide_id=<?php echo '25'?>">
+                      
+                      <spn class="manu-title">View All Reviews</span>
+                  </a></button>
         
 
 
@@ -126,7 +135,7 @@
             </div>
            
             </div>
-            <button class="loginbutton" style="height:65px; margin-left:5px;width:100%"><span>Message Guide</span></button>
+            <button class="loginbutton" style="height:65px; margin-left:5px;width:100%" ><span>Message Guide</span></button>
             <button type="button" onclick="openForm()" class="loginbutton"style="height:65px; margin-left:5px;width:100%"><span>Reserve Guide</span></button>
 
             <form action="../controller/edit_guide_myprofile_controller.php" method="post">

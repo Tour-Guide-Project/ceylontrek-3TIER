@@ -6,6 +6,7 @@ session_start();?>
 		header('Location: ../controller/view_users_admin_controller.php');
 		$_SESSION['user_level']='tourguide';
 	}
+	
 	if(isset($_POST['submit_tourist'])){
 		header('Location: ../controller/view_users_admin_controller.php');
 		$_SESSION['user_level']='tourist';
@@ -18,6 +19,7 @@ session_start();?>
 		header('Location: ../view/create_admin_and_moderator_account.php');
 		$_SESSION['level']='admin';
 	}
+
 	if(isset($_POST['submit_moderator'])){
 		header('Location: ../view/create_admin_and_moderator_account.php');
 		$_SESSION['level']='moderator';
