@@ -46,7 +46,7 @@
 .form-container {
     margin: 10px auto 10px auto;
     width: 700px;
-    height: 400px;
+    height: 280px;
     padding: 30px;
     background: #F0F8FF;
     box-sizing: border-box;
@@ -430,3 +430,30 @@ body {
     font-family: lato;
     font-weight: 500;
 }
+
+ /* The alert message box */
+ .alert {
+    padding: 20px;
+    background-color: #af1106; /* Red */
+    color: white;
+    font-weight: bold;
+    margin-bottom: -50px;
+    margin-top: 100px;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  } 

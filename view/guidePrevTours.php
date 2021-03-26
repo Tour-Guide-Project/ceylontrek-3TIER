@@ -31,39 +31,34 @@ if(isset($_GET['param'])){
         include('../view/new_top_bar.php');
     }
     ?> 
-               <?php
+               
+                
+              <?php
 
-                if($_SESSION['level']=='tourist'){
-                    include('../view/tourist_side_bar.php');
-                }
-                if($_SESSION['level']=='tourguide'){
-                    include('../view/guide_side_bar.php');
-                }
+include('../view/guide_side_bar.php');
 
-             ?>
+
+?>
 
              <div class="content">
-             
-            <h1 class="page_title">Upcoming Tours</h1>
-            <?php if(count($tours)>0):?>
-              
+
+            <h1 class="page_title">Previous Tours</h1>
             
              
              <div class="packages">
 
+             <?php if($tours):?>
 
+             <?php
+            foreach($tours as $tour)
+            ?>
 
-            
 
 
 <div class="tourPackage">
 
-           <?php
-            foreach($tours as $tour){
-            ?>
-
 <!-- Start	Package details -->
-<div class="package-details" style="border:1px solid black; background:lightblue; margin:10px">
+<div class="package-details">
 
     <!-- 	Package Name -->
   
@@ -106,22 +101,20 @@ if(isset($_GET['param'])){
 
 <!-- 	End	Package details   -->
 
-            <?php
-            }
-            ?>
+
+  
+
+
 
 </div>
 <!-- tourPackage2 -->
-
-</div>
-              <!-- end of packages -->
-
-
-
 <?php else: ?>
-<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Upcoming tours to view</h2>
-<?php endif ?>    
+<h2 style ="margin-left:400px; margin-top:50px;  " class="page_title">You do not have any Previous tours to view</h2>
+<?php endif ?>   
+            </div>
+              <!-- end of packages -->
               
+
         
 
                 <div class="corner_buttons">

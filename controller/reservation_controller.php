@@ -19,6 +19,7 @@ $errors=array();
    $notes='';
    $price_per_day='';
     $total_price='';
+    $packageid='';
     
 
 if (isset($_SESSION['id'])) {
@@ -43,7 +44,9 @@ if(isset($_POST['submit'])){
     $arrival_date=$_POST['arrival'];
     $departure_date=$_POST['departure'];
     $notes=$_POST['special_notes'];
-  
+  if(isset($_SESSION['reservation_package'])){
+      $packageid=$_SESSION['reservation_package'];
+  }
     $req_fields=array('tourist_name','tourist_email','tourist_phone','total_adults','total_children','arrival','departure','special_notes');
      $fields=array();//array to store all the required fields
      
@@ -101,25 +104,44 @@ if(isset($_POST['submit'])){
 
         $departure_date=mysqli_real_escape_string($connection,$_POST['departure']);
         $notes=mysqli_real_escape_string($connection,$_POST['special_notes']);
+
+        if(isset($_SESSION['reservation_package'])){
+            $packageid=$_SESSION['reservation_package'];
+            $has_package=1;
+            $result= make_reservation_query($connection,$tourist_id,$guide_id,$tourist_name,$tourist_email,$telephone_number,$no_of_adults,$no_of_children,$arrival_date,$departure_date,$notes,$total_price,$has_package,$packageid);
+            if($result){
+              
+             header('Location:/ceylontrek-3tier/controller/view_package_ad_controller.php?view_package='.$packageid.'&reservation=success');
+         }
+      
+         else{
+             $errors[]='Failed to modify the record.';
+             header('Location: /ceylontrek-3tier/view/reservation.php?'.http_build_query(array('param'=>$errors,'param1'=>$fields)));
+         }
+
+
+        }//end of if
+        else{
+            $has_package=0;
+            $tourpackageid=0;
+            $result= make_reservation_query($connection,$tourist_id,$guide_id,$tourist_name,$tourist_email,$telephone_number,$no_of_adults,$no_of_children,$arrival_date,$departure_date,$notes,$total_price,$has_package,$packageid);
+            if($result){
+                print_r($result);
+             header('Location:/ceylontrek-3tier/controller/view_guide_ad_controller.php?view_guide='.$guide_id.'&reservation=success');
+         }
+      
+         else{
+             $errors[]='Failed to modify the record.';
+             header('Location: /ceylontrek-3tier/view/reservation.php?'.http_build_query(array('param'=>$errors,'param1'=>$fields)));
+         }
+        }//end of else
   
-        $result= make_reservation_query($connection,$tourist_id,$guide_id,$tourist_name,$tourist_email,$telephone_number,$no_of_adults,$no_of_children,$arrival_date,$departure_date,$notes,$total_price);
-        if($result){
-            print_r($result);
-         header('Location:/ceylontrek-3tier/controller/view_guide_ad_controller.php?view_guide='.$guide_id.'&reservation=success');
-     }
-  
-     else{
-         $errors[]='Failed to modify the record.';
-        //  print_r($errors);
-        //     print_r($fields);
-         header('Location: /ceylontrek-3tier/view/reservation.php?'.http_build_query(array('param'=>$errors,'param1'=>$fields)));
-     }
+        
      }
   
   
         else{
-            // print_r($errors);
-            // print_r($fields);
+           
          header('Location: /ceylontrek-3tier/view/reservation.php?'.http_build_query(array('param'=>$errors,'param1'=>$fields)));
      }
      

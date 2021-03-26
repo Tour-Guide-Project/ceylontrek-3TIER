@@ -2,6 +2,9 @@
 $tours=array();
 if(isset($_GET['param1'])){
     $tours=$_GET['param1'];
+
+
+
 }?>
 ?>
 <html  lang="en">
@@ -11,10 +14,13 @@ if(isset($_GET['param1'])){
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/new_top_bar.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/my_all_request.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="../resources/css/guideUpcomingTours.css">
     <link rel="stylesheet" href="../resources/css/guideMyPackages.css">
     <link rel="stylesheet" href="../resources/css/touristPrevTours.css">
+    <link rel="stylesheet" href="../resources/css/pretours1.css">
+  
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,94 +35,31 @@ if(isset($_GET['param1'])){
     }else{
         include('../view/new_top_bar.php');
     }
-    ?> 
-                <div class="side_bar">
-                    <img src="../resources/img/logo2.png" class="dashlogo">
-                    <img src="../resources/img/reviewimg.jpg" class="profile" >
-                    
-                    <form action="../controller/tourist_dashboard_controller.php" method="post">
-                    <button class="edit" name="edit_profile"> <span>Edit Profile</span></button><br>
-                    
+    ?>      
 
-                    
+             <?php
 
-                  <div class="sidebar-menu">
-                    <ul>
+                include('../view/tourist_side_bar.php');    
 
-                    <li>
-                        
-                                <span class="menu-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
-                                <span class="menu-title">My Dashboard</span>
-                            
-                        </li>
-                        <li>
-                           
-                                <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Inbox</span>
-                        
-                        </li>
-
-                        <li>
-                           
-                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Favourite Guides</span>
-                          
-                        </li>
-
-
-                        <li>
-                            
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Favourite Packages</span>
-                           
-                        </li>
-
-                        
-
-
-                        <li>
-                          
-                                <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                                <button type="submit" name="upcoming_tours" class="menu_title sidebar_button" >View Upcoming Tours</button>
-                     
-                        </li>
-
-
-                        <li>
-                         
-                                <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                                <button type="submit" name="previous_tours" class="menu_title sidebar_button" >View Previous Tours</button>
-                      
-                        </li>
-
-                        <li>
-                           
-                                <span class="menu-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                                <button type="submit" name="view_all_requests" class="menu_title sidebar_button" >View My Tour Requests</button>
-                        
-                        </li>
-
-                    </ul>
-                    </form>
-                  </div><!--sidebar-manu-->        
-                </div><!--side_bar-->
+             ?>
             
              <div class="content">
              <h1 class="page_title">Previous Tours</h1>
-             <?php
-            foreach($tours as $tour)
-            ?>
+             <?php if(count($tours)>0):?>
              <div class="packages">
                     
 
 <div class="tourPackage">
-
+              
+           <?php
+            foreach($tours as $tour){
+            ?>
 <!-- Start	Package details -->
-<div class="package-details">
+<div class="package-details" style="border:1px solid black; background:lightblue; margin:10px">
 
     <!-- 	Package Name -->
   
-  
+         
     
     <h4 style ="float:left; "><b>Guide Name: </b> <?php echo $tour['displayName']?></h4>
 
@@ -143,7 +86,7 @@ if(isset($_GET['param1'])){
         <button class="cobutton" > Contact Guide
                
 </button>
-<button class="cobutton" > Write a Review
+<button class="cobutton"  onclick="openForm()" > Write a Review
                
 </button>
 
@@ -154,18 +97,56 @@ if(isset($_GET['param1'])){
 </div>
 
 <!-- 	End	Package details   -->
+           
 
 
+      <?php
+            }
+
+            ?>
 
 
-
-
-</div>
 <!-- tourPackage2 -->
-            </div>
+        </div>
               <!-- end of packages -->
+<?php else: ?>
+<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Previous tours to view</h2>
+<?php endif ?>    
+</div>
+
+        <div class="review" id="reviews"> <!--pop up form-->
+            <form action="../controller/review_rate_controller.php" class="form-container" method="post">
+               <h1> Write Review</h1>             
+               <div class="rate">
+                   <input type="radio" name="rate" id="rate-5" vlaue=5>
+                   <label for="rate-5" class="fa fa-star"> </label>
+
+                   <input type="radio" name="rate" id="rate-4" value=4>
+                   <label for="rate-4" class="fa fa-star"></label>
+
+
+                   <input type="radio" name="rate" id="rate-3" value=3>
+                   <label for="rate-3" class="fa fa-star"></label>
+
+                   <input type="radio" name="rate" id="rate-2" value=2>
+                   <label for="rate-2" class="fa fa-star"></label>
+
+                   <input type="radio" name="rate" id="rate-1" value=1>
+                   <label for="rate-1" class="fa fa-star"></label>
+
+               </div>
+			   
+    		     <textarea rows = "4" cols = "20" name = "review" style="resize: vertical;height:100px;" placeholder="Write your review......."></textarea>
+
               
-        
+                 <input type="text" name="guide_id" value="<?php echo $tour['guide_id']?>" hidden>
+                 <input type="text" name="reservation_id" value="<?php echo $tour['reservation_id']?>" hidden>
+    		     <button type="submit" class="btn save" name="save" id="save" onclick="return confirm('Add your review?');">Save </button>
+    		     <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+  		   </form>
+        </div>
+              
+
 
                 <div class="corner_buttons">
                         <div>
@@ -178,6 +159,30 @@ if(isset($_GET['param1'])){
                         </div>
                 </div><!--corner_button-->
 </div>
+
+<script>
+
+function openForm() {
+       
+       document.getElementById('reviews').style.display = 'block';
+   }
+   
+   function closeForm(){
+       document.getElementById('reviews').style.display = 'none';
+       
+   }
+
+   const rate = document.querySelector(".cobutton");
+   const save = document.querySelector(".save");
+   const cancel=document.querySelector(".cancel");
+    save.onclick = ()=>{
+          rate.style.display ="none";
+    }
+   
+
+
+   
+</script>
                 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
         <script src="../resources/js/guide dashboard.js"></script>
 

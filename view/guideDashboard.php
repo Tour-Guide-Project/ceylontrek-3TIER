@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../resources/css/top_bar.css">
         <link rel="stylesheet" href="../resources/css/new_top_bar.css">
+        <link rel="stylesheet" type="text/css" href="../resources/css/my_all_request.css">
         <link rel="stylesheet" href="../resources/css/footer.css">
         <script type="text/javascript" src="../resources/js/jquery.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,82 +26,14 @@
 
 <div id="all" >
                 
-            <div class="side_bar">
-                <img src="../resources/img/logo2.png" class="dashlogo">
-                <img src="../resources/img/reviewimg.jpg" class="profile" >
-                <form action="../controller/guide_dashboard_controller.php" method="post">
-                <button class="edit" name="edit_profile"><span>Edit Profile</span> </button><br>
+            
                
-                  
-                <div class="sidebar-menu">
-                <ul>
+              <?php
 
-                <li>    
-                        
-                       
-                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">My Dashboard</span>
-                   
-                        
-                    </li>
+                    include('../view/guide_side_bar.php');
+            
 
-                    <li>
-<<<<<<< HEAD
-                  
-=======
-                        <a href="../controller/chat_controller.php">
->>>>>>> ea5cddb75fbcb6f940c7c18f6722200e5a932a60
-                            <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                            <span class="menu-title">Inbox</span>
-                     
-                    </li>
-
-                    <li>
-                        
-                            <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                            <!-- <span class="menu-title">Create My Profile</span> -->
-                            <button type="submit" name="profile" class="menu_title sidebar_button" ">Create My Profile</button>
-                        
-                    </li>
-
-                    <li>
-                        
-                            <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                            <button type="submit" name="package" class="menu_title sidebar_button" ">Create Tour Package</button>
-                        
-                    </li>
-
-                    <li>
-                   
-                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">View My Profile</span>
-                    
-                    </li>
-
-                    <li>
-                       
-                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                            <span class="menu-title">View My Tour Packages</span>
-                        
-                    </li>
-
-                    <li>
-                      
-                            <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                            <button type="submit" name="upcoming_tours" class="menu_title sidebar_button" >View Upcoming Tours</button>
-                        
-                    </li>
-
-                    <li>
-                      
-                            <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                            <button type="submit" name="previous_tours" class="menu_title sidebar_button" >View Previous Tours</button>
-                        
-                    </li>
-                </ul>
-                </div><!--sidebar-manu-->        
-            </div><!--side_bar-->
-            </form>
+             ?>
             
             <div class="content">
                 <div class="schedule">
