@@ -39,29 +39,18 @@ if(isset($_GET['param1'])){
 
              <?php
 
-                if($_SESSION['level']=='tourist'){
-                    include('../view/tourist_side_bar.php');
-                }
-                if($_SESSION['level']=='tourguide'){
-                    include('../view/guide_side_bar.php');
-                }
+                include('../view/tourist_side_bar.php');    
 
              ?>
             
              <div class="content">
              <h1 class="page_title">Previous Tours</h1>
-<<<<<<< HEAD
-             <?php if($tours):?>
-             <?php
-            foreach($tours as $tour)
-            ?>
-=======
-            
->>>>>>> d8ab3e9b9ea52a5afe56a5d3fd5bf1eab8f8bf8e
+             <?php if(count($tours)>0):?>
              <div class="packages">
                     
 
 <div class="tourPackage">
+              
            <?php
             foreach($tours as $tour){
             ?>
@@ -117,10 +106,13 @@ if(isset($_GET['param1'])){
             ?>
 
 
-</div>
 <!-- tourPackage2 -->
         </div>
               <!-- end of packages -->
+<?php else: ?>
+<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Previous tours to view</h2>
+<?php endif ?>    
+</div>
 
         <div class="review" id="reviews"> <!--pop up form-->
             <form action="../controller/review_rate_controller.php" class="form-container" method="post">
@@ -154,7 +146,7 @@ if(isset($_GET['param1'])){
   		   </form>
         </div>
               
-<?php endif ?> 
+
 
                 <div class="corner_buttons">
                         <div>

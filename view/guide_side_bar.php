@@ -7,56 +7,67 @@
           </form>
           
 
-        <div class="sidebar-menu">
-          <ul>
+        
+          <div class="sidebar-menu">
+                <ul>
 
-          <li>
-                  <a href="guideDashboard.php">
-                      <span class="menu-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
-                      <span class="menu-title">My Dashboard</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="../controller/chat_controller.php">
-                      <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                      <spn class="manu-title">Inbox</span>
-                  </a>
-              </li>
+                <li>    
+                        
+                        <a href="guideDashboard.php">
+                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">My Dashboard</span>
+                        </a> 
+                        
+                    </li>
 
-              <li>
-                  <a href="touristFavGuides.php">
-                      <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                      <spn class="manu-title">Favourite Guides</span>
-                  </a>
-              </li>
+                    <li>
+                        <a href="../controller/chat_controller.php">
+                            <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
+                            <span class="menu-title">Inbox</span>
+                        </a>
+                    </li>
 
+                    <li>
+                        <a href="../controller/createGuideProfile_controller.php">
+                            <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Create My Profile</span>
+                        </a>
+                    </li>
 
-              <li>
-                  <a href="touristFavPackages.php">
-                      <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                      <spn class="manu-title">Favourite Packages</span>
-                  </a>
-              </li>
+                    <li>
+                        <a href="../controller/createTourPackage_controller.php">
+                            <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Create tour package</span>
+                        </a>
+                    </li>
 
-              
+                    <li>
+                        <a href="tourGuideProfile.php">
+                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">View/Edit My Profile</span>
+                        </a>
+                    </li>
 
+                    <li>
+                        <a href="guideMyPackages.php">
+                            <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">View/Edit My Tour Packages</span>
+                        </a>
+                    </li>
 
-              <li>
-                  <a href="../controller/guide_upcoming_tour_controller.php">
-                      <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                      <spn class="manu-title">Upcoming Tours</span>
-                  </a>
-              </li>
+                    <li>
+                        <a href="../controller/guide_upcoming_tour_controller.php">
+                            <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Upcoming Tours</span>
+                        </a>
+                    </li>
 
-
-              <li>
-                  <a href="../controller/guide_pre_tour_controller.php">
-                      <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                      <spn class="manu-title">Previous Tours</span>
-                  </a>
-              </li>
-
-              
-          </ul>
-        </div><!--sidebar-manu-->        
+                    <li>
+                        <a href="../controller/guide_pre_tour_controller.php">
+                            <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
+                            <span class="menu-title">Previous Tours</span>
+                        </a>
+                    </li>
+                </ul>
+                </div><!--sidebar-manu-->     
       </div><!--side_bar-->

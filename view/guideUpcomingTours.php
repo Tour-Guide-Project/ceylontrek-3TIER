@@ -45,7 +45,7 @@ if(isset($_GET['param'])){
              <div class="content">
              
             <h1 class="page_title">Upcoming Tours</h1>
-            <?php if($tours):?>
+            <?php if(count($tours)>0):?>
               
             
              
@@ -57,6 +57,7 @@ if(isset($_GET['param'])){
 
 
 <div class="tourPackage">
+
            <?php
             foreach($tours as $tour){
             ?>

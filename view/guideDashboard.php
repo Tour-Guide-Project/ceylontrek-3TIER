@@ -30,12 +30,8 @@
                
               <?php
 
-                if($_SESSION['level']=='tourist'){
-                    include('../view/tourist_side_bar.php');
-                }
-                if($_SESSION['level']=='tourguide'){
                     include('../view/guide_side_bar.php');
-                }
+            
 
              ?>
             

@@ -34,32 +34,19 @@ if(isset($_GET['param1'])){
             <div>
                  <?php
 
-                if($_SESSION['level']=='tourist'){
                     include('../view/tourist_side_bar.php');
-                }
-                if($_SESSION['level']=='tourguide'){
-                    include('../view/guide_side_bar.php');
-                }
                 
              ?>
             </div>
              <div class="content">
              <h1 class="page_title">Upcoming Tours</h1>
-<<<<<<< HEAD
-             <?php if($tours):?>
-             
-             <?php
-            foreach($tours as $tour)
-            ?>
-=======
             
->>>>>>> d8ab3e9b9ea52a5afe56a5d3fd5bf1eab8f8bf8e
              <div class="packages">
                     
              
 
 <div class="tourPackage">
-
+<?php if(count($tours)>0):?>
             <?php
             foreach($tours as $tour){
             ?>

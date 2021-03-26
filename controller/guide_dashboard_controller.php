@@ -8,14 +8,14 @@
 		header('Location: ../controller/view_guide_profile_controller.php');
 		$_SESSION['level']='tourguide';
 	}
-	if (isset($_POST['profile'])){
-		header('Location: ../controller/createGuideProfile_controller.php');
-		$_SESSION['level']='tourguide';
-	}
-	if (isset($_POST['package'])){
-		header('Location: ../controller/createTourPackage_controller.php');
-		$_SESSION['level']='tourguide';
-	}
+	// if (isset($_POST['profile'])){
+	// 	header('Location: ../controller/createGuideProfile_controller.php');
+	// 	$_SESSION['level']='tourguide';
+	// }
+	// if (isset($_POST['package'])){
+	// 	header('Location: ../controller/createTourPackage_controller.php');
+	// 	$_SESSION['level']='tourguide';
+	// }
 	
 ?>
 <?php mysqli_close($connection);?>
