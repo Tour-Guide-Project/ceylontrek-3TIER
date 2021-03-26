@@ -25,76 +25,16 @@ $mylist = $_SESSION['mylist'];
     }
     ?> 
 
+                  <?php
 
-                <div class="side_bar">
-                    <img src="../resources/img/logo2.png" class="dashlogo">
-                    <img src="../resources/img/reviewimg.jpg" class="profile" >
-                    
-                    <form action="../controller/tourist_dashboard_controller.php" method="post">
-                    <button class="edit" name="edit_profile"> <span>Edit Profile</span></button><br>
-                    </form>
+                if($_SESSION['level']=='tourist'){
+                    include('../view/tourist_side_bar.php');
+                }
+                if($_SESSION['level']=='tourguide'){
+                    include('../view/guide_side_bar.php');
+                }
 
-                    
-
-                  <div class="sidebar-menu">
-                    <ul>
-
-                    <li>
-                            <a href="touristDashboard.php">
-                                <span class="menu-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
-                                <span class="menu-title">My Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Inbox.php">
-                                <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Inbox</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="touristFavGuides.php">
-                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Favourite Guides</span>
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a href="touristFavPackages.php">
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Favourite Packages</span>
-                            </a>
-                        </li>
-
-                        
-
-
-                        <li>
-                            <a href="upcomingTours.php">
-                                <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Upcoming Tours</span>
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a href="touristPrevTours.php">
-                                <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Previous Tours</span>
-                            </a>
-                        </li>
-
-                        <li style="background-color:rgba(0, 0, 0, 0.3)">
-                            <a href="my_all_requests.php">
-                                <span class="menu-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                                <spn class="manu-title">My All Request</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                  </div><!--sidebar-manu-->        
-                </div><!--side_bar-->
+             ?>
 
 	<div class="post_box">
 

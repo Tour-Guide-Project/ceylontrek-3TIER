@@ -1,4 +1,8 @@
-<?php session_start();?>
+<?php session_start();
+
+$rewlist=$_SESSION['reviewlist'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +27,7 @@
     ?> 
  <div class="wrapper">
       <div class="split_left" >
-           <img src="../resources/img/guide/1.jpg"">
+           <img src="../resources/img/guide/1.jpg">
            <h3>Chathura Rathnayake</h3>
       </div><!--split_left--> 
 
@@ -124,38 +128,19 @@
     
 
        <div class="reviews">
+            <?php 
+                foreach($rewlist as $r){
+             ?>
             <div class="box review">
-                  <h5>Kavindya Devindi</h5>
-                    <p>
-                          The trip was amazing, a once in a lifetime opportunity and trip. My sister and I spent 16 days in Italy for her high school graduation trip, and we had an unparalleled experience. We went from Venice to Florence/Tuscany to Cinque Terre to Sorrento to Rome. Everything in each city and in between was incredible. 
-                    </p>
+                  
+                    <h3><?php echo $r['first_name']." ".$r['last_name']; ?></h3>
+                    <p><?php echo $r['reviews']; ?></p>
                     
               </div><!--box review-->
-  
-              <div class="box review">
-                      <h5>Dinendra Bandara</h5>
-                      <p>
-                            The trip was amazing, a once in a lifetime opportunity and trip. My sister and I spent 16 days in Italy for her high school graduation trip, and we had an unparalleled experience. We went from Venice to Florence/Tuscany to Cinque Terre to Sorrento to Rome. Everything in each city and in between was incredible. 
-                      </p>
-                      
-              </div><!--box review-->
-  
-              <div class="box review">
-                      <h5>Sulakshani Theja</h5>
-                      <p>
-                            The trip was amazing, a once in a lifetime opportunity and trip. My sister and I spent 16 days in Italy for her high school graduation trip, and we had an unparalleled experience. We went from Venice to Florence/Tuscany to Cinque Terre to Sorrento to Rome. Everything in each city and in between was incredible. 
-                      </p>
-                      
-              </div><!--box review-->
-              
-  
-              <div class="box review">
-                      <h5>Piyumi Dulanjali</h5>
-                      <p>
-                            The trip was amazing, a once in a lifetime opportunity and trip. My sister and I spent 16 days in Italy for her high school graduation trip, and we had an unparalleled experience. We went from Venice to Florence/Tuscany to Cinque Terre to Sorrento to Rome. Everything in each city and in between was incredible. 
-                      </p>
-                      
-                  </div><!--box review-->
+             
+              <?php
+                }
+                ?>
                  
        </div><!--reviews-->
         <div class="reviewend"><?php include('../view/footer.php'); ?> </div>

@@ -10,6 +10,7 @@ if(isset($_GET['param1'])){
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/new_top_bar.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/my_all_request.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="../resources/css/guideUpcomingTours.css">
     <link rel="stylesheet" href="../resources/css/guideMyPackages.css">
@@ -29,90 +30,34 @@ if(isset($_GET['param1'])){
         include('../view/new_top_bar.php');
     }
     ?> 
-               <div class="side_bar">
-                    <img src="../resources/img/logo2.png" class="dashlogo">
-                    <img src="../resources/img/reviewimg.jpg" class="profile" >
-                    
-                    <form action="../controller/tourist_dashboard_controller.php" method="post">
-                    <button class="edit" name="edit_profile"> <span>Edit Profile</span></button><br>
-                    
+    
+            <div>
+                 <?php
 
-                    
-
-                  <div class="sidebar-menu">
-                    <ul>
-
-                    <li>
-                        
-                                <span class="menu-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
-                                <span class="menu-title">My Dashboard</span>
-                            
-                        </li>
-                        <li>
-                           
-                                <span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Inbox</span>
-                        
-                        </li>
-
-                        <li>
-                           
-                                <span class="menu-icon"><i class="fa fa-plus-square fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Favourite Guides</span>
-                          
-                        </li>
-
-
-                        <li>
-                            
-                                <span class="menu-icon"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></span>
-                                <spn class="manu-title">Favourite Packages</span>
-                           
-                        </li>
-
-                        
-
-
-                        <li>
-                          
-                                <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
-                                <button type="submit" name="upcoming_tours" class="menu_title sidebar_button" >View Upcoming Tours</button>
-                     
-                        </li>
-
-
-                        <li>
-                         
-                                <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                                <button type="submit" name="previous_tours" class="menu_title sidebar_button" >View Previous Tours</button>
-                      
-                        </li>
-
-                        <li>
-                           
-                                <span class="menu-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                                <button type="submit" name="view_all_requests" class="menu_title sidebar_button" >View My Tour Requests</button>
-                        
-                        </li>
-
-                    </ul>
-                    </form>
-                  </div><!--sidebar-manu-->        
-                </div><!--side_bar-->
-
+                if($_SESSION['level']=='tourist'){
+                    include('../view/tourist_side_bar.php');
+                }
+                if($_SESSION['level']=='tourguide'){
+                    include('../view/guide_side_bar.php');
+                }
+                
+             ?>
+            </div>
              <div class="content">
              <h1 class="page_title">Upcoming Tours</h1>
-             <?php
-            foreach($tours as $tour)
-            ?>
+            
              <div class="packages">
                     
              
 
 <div class="tourPackage">
 
+            <?php
+            foreach($tours as $tour){
+            ?>
+
 <!-- Start	Package details -->
-<div class="package-details">
+<div class="package-details"  style="border:1px solid black; background:lightblue; margin:10px">
 
     <!-- 	Package Name -->
   
@@ -152,7 +97,11 @@ if(isset($_GET['param1'])){
 
 <!-- 	End	Package details   -->
 
+            
+          <?php
+            }
 
+            ?>
 
 
 
