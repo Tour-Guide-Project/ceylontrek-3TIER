@@ -92,9 +92,10 @@ if(isset($_POST['update_profile'])){
     if(!isset($_POST['enterDescription']) || strlen(trim($_POST['enterDescription']))<1){
         $errors[]='The Description should be less than 2500 characters';
     }
-    if(!isset($_POST['enterDescription']) || strlen(trim($_POST['bio']))<1){
+    if(!isset($_POST['bio']) || strlen(trim($_POST['bio']))<1){
         $errors[]='The bio should be less than 500 characters';
     }
+    
 
     //checking if NIC is already exists
     $NIC=mysqli_real_escape_string($connection,$_POST['NIC']);// escaped special charactrs,we can create legal query from this.
@@ -161,10 +162,7 @@ if(isset($_POST['update_profile'])){
     // if($file_size> 5000000000){
     //     $errors[]='File size should be less than 500mb';
     // }
-
-   
   
-
     //if erros are not occured
     if(empty($errors)){
 
@@ -249,9 +247,9 @@ if(isset($_POST['upload_img1'])){
     $guide_id=$_SESSION['id'];
 
     $target_path="../resources/images/nic/";
-    $target_path1=$target_path.basename($_FILES['file']['name'][0]);
+    $target_path1=$target_path.basename($_FILES['image0']['name']);
        
-    if(move_uploaded_file($_FILES ['file']['tmp_name'][0],$target_path1)){
+    if(move_uploaded_file($_FILES ['image0']['tmp_name'],$target_path1)){
         $result_set1=update_image1($connection,$guide_id,$target_path1);
         header('Location:/ceylontrek-3tier/controller/edit_guide_myprofile_controller.php?successfullyUpdated');
     }
@@ -261,9 +259,9 @@ if(isset($_POST['upload_img2'])){
     $guide_id=$_SESSION['id'];
 
     $target_path="../resources/images/nic/";
-    $target_path2=$target_path.basename($_FILES['file']['name'][1]);
+    $target_path2=$target_path.basename($_FILES['image1']['name']);
        
-    if(move_uploaded_file($_FILES ['file']['tmp_name'][1],$target_path2)){
+    if(move_uploaded_file($_FILES ['image1']['tmp_name'],$target_path2)){
         $result_set1=update_image2($connection,$guide_id,$target_path2);
         header('Location:/ceylontrek-3tier/controller/edit_guide_myprofile_controller.php?successfullyUpdated');
     }
@@ -273,9 +271,9 @@ if(isset($_POST['upload_img3'])){
     $guide_id=$_SESSION['id'];
 
     $target_path="../resources/images/profile/";
-    $target_path3=$target_path.basename($_FILES['file']['name'][2]);
+    $target_path3=$target_path.basename($_FILES['image2']['name']);
        
-    if(move_uploaded_file($_FILES ['file']['tmp_name'][2],$target_path3)){
+    if(move_uploaded_file($_FILES ['image2']['tmp_name'][2],$target_path3)){
         $result_set1=update_image3($connection,$guide_id,$target_path3);
         header('Location:/ceylontrek-3tier/controller/edit_guide_myprofile_controller.php?successfullyUpdated');
     }
@@ -285,9 +283,9 @@ if(isset($_POST['upload_img4'])){
     $guide_id=$_SESSION['id'];
 
     $target_path="../resources/images/profile/";
-    $target_path4=$target_path.basename($_FILES['file']['name'][3]);
+    $target_path4=$target_path.basename($_FILES['image3']['name']);
        
-    if(move_uploaded_file($_FILES ['file']['tmp_name'][3],$target_path4)){
+    if(move_uploaded_file($_FILES ['image3']['tmp_name'],$target_path4)){
         $result_set1=update_image4($connection,$guide_id,$target_path4);
         header('Location:/ceylontrek-3tier/controller/edit_guide_myprofile_controller.php?successfullyUpdated');
     }
@@ -297,9 +295,9 @@ if(isset($_POST['upload_img5'])){
     $guide_id=$_SESSION['id'];
 
     $target_path="../resources/images/profile/";
-    $target_path5=$target_path.basename($_FILES['file']['name'][4]);
+    $target_path5=$target_path.basename($_FILES['image4']['name']);
        
-    if(move_uploaded_file($_FILES ['file']['tmp_name'][4],$target_path5)){
+    if(move_uploaded_file($_FILES ['image4']['tmp_name'],$target_path5)){
         $result_set1=update_image5($connection,$guide_id,$target_path5);
         header('Location:/ceylontrek-3tier/controller/edit_guide_myprofile_controller.php?successfullyUpdated');
     }
@@ -309,9 +307,9 @@ if(isset($_POST['upload_img6'])){
     $guide_id=$_SESSION['id'];
 
     $target_path="../resources/images/profile/";
-    $target_path6=$target_path.basename($_FILES['file']['name'][5]);
+    $target_path6=$target_path.basename($_FILES['image5']['name']);
        
-    if(move_uploaded_file($_FILES ['file']['tmp_name'][5],$target_path6)){
+    if(move_uploaded_file($_FILES ['image5']['tmp_name'],$target_path6)){
         $result_set1=update_image6($connection,$guide_id,$target_path6);
         header('Location:/ceylontrek-3tier/controller/edit_guide_myprofile_controller.php?successfullyUpdated');
     }

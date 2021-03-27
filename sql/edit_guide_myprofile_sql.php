@@ -35,7 +35,7 @@ function update_guideinfo_query($connection,$guide_id,$displayName,$gRegNo,$NIC,
 }
 //update vehicle when havevehicle=1
 function update_vehicleinfo_query($connection,$guide_id,$vRegNo,$vType,$vMake,$vModel,$vLicense,$vSeats){
-    $query="UPDATE vehicle SET guide_id='{$guide_id}',vehicle_reg_no='{$vRegNo}',type='{$vType}',make='{$vMake}',
+    $query="UPDATE vehicle SET guide_id='{$guide_id}',vehicle_reg_no='{$vRegNo}',vtype='{$vType}',make='{$vMake}',
     model='{$vModel}',license_no='{$vLicense}',no_of_seats='{$vSeats}'
     WHERE guide_id='{$guide_id}' LIMIT 1";
 
@@ -44,7 +44,7 @@ function update_vehicleinfo_query($connection,$guide_id,$vRegNo,$vType,$vMake,$v
 }
 //insert vehicle query when havevehicle=1
 function insert_vehicleinfo_query($connection,$guide_id,$vRegNo,$vType,$vMake,$vModel,$vLicense,$vSeats){
-    $query="INSERT INTO vehicle (vehicle_reg_no, guide_id, type, make, model, license_no, no_of_seats) VALUES ('{$vRegNo}',{$guide_id},'{$vType}','{$vMake}','{$vModel}','{$vLicense}','{$vSeats}')";
+    $query="INSERT INTO vehicle (vehicle_reg_no, guide_id, vtype, make, model, license_no, no_of_seats) VALUES ('{$vRegNo}',{$guide_id},'{$vType}','{$vMake}','{$vModel}','{$vLicense}','{$vSeats}')";
 
     $result=mysqli_query($connection,$query);
     return $result;

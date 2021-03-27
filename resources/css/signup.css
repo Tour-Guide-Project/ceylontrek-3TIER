@@ -60,6 +60,18 @@ a:active {
     margin-top: 10px;
 }
 
+.text_box .input_password {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
 .input_radio {
     margin-top: 10px;
     margin-left: 9px;
@@ -88,7 +100,7 @@ a:active {
 
 .text_box .eye i {
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 8px;
     color: lightgrey;
 }
 
@@ -112,12 +124,9 @@ a:active {
 
 .signup_box p.error {
     position: relative;
-    background-color: #92a8d1;
     outline: none;
     color: red;
-    border-radius: 5px;
-    padding: 5px 5px 5px 5px;
-    font-size: 18px;
+    font-size: 16px;
     margin: 5px;
 }
 
@@ -139,28 +148,22 @@ a:active {
     font-weight: 600;
 }
 
-.cancel {
+.back {
     float: left;
     background: transparent;
-    border: none;
-    outline: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 20px;
     font-size: 16px;
-    background: #2f375b;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
     transition: .5s;
+    margin-top: 30px;
     width: 45%;
     margin-left: 20px;
     font-weight: 600;
 }
 
 .signup_box button:hover {
-    color: white;
-    font-size: 18px;
+    background: #182f96;
 }
 
 
@@ -221,5 +224,67 @@ a:active {
 /*/*main menu bar css*/
 
 .container .sign_up {
-    background-color: #360d46;
+    background-color: #221d49;
+}
+
+.indicator {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    justify-content: space-between;
+    /* margin: 12px 1px; */
+    display: none;
+}
+
+.indicator span {
+    width: 34%;
+    height: 100%;
+    background-color: lightgrey;
+}
+
+.indicator span .medium {
+    margin: 0 3px;
+}
+
+.indicator span:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 12px;
+    margin-bottom: 5px;
+    display: none;
+    font-weight: bold;
+}
+
+.weak {
+    color: rgb(255, 79, 79);
+}
+
+.medium {
+    color: rgb(180, 127, 27);
+}
+
+.strong {
+    color: #0f8b43;
+}
+
+.sub {
+    opacity: 0.6;
+    cursor: no-drop;
+}
+
+.sub:hover {
+    font-size: 16px;
 }

@@ -97,55 +97,21 @@
 		<form action="../controller/createGuideProfile_controller.php" method="post" enctype="multipart/form-data">
         <div>
         <?php
-                $displayName='';
-                $gRegNo ='';
-                $DOB='';
-                $NIC='';
-                $languages='';
-                $experience='';
-                $bio='';
-                $enterDescription='';
-                $haveVehicle='';
-                $vRegNo='';
-                $vType='';
-                $vMake='';
-                $vModel='';
-                $vLicense='';
-                $vSeats='';
-
+            
 				if(isset($_GET['param'])){
                     $errors=$_GET['param'];
 				    foreach ($errors as $error) {
 					    echo '<p class="error">'.$error.'</p>';
 				    }
                 }
-                if(isset($_GET['param1'])){
-                    $fields=$_GET['param1'];
-                    $gRegNo = $fields[0];
-                    $NIC=$fields[1];
-                    $languages=$fields[2];
-                    $experience=$fields[3];
-                    $bio=$fields[4];
-                    $enterDescription=$fields[5];
-                    $displayName=$fields[6];
-				    
-                }
-                if(isset($_GET['param2'])){
-                    $vfields=$_GET['param2'];
-				    $vRegNo=$vfields[0];
-                    $vType=$vfields[1];
-                    $vMake=$vfields[2];
-                    $vModel=$vfields[3];
-                    $vLicense=$vfields[4];
-                    $vSeats=$vfields[5];
-			    }
+                
 			?>
             		<div class="row">
 				<div class="col-25">
 					<label for="displayName" class="lbl">Display Name:</label>
 				</div>
 				<div class="col-75">
-					<input type="text" name="displayName" <?php echo 'value="'.$displayName.'"'; ?> >
+					<input type="text" name="displayName"  ></input>
 				</div>
 			</div>
 			<div class="row">
@@ -153,7 +119,7 @@
 					<label for="gRegNo" class="lbl">Guide Reg. Number:</label>
 				</div>
 				<div class="col-75">
-					<input type="text" name="gRegNo" <?php echo 'value="'.$gRegNo.'"'; ?> >
+					<input type="text" name="gRegNo"  ></input>
 				</div>
 			</div>
 			<div class="row">
@@ -161,7 +127,7 @@
 					<label for="NIC" class="lbl">NIC number :</label>
 				</div>
 				<div class="col-75">
-					<input type="text" name="NIC" <?php echo 'value="'.$NIC.'"'; ?>>
+					<input type="text" name="NIC" ></input>
 				</div>
 			</div>
 			
@@ -171,7 +137,7 @@
 				</div>
 				<div class="col-75">
                 
-                    <input type="file"   name="file[]" >
+                    <input type="file"  id="file"   name="image0" />
 					
 				</div>
             </div>
@@ -180,7 +146,7 @@
 					<label for="imageUpload" class="lbl">Upload NIC image :</br>(side 2)</label>
 				</div>
 				<div class="col-75">
-                <input type="file"   name="file[]" >
+                <input type="file"   id="file"  name="image1" />
 				</div>
             </div>
             
@@ -189,7 +155,7 @@
 					<label for="languages" class="lbl">Fluent Languages:</label>
 				</div>
 				<div class="col-75" >
-					<input type="text" name="languages" <?php echo 'value="'.$languages.'"'; ?>>
+					<input type="text" name="languages" ></input>
 				</div>
             </div>
             
@@ -198,16 +164,33 @@
 					<label for="experience" class="lbl">Years of Experience:</label>
 				</div>
 				<div class="col-75" >
-					<input type="text" name="experience" <?php echo 'value="'.$experience.'"'; ?>>
+					<input type="text" name="experience" ></input>
 				</div>
 			</div>
+
+            <div class="row">
+                    <div class="col-25">
+                        <label for="experience" class="lbl">Price($):</label>
+                    </div>
+                    <div class="col-75" >
+                        <input type="text" name="price" ></input>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="experience" class="lbl">No of Maximum Tourists:</label>
+                </div>
+                <div class="col-75" >
+                    <input type="text" name="max_tourists" ></input>
+                </div>
+            </div>
 
             <div class="row">
 				<div class="col-25">
 					<label for="bio" class="lbl" >Bio:</br>(max 500 characters)</label>
 				</div>
 				<div class="col-75">
-					<textarea name="bio" style="height:100px" ><?php echo "$bio"; ?></textarea>
+					<textarea name="bio" style="height:100px" ></textarea>
 				</div>
             </div>
 
@@ -216,7 +199,7 @@
 					<label for="enterDescription" class="lbl" >Description:</br>(max 2500 characters)</label>
 				</div>
 				<div class="col-75">
-					<textarea name="enterDescription" style="height:400px" ><?php echo "$enterDescription"; ?></textarea>
+					<textarea name="enterDescription" style="height:400px" ></textarea>
 				</div>
             </div>
     
@@ -225,7 +208,7 @@
 					<label for="imageUpload3" class="lbl">Upload Main image :</label>
 				</div>
 				<div class="col-75">
-                <input type="file"   name="file[]" >
+                <input type="file"  id="file"   name="image2" />
 				</div>
             </div>
             <div class="row">
@@ -233,7 +216,7 @@
 					<label for="imageUpload4" class="lbl">Upload image 2:</label>
 				</div>
 				<div class="col-75">
-                <input type="file"   name="file[]" >
+                <input type="file"  id="file"   name="image3" />
 				</div>
             </div>
             <div class="row">
@@ -241,7 +224,7 @@
 					<label for="imageUpload5" class="lbl">Upload image 3 :</label>
 				</div>
 				<div class="col-75">
-                <input type="file"   name="file[]" >
+                <input type="file"  id="file"   name="image4" />
 				</div>
             </div>
             <div class="row">
@@ -249,7 +232,7 @@
 					<label for="imageUpload6" class="lbl">Upload image 4:</label>
 				</div>
 				<div class="col-75">
-                <input type="file"   name="file[]" >
+                <input type="file" id="file"  name="image5" />
 				</div>
             </div>
 
@@ -266,7 +249,7 @@
 					<label for="vRegNo" class="lbl">Registration No. :</label>
 				</div>
 				<div class="col-75" >
-					<input type="text" name="vRegNo" <?php echo 'value="'.$vRegNo.'"'; ?>>
+					<input type="text" name="vRegNo" >
 				</div>
             </div>
             
@@ -275,7 +258,7 @@
 					<label for="vType" class="lbl">Type :</label>
 				</div>
 				<div class="col-75" >
-					<input type="text" name="vType" <?php echo 'value="'.$vType.'"'; ?>>
+					<input type="text" name="vType" >
 				</div>
             </div>
             
@@ -284,7 +267,7 @@
 					<label for="vMake" class="lbl">Make :</label>
 				</div>
 				<div class="col-75" >
-					<input type="text" name="vMake" <?php echo 'value="'.$vMake.'"'; ?>>
+					<input type="text" name="vMake" >
 				</div>
             </div>
             
@@ -295,7 +278,7 @@
 					<label for="vModel" class="lbl">Model :</label>
 				</div>
 				<div class="col-75" >
-					<input type="text" name="vModel" <?php echo 'value="'.$vModel.'"'; ?>>
+					<input type="text" name="vModel" >
 				</div>
             </div>
             
@@ -304,7 +287,7 @@
 					<label for="vLicense" class="lbl">License No. :</label>
 				</div>
 				<div class="col-75" >
-					<input type="text" name="vLicense" <?php echo 'value="'.$vLicense.'"'; ?>>
+					<input type="text" name="vLicense" >
 				</div>
 			</div>
 
@@ -313,7 +296,7 @@
 					<label for="vSeats" class="lbl">No. of seats :</label>
 				</div>
 				<div class="col-75" >
-					<input type="text" name="vSeats" <?php echo 'value="'.$vSeats.'"'; ?>>
+					<input type="text" name="vSeats" >
 				</div>
             </div>
 
@@ -325,7 +308,7 @@
 			
 			<div class="agreeCls">
 				<div class="agreed1">
-					<input type="checkbox" name="agree">
+					<input type="checkbox" name="agree" required>
 				</div>
 				<div class="agreed2">
 					<label for="agree">I agree that I will take the whole responsibility of the tour and I will not hold Ceylon Trek against any problems occured during tour.</label>
@@ -338,10 +321,13 @@
 		</form>
     </div>
     <!-- form -->
-                
+    <?php 
+		if(isset($_GET['profile-submitted'])=='true'){?>
+			<script>alert('You have Successfully Created Your Profile!!!');</script>
+	<?php }?>        
           
         
-                <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
+        <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
         <script src="../resources/js/guide dashboard.js"></script>
         <script src="../resources/js/createGuideProfile.js"></script>
 

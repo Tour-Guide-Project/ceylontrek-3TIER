@@ -137,7 +137,7 @@
                         <label for="imageUpload1" class="lbl">Upload NIC image :</br>(side 1)</label>
                     </div>
                     <div class="col-75">
-                        <input type="file"  id="file1" name="file[]" >  
+                        <input type="file"  id="file1" name="image0" />  
                     </div>
                     <div class="col-75">
                         <button type="submit button" class=" upload_img" id="upload1" name="upload_img1" >Upload</button>  
@@ -155,7 +155,7 @@
                         <label for="imageUpload" class="lbl">Upload NIC image :</br>(side 2)</label>
                     </div>
                     <div class="col-75">
-                        <input type="file"  id="file2" name="file[]" >
+                        <input type="file"  id="file2" name="image1" />
                     </div>
                     <div class="col-75">
                         <button type="submit button" class=" upload_img"  id="upload2" name="upload_img2" >Upload</button>
@@ -226,7 +226,7 @@
                         <label for="imageUpload3" class="lbl">Upload Main image:</label>
                     </div>
                     <div class="col-75">
-                        <input type="file"  id="file3" name="file[]" >
+                        <input type="file"  id="file3" name="image2" />
                     </div>
                     <div class="col-75">
                         <button type="submit button" class=" upload_img" id="upload3" name="upload_img3" >Upload</button> 
@@ -243,7 +243,7 @@
                         <label for="imageUpload4" class="lbl">Upload image 2:</label>
                     </div>
                     <div class="col-75">
-                        <input type="file" id="file4"  name="file[]" >
+                        <input type="file" id="file4"  name="image3" />
                     </div>
                     <div class="col-75">
                         <button type="submit button" class=" upload_img" id="upload4" name="upload_img4" >Upload</button>
@@ -260,7 +260,7 @@
                         <label for="imageUpload5" class="lbl">Upload image 3 :</label>
                     </div>
                     <div class="col-75">
-                        <input type="file"  id="file5" name="file[]" >
+                        <input type="file"  id="file5" name="image4" />
                     </div>
                     <div class="col-75">
                         <button type="submit button" class=" upload_img" id="upload5" name="upload_img5" >Upload</button> 
@@ -277,7 +277,7 @@
                         <label for="imageUpload6" class="lbl">Upload image 4:</label>
                     </div>
                     <div class="col-75">
-                        <input type="file"  id="file6" name="file[]" >
+                        <input type="file"  id="file6" name="image5" />
                     </div>
                     <div class="col-75">
                         <button type="submit button" class=" upload_img" id="upload6" name="upload_img6" >Upload</button> 
@@ -382,7 +382,7 @@
                             <label for="vType" class="lbl">Type :</label>
                         </div>
                         <div class="col-75" >
-                            <input type="text" name="vType" value="<?php echo $vrecord['type']?>" >
+                            <input type="text" name="vType" value="<?php echo $vrecord['vtype']?>" >
                         </div>
                     </div>
             
