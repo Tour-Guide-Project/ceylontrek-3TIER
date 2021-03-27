@@ -5,31 +5,31 @@
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\view_tourist_profile_sql.php'); ?>
 <?php
 
-    //print_r($_SESSION['id']);
+if (!isset($_SESSION['id'])) {
+    header('Location:/ceylontrek-3tier/view/login.php');
+}
 
-    $user_id = $_GET['view_user'];
-    //print_r($user_id);
+$errors = array();
 
-    // check if a user is logged in
-    if (!isset($_SESSION['id'])) {
-        header('Location:/ceylontrek-3tier/view/login.php');
-    }
+if (isset($_SESSION['id'])) {
 
-    $user_level = $_SESSION['user_level'];
-    $errors=array();
+    if (isset($_GET['view_user'])) {
 
-    if (isset($_SESSION['id'])) {
-        
-        // getting the user information
-        $id = mysqli_real_escape_string($connection,$user_id);
+        $user_id = $_GET['view_user'];
+        //print_r($user_id);
+        $user_level = $_GET['user_level'];
+        //print_r($user_level);
+
+        //getting the user information
+        $id = mysqli_real_escape_string($connection, $user_id);
 
         if ($user_level == 'tourguide') {
-            $result_set = get_id_guide($connection,$id);
+            $result_set = get_id_guide($connection, $id);
             //print_r($result_set);
         }
 
         if ($user_level == 'tourist') {
-            $result_set = get_id_tourist($connection,$id);
+            $result_set = get_id_tourist($connection, $id);
             //print_r($result_set);
         }
 
@@ -37,34 +37,21 @@
 
             if (mysqli_num_rows($result_set) == 1) {
 
-                // user found retrieve data
+                //user found retrieve data
                 $result = mysqli_fetch_assoc($result_set);
 
-                // pass data
-                $_SESSION['user_id']=$result['id'];
-                $_SESSION['first_name']=$result['first_name'];
-				$_SESSION['last_name']=$result['last_name'];
-				$_SESSION['email']=$result['email'];
-				$_SESSION['gender']=$result['gender'];
-				$_SESSION['address']=$result['address'];
-                $_SESSION['contact']=$result['contact'];
-                $_SESSION['image_path']=$result['image_path'];
-                
-                // print data
-                header('Location:/ceylontrek-3tier/view/UserAccountAdminView.php');
-            }
-
-            else {
+                //print data
+                header('Location:/ceylontrek-3tier/view/UserAccountAdminView.php?user_level=' . $user_level . '&' . http_build_query(array('user_details' => $result)));
+            } else {
                 //user not found,redirect users page
-				header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found1');
+                header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found1');
             }
-        }
-
-        else {
+        } else {
             //query unsuccessfull, redirect users page
-			header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found2');
+            header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found2');
         }
     }
+}
 
 ?>
-<?php mysqli_close($connection);?>
+<?php mysqli_close($connection); ?>

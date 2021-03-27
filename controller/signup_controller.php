@@ -6,42 +6,54 @@ session_start();
 if (isset($_POST['submit'])) {
 
         $errors = array();
+        $errors['first']="";
+        $errors['last']="";
+        $errors['tel']="";
+        $errors['add']="";
+        $errors['email']="";
+        $errors['password']="";
+
+
+        $errors['sucess']='unsucess';
         $level=$_SESSION['level'];
 	//check correct details has been entered
 	if(!isset($_POST['first_name']) || strlen(trim($_POST['first_name']))<1){
-        $errors[]= 'First Name is required/Invalid';
+        $errors['first']= 'First Name is required/Invalid';
         }
         //check name has only a-z
         elseif(!preg_match(("/^([a-zA-Z']+)$/"),$_POST['first_name'])){
-        $errors[]= 'First Name is Invalid';     
+        $errors['first']= 'First Name is Invalid';     
         }
 	if(!isset($_POST['last_name']) || strlen(trim($_POST['last_name']))<1){
-        $errors[]= 'Last Name is required/Invalid';
+        $errors['last']= 'Last Name is required/Invalid';
         }
         //check name has only a-z
         elseif(!preg_match(("/^([a-zA-Z']+)$/"),$_POST['last_name'])){
-        $errors[]= 'Last Name is Invalid';     
+        $errors['last']= 'Last Name is Invalid';     
         }
 	if(!isset($_POST['tel_no']) || strlen(trim($_POST['tel_no']))<1){
-        $errors[]= 'Contact Details is required/Invalid';
+        $errors['tel']= 'Contact Details is required/Invalid';
+        }
+        elseif(strlen(trim($_POST['tel_no']))<10){
+        $errors['tel']= 'Contact Details is Invalid';
         }
         //check contact details has only 0-9
         elseif(preg_match(("/[^0-9]/"), $_POST['tel_no'])){
-        $errors[]='Invalid phone number';
+        $errors['tel']='Invalid phone number';
         }
 	if(!isset($_POST['address']) || strlen(trim($_POST['address']))<1){
-        $errors[]= 'Address is required/Invalid';
+        $errors['add']= 'Address is required/Invalid';
 	}
 	if(!isset($_POST['email']) || strlen(trim($_POST['email']))<1){
-        $errors[]= 'Email Address is required/Invalid';
+        $errors['email']= 'Email Address is required/Invalid';
 	}
 
 	if(!isset($_POST['password']) || strlen(trim($_POST['password']))<1){
-        $errors[]= 'Password is required/Invalid';
+        $errors['password']= 'Password is required/Invalid';
 	}
-	if(strlen(trim($_POST['password']))<6){
-        $errors[]= 'Please create strong password,Password must contain at least 6 characters!';
-        }
+	// if(strlen(trim($_POST['password']))<6){
+        // $errors['password']= 'Please create strong password,Password must contain at least 6 characters!';
+        // }
 
         //checking if email address already exists
         $email=mysqli_real_escape_string($connection,$_POST['email']);//(email sanitized) escaped special charactrs,we can create legal query from this.
@@ -50,15 +62,22 @@ if (isset($_POST['submit'])) {
 	if($result_set1)
 	{
 		if(mysqli_num_rows($result_set1)==1){
-			$errors[]='Your Email address already exists';
+			$errors['email']='Your Email address already exists';
 		}
         } 
         
         //if error is empty
-	if(empty($errors)){
+        if($errors['first']=="" && $errors['last']=="" && $errors['tel']=="" && $errors['add']=="" && $errors['email']=="" && $errors['password']==""){
 
-        $result_set2=signup($connection);
+        $first_name=mysqli_real_escape_string($connection,$_POST['first_name']);
+        $last_name=mysqli_real_escape_string($connection,$_POST['last_name']);
+        $address=mysqli_real_escape_string($connection,$_POST['address']);
+        $contact=mysqli_real_escape_string($connection,$_POST['tel_no']);
+        $password=mysqli_real_escape_string($connection,$_POST['password']);
+        
 
+        $result_set2=signup($connection,$first_name,$last_name,$email,$address,$contact,$password);
+        
         $result_set3=get_id($connection,$email,$level);
         $record=mysqli_fetch_assoc($result_set3);
         $_SESSION['id']=$record['id'];
@@ -78,27 +97,15 @@ if (isset($_POST['submit'])) {
                         echo "<script>window.location ='/ceylontrek-3tier/view/moderator_dashboard.php' </script>";
                 }
         
+        $errors['sucess']='sucess';
+        $errors['level']=$level;
         }
-        //if error is not empty print errors
-        else{
-                if($level=='tourist'|| $level=='tourguide'){
-                        header('Location: /ceylontrek-3tier/view/signup.php?'.http_build_query(array('param'=>$errors)));
-                }
-                if($level=='admin'|| $level=='moderator'){
-                        header('Location: /ceylontrek-3tier/view/create_admin_and_moderator_account.php?'.http_build_query(array('param'=>$errors)));
-                }
-                
-        }
+
+        echo json_encode($errors);
 }
 
-if(isset($_POST['cancel'])){
-        $level=$_SESSION['level'];
-        if($level=='tourist'|| $level=='tourguide'){
-                header('Location:/ceylontrek-3tier/view/signup_selection_page.php');
-        }
-        if($level=='admin'|| $level=='moderator'){
-                header('Location: /ceylontrek-3tier/view/admin_dashboard.php');
-        }
-}
+
+
+
 ?>
 <?php mysqli_close($connection);?>

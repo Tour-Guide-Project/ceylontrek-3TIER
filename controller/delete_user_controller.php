@@ -5,30 +5,41 @@
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\view_tourist_profile_sql.php'); ?>
 <?php
 
-    $user_level = $_SESSION['user_level'];
-    print_r($level);
+if (!isset($_SESSION['id'])) {
+    header('Location:/ceylontrek-3tier/view/login.php');
+}
 
-    // getting the user information
-    $U_id = mysqli_real_escape_string($connection,$_SESSION['user_id']);
+$errors = array();
 
-    if ($user_level == 'tourguide') {
-        $result_set2 = delete_guide($connection,$U_id);
-        //print_r($result_set2);
+if (isset($_SESSION['id'])) {
+
+    if (isset($_GET['user_level'])) {
+
+        $user_level = $_GET['user_level'];
+        //print_r($user_level);
+        $user_id = $_GET['user_id'];
+        //print_r($user_id);
+
+        $U_id = mysqli_real_escape_string($connection, $user_id);
+
+        if ($user_level == 'tourguide') {
+            $result = delete_guide($connection, $U_id);
+            //print_r($result);
+        }
+
+        if ($user_level == 'tourist') {
+            $result = delete_tourist($connection, $U_id);
+            //print_r($result);
+        }
+
+        if ($result) {
+            header('Location:/ceylontrek-3tier/controller/view_users_admin_controller.php?user_level=' . $user_level . '');
+        } else {
+            //query unsuccessfull, redirect users page
+            header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+        }
     }
-
-    if ($user_level == 'tourist') {
-        $result_set2 = delete_tourist($connection,$U_id);
-        //print_r($result_set2);
-    }
-
-    if ($result_set2) {         
-        header('Location:/ceylontrek-3tier/controller/view_users_admin_controller.php');
-    }
-
-    else {
-        //query unsuccessfull, redirect users page
-        header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
-    }
+}
 
 ?>
-<?php mysqli_close($connection);?>
+<?php mysqli_close($connection); ?>

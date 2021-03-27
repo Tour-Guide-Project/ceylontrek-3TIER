@@ -46,7 +46,7 @@
                 <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
                 <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
                 <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-                <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="../controller/SS_criteria_selection_controller.php">Smart Search</a></li>
                 <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
                 <div  style=" display:flex ">
                   <li><button class="loginbutton login" style="height:50px;" type="button" onclick="window.location='../view/login.php'"><span>Login</span></button> </li>
@@ -67,7 +67,7 @@
            <li style="margin-top: 45px; font-size:17px; margin-left:20px;margin-top:30px;"><a href="Guide_search_page.php">Tour Guides</a></li>
            <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="package_search_page.php">Tour Packages</a></li>
            <li class="request_tour" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-           <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+           <li style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="../controller/SS_criteria_selection_controller.php">Smart Search</a></li>
            <li class="travel_calendar" style="margin-top: 45px; font-size:17px; margin-left:-10px;margin-top:30px;"><a href="calendar.php">Travel Calendar</a></li>
        </ul>
             <div style="margin-right: 10px;">
@@ -97,7 +97,7 @@
                 <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="Guide_search_page.php">Tour Guides</a></li>
                 <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px "><a href="package_search_page.php">Tour Packages</a></li>
                 <li class="request_tour" style="margin-top: 10px; font-size:17px; margin-left: 0px; margin-right:0px"><a href="../controller/tour_request_post_controller.php">Request a Tour</a></li>
-                <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="SmartSearchCriteriaSelection.php">Smart Search</a></li>
+                <li style="margin-top: 10px; font-size:17px;margin-left: 0px; margin-right:0px"><a href="../controller/SS_criteria_selection_controller.php">Smart Search</a></li>
                 <li class="travel_calendar" style="margin-top: 10px; font-size:17px; margin-right:0px;margin-left: 0px"><a href="calendar.php">Travel Calendar</a></li>
                 <div  style=" display:flex ">
                 <li style="height: 60px" ><button onclick="window.location='/ceylontrek-3tier/controller/auth/logout_controller.php'" class="loginbutton sign_out" style="margin-top:10px; margin-left:20px;"><span>Sign Out</span></button></li>
@@ -140,13 +140,13 @@
             <h1>Request a Tour</h1>
             <p class="lead" style="float: left;">Not happy with the Tour Packages offered?<br> Ceylon Trek got you covered!<br> Simply post a request for a Tour and let all our Tour Guides know how you want to<br> spend your holiday in Paradise and wait for them to come up with the best
                 itinerary for you. </p>
-            <button class="loginbutton" style="width: 250px; margin-left: 350px; margin-top: 10px; font-size: 1.25rem; height: 70px; "><span><a style="color:white; text-decoration:none;" href='tour_request_post.php'>Request a Tour</a></span></button>
+            <button class="loginbutton" style="width: 250px; margin-left: 350px; margin-top: 10px; font-size: 1.25rem; height: 70px; "><span><a style="color:white; text-decoration:none;" href="../controller/tour_request_post_controller.php">Request a Tour</a></span></button>
 
         </section>
         <section id="smartSearch">
             <h1>Smart Search</h1>
             <p class="lead" style="float: left;">Don't know where to travel?<br> We at Ceylon Trek are ready to help.<br> Simply choose your favourite activities and hobbies<br> and our Smart Search will suggest where exactly you belong in paradise !!! </p>
-            <button class="loginbutton" style="width: 250px; margin-left: 650px; margin-top: 10px; font-size: 1.25rem; height: 70px; "><span><a style="color:white; text-decoration:none;" href='SmartSearchCriteriaSelection.php'>Smart Search</a></span></button>
+            <button class="loginbutton" style="width: 250px; margin-left: 650px; margin-top: 10px; font-size: 1.25rem; height: 70px; "><span><a style="color:white; text-decoration:none;" href="../controller/SS_criteria_selection_controller.php">Smart Search</a></span></button>
 
         </section>
         <section id="travelCalendar">

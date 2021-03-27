@@ -7,14 +7,15 @@
         
                     <a href="package_search_page.php">Tour Packages</a>
     
-                    <a href="tour_request_post.php">Request a Tour</a>
+                    <a href="../controller/tour_request_post_controller.php">Request a Tour</a>
     
-                    <a href="SmartSearchCriteriaSelection.php">Smart Search</a>
+                    <a href="../controller/SS_criteria_selection_controller.php">Smart Search</a>
         
                     <a href="calendar.php">Travel Calendar</a>
         
                     <a href="faq.php">FAQ</a>
                 </p>
+
     
                 <p class="footer-company-name">Ceylon Trek © 2020</p>
             </div>
