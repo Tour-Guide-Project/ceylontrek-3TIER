@@ -18,6 +18,15 @@
             $result = mysqli_fetch_array($result_set,MYSQLI_ASSOC);
                
                 $upcomingtours[] = $result;
+                if($upcomingtours[$i]['has_package']==1){
+                    $package_id=$upcomingtours[$i]['package_id'];
+                    $package_name=get_package_name($connection,$package_id);
+                    $result1 = mysqli_fetch_array($package_name);
+                    $upcomingtours[$i]['package_name']=$result1['package_name'];
+                }
+                else{
+                    $upcomingtours[$i]['package_name']="None";
+                }
         }
         $guideid=$upcomingtours['guide_id'];
     header('Location: /ceylontrek-3tier/view/UpcomingTours.php?'.http_build_query(array('param1'=>$upcomingtours)));

@@ -7,7 +7,7 @@ if(isset($_GET['param'])){
 ?>
 <html  lang="en">
     <head>
-        <title>Upcoming Tours</title>
+        <title>Pending Tours</title>
        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
@@ -44,7 +44,7 @@ if(isset($_GET['param'])){
 
              <div class="content">
              
-            <h1 class="page_title">Upcoming Tours</h1>
+            <h1 class="page_title">Pending Tours</h1>
             <?php if(count($tours)>0):?>
               
             
@@ -63,7 +63,7 @@ if(isset($_GET['param'])){
             ?>
 
 <!-- Start	Package details -->
-<div class="package-details" style="border:1px solid black; background:lightblue; margin:10px">
+<div class="package-details" style="border:1px solid black;  margin:10px; width:90%">
 
     <!-- 	Package Name -->
   
@@ -92,12 +92,14 @@ if(isset($_GET['param'])){
 
 
     <!-- 		Control -->
-    <div class="control">
+    <div class="control_a">
 
         <!-- Start Button buying -->
-        <button class="cobtn" ><span> Contact Tourist</span>
-               
-</button>
+        <form action="../controller/pending_tours_controller.php"  method="get">
+        <button type="submit" name="accept_tour" class="cobtn" style="float:left margin-right:70px" value="<?php echo $tour['reservation_id']?>"><span> Accept Tour</span></button>
+        <button type="submit" name="decline_tour"class="cobtn" style="float:none margin-right:70px" value="<?php echo $tour['reservation_id']?>"><span> Decline Tour</span></button>
+            </form>
+        <button class="cobtn" style="float:right " ><span> Contact Tourist</span></button>
 
         <!-- End Button buying -->
 
@@ -120,7 +122,7 @@ if(isset($_GET['param'])){
 
 
 <?php else: ?>
-<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Upcoming tours to view</h2>
+<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Pending tours to view</h2>
 <?php endif ?>    
               
         
