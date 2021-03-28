@@ -37,7 +37,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="inbox.php">
+						<a href="../controller/chat_controller.php">
 							<span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
 							<span class="menu-title">Inbox</span>
 						</a>
@@ -102,12 +102,12 @@
 
 			   <div>
                <label for="date"><b>Start Date :</b></label>
-               <input style="width:100%;"  type="date" placeholder="DD/MM/YYYY" name="startdate" >
+               <input style="width:100%;"  type="date" placeholder="DD/MM/YYYY" name="startdate" min=<?php echo date('Y-m-d');?>>
                </div>
 
                <div>
                <label for="date"><b>End Date :</b></label>
-               <input style="width:100%;"  type="date" placeholder="DD/MM/YYYY" name="enddate" >
+               <input style="width:100%;"  type="date" placeholder="DD/MM/YYYY" name="enddate" min=<?php echo date('Y-m-d');?>>
                </div>
                
                <div>

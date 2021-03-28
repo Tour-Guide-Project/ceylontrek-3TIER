@@ -36,7 +36,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="inbox.php">
+						<a href="../controller/chat_controller.php">
 							<span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
 							<span class="menu-title">Inbox</span>
 						</a>
