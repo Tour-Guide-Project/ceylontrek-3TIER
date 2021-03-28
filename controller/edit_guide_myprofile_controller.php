@@ -272,8 +272,8 @@ if(isset($_POST['upload_img3'])){
 
     $target_path="../resources/images/profile/";
     $target_path3=$target_path.basename($_FILES['image2']['name']);
-       
-    if(move_uploaded_file($_FILES ['image2']['tmp_name'][2],$target_path3)){
+      
+    if(move_uploaded_file($_FILES ['image2']['tmp_name'],$target_path3)){
         $result_set1=update_image3($connection,$guide_id,$target_path3);
         header('Location:/ceylontrek-3tier/controller/edit_guide_myprofile_controller.php?successfullyUpdated');
     }

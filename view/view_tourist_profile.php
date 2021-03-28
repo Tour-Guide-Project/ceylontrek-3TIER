@@ -18,6 +18,7 @@ $contact=$_SESSION['contact'];
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
 	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/my_all_request.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -29,6 +30,10 @@ $contact=$_SESSION['contact'];
         include('../view/new_top_bar.php');
     }
     ?> 
+
+<?php
+include('../view/guide_side_bar.php');
+?>
 	<div class="view_admin_profile_box">
 		<form action="../controller/view_tourist_profile_controller.php" method="post">
 			<h1>Edit Profile</h1>
