@@ -16,6 +16,8 @@ if (isset($_SESSION['id'])) {
         // print_r($package_id);
         $package_id = mysqli_real_escape_string($connection, $package_id);
 
+        $_SESSION['my_package_id'] = $package_id;
+
         //getting the packages information
         $result = guide_package($connection, $package_id);
 
@@ -25,11 +27,22 @@ if (isset($_SESSION['id'])) {
 
                 $package = mysqli_fetch_assoc($result);
                 //print_r($package);
+            }
 
-                if (isset($_GET['param'])) {
-                    $errors = ($_GET['param']);
-                }
+            if (!isset($_GET['with_errors']) || isset($_GET['successfullyUpdated'])) {
+                header('Location:/ceylontrek-3tier/view/edit_my_package.php?' . http_build_query(array('package' => $package)));
+            }
+
+            //print_r('theja');
+            if (isset($_GET['with_errors'])) {
+                $errors = ($_GET['errors']);
+                //print_r($errors);
+
                 header('Location:/ceylontrek-3tier/view/edit_my_package.php?' . http_build_query(array('package' => $package, 'param' => $errors)));
+            }
+
+            if (isset($_GET['successfullyUpdated'])) {
+                header('Location:/ceylontrek-3tier/view/edit_my_package.php?' . http_build_query(array('package' => $package)) . '&successfullyUpdated');
             }
         }
     }

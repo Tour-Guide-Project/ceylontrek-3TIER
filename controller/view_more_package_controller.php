@@ -30,12 +30,19 @@ if (isset($_SESSION['id'])) {
                 $package = mysqli_fetch_assoc($result);
                 //print_r($package);
 
-                header('Location:/ceylontrek-3tier/view/view_my_package.php?' . http_build_query(array('package' => $package)));
+                if (!isset($_GET['updateSuccess'])) {
+                    header('Location:/ceylontrek-3tier/view/view_my_package.php?' . http_build_query(array('package' => $package)));
+                }
+
+                if (isset($_GET['updateSuccess'])) {
+                    header('Location:/ceylontrek-3tier/view/view_my_package.php?' . http_build_query(array('package' => $package)) . '&updateSuccess');
+                }
             }
-        } else {
-            //query unsuccessfull, redirect users page
-            header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
         }
+        // else {
+        //     //query unsuccessfull, redirect users page
+        //     header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+        // }
     }
 }
 ?>

@@ -18,17 +18,6 @@ if (isset($_SESSION['id'])) {
 
     $guide_id = mysqli_real_escape_string($connection, $guide_id);
 
-    //getting the guide name
-    $name_result = guide_name($connection, $guide_id);
-
-    if ($name_result) {
-        if (mysqli_num_rows($name_result) == 1) {
-
-            $name = mysqli_fetch_assoc($name_result);
-            //print_r($name);
-        }
-    }
-
     //getting the packages information
     $result_set = guide_all_packages($connection, $guide_id);
 
@@ -44,11 +33,18 @@ if (isset($_SESSION['id'])) {
         }
 
         //print_r($packages);
-        header('Location:/ceylontrek-3tier/view/guideMyPackages.php?' . http_build_query(array('packages' => $packages, 'name' => $name)));
-    } else {
-        //query unsuccessfull, redirect users page
-        header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+        if (!isset($_GET['successfullyDeleted'])) {
+            header('Location:/ceylontrek-3tier/view/guideMyPackages.php?' . http_build_query(array('packages' => $packages)));
+        }
+
+        if (isset($_GET['successfullyDeleted'])) {
+            header('Location:/ceylontrek-3tier/view/guideMyPackages.php?' . http_build_query(array('packages' => $packages)) . '&successfullyDeleted');
+        }
     }
+    // else {
+    //     //query unsuccessfull, redirect users page
+    //     header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+    // }
 }
 
 ?>

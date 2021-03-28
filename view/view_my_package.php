@@ -86,16 +86,40 @@
 
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
-                    <?php echo '<img src="' . $package['imgpath1'] . '" style="width:640px; height:380px">' ?>
+                    <?php
+                    if ($package['imgpath1']) {
+                        echo '<img src="' . $package['imgpath1'] . '" style="width:640px; height:380px">';
+                    } else {
+                        echo '<img src="../resources/img/SmartSearchResult/default.jpg" style="width:640px; height:380px">';
+                    }
+                    ?>
                 </div>
                 <div class="mySlides fade">
-                    <?php echo '<img src="' . $package['imgpath2'] . '" style="width:640px; height:380px">' ?>
+                    <?php
+                    if ($package['imgpath2']) {
+                        echo '<img src="' . $package['imgpath2'] . '" style="width:640px; height:380px">';
+                    } else {
+                        echo '<img src="../resources/img/SmartSearchResult/default.jpg" style="width:640px; height:380px">';
+                    }
+                    ?>
                 </div>
                 <div class="mySlides fade">
-                    <?php echo '<img src="' . $package['imgpath3'] . '" style="width:640px; height:380px">' ?>
+                    <?php
+                    if ($package['imgpath3']) {
+                        echo '<img src="' . $package['imgpath3'] . '" style="width:640px; height:380px">';
+                    } else {
+                        echo '<img src="../resources/img/SmartSearchResult/default.jpg" style="width:640px; height:380px">';
+                    }
+                    ?>
                 </div>
                 <div class="mySlides fade">
-                    <?php echo '<img src="' . $package['imgpath4'] . '" style="width:640px; height:380px">' ?>
+                    <?php
+                    if ($package['imgpath4']) {
+                        echo '<img src="' . $package['imgpath4'] . '" style="width:640px; height:380px">';
+                    } else {
+                        echo '<img src="../resources/img/SmartSearchResult/default.jpg" style="width:640px; height:380px">';
+                    }
+                    ?>
                 </div>
 
                 <!-- Next and previous buttons -->
@@ -129,6 +153,9 @@
             <form action="../controller/edit_my_package_controller.php" method="get">
                 <button class="editbutton" name="edit_package" value="<?php echo $package['package_id']; ?>"><span>Edit Package</span></button>
             </form>
+            <form action="../controller/delete_my_package_controller.php" method="get">
+                <button class="editbutton" style="margin-top: 10px;" name="delete_package" value="<?php echo $package['package_id']; ?>" onclick="return confirm('Are you sure you want to Delete this Tour Package?')"><span>Delete Package</span></button>
+            </form>
         </div>
 
     </div>
@@ -137,6 +164,14 @@
     <script>
         showSlides(slideIndex);
     </script>
+
+    <!-- //successfully update alert  -->
+    <?php
+    if (isset($_GET['updateSuccess'])) { ?>
+        <script>
+            alert('You have Successfully Updated Your Tour Package');
+        </script>
+    <?php } ?>
 
     <?php include('../view/footer.php'); ?>
 </body>
