@@ -30,25 +30,11 @@
     }
     ?> 
 
-    <?php
-        if($info['available']=="false"){
-            echo '<div class="alert">';
-            echo '<span class="closebtn" onclick="this.parentElement.style.display="none";">&times;</span>';
-            echo ''.$info['displayName'].' is not available for the dates you chose. Please try different dates.';
-            echo '</div>';
-        }
-        else if($info['reservation']=="success"){
-            echo '<div class="alert">';
-            echo '<span class="closebtn" onclick="this.parentElement.style.display="none";">&times;</span>';
-            echo 'You have successfully reserved '.$info['displayName'].'';
-            echo '</div>';
-        }
-    ?>
 
-        <div class="sidenav">
+<div class="sidenav">
 
             
-            <h2 style="margin-left: 20px; margin-bottom:-20px;" >Reviews</h2>
+        <h2 style="margin-left: 20px; margin-bottom:-20px;" >Reviews</h2>
             
             
 
@@ -99,8 +85,8 @@
           <button type="review" class="loginbutton" style="width:200px; margin-right:60px" name="review" id="review" >
                     <a href="../controller/view_review_controller.php?guide_id=<?php echo '25'?>">
                       
-                      <spn class="manu-title">View All Reviews</span>
-                  </a></button>
+                      <span class="manu-title">View All Reviews</span>
+            </a></button>
         
 
 
@@ -111,10 +97,15 @@
         <!-- sidenav -->
         <div class="guideInfo">
             
+            <?php 
+			    if(isset($_GET['data']) && isset($_GET['image_path'])){
+					$records=unserialize($_GET['data']);
+                    $image_path=$_GET['image_path']; ?>
+                    <?php foreach ($records as $record) {?>
         
             <div class="guidewrapper ">
-            <div class="avtar"><img src="../resources/img/guide/1.jpg" alt="user-avtar" width="100%"/></div>
-            <span class="guide-name"><?php echo $info['displayName']?></span>
+            <div class="avtar"><img src="<?php echo $image_path?>" alt="user-avtar" width="100%"/></div>
+            <span class="guide-name"><?php echo $record['displayName']?></span>
             
             <div class="star-rating">
             <span class="fa fa-star checked"></span>
@@ -127,53 +118,21 @@
             <div class="guide-content">
            <ul>
                <li>Trips Completed : 45</li>
-               <li>Years of Experience : <?php echo $info['experience']?></li>
+               <li>Years of Experience : <?php echo $record['experience']?></li>
                <li>Four Star Rated Tours : 30</li>
-               <li>Fluent Languages: <ul><li><?php echo $info['fluent_languages']?></li>
+               <li>Fluent Languages: <?php echo $record['fluent_languages']?></li>
             
            </ul>
             </div>
            
             </div>
-            <button class="loginbutton" style="height:65px; margin-left:5px;width:100%" ><span>Message Guide</span></button>
-            <button type="button" onclick="openForm()" class="loginbutton"style="height:65px; margin-left:5px;width:100%"><span>Reserve Guide</span></button>
 
-            
-                    
-                   
-            
-             <!-- make reservation popup window -->
-           <div class="form-popup" id="myForm">
-              <form action="../controller/availability_controller.php" class="form-container" method="post">
-                <span><b>Arrival Date :</b></span>
-                <input type="date"  required="" id="arrivaldate" name="arrivaldate" min=<?php echo date('Y-m-d');?>>
-                <?php
-                $datetime = new DateTime('tomorrow');
-               
-                ?>
-                <span ><b>Departure  Date :</b></span>
-                <input type="date"  required="" id="departuredate" name="departuredate" min=<?php  echo $datetime->format('Y-m-d H:i:s');?>>
-
-                 <span ><b>No. of Tourists :</b></span>
-                <input type="number" min="0"  required="" id="tourists" name="no_of_tourists">
-        
-               
-                <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
-                 <button type="submit" class="btn" name="check_availability">Check Availability</button>
-             </form>
-             </div>
-             
-        <script>
-          function openForm() {
-              document.getElementById("myForm").style.display = "block";
-         }
-
-         function closeForm() {
-             document.getElementById("myForm").style.display = "none";
-         }
-                    
-        </script>
-        <!-- make reservation popup window -->
+            <?php if($_SESSION['level']=="tourguide"){?>
+                <form action="../controller/edit_guide_myprofile_controller.php" method="post">
+                    <button class="loginbutton" name="editmyprofile_btn" style="height:65px; margin-left:5px;width:100%"><span>Edit My Profile</span></button>
+                </form>
+            <?php }?>         
+           
 </div>
 
          <!-- end of guide info -->
@@ -185,25 +144,25 @@
 
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
-            <img src="../resources/img/guideProfile/1.jpg" style="width:640px; height:380px">
+            <img src="<?php echo $record['img1']?>" style="width:640px; height:380px">
             
             </div>
 
             <div class="mySlides fade">
             
-            <img src="../resources/img/guideProfile/2.jpg" style="width:640px ;height:380px">
+            <img src="<?php echo $record['img2']?>" style="width:640px ;height:380px">
             
             </div>
 
             <div class="mySlides fade">
             
-            <img src="../resources/img/guideProfile/3.jpg" style="width:640px ;height:380px">
+            <img src="<?php echo $record['img3']?>" style="width:640px ;height:380px">
             
             </div>
 
             <div class="mySlides fade">
             
-            <img src="../resources/img/guideProfile/4.jpg" style="width:640px ;height:380px">
+            <img src="<?php echo $record['img4']?>" style="width:640px ;height:380px">
             
             </div>
 
@@ -224,44 +183,29 @@
             <!-- end of slideshow-container -->
 
             <div class="guide-bio">
-                <p><?php echo $info['gdescription']?></p>
-                <h2 style="margin-top: 20px;  font-weight:bold;">Tour Packages offered by <?php echo $info['displayName']?> :</h2>
+                <p><?php echo $record['gdescription']?></p>
+                <h2 style="margin-top: 20px;  font-weight:bold;">Tour Packages offered by <?php echo $record['displayName']?> :</h2>
             </div>
 
            <!-- start of tour packages -->
           
-
-           <div class="card">
-                <img src="../resources/img/guideProfile/packages/2.jpg" 
-                 style="width:640px ;height:380px">
-                <h1>Down South Adventure</h1>
-               
-                <p>Great Beaches, Great sea food, Great Nights..</p>
-                <p><button><a style="color:white; text-decoration:none;" href='tourPackage.php'>View Package >></a></button></p>
-                </div> 
-                
-                 
-                <div class="card">
-                <img src="../resources/img/guideProfile/packages/3.jpg"  style="width:640px ;height:380px">
-                <h1>Colombo in a Day</h1>
-               
-                <p>Explore the Capital of three Sri Lanka in a single day..</p>
-                <p><button>View Package >></button></p>
-                </div> 
-                       
+           <?php 
+			    if(isset($_GET['pdata'])){
+					$precords=unserialize($_GET['pdata']);?>
+                    <?php foreach ($precords as $precord) {?>
                         <div class="card">
-                <img src="../resources/img/guideProfile/packages/1.jpg"  style="width:640px ;height:380px">
-                <h1>Badulla, Bandarawela Tour and Hike</h1>
-               
-                <p>Get a glimpse of the best scenery and greenery Sri Lanka has to offer in three days..</p>
-                <p><button>View Package >></button></p>
-                </div> 
-
+                            <img src="<?php echo $precord['imgpath1']?>" style="width:640px ;height:380px">
+                            <h1><?php echo $precord['package_name']?></h1>
+                        
+                            <p><?php echo $precord['pdescription']?></p>
+                            <p><button><a style="color:white; text-decoration:none;" type="button" onclick="window.location='../controller/view_guide_myprofile_controller.php?package_id=<?php echo $precord['package_id']?>'">View Package >></a></button></p>
+                        </div>
+            <?php }}?> 
                 
-
-
-                <!-- end of tour packages -->
+               <!-- end of tour packages -->
             </div>
+
+            <?php }}?>
     <!-- end of info -->
     <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
 
