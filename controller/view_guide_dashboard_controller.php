@@ -8,7 +8,13 @@ $info=array();
 $guide_id=$_SESSION['id'];
 $date=date("Y-m-d");
 $pending_tours=get_pending_tours($connection,$guide_id,$date);
-$info['pending_tours']=mysqli_num_rows($pending_tours);
+if(mysqli_num_rows($pending_tours)>0){
+    $info['pending_tours']=mysqli_num_rows($pending_tours);
+}
+else{
+    $info['pending_tours']=0;  
+}
+
 header('Location: /ceylontrek-3tier/view/guideDashboard.php?'.http_build_query(array('param1'=>$info)));
 ?>
 
