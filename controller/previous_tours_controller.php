@@ -16,6 +16,15 @@
             $result = mysqli_fetch_array($result_set,MYSQLI_ASSOC);
                
                 $previoustours[] = $result;
+                if($previoustours[$i]['has_package']==1){
+                    $package_id=$previoustours[$i]['package_id'];
+                    $package_name=get_package_name($connection,$package_id);
+                    $result1 = mysqli_fetch_array($package_name);
+                    $previoustours[$i]['package_name']=$result1['package_name'];
+                }
+                else{
+                    $previoustours[$i]['package_name']="None";
+                }
         }
         $guideid=$previoustours['guide_id'];
     header('Location: /ceylontrek-3tier/view/touristPrevTours.php?'.http_build_query(array('param1'=>$previoustours)));

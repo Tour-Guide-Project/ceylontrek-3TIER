@@ -29,6 +29,75 @@ $contact=$_SESSION['contact'];
         include('../view/new_top_bar.php');
     }
     ?> 
+
+<div class="side_bar">
+			<img src="../resources/img/logo2.png" class="dashlogo">
+			<img src="../resources/img/reviewimg.jpg" class="profile">
+			<form action="../controller/moderator_dashboard_controller.php" method="post">
+				<button class="edit" name="edit_profile" type="submit"><span>Edit Profile</span> </button><br>
+			</form>
+			<div class="sidebar-menu">
+				<ul>
+					<li>
+						<a href="moderator_dashboard.php">
+							<span class="menu-icon"><i class="fa fa-folder-open fa-1x" aria-hidden="true"></i></span>
+							<span class="menu-title">My Dashboard</span>
+						</a>
+					</li>
+					<li>
+						<a href="../controller/chat_controller.php">
+							<span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
+							<span class="menu-title">Inbox</span>
+						</a>
+					</li>
+					<li>
+						<form action="../controller/complain_controller.php" method="post">
+							<a href="">
+								<span class="menu-icon"><i class="fa fa-question-circle fa-1x" aria-hidden="true"></i></span>
+								<button type="submit" style=" 
+								display: block;
+								padding: 0 10px;
+								height: 40px;
+								font-size: medium;
+								background:none;
+								outline:none;
+								border:none;
+								color:white;
+								line-height: 40px;
+								text-align: start;" name="complain_button">Complain</button>
+							</a>
+						</form>
+					</li>
+					<li>
+						<a href="../controller/view_users_admin_controller.php?user_level=tourguide">
+							<span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
+							<span class="menu-title">View all Guides</span>
+						</a>
+					</li>
+					<li>
+						<a href="../controller/view_users_admin_controller.php?user_level=tourist">
+							<span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
+							<span class="menu-title">View all Tourists</span>
+						</a>
+					</li>
+					<li>
+						<a href="../view/create_event.php">
+							<span class="menu-icon"><i class="fa fa-calendar-plus-o fa-1x" aria-hidden="true"></i></span>
+							<span class="menu-title">Create Event</span>
+						</a>
+					</li>
+					<li>
+						<a href="../view/view_event.php">
+							<span class="menu-icon"><i class="fa fa-calendar-o fa-1x" aria-hidden="true"></i></span>
+							<span class="menu-title">View Event</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--sidebar-manu-->
+		</div>
+		<!--side_bar-->
+		
 	<div class="view_admin_profile_box">
 		<form action="../controller/view_moderator_profile_controller.php" method="post">
 			<h1>Edit My Profile</h1>

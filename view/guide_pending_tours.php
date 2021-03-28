@@ -1,21 +1,22 @@
 <?php session_start();
 $tours=array();
-if(isset($_GET['param1'])){
-    $tours=$_GET['param1'];
-}?>
+if(isset($_GET['param'])){
+    $tours=$_GET['param'];
+}
+
+?>
 <html  lang="en">
     <head>
-        <title>Upcoming Tours</title>
-        <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/Guidedashboardpage.css'>
+        <title>Pending Tours</title>
+       
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
     <link rel="stylesheet" href="../resources/css/new_top_bar.css">
-    <link rel="stylesheet" type="text/css" href="../resources/css/my_all_request.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/my_all_request.css">
     <link rel="stylesheet" href="../resources/css/guideUpcomingTours.css">
     <link rel="stylesheet" href="../resources/css/guideMyPackages.css">
-    <link rel="stylesheet" href="../resources/css/touristPrevTours.css">
-  
+    <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/Guidedashboardpage.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -30,35 +31,45 @@ if(isset($_GET['param1'])){
         include('../view/new_top_bar.php');
     }
     ?> 
-    
-            <div>
-                 <?php
+               <?php
 
+                if($_SESSION['level']=='tourist'){
                     include('../view/tourist_side_bar.php');
-                
+                }
+                if($_SESSION['level']=='tourguide'){
+                    include('../view/guide_side_bar.php');
+                }
+
              ?>
-            </div>
+
              <div class="content">
-             <h1 class="page_title">Upcoming Tours</h1>
-            
-             <div class="packages">
-                    
              
+            <h1 class="page_title">Pending Tours</h1>
+            <?php if(count($tours)>0):?>
+              
+            
+             
+             <div class="packages">
+
+
+
+            
+
 
 <div class="tourPackage">
-<?php if(count($tours)>0):?>
-            <?php
+
+           <?php
             foreach($tours as $tour){
             ?>
 
 <!-- Start	Package details -->
-<div class="package-details"  style="border:1px solid black;  margin-top:20px; margin-bottom:20px; margin-left:50px;">
+<div class="package-details" style="border:1px solid black;  margin:10px; width:90%">
 
     <!-- 	Package Name -->
   
   
-    <h4 style ="float:left; "><b>Guide Name: </b> <?php echo $tour['displayName']?></h4>
-
+    <h4 style ="float:left; "><b>Name of Tourist: </b> <?php echo $tour['tourist_name']?></h4>
+    
 
     
     
@@ -66,27 +77,29 @@ if(isset($_GET['param1'])){
 
     <!-- Package bio -->
     <p class="information" >
-    <p style="margin-left:50px; margin-top:10px; text-align:left; margin-top:30px"><b>Start Date:</b> <?php echo $tour['arrival_date']?></</p>
+
+        <p style="margin-left:50px; margin-top:10px; text-align:left; margin-top:30px"><b>Start Date:</b> <?php echo $tour['arrival_date']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>End Date:</b> <?php echo $tour['departure_date']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Package Name:</b> <?php echo $tour['package_name']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Tourist Email:</b> <?php echo $tour['tourist_email']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Tourist Contact Number:</b> <?php echo $tour['telephone']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Adults:</b> <?php echo $tour['no_of_adults']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Children:</b> <?php echo $tour['no_of_children']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Payment ($):</b> <?php echo $tour['price']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Special Notes:</b> <?php echo $tour['notes']?></p>
+    </p>
 
 
 
     <!-- 		Control -->
-    
-    <div class="controler">
+    <div class="control_a">
 
         <!-- Start Button buying -->
-        <button class="cobutton" > Cancel Tour
-               
-</button>
-<button class="cobutton" > Contact Guide
-               
-               </button>
+        <form action="../controller/pending_tours_controller.php"  method="get">
+        <button type="submit" name="accept_tour" class="cobtn" style="float:left margin-right:70px" value="<?php echo $tour['reservation_id']?>"><span> Accept Tour</span></button>
+        <button type="submit" name="decline_tour"class="cobtn" style="float:none margin-right:70px" value="<?php echo $tour['reservation_id']?>"><span> Decline Tour</span></button>
+            </form>
+        <button class="cobtn" style="float:right " ><span> Contact Tourist</span></button>
 
         <!-- End Button buying -->
 
@@ -96,14 +109,9 @@ if(isset($_GET['param1'])){
 
 <!-- 	End	Package details   -->
 
-            
-          <?php
+            <?php
             }
-
             ?>
-
-
-
 
 </div>
 <!-- tourPackage2 -->
@@ -112,19 +120,21 @@ if(isset($_GET['param1'])){
               <!-- end of packages -->
 
 
+
 <?php else: ?>
-<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Upcoming tours to view</h2>
-<?php endif ?>             
+<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Pending tours to view</h2>
+<?php endif ?>    
+              
         
 
                 <div class="corner_buttons">
                         <div>
-                            <button class="cobutton" style="width:260px"><i class="fa fa-credit-card" aria-hidden="true" ></i>Make a Complain</button>
+                            <button class="cobutton" style="width:275px"><i class="fa fa-credit-card" aria-hidden="true" ></i>Pay System fee</button>
                         </div>
 
                         <div>
                             
-                            <button class="cobutton" style="width:260px; margin-top:20px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
+                            <button class="cobutton" style="margin-top:20px; width:275px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
                         </div>
                 </div><!--corner_button-->
 </div>

@@ -5,7 +5,7 @@
     border-radius: 5px;
     overflow: hidden;
     height: auto;
-    width: 970px;
+    width: 1070px;
     padding-top: 10px;
     margin-top: 20px;
     margin-left: 350px;
@@ -22,7 +22,7 @@
     padding: 10px;
     height: 100%;
     float: left;
-    margin-left: 10px
+    margin-left: 50px
 }
 
 
@@ -65,7 +65,12 @@
     margin-top: 20px;
     margin-left: 650px;
 }
-
+.control_a {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
 /* the Button */
 

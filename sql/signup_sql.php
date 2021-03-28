@@ -1,13 +1,5 @@
 <?php
-function signup($connection){
-//
-    //get values in to variables
-		$first_name=$_POST['first_name'];
-		$last_name=$_POST['last_name'];
-		$email=$_POST['email'];
-		$address=$_POST['address'];
-		$contact=$_POST['tel_no'];
-		$password=$_POST['password'];
+function signup($connection,$first_name,$last_name,$email,$address,$contact,$password){
 		$hashed_password=sha1($password);
 		$level=$_SESSION['level'];
 		$token= bin2hex(random_bytes(50));
