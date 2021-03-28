@@ -55,10 +55,10 @@ include('../view/guide_side_bar.php');
 
 
 
-<div class="tourPackage">
+<div class="tourPackage" style="margin-left:400px;">
 
 <!-- Start	Package details -->
-<div class="package-details">
+<div class="package-details" style="border:1px solid black;  margin:10px; width:900px;">
 
     <!-- 	Package Name -->
   

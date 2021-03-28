@@ -7,7 +7,7 @@ if(isset($_GET['param'])){
 ?>
 <html  lang="en">
     <head>
-        <title>Upcoming Tours</title>
+        <title>Cancelled Tours</title>
        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
@@ -44,7 +44,7 @@ if(isset($_GET['param'])){
 
              <div class="content">
              
-            <h1 class="page_title">Upcoming Tours</h1>
+            <h1 class="page_title">Cancelled Tours</h1>
             <?php if(count($tours)>0):?>
               
             
@@ -56,14 +56,14 @@ if(isset($_GET['param'])){
             
 
 
-<div class="tourPackage" style="margin-left:400px;">
+<div class="tourPackage" style="margin-left:400px">
 
            <?php
             foreach($tours as $tour){
             ?>
 
 <!-- Start	Package details -->
-<div class="package-details" style="border:1px solid black;  margin:10px; width:900px;">
+<div class="package-details" style="border:1px solid black;  margin:10px; width:90%">
 
     <!-- 	Package Name -->
   
@@ -87,20 +87,20 @@ if(isset($_GET['param'])){
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Children:</b> <?php echo $tour['no_of_children']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Payment ($):</b> <?php echo $tour['price']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Special Notes:</b> <?php echo $tour['notes']?></p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Reason for Cancellation:</b> <?php echo $tour['reason']?></p>
     </p>
 
 
 
     <!-- 		Control -->
-    <div class="controler" style="margin-left:500px;" >
+    <div class="control_a">
 
         <!-- Start Button buying -->
-        <form action="../controller/cancellation_controller.php" method="get">
-        <button type="submit" class="cobutton" name="cancel" style ="float:left;" value="<?php echo $tour['reservation_id']?>"> Cancel Tour</button>
-</form>
-        <button class="cobutton" style ="float:none;" ><span> Contact Tourist</span>
-               
-</button>
+        <form action="../controller/cancelled_tours_controller.php"  method="get">
+  
+        <button type="submit" name="remove_notification"class="cobtn" style="float:none margin-right:70px" value="<?php echo $tour['reservation_id']?>"><span>Remove Notification</span></button>
+            </form>
+        <button class="cobtn" style="float:right " ><span> Contact Tourist</span></button>
 
         <!-- End Button buying -->
 
@@ -123,7 +123,7 @@ if(isset($_GET['param'])){
 
 
 <?php else: ?>
-<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Upcoming tours to view</h2>
+<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Cancelled tours to view</h2>
 <?php endif ?>    
               
         

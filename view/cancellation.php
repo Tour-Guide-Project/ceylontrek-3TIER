@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation</title>
+    <title>Cancelling Tour</title>
     <!-- <link rel="stylesheet" href="../resources/css/homepage.css"> -->
 
     <link rel="stylesheet" href="../resources/css/top_bar.css">
@@ -28,21 +28,12 @@
     ?> 
 
 <div class="reservation_form">
-<form action="../controller/reservation_controller.php" method="POST">
+<form action="../controller/cancellation_controller.php" method="POST">
 
   <?php
 
-      $tourist_name=''; 
-        $tourist_email='';
-        $telephone_number='';
-        $no_of_adults='';
-        $no_of_children='';
-        $arrival_date='';
-        $departure_date='';
-        $notes='';
-        $price_per_day='';
-          $total_price='';
- 
+     $fields=array();
+    $reasons='';
 
 
 
@@ -61,44 +52,50 @@ if(isset($_GET['param1'])){
      
   ?>
   <div class="elem-group">
-    <label for="name">Your Name</label>
+    <label for="name">Tourist Name : <?php echo $fields['tourist_name']?></label>
    
   </div>
   <div class="elem-group">
-    <label for="email">Your E-mail</label>
+    <label for="email">Tourist E-mail : <?php echo $fields['tourist_email']?></label>
   
   </div>
   <div class="elem-group">
-    <label for="phone">Your Phone</label>
+    <label for="phone">Tourist Phone : <?php echo $fields['telephone']?></label>
   
   </div>
   <hr>
   <div class="elem-group inlined">
-    <label for="adult">Adults</label>
+    <label for="adult">Adults : <?php echo $fields['no_of_adults']?></label>
 
   </div>
   <div class="elem-group inlined">
-    <label for="child">Children (Less than age 12)</label>
+    <label for="child">Children (Less than age 12) : <?php echo $fields['no_of_children']?></label>
 
   </div>
   <div class="elem-group inlined">
-    <label for="arrival-date">Arrival Date</label>
+    <label for="arrival-date">Arrival Date : <?php echo $fields['arrival_date']?></label>
  
   </div>
 
   <div class="elem-group inlined">
-    <label for="departure-date">Departure Date</label>
+    <label for="departure-date">Departure Date : <?php echo $fields['departure_date']?></label>
 
   </div>
 
   <hr>
   <div class="elem-group">
     <label for="message">Special Notes</label>
+    <p style ="color:black;"><?php echo $fields['notes']?></p>
    
   </div>
 
+  <div class="elem-group">
+    <label for="message">Reasons for Cancellation</label>
+    <textarea id="message" name="reason" ><?php echo ''.$reasons.''; ?></textarea>
+  </div>
 
-  <button type="submit" name="submit">Reserve the Guide</button>
+
+  <button type="submit" name="submit_cancellation_tourist" value="<?php echo $fields['reservation_id']?>">Cancel reservation</button>
 </form>
 
 

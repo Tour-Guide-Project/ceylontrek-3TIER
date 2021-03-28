@@ -30,7 +30,7 @@
         }
         $guideid=$upcomingtours['guide_id'];
     header('Location: /ceylontrek-3tier/view/UpcomingTours.php?'.http_build_query(array('param1'=>$upcomingtours)));
-    $_SESSION['level']='tourguide';
+   
 }
 //}
 ?>

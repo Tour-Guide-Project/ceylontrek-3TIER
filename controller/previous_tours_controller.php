@@ -28,7 +28,7 @@
         }
         $guideid=$previoustours['guide_id'];
     header('Location: /ceylontrek-3tier/view/touristPrevTours.php?'.http_build_query(array('param1'=>$previoustours)));
-    $_SESSION['level']='tourguide';
+  
     }
 //}
 ?>

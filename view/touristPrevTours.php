@@ -49,7 +49,7 @@ if(isset($_GET['param1'])){
              <div class="packages">
                     
 
-<div class="tourPackage">
+<div class="tourPackage" style="margin-left:400px;">
               
            <?php
             foreach($tours as $tour){
@@ -110,10 +110,11 @@ if(isset($_GET['param1'])){
 <!-- tourPackage2 -->
         </div>
               <!-- end of packages -->
+ 
+</div>
 <?php else: ?>
 <h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Previous tours to view</h2>
-<?php endif ?>    
-</div>
+<?php endif ?>   
 
         <div class="review" id="reviews"> <!--pop up form-->
             <form action="../controller/review_rate_controller.php" class="form-container" method="post">

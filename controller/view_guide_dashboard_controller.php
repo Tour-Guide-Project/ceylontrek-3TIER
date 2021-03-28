@@ -15,6 +15,14 @@ else{
     $info['pending_tours']=0;  
 }
 
+$cancelled_tours=get_cancelled_tours($connection,$guide_id);
+if(mysqli_num_rows($cancelled_tours)>0){
+    $info['cancelled_tours']=mysqli_num_rows($pending_tours);
+}
+else{
+    $info['cancelled_tours']=0;  
+}
+
 header('Location: /ceylontrek-3tier/view/guideDashboard.php?'.http_build_query(array('param1'=>$info)));
 ?>
 

@@ -54,6 +54,20 @@
                     </div>
                 
                     <hr style="width:70% ">
+
+                    <?php
+                        if($info['cancelled_tours']>0){
+                            echo "<p>You have Cancelled Tours to be viewed.</p>";
+                            echo "<div>";
+                            echo"<form action=\"../controller/cancelled_tours_controller.php\"  method=\"get\">";
+                            echo "<button class=\"cobutton\" type=\"submit\" name=\"cancelled_tours\" style=\"width:260px float:right\" >View Cancelled Tours</button>";
+                        echo "</form>";
+                        echo "</div>";
+                        }
+                    ?>
+                    
+                
+                    <hr style="width:70% ">
                     </div>
                     <table class="table-fill">
                         <tbody class="table-hover">

@@ -29,7 +29,7 @@
 			}
             
 		header('Location: /ceylontrek-3tier/view/guide_pending_tours.php?'.http_build_query(array('param'=>$upcomingtours)));
-		$_SESSION['level']='tourguide';
+		
 	}
 }
 
