@@ -118,16 +118,22 @@ if(isset($_GET['param1'])){
         
 
                 <div class="corner_buttons">
+                <form action="../controller/cancellation_controller.php" method="get">
                         <div>
-                            <button class="cobutton" style="width:260px"><i class="fa fa-credit-card" aria-hidden="true" ></i>Make a Complain</button>
+                            <button type="submit" value="<?php echo $tour['reservation_id']?>" name="cancel_tourist" class="cobutton" style="width:260px"><i class="fa fa-credit-card" aria-hidden="true" ></i>Make a Complain</button>
                         </div>
-
+                        </form>
                         <div>
                             
                             <button class="cobutton" style="width:260px; margin-top:20px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
                         </div>
                 </div><!--corner_button-->
 </div>
+
+
+
+
+
                 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
         <script src="../resources/js/guide dashboard.js"></script>
 
