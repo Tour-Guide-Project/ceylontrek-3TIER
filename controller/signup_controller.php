@@ -82,20 +82,7 @@ if (isset($_POST['submit'])) {
         $record=mysqli_fetch_assoc($result_set3);
         $_SESSION['id']=$record['id'];
 
-        echo "<script>alert('Welcome ceylon-trek!');</script>";
 
-                if ($level=='tourist'){
-                        echo "<script>window.location ='/ceylontrek-3tier/view/touristDashboard.php' </script>";
-                }
-                if ($level=='tourguide'){
-                        echo "<script>window.location ='/ceylontrek-3tier/controller/view_guide_dashboard_controller.php' </script>";
-                }
-                if ($level=='admin'){
-                        echo "<script>window.location ='/ceylontrek-3tier/view/admin_dashboard.php' </script>";
-                }
-                if ($level=='moderator'){
-                        echo "<script>window.location ='/ceylontrek-3tier/view/moderator_dashboard.php' </script>";
-                }
         
         $errors['sucess']='sucess';
         $errors['level']=$level;
