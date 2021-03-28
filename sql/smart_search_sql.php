@@ -12,7 +12,7 @@ function select_criteria($connection)
 
 function search_smart($connection, $activity)
 {
-    $query = "SELECT smartsearch.place_name , smartsearch.image_path , smartsearch.short_description
+    $query = "SELECT smartsearch.place_id , smartsearch.place_name , smartsearch.image_path , smartsearch.short_description
     FROM activities 
     INNER JOIN activity_place ON activities.activity_id = activity_place.activity_id 
     INNER JOIN smartsearch ON activity_place.place_id = smartsearch.place_id
@@ -35,9 +35,9 @@ function search_activities($connection, $place_id)
     return $result;
 }
 
-function search_place($connection, $place_name)
+function search_place($connection, $place_id)
 {
-    $query = "SELECT * FROM smartsearch WHERE place_name='{$place_name}'";
+    $query = "SELECT * FROM smartsearch WHERE place_id='{$place_id}'";
 
     $result = mysqli_query($connection, $query);
     //print_r($result);

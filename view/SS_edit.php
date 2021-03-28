@@ -24,7 +24,7 @@
 
         <div class="content">
             <div class="con">
-                <form action="../controller/SS_edit_place_controller.php" method="get" enctype="multipart/form-data">
+                <form action="../controller/SS_update_place_controller.php" method="get" enctype="multipart/form-data">
                     <?php
                     if (isset($_GET['param'])) {
                         $errors = $_GET['param'];
@@ -66,6 +66,9 @@
                             <label for="image_upload" class="lbl">Uploaded Image :</label>
                         </div>
                         <div class="col-75">
+                            <div style="margin-bottom: 5px;">
+                                <img src="<?php echo $details['image_path'] ?>" alt="" class="nic">
+                            </div>
                             <input type="file" name="file" id="file">
                         </div>
                     </div>
@@ -139,7 +142,7 @@
                         </div>
                     </div>
                     <div class="submitCls" style="float: right;">
-                        <button class="btnbtn" style="margin-right: 5%;" name="cancel" value="<?php echo $details['place_name']; ?>">Cancel</button>
+                        <button class="btnbtn" style="margin-right: 5%;" name="cancel" value="<?php echo $details['place_id']; ?>">Cancel</button>
                         <button class="btnbtn" name="place_edit" value="<?php echo $details['place_id']; ?>">Edit Place</button>
                     </div>
                 </form>

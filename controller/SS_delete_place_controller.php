@@ -32,10 +32,10 @@ if (isset($_SESSION['id'])) {
                 header('Location:/ceylontrek-3tier/controller/SS_criteria_selection_controller.php');
             }
         }
-    } else {
-        //query unsuccessfull, redirect users page
-        header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
     }
+    // else {
+    //     header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found');
+    // }
 }
 ?>
 <?php mysqli_close($connection); ?>

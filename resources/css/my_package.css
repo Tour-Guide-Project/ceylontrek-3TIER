@@ -1,0 +1,234 @@
+body {
+  font-family: lato;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.package_container {
+  display: flex;
+  margin-top: 150px;
+  margin-bottom: 20px;
+}
+
+.sidenav {
+  width: 300px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  margin-left: 15px;
+  background: #e8b860;
+  padding: 8px 0;
+  color: black;
+  border: 2px solid darkblue;
+  display: inline-block;
+}
+
+.info {
+  background-color: #dde2dd;
+  margin-left: 30px;
+  width: 850px;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.guideInfo {
+  margin-left: 50px;
+}
+
+.wrapper {
+  border: 1px solid whitesmoke;
+  width: 275px;
+  padding: 20px 15px 0px;
+  margin: 20px auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.client-name {
+  display: block;
+  text-align: left;
+  /* padding: 5px; */
+  font-size: 20px;
+  /* margin: 15px 0px 5px; */
+  text-transform: uppercase;
+  font-family: lato;
+  font-weight: 500;
+}
+
+.client-country {
+  display: block;
+  text-align: left;
+  /* padding: 5px; */
+  font-size: 15px;
+  /* margin: 15px 0px 5px; */
+  text-transform: uppercase;
+  font-family: lato;
+}
+
+.viewmore {
+  display: block;
+  text-align: left;
+  /* padding: 5px; */
+  font-size: 15px;
+  font-weight: bold;
+  /* margin: 15px 0px 5px; */
+}
+
+.testimonial-content {
+  padding: 5px 0px;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: justify;
+  font-family: "Farsan", cursive;
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.topic {
+  margin-top: 20px;
+  text-align: center;
+  color: black;
+  font-family: lato;
+  font-size: 30px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: 0 auto;
+  padding-top: 30px;
+  width: 640px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: 20px;
+  padding: 16px;
+  color: rgb(3, 0, 0);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.circles {
+  margin-top: 10px;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.guide-bio {
+  margin: 0 auto;
+  padding: 10px 20px 20px 30px;
+  color: black;
+  font-family: "Farsan", cursive;
+  font-size: 18px;
+}
+
+.editbutton {
+  width: 200px;
+  color: #fff;
+  background-color: #2f375b;
+  border-color: #007bff;
+  padding: 6%;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  display: inline;
+  font-size: 20px;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.editbutton:hover {
+  color: #fff;
+  background-color: #3e4877;
+  border-color: #0062cc;
+  transition-duration: 0.5s;
+}

@@ -3,25 +3,32 @@
 <?php require_once('C:\xampp\htdocs\ceylontrek-3tier\sql\smart_search_sql.php'); ?>
 <?php
 
-if (isset($_GET['view_place'])) {
-    $place = $_GET['view_place'];
-    //print_r($place);
+// check if a user is logged in
+if (!isset($_SESSION['id'])) {
+    header('Location:/ceylontrek-3tier/view/login.php');
 }
 
-// getting the place information
-$place_name = mysqli_real_escape_string($connection, $place);
-//print_r($place_name);
+if (isset($_SESSION['id'])) {
 
-$result_set = search_place($connection, $place_name);
-//print_r($result_set);
+    if (isset($_GET['view_place'])) {
+        $place_id = $_GET['view_place'];
+        //print_r($place_id);
 
-if ($result_set) {
+        $place_id = mysqli_real_escape_string($connection, $place_id);
 
-    if (mysqli_num_rows($result_set) == 1) {
+        // getting the place information
+        $result = search_place($connection, $place_id);
+        //print_r($result);
 
-        $result = mysqli_fetch_assoc($result_set);
+        if ($result) {
 
-        header('Location:/ceylontrek-3tier/view/SSR_ViewMorePage.php?' . http_build_query(array('place' => $result)));
+            if (mysqli_num_rows($result) == 1) {
+
+                $place = mysqli_fetch_assoc($result);
+
+                header('Location:/ceylontrek-3tier/view/SSR_ViewMorePage.php?' . http_build_query(array('place' => $place)));
+            }
+        }
     }
 }
 ?>

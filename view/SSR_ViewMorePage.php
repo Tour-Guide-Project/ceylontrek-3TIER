@@ -51,7 +51,7 @@
       <div class="submitCls">
         <div>
           <form action="../controller/SS_edit_place_controller.php" method="get">
-            <button class="btnbtn" name="edit_place" value="<?php echo $place['place_name']; ?>">Edit Place</button>
+            <button class="btnbtn" name="edit_place" value="<?php echo $place['place_id']; ?>">Edit Place</button>
           </form>
         </div>
         <div>

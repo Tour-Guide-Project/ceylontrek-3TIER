@@ -63,7 +63,7 @@ $places = $_SESSION['places'];
 
 							<div class="btn">
 								<form action="../controller/SSviewmore_controller.php" method="get">
-									<button class="viewButton" style="color:white; text-decoration:none;" type="submit" name="view_place" value="<?php echo $place['place_name']; ?>">View</a></button>
+									<button class="viewButton" style="color:white; text-decoration:none;" type="submit" name="view_place" value="<?php echo $place['place_id']; ?>">View</a></button>
 								</form>
 							</div>
 						</div>
