@@ -36,7 +36,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="inbox.php">
+					<a href="../controller/chat_controller.php">
 						<span class="menu-icon"><i class="fa fa-comment-o" aria-hidden="true"></i></span>
 						<span class="menu-title">Inbox</span>
 					</a>
@@ -78,7 +78,7 @@
 						<p><?php echo $record['description'];?></p>
 					</div><!-- text_box -->
 
-					<button class="msg">Message <?php echo $record['complainee_level'];?></button>
+					<button class="msg" type="submit" name="msg">Message <?php echo $record['complainee_level'];?></button>
 
 					<?php if($checked_status_admin==0){?>
 						<button type="button" name="checked" class="report" onclick="window.location='/ceylontrek-3tier/controller/complain_admin_controller.php?checked_id=<?php echo $record['complain_id'];?>'">Checked</button>
