@@ -24,7 +24,7 @@
 <div class="side_bar">
         <img src="../resources/img/logo2.png" class="dashlogo">
         <img src="../resources/img/reviewimg.jpg" class="profile" >
-		<form action="../controller/moderator_dashboard_controller.php" method="post">
+		<form action="../controller/admin_dashboard_controller.php" method="post">
         	<button class="edit" name="edit_profile" type="submit"> Edit Profile</button><br>
 		</form>
 		<div class="sidebar-menu">

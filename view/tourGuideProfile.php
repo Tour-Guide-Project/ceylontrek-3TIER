@@ -96,11 +96,11 @@
           
           
           
-            <a href="../controller/view_review_controller.php?guide_id=<?php echo $guide['current_guide_id'];?>">
-               <button type="review" class="loginbutton" style="width:200px; margin-right:60px" name="review" id="review" >                                      
-                <span class="manu-title">View All Reviews</span>
-                </button>
-            </a>
+          <button type="review" class="loginbutton" style="width:200px; margin-right:60px" name="review" id="review" >
+                    <a href="../controller/view_review_controller.php?guide_id=<?php echo '25'?>">
+                      
+                      <spn class="manu-title">View All Reviews</span>
+                  </a></button>
         
 
 
@@ -113,7 +113,7 @@
             
         
             <div class="guidewrapper ">
-            <div class="avtar"><img src="../resources/img/guide/1.jpg" alt="user-avtar" width="100%"/></div>
+            <div class="avtar"><img src="<?php echo $info['image_path']?>" alt="user-avtar" width="100%"/></div>
             <span class="guide-name"><?php echo $info['displayName']?></span>
             
             <div class="star-rating">
@@ -129,27 +129,29 @@
                <li>Trips Completed : 45</li>
                <li>Years of Experience : <?php echo $info['experience']?></li>
                <li>Four Star Rated Tours : 30</li>
-               <li>Fluent Languages: <ul><li><?php echo $info['fluent_languages']?></li>
+               <li>Fluent Languages: <?php echo $info['fluent_languages']?></li>
             
            </ul>
             </div>
            
             </div>
-            <button class="loginbutton" style="height:65px; margin-left:5px;width:100%" ><span>Message Guide</span></button>
+            <button class="loginbutton" style="height:65px; margin-left:5px;width:100%" onclick="window.location='../controller/view_guide_ad_controller.php?msg'" ><span>Message Guide</span></button>
             <button type="button" onclick="openForm()" class="loginbutton"style="height:65px; margin-left:5px;width:100%"><span>Reserve Guide</span></button>
 
             
-                    
-                   
+                
             
              <!-- make reservation popup window -->
            <div class="form-popup" id="myForm">
               <form action="../controller/availability_controller.php" class="form-container" method="post">
                 <span><b>Arrival Date :</b></span>
-                <input type="text"  required="" id="arrivaldate" name="arrivaldate" >
-                
+                <input type="date"  required="" id="arrivaldate" name="arrivaldate" min=<?php echo date('Y-m-d');?>>
+                <?php
+                $datetime = new DateTime('tomorrow');
+               
+                ?>
                 <span ><b>Departure  Date :</b></span>
-                <input type="text"  required="" id="departuredate" name="departuredate" >
+                <input type="date"  required="" id="departuredate" name="departuredate" min=<?php  echo $datetime->format('Y-m-d H:i:s');?>>
 
                  <span ><b>No. of Tourists :</b></span>
                 <input type="number" min="0"  required="" id="tourists" name="no_of_tourists">
@@ -182,25 +184,25 @@
 
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
-            <img src="../resources/img/guideProfile/1.jpg" style="width:640px; height:380px">
+            <img src="<?php echo $info['img1']?>" style="width:640px; height:380px">
             
             </div>
 
             <div class="mySlides fade">
             
-            <img src="../resources/img/guideProfile/2.jpg" style="width:640px ;height:380px">
+            <img src=".<?php echo $info['img3']?>" style="width:640px ;height:380px">
             
             </div>
 
             <div class="mySlides fade">
             
-            <img src="../resources/img/guideProfile/3.jpg" style="width:640px ;height:380px">
+            <img src="<?php echo $info['img3']?>" style="width:640px ;height:380px">
             
             </div>
 
             <div class="mySlides fade">
             
-            <img src="../resources/img/guideProfile/4.jpg" style="width:640px ;height:380px">
+            <img src="<?php echo $info['img4']?>" style="width:640px ;height:380px">
             
             </div>
 
@@ -228,31 +230,18 @@
            <!-- start of tour packages -->
           
 
-           <div class="card">
-                <img src="../resources/img/guideProfile/packages/2.jpg" 
-                 style="width:640px ;height:380px">
-                <h1>Down South Adventure</h1>
-               
-                <p>Great Beaches, Great sea food, Great Nights..</p>
-                <p><button><a style="color:white; text-decoration:none;" href='tourPackage.php'>View Package >></a></button></p>
-                </div> 
-                
-                 
-                <div class="card">
-                <img src="../resources/img/guideProfile/packages/3.jpg"  style="width:640px ;height:380px">
-                <h1>Colombo in a Day</h1>
-               
-                <p>Explore the Capital of three Sri Lanka in a single day..</p>
-                <p><button>View Package >></button></p>
-                </div> 
-                       
+           <?php 
+			    if(isset($_GET['pdata'])){
+					$precords=unserialize($_GET['pdata']);?>
+                    <?php foreach ($precords as $precord) {?>
                         <div class="card">
-                <img src="../resources/img/guideProfile/packages/1.jpg"  style="width:640px ;height:380px">
-                <h1>Badulla, Bandarawela Tour and Hike</h1>
-               
-                <p>Get a glimpse of the best scenery and greenery Sri Lanka has to offer in three days..</p>
-                <p><button>View Package >></button></p>
-                </div> 
+                            <img src="<?php echo $precord['imgpath1']?>" style="width:640px ;height:380px">
+                            <h1><?php echo $precord['package_name']?></h1>
+                        
+                            <p><?php echo $precord['pdescription']?></p>
+                            <p><button><a style="color:white; text-decoration:none;" type="button" onclick="window.location='../controller/view_more_package_controller.php?profile&view_more=<?php echo $precord['package_id']?>'">View Package >></a></button></p>
+                        </div>
+            <?php }}?>
 
                 
 
@@ -269,34 +258,6 @@
     <script>
   showSlides(slideIndex);
   
-</script>
-
-<!-- date picker -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
-type="text/javascript"></script>
-<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
-rel="Stylesheet"type="text/css"/>
-<script type="text/javascript">
-$(function () {
-    $("#arrivaldate").datepicker({
-        numberOfMonths: 1,
-        minDate: 0,
-        onSelect: function (selected) {
-            var dt = new Date(selected);
-            dt.setDate(dt.getDate() + 1);
-            $("#departuredate").datepicker("option", "minDate", dt);
-        }
-    });
-    $("#departuredate").datepicker({
-        numberOfMonths: 1,
-        onSelect: function (selected) {
-            var dt = new Date(selected);
-            dt.setDate(dt.getDate() - 1);
-            $("#arrivaldate").datepicker("option", "maxDate", dt);
-        }
-    });
-});
 </script>
 </body>
 
