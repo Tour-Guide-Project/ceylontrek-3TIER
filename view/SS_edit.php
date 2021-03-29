@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../resources/css/SS_create.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/SS_edit.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="../resources/js/jquery.js"></script>
 </head>
 
 <body class="body">
@@ -24,7 +25,7 @@
 
         <div class="content">
             <div class="con">
-                <form action="../controller/SS_update_place_controller.php" method="get" enctype="multipart/form-data">
+                <form action="../controller/SS_edit_place_controller.php" method="get" enctype="multipart/form-data">
                     <?php
                     if (isset($_GET['param'])) {
                         $errors = $_GET['param'];
@@ -109,7 +110,7 @@
                                 ?>
                                         <label class="lbl_current" for="">
                                             <?php echo $act['activity']; ?>
-                                            <button class="closebtn" name="delete_one" value="<?php echo $act['activity']; ?>" id="dbtn">
+                                            <button class="closebtn" type="button" name="delete_one" value="<?php echo $act['activity']; ?>" id="dbtn">
                                                 <i class="fa fa-close"></i>
                                             </button>
                                         </label>
@@ -142,7 +143,7 @@
                         </div>
                     </div>
                     <div class="submitCls" style="float: right;">
-                        <button class="btnbtn" style="margin-right: 5%;" name="cancel" value="<?php echo $details['place_id']; ?>">Cancel</button>
+                        <button class="btnbtn" style="margin-right: 5%;" name="cancel" value="<?php echo $details['place_name']; ?>">Cancel</button>
                         <button class="btnbtn" name="place_edit" value="<?php echo $details['place_id']; ?>">Edit Place</button>
                     </div>
                 </form>
@@ -151,7 +152,9 @@
         </div>
         <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
     </div>
+
+    <!-- JavaScript function for checked -->
+    <script type="text/javascript" src="../resources/js/delete_one.js"></script>
 </body>
-<!-- <script type="text/javascript" src="../resources/js/checkboxes.js"></script> -->
 
 </html>
