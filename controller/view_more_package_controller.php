@@ -30,12 +30,16 @@ if (isset($_SESSION['id'])) {
                 $package = mysqli_fetch_assoc($result);
                 //print_r($package);
 
-                if (!isset($_GET['updateSuccess'])) {
+                if (!isset($_GET['updateSuccess']) && !isset($_GET['profile'])) {
                     header('Location:/ceylontrek-3tier/view/view_my_package.php?' . http_build_query(array('package' => $package)));
                 }
 
                 if (isset($_GET['updateSuccess'])) {
                     header('Location:/ceylontrek-3tier/view/view_my_package.php?' . http_build_query(array('package' => $package)) . '&updateSuccess');
+                }
+
+                if (isset($_GET['profile'])) {
+                    header('Location:/ceylontrek-3tier/view/view_my_package.php?' . http_build_query(array('package' => $package)) . '&profile');
                 }
             }
         }
