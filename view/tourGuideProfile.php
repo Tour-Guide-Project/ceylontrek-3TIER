@@ -97,7 +97,7 @@
           
           
           <button type="review" class="loginbutton" style="width:200px; margin-right:60px" name="review" id="review" >
-                    <a href="../controller/view_review_controller.php?guide_id=<?php echo '25'?>">
+                    <a href="../controller/view_review_controller.php?guide_id=<?php echo $_SESSION['current_guide_id']?>">
                       
                       <spn class="manu-title">View All Reviews</span>
                   </a></button>
