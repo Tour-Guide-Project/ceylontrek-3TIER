@@ -1,4 +1,4 @@
-<?php
+=<?php
 //get tourguide others details
 function get_details($connection,$guide_id){
     //prepare database query

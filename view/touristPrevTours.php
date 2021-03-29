@@ -87,7 +87,7 @@ if(isset($_GET['param1'])){
         <button class="cobutton" > Contact Guide
                
 </button>
-<button class="cobutton"  onclick="openForm()" > Write a Review
+<button class="cobutton"  onclick="onForm()" > Write a Review
                
 </button>
 
@@ -120,9 +120,7 @@ if(isset($_GET['param1'])){
             <form action="../controller/review_rate_controller.php" class="form-container" method="post">
                <h1> Write Review</h1>             
                <div class="rate">
-                   <input type="radio" name="rate" id="rate-5" vlaue=5>
-                   <label for="rate-5" class="fa fa-star"> </label>
-
+                  
                    <input type="radio" name="rate" id="rate-4" value=4>
                    <label for="rate-4" class="fa fa-star"></label>
 
@@ -144,7 +142,7 @@ if(isset($_GET['param1'])){
                  <input type="text" name="guide_id" value="<?php echo $tour['guide_id']?>" hidden>
                  <input type="text" name="reservation_id" value="<?php echo $tour['reservation_id']?>" hidden>
     		     <button type="submit" class="btn save" name="save" id="save" onclick="return confirm('Add your review?');">Save </button>
-    		     <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+    		     <button type="button" class="btn cancel" onclick="offForm()">Cancel</button>
   		   </form>
         </div>
               
@@ -164,12 +162,12 @@ if(isset($_GET['param1'])){
 
 <script>
 
-function openForm() {
+function onForm() {
        
        document.getElementById('reviews').style.display = 'block';
    }
    
-   function closeForm(){
+   function offForm(){
        document.getElementById('reviews').style.display = 'none';
        
    }

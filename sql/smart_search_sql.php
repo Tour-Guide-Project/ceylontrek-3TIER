@@ -139,3 +139,12 @@ function delete_activity($connection, $place_name, $activity)
     //print_r($result);
     return $result;
 }
+
+function delete_one_place_activity($connection, $activity_id, $place_id)
+{
+    $query = "DELETE FROM activity_place WHERE (place_id='{$place_id}' AND activity_id='{$activity_id}' ";
+
+    $result = mysqli_query($connection, $query);
+    //print_r($result);
+    return $result;
+}

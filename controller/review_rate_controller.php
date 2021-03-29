@@ -24,11 +24,7 @@ if (!isset($_SESSION['id'])) {
 
 
         $result=write_rate_review($connection,$guide_id,$tourist_id,$reservation_id,$review,$rate);
-
-        if($result){
-            $_SESSION['write_review']='hidden';
-        }
-
+     
        
         header('Location:/ceylontrek-3tier/controller/previous_tours_controller.php');
         

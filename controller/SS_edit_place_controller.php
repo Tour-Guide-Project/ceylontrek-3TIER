@@ -19,6 +19,8 @@ if (isset($_SESSION['id'])) {
         $place_id = $_GET['edit_place'];
         //print_r($place_id);
 
+        $_SESSION['ss_place_id'] = $place_id;
+
         $place_id = mysqli_real_escape_string($connection, $place_id);
 
         // getting the place information

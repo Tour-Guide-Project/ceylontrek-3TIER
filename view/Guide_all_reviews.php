@@ -1,6 +1,8 @@
 <?php session_start();
 
-$rewlist=$_SESSION['reviewlist'];
+$rewlist=$_SESSION['reviewlist']; // get reviews details
+$rate_1=$_SESSION['rate_1']; //get rating values
+$guide_de=$_SESSION['guide_de'];
 
 ?>
 <!DOCTYPE html>
@@ -18,27 +20,36 @@ $rewlist=$_SESSION['reviewlist'];
 </head>
 <body class="Guide_All_Reviewsbody">
 
-<?php 
+    <?php 
     if (!isset($_SESSION['id'])){
         include('../view/top_bar.php');
     }else{
         include('../view/new_top_bar.php');
     }
     ?> 
+
  <div class="wrapper">
+           <!--guide details-->
       <div class="split_left" >
-           <img src="../resources/img/guide/1.jpg">
-           <h3>Chathura Rathnayake</h3>
+            <?php 
+                foreach($guide_de as $ge){
+            ?>
+           <img src="<?php echo $ge['image_path']; ?>">
+           <h3><?php echo $ge['first_name']." ".$ge['last_name']; ?></h3>
+           <?php
+                }
+           ?>
+        
       </div><!--split_left--> 
 
-    
-        
+            
       <div class="box rating">
                 
-                    <table>
-
-                        <tr>
-                           <div class="star 4">
+            <table>
+                            
+                                
+                    <tr>
+                        <div class="star 4">
                         <td>
                              <div class="star-container">
                                  <span class="fa fa-star checked"></span>
@@ -50,18 +61,21 @@ $rewlist=$_SESSION['reviewlist'];
 
                        <td>
                              <div class="bar-container">
-                                <div class="bar-4">
+                                <div class="bar-4"  style="width:<?php  echo $rate_1[3];?>px">
     
                                 </div>
                              </div><!--bar-container-->
                         </td>
-                </div><!--star 4-->
-                        
+                        </div><!--star 4-->                      
                      </tr>
 
-                     <tr>
+
+
+
+
+                    <tr>
                     <div class="star 3">
-                         <td>
+                        <td>
                               <div class="star-container">
                                   <span class="fa fa-star checked"></span>
                                   <span class="fa fa-star checked"></span>
@@ -70,18 +84,21 @@ $rewlist=$_SESSION['reviewlist'];
                         </td>
  
                         <td>
-                              <div class="bar-container">
-                                 <div class="bar-3">
-     
+                              <div class="bar-container" >
+                                 <div class="bar-3" style="width:<?php  echo $rate_1[2];?>px">     
                                  </div>
                               </div><!--bar-container-->
-                         </td>
-                     </div><!--star 3-->
-                         
-                      </tr>
+                        </td>
+                     </div><!--star 3-->                        
+                    </tr>
 
-                      <tr>
-                            <div class="star 2">
+
+
+
+
+
+                    <tr>
+                        <div class="star 2">
                          <td>
                               <div class="star-container">
                                   <span class="fa fa-star checked"></span>
@@ -91,56 +108,52 @@ $rewlist=$_SESSION['reviewlist'];
  
                         <td>
                               <div class="bar-container">
-                                 <div class="bar-2">
+                                 <div class="bar-2" style="width:<?php  echo $rate_1[1];?>px" >
      
                                  </div>
                               </div><!--bar-container-->
                          </td>
-                 </div><!--star 2-->
-                         
-                      </tr>
+                        </div><!--star 2-->                         
+                    </tr>
 
-                      <tr>
-                            <div class="star 1">
+
+
+                    <tr>
+                        <div class="star 1">
                          <td>
                               <div class="star-container">
-                                  <span class="fa fa-star checked"></span>
-                                  
+                                  <span class="fa fa-star checked"></span>                                
                               </div><!--star-container-->
                         </td>
  
                         <td>
                               <div class="bar-container">
-                                 <div class="bar-1">
-     
+                                 <div class="bar-1" style="width:<?php  echo $rate_1[0];?>px" >                                    
                                  </div>
                               </div><!--bar-container-->
                          </td>
-                 </div><!--star 1-->
-                         
-                      </tr>
+                        </div><!--star 1-->                        
+                    </tr>
 
 
-
+                    
             </table>    
-            </div><!--star_rating-->     
+        </div><!--star_rating-->     
                    
     
 
        <div class="reviews">
             <?php 
                 foreach($rewlist as $r){
-             ?>
-            <div class="box review">
-                  
+            ?>
+            <div class="box review">                  
                     <h3><?php echo $r['first_name']." ".$r['last_name']; ?></h3>
-                    <p><?php echo $r['reviews']; ?></p>
-                    
+                    <p><?php echo $r['reviews']; ?></p>                   
               </div><!--box review-->
              
-              <?php
+            <?php
                 }
-                ?>
+            ?>
                  
        </div><!--reviews-->
         <div class="reviewend"><?php include('../view/footer.php'); ?> </div>
