@@ -8,11 +8,17 @@
 $guide_id=$_SESSION['current_guide_id'];
 
     if(isset($_POST['check_availability'])){
-        $arrival_date=$_POST['arrivaldate'];
-        $no_of_tourists=$_POST['no_of_tourists'];
-        $departure_date=$_POST['departuredate'];
-        $result = check_availability($connection, $guide_id,$arrival_date, $departure_date, $no_of_tourists);
         
+        $arrival=$_POST['arrivaldate'];
+        $arrival=str_replace('/', '-', $arrival);
+        $arrival_date=date("Y-m-d", strtotime($arrival));
+        $no_of_tourists=$_POST['no_of_tourists'];
+        $departure=$_POST['departuredate'];
+        $departure=str_replace('/', '-', $departure);
+        $departure_date=date("Y-m-d", strtotime($departure));
+      
+        $result = check_availability($connection, $guide_id,$arrival_date, $departure_date, $no_of_tourists);
+        print_r($result);
         if(mysqli_num_rows($result)>0){
         
             header('Location: /ceylontrek-3tier/controller/view_guide_ad_controller.php?view_guide='.$guide_id.'&available=false'); 
@@ -29,9 +35,11 @@ $guide_id=$_SESSION['current_guide_id'];
 
     if(isset($_POST['check_availability_package'])){
         $package_id=$_SESSION['current_package_id'];
-        $arrival_date=$_POST['arrivaldate'];
+        $arrival=$_POST['arrivaldate'];
+        $arrival_date=strtotime($arrival_date);
         $no_of_tourists=$_POST['no_of_tourists'];
-        $departure_date=$_POST['departuredate'];
+        $departure=$_POST['departuredate'];
+        $departure_date=strtotime($departure);
         $result = check_availability($connection, $guide_id,$arrival_date, $departure_date, $no_of_tourists);
         
         if(mysqli_num_rows($result)>0){
