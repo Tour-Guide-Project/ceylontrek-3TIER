@@ -196,9 +196,10 @@ body {
     height: 765px;
 }
 
+
 .myposts ul{
     width: 900px;
-    height: 500px;
+    height: 450px;
     margin-top: 15px;
     background-color: rgb(241, 237, 241);
     color: black;
@@ -207,6 +208,8 @@ body {
     display: block;
     padding-bottom: 30px;
 }
+
+
 
 .myposts ul  li{
     width: 800px;
@@ -319,7 +322,7 @@ body {
     padding: 5px;
     margin: 5px 0 22px 0;
     /*padding-bottom: 80px;*/
-}
+
 
 .update-form .btn {
     background-color: #4CAF50;

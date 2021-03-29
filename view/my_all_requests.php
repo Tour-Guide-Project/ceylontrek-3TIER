@@ -41,15 +41,18 @@ $mylist = $_SESSION['mylist'];
 
 			
 			<form action="my_all_requests.php"  method="post">	
-                <h3 style="color:black; font-size:30px; text-align:center; margin-top:0px; margin-left:20px; position:relative;">.......YOUR ALL REQUEST POSTS.......</h3>			
-                <div class="myposts">   <!--request post start-->
+                <h3 style="color:black; font-size:30px; text-align:center; margin-top:0px; margin-left:20px; position:relative;">.......YOUR ALL REQUEST POSTS.......</h3>
+				       
+
+						 	
+                <div class="myposts" id="myposts">   <!--request post start-->
 
 					  <!--get associative array element to display-->
 					  <?php
 					      foreach ($mylist as $mylist_element){
-						 ?>
+						 ?>		
 						 
-						<ul>
+						<ul> 
                             <h5><?php echo $mylist_element['day_no']; ?></h5>
 							<h3><?php echo $mylist_element['title']; ?></h3>
 							<li><i class='fa fa-calendar' aria-hidden='true'></i>Requested Date :<?php echo $mylist_element['requested_date']; ?></li>
@@ -87,6 +90,15 @@ $mylist = $_SESSION['mylist'];
 	function closeForm() {
   		document.getElementById("myForm").style.display = "none";
 	}
+
+
+
+	$(document).ready(function(){
+        $("#tour_name").click(function(){
+            $("#myposts").slideToggle(1000);
+        });
+    });
+
 </script>
 <?php include('../view/footer.php'); ?>
 </body>
