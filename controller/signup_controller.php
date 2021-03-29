@@ -81,6 +81,8 @@ if (isset($_POST['submit'])) {
         $result_set3=get_id($connection,$email,$level);
         $record=mysqli_fetch_assoc($result_set3);
         $_SESSION['id']=$record['id'];
+
+
         
         $errors['sucess']='sucess';
         $errors['level']=$level;

@@ -6,7 +6,7 @@ if ($level=='tourist'){
     header('Location:/ceylontrek-3tier/view/touristDashboard.php');
 }
 if ($level=='tourguide'){
-    header('Location:/ceylontrek-3tier/view/guideDashboard.php');
+    header('Location:/ceylontrek-3tier/controller/view_guide_dashboard_controller.php');
 }
 if ($level=='admin'){
     header('Location:/ceylontrek-3tier/view/admin_dashboard.php');

@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
 				{
 					$_SESSION['level']='tourguide';
 					$_SESSION['id']=$record['id'];
-					header('Location: /ceylontrek-3tier/view/guideDashboard.php');
+					header('Location: /ceylontrek-3tier/controller/view_guide_dashboard_controller.php');
 				}  
 			}
 			else

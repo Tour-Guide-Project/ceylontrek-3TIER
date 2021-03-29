@@ -53,5 +53,9 @@ if (isset($_SESSION['id'])) {
     }
 }
 
+if(isset($_POST['message_user'])){
+    header('Location:../controller/chat_controller.php');
+}
+
 ?>
 <?php mysqli_close($connection); ?>

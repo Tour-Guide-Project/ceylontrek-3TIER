@@ -1,14 +1,79 @@
-.packages {
-    float: left;
-    margin-left: -300px;
-    margin-top: 20px;
+.tourPackage {
+  box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  height: auto;
+  width: 1000px;
+  margin-top: 25px;
+  margin-left: 325px;
+  margin-bottom: 25px;
 }
 
-.calendar {
-    margin-top: 100px;
+.package_image {
+  float: left;
+  transition: all 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+  width: 350px;
+  margin-top: 15px;
+  margin-left: 20px;
+  border-radius: 4px;
+  height: 250px;
+}
+
+.tourPackage img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 	Package details  */
+.package_details {
+  float: right;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  padding: 10px;
+  width: 600px;
+}
+
+/* 	Package Name */
+.tourPackage .package_details h1 {
+  font-family: "Farsan", cursive;
+  position: relative;
+  font-size: 34px;
+  color: #344055;
+  margin: 0;
+}
+
+.tourPackage .package_details h4 {
+  font-family: lato;
+  position: relative;
+  color: #344055;
+  margin: 0;
+}
+
+/* The most important information about the Package */
+.tourPackage .package_details p {
+  font-family: "Farsan", cursive;
+  text-align: center;
+  font-size: 15px;
+  color: #7d7d7d;
+  padding-right: 20px;
 }
 
 .pkgcontrol {
-    margin-top: 20px;
-    margin-left: 210px;
+  margin-top: 20px;
+  margin-left: 210px;
+}
+
+.packages {
+  float: left;
+  margin-left: -300px;
+  margin-top: 20px;
+}
+
+.calendar {
+  margin-top: 100px;
 }

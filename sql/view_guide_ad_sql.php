@@ -5,4 +5,38 @@
         return $result;
 
     }
+
+  
+//kavii
+//get tourguide others details
+function get_details($connection,$guide_id){
+    //prepare database query
+	$query= "SELECT * FROM tourguide_others WHERE guide_id='{$guide_id}' LIMIT 1"; 
+    $result_set=mysqli_query($connection,$query);
+    return $result_set;
+}
+
+function get_profile_img($connection,$guide_id){
+    //prepare database query
+	$query= "SELECT image_path FROM tourguide WHERE id='{$guide_id}' LIMIT 1"; 
+    $result_set=mysqli_query($connection,$query);
+    return $result_set;
+
+}
+
+function get_package_details($connection,$guide_id){
+    //prepare database query
+	$query= "SELECT * FROM tour_package WHERE guide_id='{$guide_id}'"; 
+    $result_set=mysqli_query($connection,$query);
+    return $result_set;
+}
+
+function guide_package($connection, $package_id)
+{
+        $query = "SELECT * FROM tour_package WHERE package_id = '{$package_id}'";
+
+        $result = mysqli_query($connection, $query);
+        //print_r($result);
+        return $result;
+}
 ?>

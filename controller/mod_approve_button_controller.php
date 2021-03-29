@@ -35,7 +35,14 @@ if (isset($_SESSION['id'])) {
         //query unsuccessfull, redirect users page
         header('Location:/ceylontrek-3tier/view/login.php?err=guide_not_found2');
     }
+
+    if(isset($_GET['msg'])){
+        header('Location:../controller/chat_controller.php');
+    }
 }
+
+
+
 
 ?>
 <?php mysqli_close($connection); ?>

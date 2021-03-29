@@ -7,7 +7,7 @@ if(isset($_GET['param'])){
 ?>
 <html  lang="en">
     <head>
-        <title>Upcoming Tours</title>
+        <title>Previous Tours</title>
        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
@@ -50,15 +50,15 @@ include('../view/guide_side_bar.php');
              <?php if($tours):?>
 
              <?php
-            foreach($tours as $tour)
+            foreach($tours as $tour){
             ?>
 
 
 
-<div class="tourPackage">
+<div class="tourPackage" style="margin-left:400px;">
 
 <!-- Start	Package details -->
-<div class="package-details">
+<div class="package-details" style="border:1px solid black;  margin:10px; width:900px;">
 
     <!-- 	Package Name -->
   
@@ -75,6 +75,7 @@ include('../view/guide_side_bar.php');
 
         <p style="margin-left:50px; margin-top:10px; text-align:left; margin-top:30px"><b>Start Date:</b> <?php echo $tour['arrival_date']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>End Date:</b> <?php echo $tour['departure_date']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Package Name:</b> <?php echo $tour['package_name']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Tourist Email:</b> <?php echo $tour['tourist_email']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Tourist Contact Number:</b> <?php echo $tour['telephone']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Adults:</b> <?php echo $tour['no_of_adults']?></</p>
@@ -108,6 +109,9 @@ include('../view/guide_side_bar.php');
 
 </div>
 <!-- tourPackage2 -->
+<?php
+            }
+            ?>
 <?php else: ?>
 <h2 style ="margin-left:400px; margin-top:50px;  " class="page_title">You do not have any Previous tours to view</h2>
 <?php endif ?>   

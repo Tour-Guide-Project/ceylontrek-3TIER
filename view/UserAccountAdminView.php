@@ -102,10 +102,11 @@
 		</div>
 
 		<div class="btnCls">
-			<!-- <form action="../controller/UserAccountAdmin_controller.php" method="post"> -->
-			<div class="btn">
-				<button class="sectionBtn" type="submit" name="message_user">Message User</button>
-			</div>
+			<form action="../controller/UserAccountAdmin_controller.php" method="post">
+				<div class="btn">
+					<button class="sectionBtn" type="submit" name="message_user">Message User</button>
+				</div>
+			</form>
 			<!-- <div class="btn">
 					<button class="sectionBtn" type="submit" name="reset_password">Reset Password</button>
 				</div> -->

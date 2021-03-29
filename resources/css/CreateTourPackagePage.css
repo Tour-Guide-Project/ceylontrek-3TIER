@@ -1,231 +1,269 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .clearfix {
-    overflow: auto
+  overflow: auto;
 }
 
 .con {
-    width: 65%;
-    height: 100%;
-    background: rgb(0, 0, 0, 0.3);
-    box-sizing: border-box;
-    box-shadow: rgba(0, 0, 0, .5);
-    border-radius: 15px;
-    padding: 1% 5% 3% 5%;
-    margin-top: 40px;
-    margin-left: 20%;
-    margin-bottom: 1%;
-    color: black;
-    font-size: 20px;
-    font-weight: 500;
-    float: left;
-    font-family: lato;
+  width: 65%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 1% 5% 3% 5%;
+  margin-top: 40px;
+  margin-left: 20%;
+  margin-bottom: 1%;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  float: left;
+  font-family: lato;
 }
 
 .col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 0;
+  float: left;
+  width: 25%;
+  margin-top: 0;
 }
 
 .col-75 {
-    float: right;
-    width: 75%;
-    margin-top: 3%;
+  float: right;
+  width: 75%;
+  margin-top: 3%;
 }
+
+/* .col-50-left {
+  float: left;
+  width: 50%;
+}
+
+.col-50-right {
+  float: right;
+  width: 50%;
+} */
 
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
-input[type=text],
+input[type="text"],
 select,
 textarea {
-    width: 100%;
-    padding: 1%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
+  width: 100%;
+  padding: 1%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
 
 @media screen and (max-width: 1000px) {
-    .col-25,
-    .col-75 {
-        width: 100%;
-        margin-top: 0;
-    }
+  .col-25,
+  .col-75 {
+    width: 100%;
+    margin-top: 0;
+  }
 }
 
 .lbl {
-    padding: 10% 10% 5% 0;
-    display: inline-block;
-    font-size: 17.5px;
+  padding: 10% 10% 5% 0;
+  display: inline-block;
+  font-size: 17.5px;
 }
 
 .submitCls {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
-.row input[type=submit] {
-    color: #fff;
-    background-color: #2f375b;
-    border-color: #007bff;
-    padding: 2% 2% 2% 2%;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    display: inline;
-    margin-top: 0;
-    font-size: 15px;
-    border: 1px solid transparent;
-    border-radius: 0.5rem;
-    cursor: pointer;
+.row input[type="submit"] {
+  color: #fff;
+  background-color: #2f375b;
+  border-color: #007bff;
+  padding: 2% 2% 2% 2%;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  display: inline;
+  margin-top: 0;
+  font-size: 15px;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
-.row input[type=submit]:hover {
-    color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
+.row input[type="submit"]:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
 }
 
-.submitCls input[type=submit] {
-    width: 30%;
-    color: #fff;
-    background-color: #2f375b;
-    border-color: #007bff;
-    padding: 2% 2% 2% 2%;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    display: inline;
-    font-size: 17px;
-    border: 1px solid transparent;
-    border-radius: 0.5rem;
-    cursor: pointer;
+.submitCls input[type="submit"] {
+  width: 30%;
+  color: #fff;
+  background-color: #2f375b;
+  border-color: #007bff;
+  padding: 2% 2% 2% 2%;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  display: inline;
+  font-size: 17px;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
-.submitCls input[type=submit]:hover {
-    color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
+.submitCls input[type="submit"]:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
 }
 
 .submitCls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .agreeCls {
-    margin-top: 3%;
-    margin-left: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
+  margin-top: 3%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
 }
 
 .agreed2 {
-    margin-left: 3%;
+  margin-left: 3%;
 }
 
 .agreed1 input {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .haveVehicle {
-    font-size: 17.5px;
+  font-size: 17.5px;
 }
 
 .vehicle {
-    display: none;
+  display: none;
 }
-
 
 /* edit my profile css */
 
-.updateCls input[type=submit],
-.cancel input[type=submit] {
-    margin-top: 10px;
-    float: left;
-    width: 30%;
-    color: #fff;
-    background-color: #2f375b;
-    border-color: #007bff;
-    padding: 2% 2% 2% 2%;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    /* //display: inline; */
-    font-size: 17px;
-    border: 1px solid transparent;
-    border-radius: 0.5rem;
-    cursor: pointer;
+.updateCls input[type="submit"],
+.cancel input[type="submit"] {
+  margin-top: 10px;
+  float: left;
+  width: 30%;
+  color: #fff;
+  background-color: #2f375b;
+  border-color: #007bff;
+  padding: 2% 2% 2% 2%;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  /* //display: inline; */
+  font-size: 17px;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
-.updateCls input[type=submit]:hover {
-    color: #fff;
-    background-color: #355f8d;
-    border-color: #0062cc;
+.updateCls input[type="submit"]:hover {
+  color: #fff;
+  background-color: #355f8d;
+  border-color: #0062cc;
 }
 
-.cancel input[type=submit]:hover {
-    color: #fff;
-    background-color: #721512;
-    border-color: #5a0e0e;
+.cancel input[type="submit"]:hover {
+  color: #fff;
+  background-color: #721512;
+  border-color: #5a0e0e;
 }
 
-.cancel input[type=submit] {
-    float: right;
+.cancel input[type="submit"] {
+  float: right;
 }
 
 .nic {
-    border-radius: 8px;
-    width: 200px;
-    height: 200px;
-    margin-top: 10px;
+  border-radius: 8px;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
 }
 
 .upload_img {
-    padding: 5px;
-    background-color: #2f375b;
-    color: white;
-    border: none;
-    outline: none;
-    border-radius: 5px;
+  padding: 5px;
+  background-color: #2f375b;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
 }
 
 .remove_img {
-    margin-left: 20px;
-    padding: 5px;
-    border: none;
-    outline: none;
-    background-color: #721512;
-    border-color: #5a0e0e;
-    color: white;
-    border-radius: 5px;
+  margin-left: 20px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background-color: #721512;
+  border-color: #5a0e0e;
+  color: white;
+  border-radius: 5px;
 }
 
 .upload_img:hover,
 .remove_img:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .disable {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 .disable:hover {
-    cursor: none;
+  cursor: none;
 }
 
 .error {
-    color: red;
-    font-size: 16px;
+  color: red;
+  font-size: 16px;
+}
+
+.update_btn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update_btn .p_button {
+  width: 200px;
+  color: #fff;
+  background-color: #2f375b;
+  border-color: #007bff;
+  padding: 15px 15px 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  font-size: 18px;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.update_btn .p_button:hover {
+  color: #fff;
+  background-color: #3e4877;
+  border-color: #0062cc;
+  transition-duration: 0.5s;
 }

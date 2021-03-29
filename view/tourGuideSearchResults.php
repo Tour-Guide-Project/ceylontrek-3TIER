@@ -88,7 +88,7 @@ $guides=$_SESSION['guides'];
         
 
         <?php
-            foreach($guides as $guide)
+            foreach($guides as $guide){
             ?>
 
         <div class="tourGuide">
@@ -145,7 +145,7 @@ $guides=$_SESSION['guides'];
 
         </div>
         <!-- tourGuide1 -->
-
+<?php } ?>
         
 
         <div class="dashend"> <?php include('../view/footer.php'); ?> </div>

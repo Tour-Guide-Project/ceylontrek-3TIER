@@ -44,7 +44,7 @@ a {
 .side_bar .profile {
     float: left;
     margin-left: 100px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius: 50%;
     border: 3px solid blue;
     width: 100px;
@@ -62,7 +62,7 @@ a {
     color: white;
     font-family: lato;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     outline: none;
 }
 
@@ -164,9 +164,9 @@ z .side_bar input[type=submit] {
 .schedule {
     background-color: rgba(0, 0, 0, 0.3);
     float: left;
-    margin-left: 300px;
+    margin-left: 100px;
     margin-top: 40px;
-    width: 50%;
+    width: 70%;
     height: auto;
     border: 1px solid;
     color: darkblue;
@@ -352,7 +352,7 @@ z .side_bar input[type=submit] {
     border-collapse: collapse;
     height: 320px;
     margin: auto;
-    max-width: 600px;
+    max-width: 700px;
     padding: 5px;
     width: 100%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -687,4 +687,10 @@ hr.solid {
 .all {
     filter: blur(5px);
     -webkit-filter: blur(5px);
+}
+
+.announcements{
+ 
+    margin-bottom: 20px;
+    margin-left: 30px;
 }

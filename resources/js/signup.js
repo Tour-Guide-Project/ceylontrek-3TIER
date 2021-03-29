@@ -95,7 +95,7 @@ $('#registerForm').on('submit', function() {
                     window.location = '/ceylontrek-3tier/view/touristDashboard.php';
                 }
                 if (data.level == 'tourguide') {
-                    window.location = '/ceylontrek-3tier/view/guideDashboard.php';
+                    window.location = '/ceylontrek-3tier/controller/view_guide_dashboard_controller.php';
                 }
                 if (data.level == 'admin') {
                     window.location = '/ceylontrek-3tier/view/admin_dashboard.php';

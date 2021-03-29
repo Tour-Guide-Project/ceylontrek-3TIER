@@ -274,6 +274,10 @@ if(isset($_POST['search'])){
 }
 
 
+if(isset($_POST['msg'])){
+    header('Location:../controller/chat_controller.php');
+}
+
 
 ?>
 

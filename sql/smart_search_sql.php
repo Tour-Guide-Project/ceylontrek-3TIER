@@ -12,7 +12,7 @@ function select_criteria($connection)
 
 function search_smart($connection, $activity)
 {
-    $query = "SELECT smartsearch.place_name , smartsearch.image_path , smartsearch.short_description
+    $query = "SELECT smartsearch.place_id , smartsearch.place_name , smartsearch.image_path , smartsearch.short_description
     FROM activities 
     INNER JOIN activity_place ON activities.activity_id = activity_place.activity_id 
     INNER JOIN smartsearch ON activity_place.place_id = smartsearch.place_id
@@ -35,9 +35,9 @@ function search_activities($connection, $place_id)
     return $result;
 }
 
-function search_place($connection, $place_name)
+function search_place($connection, $place_id)
 {
-    $query = "SELECT * FROM smartsearch WHERE place_name='{$place_name}'";
+    $query = "SELECT * FROM smartsearch WHERE place_id='{$place_id}'";
 
     $result = mysqli_query($connection, $query);
     //print_r($result);
@@ -134,6 +134,15 @@ function delete_activity($connection, $place_name, $activity)
 {
     $query = "DELETE FROM activity_place WHERE place_id = (SELECT place_id FROM smartsearch WHERE place_name = '{$place_name}')
     AND activity_id = (SELECT activity_id FROM activities WHERE activity = '{$activity}')";
+
+    $result = mysqli_query($connection, $query);
+    //print_r($result);
+    return $result;
+}
+
+function delete_one_place_activity($connection, $activity_id, $place_id)
+{
+    $query = "DELETE FROM activity_place WHERE (place_id='{$place_id}' AND activity_id='{$activity_id}' ";
 
     $result = mysqli_query($connection, $query);
     //print_r($result);

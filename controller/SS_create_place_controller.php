@@ -118,7 +118,7 @@ if (isset($_SESSION['id'])) {
                     $img_result = upload_place_image($connection, $place_name, $target_path);
                 }
 
-                header('Location:/ceylontrek-3tier/controller/SSviewmore_controller.php?view_place=' . $place_name . '&Success');
+                header('Location:/ceylontrek-3tier/controller/SSviewmore_controller.php?view_place=' . $place_id . '&Success');
             } else {
                 $errors[] = 'Failed to create place.';
                 header('Location: /ceylontrek-3tier/view/SS_create.php?' . http_build_query(array('param' => $errors)) . '&path=' . $path . '');

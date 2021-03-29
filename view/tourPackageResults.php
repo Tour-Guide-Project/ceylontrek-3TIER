@@ -83,7 +83,7 @@ $packages=$_SESSION['packages'];
 
 
         <?php
-            foreach($packages as $package)
+            foreach($packages as $package){
             ?>
 
 
@@ -148,7 +148,7 @@ $packages=$_SESSION['packages'];
 </div>
 <!-- tourPackage2 -->
 
-
+<?php } ?>
 
 
 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>

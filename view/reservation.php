@@ -63,9 +63,7 @@ if(isset($_GET['param1'])){
    $arrival_date=$fields[5];
    $departure_date=$fields[6];
    $notes=$fields[7];
-foreach ($fields as $field) {
-echo '<p class="error" style="color:blue;">'.$field.'</p>';
-}
+
 }
 
      

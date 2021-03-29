@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php session_start();
+    $info=array();
+    if(isset($_GET['param1'])){
+        $info=$_GET['param1'];
+    }
+?>
 <html  lang="en">
     <head>
         <title>Guide dash board</title>
@@ -36,7 +41,32 @@
             <div class="content">
                 <div class="schedule">
                     <h1>CeylonTrek Guide Dashboard</h1><br>
+                    <div class="announcements">
+                    <h3 style="">Announcements</h3> 
+                  
+                    <p>Number of Tour Requests Pending : <?php echo $info['pending_tours']?></p>
+                    <div>
+                    <form action="../controller/pending_tours_controller.php"  method="get">
+                        <button class="cobutton" type="submit" name="pending_tours" style="width:260px float:right" >View Pending Tours</button>
+                    </form>
+                    </div>
+                
+                    <hr style="width:70% ">
+
+                    <?php
+                        if($info['cancelled_tours']>0){
+                            echo "<p>You have Cancelled Tours to be viewed.</p>";
+                            echo "<div>";
+                            echo"<form action=\"../controller/cancelled_tours_controller.php\"  method=\"get\">";
+                            echo "<button class=\"cobutton\" type=\"submit\" name=\"cancelled_tours\" style=\"width:260px float:right\" >View Cancelled Tours</button>";
+                        echo "</form>";
+                        echo "</div>";
+                        }
+                    ?>
                     
+                
+                    <hr style="width:70% ">
+                    </div>
                     <table class="table-fill">
                         <tbody class="table-hover">
                         <tr>

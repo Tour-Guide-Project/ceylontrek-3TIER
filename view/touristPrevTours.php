@@ -49,13 +49,13 @@ if(isset($_GET['param1'])){
              <div class="packages">
                     
 
-<div class="tourPackage">
+<div class="tourPackage" style="margin-left:400px;">
               
            <?php
             foreach($tours as $tour){
             ?>
 <!-- Start	Package details -->
-<div class="package-details" style="border:1px solid black; background:lightblue; margin:10px">
+<div class="package-details" style="border:1px solid black;  margin:10px">
 
     <!-- 	Package Name -->
   
@@ -72,6 +72,7 @@ if(isset($_GET['param1'])){
     <p class="information" >
     <p style="margin-left:50px; margin-top:10px; text-align:left; margin-top:30px"><b>Start Date:</b> <?php echo $tour['arrival_date']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>End Date:</b> <?php echo $tour['departure_date']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Package Name:</b> <?php echo $tour['package_name']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Adults:</b> <?php echo $tour['no_of_adults']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Children:</b> <?php echo $tour['no_of_children']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Payment ($):</b> <?php echo $tour['price']?></</p>
@@ -109,10 +110,11 @@ if(isset($_GET['param1'])){
 <!-- tourPackage2 -->
         </div>
               <!-- end of packages -->
+ 
+</div>
 <?php else: ?>
 <h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Previous tours to view</h2>
-<?php endif ?>    
-</div>
+<?php endif ?>   
 
         <div class="review" id="reviews"> <!--pop up form-->
             <form action="../controller/review_rate_controller.php" class="form-container" method="post">

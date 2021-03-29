@@ -56,14 +56,14 @@ if(isset($_GET['param'])){
             
 
 
-<div class="tourPackage">
+<div class="tourPackage" style="margin-left:400px;">
 
            <?php
             foreach($tours as $tour){
             ?>
 
 <!-- Start	Package details -->
-<div class="package-details" style="border:1px solid black; background:lightblue; margin:10px">
+<div class="package-details" style="border:1px solid black;  margin:10px; width:900px;">
 
     <!-- 	Package Name -->
   
@@ -80,6 +80,7 @@ if(isset($_GET['param'])){
 
         <p style="margin-left:50px; margin-top:10px; text-align:left; margin-top:30px"><b>Start Date:</b> <?php echo $tour['arrival_date']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>End Date:</b> <?php echo $tour['departure_date']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Package Name:</b> <?php echo $tour['package_name']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Tourist Email:</b> <?php echo $tour['tourist_email']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Tourist Contact Number:</b> <?php echo $tour['telephone']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Adults:</b> <?php echo $tour['no_of_adults']?></</p>
@@ -91,10 +92,13 @@ if(isset($_GET['param'])){
 
 
     <!-- 		Control -->
-    <div class="control">
+    <div class="controler" style="margin-left:500px;" >
 
         <!-- Start Button buying -->
-        <button class="cobtn" ><span> Contact Tourist</span>
+        <form action="../controller/cancellation_controller.php" method="get">
+        <button type="submit" class="cobutton" name="cancel" style ="float:left;" value="<?php echo $tour['reservation_id']?>"> Cancel Tour</button>
+</form>
+        <button class="cobutton" style ="float:none;" ><span> Contact Tourist</span>
                
 </button>
 

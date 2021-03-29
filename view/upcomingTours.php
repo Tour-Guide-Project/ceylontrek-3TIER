@@ -45,14 +45,14 @@ if(isset($_GET['param1'])){
                     
              
 
-<div class="tourPackage">
+<div class="tourPackage" style="margin-left:400px;">
 <?php if(count($tours)>0):?>
             <?php
             foreach($tours as $tour){
             ?>
 
 <!-- Start	Package details -->
-<div class="package-details"  style="border:1px solid black; background:lightblue; margin:10px">
+<div class="package-details"  style="border:1px solid black;  margin-top:20px; margin-bottom:20px; margin-left:50px; width:900px;">
 
     <!-- 	Package Name -->
   
@@ -68,6 +68,7 @@ if(isset($_GET['param1'])){
     <p class="information" >
     <p style="margin-left:50px; margin-top:10px; text-align:left; margin-top:30px"><b>Start Date:</b> <?php echo $tour['arrival_date']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>End Date:</b> <?php echo $tour['departure_date']?></</p>
+        <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Package Name:</b> <?php echo $tour['package_name']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Adults:</b> <?php echo $tour['no_of_adults']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Children:</b> <?php echo $tour['no_of_children']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Payment ($):</b> <?php echo $tour['price']?></</p>
@@ -76,13 +77,16 @@ if(isset($_GET['param1'])){
 
 
     <!-- 		Control -->
+    
     <div class="controler">
 
         <!-- Start Button buying -->
-        <button class="cobutton" > Contact Guide
+        <form action="../controller/cancellation_controller.php" method="get">
+        <button type="submit" class="cobutton" name="cancel" style="float:left;" value="<?php echo $tour['reservation_id']?>"> Cancel Tour</button>
+</form>
+<button class="cobutton"  style="float:none;"> Contact Guide
                
-</button>
-
+               </button>
 
         <!-- End Button buying -->
 
@@ -93,27 +97,32 @@ if(isset($_GET['param1'])){
 <!-- 	End	Package details   -->
 
             
-          <?php
+          
+
+
+<?php
             }
 
             ?>
-
-
-
 
 </div>
 <!-- tourPackage2 -->
 
 </div>
+
               <!-- end of packages -->
+            
 
-
-<?php else: ?>
+              <?php else: ?>
+              
 <h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Upcoming tours to view</h2>
+echo "</div>";
 <?php endif ?>             
         
 
-                <div class="corner_buttons">
+               
+</div>
+     <div class="corner_buttons">
                         <div>
                             <button class="cobutton" style="width:260px"><i class="fa fa-credit-card" aria-hidden="true" ></i>Make a Complain</button>
                         </div>
@@ -122,11 +131,12 @@ if(isset($_GET['param1'])){
                             
                             <button class="cobutton" style="width:260px; margin-top:20px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
                         </div>
-                </div><!--corner_button-->
-</div>
+                </div><!--corner_button-->    
+               
                 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
-        <script src="../resources/js/guide dashboard.js"></script>
-
+        <script src="../resources/js/guide dashboard.js"></script>       
         </div>
+      
+
     </body>
 </html>
