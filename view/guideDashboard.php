@@ -25,9 +25,7 @@
     ?> 
 
 <div id="all" >
-                
-            
-               
+                          
               <?php
 
                     include('../view/guide_side_bar.php');

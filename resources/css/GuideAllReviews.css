@@ -106,28 +106,28 @@
 }
 
 .bar-4 {
-    width: 200px;
+    max-width: 500px;
     height: 20px;
     background-color: rgb(250, 165, 6);
     border: 1px solid;
 }
 
 .bar-3 {
-    width: 400px;
+    max-width: 500px;
     height: 20px;
     background-color: rgb(250, 165, 6);
     border: 1px solid;
 }
 
 .bar-2 {
-    width: 300px;
+    max-width: 500px;
     height: 20px;
     background-color: rgb(250, 165, 6);
     border: 1px solid;
 }
 
 .bar-1 {
-    width: 500px;
+    max-width: 500px;
     height: 20px;
     background-color: rgb(250, 165, 6);
     border: 1px solid;
