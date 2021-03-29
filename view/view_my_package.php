@@ -148,15 +148,20 @@
             </div>
         </div>
         <!-- end of info -->
+        <?php if (!isset($_GET['profile'])) {
+        ?>
+            <div class="guideInfo">
+                <form action="../controller/edit_my_package_controller.php" method="get">
+                    <button class="editbutton" name="edit_package" value="<?php echo $package['package_id']; ?>"><span>Edit Package</span></button>
+                </form>
+                <form action="../controller/delete_my_package_controller.php" method="get">
+                    <button class="editbutton" style="margin-top: 10px;" name="delete_package" value="<?php echo $package['package_id']; ?>" onclick="return confirm('Are you sure you want to Delete this Tour Package?')"><span>Delete Package</span></button>
+                </form>
+            </div>
 
-        <div class="guideInfo">
-            <form action="../controller/edit_my_package_controller.php" method="get">
-                <button class="editbutton" name="edit_package" value="<?php echo $package['package_id']; ?>"><span>Edit Package</span></button>
-            </form>
-            <form action="../controller/delete_my_package_controller.php" method="get">
-                <button class="editbutton" style="margin-top: 10px;" name="delete_package" value="<?php echo $package['package_id']; ?>" onclick="return confirm('Are you sure you want to Delete this Tour Package?')"><span>Delete Package</span></button>
-            </form>
-        </div>
+        <?php
+        }
+        ?>
 
     </div>
     <!-- container -->
