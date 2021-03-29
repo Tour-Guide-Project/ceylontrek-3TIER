@@ -198,7 +198,7 @@
                             <h1><?php echo $precord['package_name']?></h1>
                         
                             <p><?php echo $precord['pdescription']?></p>
-                            <p><button><a style="color:white; text-decoration:none;" type="button" onclick="window.location='../controller/view_guide_myprofile_controller.php?package_id=<?php echo $precord['package_id']?>'">View Package >></a></button></p>
+                            <p><button><a style="color:white; text-decoration:none;" type="button" onclick="window.location='../controller/view_more_package_controller.php?profile&view_more=<?php echo $precord['package_id']?>'">View Package >></a></button></p>
                         </div>
             <?php }}?> 
                 

@@ -34,21 +34,21 @@
 
     }
     //kavi part
-    if(isset($_GET['package_id'])){
-        $package_id=$_GET['package_id'];
+    // if(isset($_GET['package_id'])){
+    //     $package_id=$_GET['package_id'];
 
-        //getting the packages information
-        $result = guide_package($connection, $package_id);
+    //     //getting the packages information
+    //     $result = guide_package($connection, $package_id);
 
-        if ($result) {
+    //     if ($result) {
 
-            if (mysqli_num_rows($result) == 1) {
+    //         if (mysqli_num_rows($result) == 1) {
 
-                $package = mysqli_fetch_assoc($result);
-                header('Location:/ceylontrek-3tier/view/edit_my_package.php?' . http_build_query(array('package' => $package)));
-            }
-        }
-    }
+    //             $package = mysqli_fetch_assoc($result);
+    //             header('Location:/ceylontrek-3tier/view/.php?' . http_build_query(array('package' => $package)));
+    //         }
+    //     }
+    // }
 
    
 
