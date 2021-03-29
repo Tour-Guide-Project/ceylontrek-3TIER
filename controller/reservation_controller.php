@@ -14,17 +14,17 @@ $errors=array();
    $telephone_number='';
    $no_of_adults='';
    $no_of_children='';
-   $arrival_date='';
-   $departure_date='';
+//    $arrival_date='';
+//    $departure_date='';
    $notes='';
    $price_per_day='';
     $total_price='';
     $packageid='';
     
 
-if (isset($_SESSION['id'])) {
-    
-    header('Location:/ceylontrek-3tier/view/reservation.php');
+if ((isset($_SESSION['id']))&& ($_SESSION['level']=="tourist")) {
+
+    header('Location:/ceylontrek-3tier/view/reservation.php?');
     
 }
 else{

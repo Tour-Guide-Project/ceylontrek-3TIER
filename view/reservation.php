@@ -37,8 +37,8 @@
         $telephone_number='';
         $no_of_adults='';
         $no_of_children='';
-        $arrival_date='';
-        $departure_date='';
+        $arrival_date=$_SESSION['arrival_date'];
+        $departure_date=$_SESSION['departure_date'];
         $notes='';
         $price_per_day='';
           $total_price='';
@@ -70,15 +70,15 @@ if(isset($_GET['param1'])){
   ?>
   <div class="elem-group">
     <label for="name">Your Name</label>
-    <input type="text" id="name" name="tourist_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} <?php echo 'value="'.$tourist_name.'"'; ?>>
+    <input type="text" id="name" name="tourist_name" pattern=[A-Z\sa-z]{3,20} <?php echo 'value="'.$tourist_name.'"'; ?>>
   </div>
   <div class="elem-group">
     <label for="email">Your E-mail</label>
-    <input type="text" id="email" name="tourist_email" placeholder="john.doe@email.com"<?php echo 'value="'.$tourist_email.'"'; ?> >
+    <input type="text" id="email" name="tourist_email" <?php echo 'value="'.$tourist_email.'"'; ?> >
   </div>
   <div class="elem-group">
     <label for="phone">Your Phone</label>
-    <input type="text" id="phone" name="tourist_phone" placeholder="498-348-3872"  <?php echo 'value="'.$telephone_number.'"'; ?>>
+    <input type="text" id="phone" name="tourist_phone"   <?php echo 'value="'.$telephone_number.'"'; ?>>
   </div>
   <hr>
   <div class="elem-group inlined">
@@ -91,15 +91,12 @@ if(isset($_GET['param1'])){
   </div>
   <div class="elem-group inlined">
     <label for="arrival-date">Arrival Date</label>
-    <input type="date" id="arrival-date" name="arrival"  min= <?php echo date('Y-m-d H:i:s');?> <?php echo 'value="'.$arrival_date.'"'; ?>>
+    <input type="date" id="arrival-date" name="arrival"   <?php echo 'value="'.$arrival_date.'"'; ?>readonly>
   </div>
-  <?php
-                $datetime = new DateTime('tomorrow');
-               
-                ?>
+  
   <div class="elem-group inlined">
     <label for="departure-date">Departure Date</label>
-    <input type="date" id="departure-date" name="departure"  min=<?php  echo $datetime->format('Y-m-d');?> <?php echo 'value="'.$departure_date.'"'; ?>>
+    <input type="date" id="departure-date" name="departure"   <?php echo 'value="'.$departure_date.'"'; ?>readonly>
   </div>
 
   <hr>

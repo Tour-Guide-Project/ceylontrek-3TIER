@@ -1,6 +1,6 @@
 <?php
     function check_availability($connection, $guide_id,$arrivaldate, $departuredate, $no_of_tourist){
-        $query="SELECT reservation_id FROM reservations WHERE departure_date<'{$arrivaldate}' AND guide_id='{$guide_id}'";
+        $query="SELECT reservation_id FROM reservations WHERE (arrival_date BETWEEN '{$arrivaldate}' AND '{$departuredate}') OR (departure_date BETWEEN '{$arrivaldate}' AND '{$departuredate}') AND guide_id='{$guide_id}'";
         $result= mysqli_query($connection,$query);
         return $result;
     }
