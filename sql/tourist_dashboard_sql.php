@@ -38,7 +38,7 @@ function get_cancelled_tours($connection,$tourist_id){
     return $result;
 }
 
-function get_cancelled_tours_info($connection, $tourist_id,){
+function get_cancelled_tours_info($connection, $tourist_id){
     $query="SELECT r.reservation_id,r.guide_id,r.tourist_name,r.arrival_date, r.departure_date, r.no_of_adults, r.no_of_children, r.notes, r.price,r.has_package,r.package_id,g.displayName FROM reservations r INNER JOIN tourguide_others g ON r.guide_id=g.guide_id WHERE  r.tourist_id='{$tourist_id}' AND r.active_status=3 ";
     $result= mysqli_query($connection,$query);
     return $result;
