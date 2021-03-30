@@ -70,28 +70,21 @@ if(isset($_GET['param1'])){
                      <hr style="width:70% ">
                     </div>
                     <p>Heres is a Summary of your interaction with CeylonTrek.</p>
-                   <table class="table-fill">
+                    <table class="table-fill">
                                 
-                        <tbody class="table-hover">
-                            <tr>
-                                <td class="text-left">All Previous Tours with CeylonTrek</td>
-                                <td class="text-left">5</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">All Upcoming Tours with CeylonTrek</td>
-                                <td class="text-left">1</td>
-                            </tr>
-                                
-                            <tr>
-                                <td class="text-left">Guides Reviewed</td>
-                                <td class="text-left">2</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Packages Reviewed</td>
-                                <td class="text-left">2</td>
-                            </tr>
-
-                        </tbody>
+                                <tbody class="table-hover">
+                                    <tr>
+                                        <td class="text-left">All Previous Tours with CeylonTrek</td>
+                                        <td class="text-left"><?php echo $info['upcoming_tours']?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">All Upcoming Tours with CeylonTrek</td>
+                                        <td class="text-left"><?php echo $info['previous_tours']?></td>
+                                    </tr>
+                                        
+                            
+        
+                                </tbody>
                     </table>
                  
                 </div><!--schedule-->

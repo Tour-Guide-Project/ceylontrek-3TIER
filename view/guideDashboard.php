@@ -71,36 +71,19 @@
                         <tbody class="table-hover">
                         <tr>
                                 <td class="text-left">Guide Profile Status</td>
-                                <td class="text-left">Active</td>
+                                <td class="text-left"><?php echo $info['active_status']?></td>
+                            </tr>
+                        
+                            <tr>
+                                <td class="text-left">Total Upcoming Tours</td>
+                                <td class="text-left"><?php echo $info['upcoming_tours']?></td>
                             </tr>
                             <tr>
-                                <td class="text-left">Tours in This Month</td>
-                                <td class="text-left">5</td>
+                                <td class="text-left">Total Previous Tours</td>
+                                <td class="text-left"><?php echo $info['previous_tours']?></td>
                             </tr>
-                            <tr>
-                                <td class="text-left">Earnings in This Month</td>
-                                <td class="text-left">$ 800.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">All time Tours</td>
-                                <td class="text-left">140</td>
-                            </tr>
-                                <tr>
-                                <td class="text-left">Total Earnings</td>
-                                <td class="text-left">$ 10,000.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">All Ratings</td>
-                                <td class="text-left">140</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">All Reviews</td>
-                                <td class="text-left">120</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Due System Payment</td>
-                                <td class="text-left">$ 80</td>
-                            </tr>
+                           
+                           
                         </tbody>
                     </table>
                 </div><!--schedule-->

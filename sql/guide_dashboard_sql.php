@@ -68,3 +68,9 @@ function remove_notification_b($connection,$reservation_id){
     $result= mysqli_query($connection,$query);
     return $result;
 }
+
+function get_active_status($connection,$guide_id){
+    $query="SELECT * FROM tourguide_others WHERE guide_id='{$guide_id}'";
+    $result= mysqli_query($connection,$query);
+    return $result;
+}

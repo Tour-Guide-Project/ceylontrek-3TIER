@@ -38,9 +38,9 @@
             echo '</div>';
         }
         else if($info['reservation']=="success"){
-            echo '<div class="alert">';
+            echo '<div class="alert" style="background-color:green;">';
             echo '<span class="closebtn" onclick="this.parentElement.style.display="none";">&times;</span>';
-            echo 'You have successfully reserved '.$info['displayName'].'';
+            echo 'You have successfully requested a tour from '.$info['displayName'].'';
             echo '</div>';
         }
     ?>

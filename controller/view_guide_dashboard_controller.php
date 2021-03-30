@@ -23,6 +23,32 @@ else{
     $info['cancelled_tours']=0;  
 }
 
+$status=get_active_status($connection,$guide_id);
+$active_status=mysqli_fetch_array($status);
+if($active_status['active_status']==0){
+    $info['active_status']="Pending Approval";
+}
+else{
+    $info['active_status']="Profile Approved";  
+}
+
+$date=date("Y-m-d");
+$upcoming_tours=get_upcoming_tours($connection,$guide_id,$date);
+if(mysqli_num_rows($upcoming_tours)>0){
+    $info['upcoming_tours']=mysqli_num_rows($upcoming_tours);
+}
+else{
+    $info['upcoming_tours']=0;  
+}
+
+$previous_tours=get_previous_tours($connection,$guide_id,$date);
+if(mysqli_num_rows($previous_tours)>0){
+    $info['previous_tours']=mysqli_num_rows($previous_tours);
+}
+else{
+    $info['previous_tours']=0;  
+}
+
 header('Location: /ceylontrek-3tier/view/guideDashboard.php?'.http_build_query(array('param1'=>$info)));
 
 if(isset($_GET['param2'])){
@@ -30,5 +56,12 @@ if(isset($_GET['param2'])){
     $errors=$_GET['param2'];
     header('Location: /ceylontrek-3tier/view/guideDashboard.php?'.http_build_query(array('param'=>$errors,'param1'=>$info)));
 }
+
+
+
+
+
+
+
 ?>
 

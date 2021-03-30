@@ -23,6 +23,23 @@ else{
     $info['cancelled_tours']=0;  
 }
 
+$date=date("Y-m-d");
+$upcoming_tours=get_upcoming_tours($connection,$tourist_id,$date);
+if(mysqli_num_rows($upcoming_tours)>0){
+    $info['upcoming_tours']=mysqli_num_rows($upcoming_tours);
+}
+else{
+    $info['upcoming_tours']=0;  
+}
+
+$previous_tours=get_previous_tours($connection,$tourist_id,$date);
+if(mysqli_num_rows($previous_tours)>0){
+    $info['previous_tours']=mysqli_num_rows($previous_tours);
+}
+else{
+    $info['previous_tours']=0;  
+}
+
 header('Location: /ceylontrek-3tier/view/touristDashboard.php?'.http_build_query(array('param1'=>$info)));
 
 
