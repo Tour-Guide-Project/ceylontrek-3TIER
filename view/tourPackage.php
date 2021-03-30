@@ -128,7 +128,7 @@ if(isset($_GET['guide_info'])){
             </div>
             
             </div>
-            <button class="loginbutton" style="height:65px; margin-left:5px;width:100%"><span>Message Guide</span></button>
+            <button class="loginbutton" style="height:65px; margin-left:5px;width:100%" onclick="window.location='../controller/chat_controller.php'"><span>Message Guide</span></button>
             <button type="button" onclick="openForm()" class="loginbutton"style="height:65px; margin-left:5px;width:100%"><span>Reserve Guide</span></button>
 
              <!-- make reservation popup window -->
@@ -140,10 +140,10 @@ if(isset($_GET['guide_info'])){
                 $datetime = new DateTime('tomorrow');
                
                 ?>
-                <span ><b>Departure  Date :</b></span>
+                <span style="margin-top:10px;"><b>Departure  Date :</b></span>
                 <input type="text"  required="" id="departuredate" name="departuredate" min=<?php  echo $datetime->format('Y-m-d H:i:s');?>>
 
-                 <span ><b>No. of Tourists :</b></span>
+                 <span style="margin-top:10px;"><b>No. of Tourists :</b></span>
                 <input type="number" min="0"  required="" id="tourists" name="no_of_tourists">
         
                
@@ -179,25 +179,25 @@ if(isset($_GET['guide_info'])){
 
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
-            <img src="../resources/img/packages/1.jpg" style="width:640px; height:380px">
+            <img src="<?php echo $info['imgpath1']?>" style="width:640px; height:380px">
             
             </div>
 
             <div class="mySlides fade">
             
-            <img src="../resources/img/packages/2.jpg" style="width:640px ;height:380px">
+            <img src="<?php echo $info['imgpath2']?>" style="width:640px ;height:380px">
             
             </div>
 
             <div class="mySlides fade">
             
-            <img src="../resources/img/packages/3.jpg" style="width:640px ;height:380px">
+            <img src="<?php echo $info['imgpath3']?>" style="width:640px ;height:380px">
             
             </div>
 
             <div class="mySlides fade">
             
-            <img src="../resources/img/packages/4.jpg" style="width:640px ;height:380px">
+            <img src="<?php echo $info['imgpath4']?>" style="width:640px ;height:380px">
             
             </div>
 

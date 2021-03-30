@@ -150,10 +150,10 @@
                 <span><b>Arrival Date :</b></span>
                 <input type="text"  required="" id="arrivaldate" name="arrivaldate" >
                 
-                <span ><b>Departure  Date :</b></span>
+                <span style="margin-top: 10px;"><b>Departure  Date :</b></span>
                 <input type="text"  required="" id="departuredate" name="departuredate" >
 
-                 <span ><b>No. of Tourists :</b></span>
+                 <span style="margin-top: 10px;"><b>No. of Tourists :</b></span>
                 <input type="number" min="0"  required="" id="tourists" name="no_of_tourists">
         
                
