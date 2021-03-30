@@ -25,9 +25,10 @@ $fullpost=$_SESSION['fullpost'];
     }
     ?> 
 	<div class="full_tour_request_post_view_box">
-			<form action="..\controller\full_tour_request_post_view_controller.php" method="GET" >
+			
 				
 				<div class="text_box">
+				<form action="..\controller\full_tour_request_post_view_controller.php" method="GET" >
 					<img src="../resources/img/ct6.jpg" width="112" height="112" style="border-radius: 65px;vertical-align:middle;float: left;">
 					<!--get associative array element to display-->
 						
@@ -50,18 +51,18 @@ $fullpost=$_SESSION['fullpost'];
 						  }  
 					    ?> 
 				
-					    	   
+				</form> 	   
 
 				</div><!-- text_box -->
 				
 				
 				
-			</form>
+		
 			
 			<div class="msg_button" >
 
-			<button class="msg1" onclick="window.location='../controller/view_guide_ad_controller.php?msg'">Message Tourist</button></a>
-			    <a href=""><button class="report1">Report</button></a>
+			<button  onclick="window.location='../controller/view_guide_ad_controller.php?msg'">Message Tourist</button></a>
+			    <a href=""><button >Report</button></a>
 			</div>
 			
 	</div><!-- tour_request_post_box -->

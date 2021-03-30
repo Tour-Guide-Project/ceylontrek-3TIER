@@ -216,7 +216,7 @@ input[type="submit"]:hover {
 .full_tour_request_post_view_box {
     margin: 150px auto 20px auto;
     display: -webkit-box;
-    width: 800px;
+    width: 1000px;
     padding: 40px;
     background: #C0C0C0;
     box-sizing: border-box;
@@ -229,7 +229,8 @@ input[type="submit"]:hover {
      background-color: #13345a;
      height: 50px;
      display: block;
-     margin: 100px;
+     margin-left:30px;
+     margin-top: 20px;
      color: #fff;
 }
 

@@ -241,7 +241,7 @@ body {
 .myposts ul .bt{
     justify-content: center;
 }
-.myposts ul li a button {
+.myposts ul li  button {
     height: 45px;
     background-color:  #2f375b;
     width: 120px;

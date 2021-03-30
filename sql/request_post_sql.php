@@ -10,44 +10,44 @@
     
         
     function get_all_posts($connection){
-        $query ="SELECT * FROM custom_tour_request_post WHERE delete_status='0'  ORDER BY day_no DESC";
+        $query ="SELECT * FROM custom_tour_request_post WHERE delete_status=0  ORDER BY day_no DESC";
         $posts =mysqli_query($connection, $query);
         return $posts;
     }
 
     function get_old_posts($connection){
-        $query ="SELECT * FROM custom_tour_request_post WHERE delete_status='0' ORDER BY day_no ASC";
+        $query ="SELECT * FROM custom_tour_request_post WHERE delete_status=1 ORDER BY day_no ASC";
         $posts =mysqli_query($connection, $query);
         return $posts;
     }
 
     function get_full_post($connection,$post_id){
-        $query ="SELECT * FROM custom_tour_request_post WHERE post_id='{$post_id}' AND  delete_status='0' LIMIT 1";
+        $query ="SELECT * FROM custom_tour_request_post WHERE post_id='{$post_id}' AND  delete_status=0 LIMIT 1";
         $tour_post =mysqli_query($connection, $query);
         return $tour_post;
     }
 
     function get_searched_posts($connection,$search_post){
-        $query="SELECT * FROM custom_tour_request_post WHERE places LIKE '$search_post%' OR requested_date LIKE '$search_post%' AND delete_status='0' ORDER BY day_no DESC";
+        $query="SELECT * FROM custom_tour_request_post WHERE places LIKE '$search_post%' OR requested_date LIKE '$search_post%' AND delete_status=1 ORDER BY day_no DESC";
         $all_post=mysqli_query($connection,$query);
 
         return $all_post;
     }
     
     function get_my_requests($connection,$t_id){
-        $query ="SELECT * FROM custom_tour_request_post WHERE tourist_id='{$t_id}' AND  delete_status='0' ORDER BY requested_date DESC";
+        $query ="SELECT * FROM custom_tour_request_post WHERE tourist_id='{$t_id}' AND  delete_status=0 ORDER BY requested_date DESC";
         $myposts =mysqli_query($connection, $query);
         return $myposts;
     }
 
     function delete_post($connection,$mypost_id){
-        $query="UPDATE  custom_tour_request_post SET delete_status='1'  WHERE post_id ='{$mypost_id}' LIMIT 1";
+        $query="UPDATE  custom_tour_request_post SET delete_status=1  WHERE post_id ='{$mypost_id}' LIMIT 1";
         $result = mysqli_query($connection, $query);
         return $result;
     }
 
     function get_post_details($connection,$post_id){
-        $query= "SELECT * FROM custom_tour_request_post WHERE post_id='{$post_id}' AND  delete_status='0'";
+        $query= "SELECT * FROM custom_tour_request_post WHERE post_id='{$post_id}' AND  delete_status=0";
         $update_result = mysqli_query($connection, $query);
 
         return $update_result;

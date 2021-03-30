@@ -68,8 +68,8 @@ $mylist = $_SESSION['mylist'];
 							
 							  
                             <li class="bt">
-							  <a  style="text-decoration:none" href="../controller/my_all_request_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>" 
-							  onclick="return confirm('Delete Post?');"><button name='post_delete' style="color:white">DELETE</button></a>
+							<button name='post_delete' style="color:white"><a  style="text-decoration:none" href="../controller/my_all_request_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>" 
+							  onclick="return confirm('Delete Post?');">DELETE</a></button>
 
 							  <a type="button" style="text-decoration:none" href="../controller/update_post_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>"><button type="button" name='post_update' onclick="openForm()" class="update">UPDATE</button></a></li>                              
                                 
