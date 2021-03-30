@@ -2,14 +2,10 @@
 $tours=array();
 if(isset($_GET['param1'])){
     $tours=$_GET['param1'];
-
-
-
 }?>
-?>
 <html  lang="en">
     <head>
-        <title>Previous Tours</title>
+        <title>Upcoming Tours</title>
         <link rel='stylesheet' type='text/css' media='screen' href='../resources/css/Guidedashboardpage.css'>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/top_bar.css">
@@ -19,8 +15,6 @@ if(isset($_GET['param1'])){
     <link rel="stylesheet" href="../resources/css/guideUpcomingTours.css">
     <link rel="stylesheet" href="../resources/css/guideMyPackages.css">
     <link rel="stylesheet" href="../resources/css/touristPrevTours.css">
-    <link rel="stylesheet" href="../resources/css/pretours1.css">
-  
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,32 +29,34 @@ if(isset($_GET['param1'])){
     }else{
         include('../view/new_top_bar.php');
     }
-    ?>      
+    ?> 
+    
+            <div>
+                 <?php
 
-             <?php
-
-                include('../view/tourist_side_bar.php');    
-
+                    include('../view/tourist_side_bar.php');
+                
              ?>
-            
+            </div>
              <div class="content">
-             <h1 class="page_title">Previous Tours</h1>
-             <?php if(count($tours)>0):?>
+             <h1 class="page_title">Cancelled Tours</h1>
+            
              <div class="packages">
                     
+             
 
 <div class="tourPackage" style="margin-left:400px;">
-              
-           <?php
+<?php if(count($tours)>0):?>
+            <?php
             foreach($tours as $tour){
             ?>
+
 <!-- Start	Package details -->
-<div class="package-details" style="border:1px solid black;  margin:10px">
+<div class="package-details"  style="border:1px solid black;  margin-top:20px; margin-bottom:20px; margin-left:50px; width:900px;">
 
     <!-- 	Package Name -->
   
-         
-    
+  
     <h4 style ="float:left; "><b>Guide Name: </b> <?php echo $tour['displayName']?></h4>
 
 
@@ -77,19 +73,18 @@ if(isset($_GET['param1'])){
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Number of Children:</b> <?php echo $tour['no_of_children']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Payment ($):</b> <?php echo $tour['price']?></</p>
         <p style="margin-left:50px; margin-top:10px; text-align:left;"><b>Special Notes:</b> <?php echo $tour['notes']?></p>
-</p>
+
 
 
     <!-- 		Control -->
+    
     <div class="controler">
 
         <!-- Start Button buying -->
-        <button class="cobutton" type="button" onclick="window.location='../controller/chat_controller.php'"> Contact Guide
-               
-</button>
-<button class="cobutton"  onclick="onForm()" > Write a Review
-               
-</button>
+        <form action="../controller/cancelled_tours_tourist_controller.php"  method="get">
+  
+  <button type="submit" name="remove_notification"class="cobtn" style="float:none margin-right:70px" value="<?php echo $tour['reservation_id']?>"><span>Remove Notification</span></button>
+      </form>
 
         <!-- End Button buying -->
 
@@ -98,57 +93,34 @@ if(isset($_GET['param1'])){
 </div>
 
 <!-- 	End	Package details   -->
-           
+
+            
+          
 
 
-      <?php
+<?php
             }
 
             ?>
 
-
-<!-- tourPackage2 -->
-        </div>
-              <!-- end of packages -->
- 
 </div>
-<?php else: ?>
-<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Previous tours to view</h2>
-<?php endif ?>   
+<!-- tourPackage2 -->
 
-        <div class="review" id="reviews"> <!--pop up form-->
-            <form action="../controller/review_rate_controller.php" class="form-container" method="post">
-               <h1> Write Review</h1>             
-               <div class="rate">
-                  
-                   <input type="radio" name="rate" id="rate-4" value=4>
-                   <label for="rate-4" class="fa fa-star"></label>
+</div>
 
+              <!-- end of packages -->
+            
 
-                   <input type="radio" name="rate" id="rate-3" value=3>
-                   <label for="rate-3" class="fa fa-star"></label>
-
-                   <input type="radio" name="rate" id="rate-2" value=2>
-                   <label for="rate-2" class="fa fa-star"></label>
-
-                   <input type="radio" name="rate" id="rate-1" value=1>
-                   <label for="rate-1" class="fa fa-star"></label>
-
-               </div>
-			   
-    		     <textarea rows = "4" cols = "20" name = "review" style="resize: vertical;height:100px;" placeholder="Write your review......."></textarea>
-
+              <?php else: ?>
               
-                 <input type="text" name="guide_id" value="<?php echo $tour['guide_id']?>" hidden>
-                 <input type="text" name="reservation_id" value="<?php echo $tour['reservation_id']?>" hidden>
-    		     <button type="submit" class="btn save" name="save" id="save" onclick="return confirm('Add your review?');">Save </button>
-    		     <button type="button" class="btn cancel" onclick="offForm()">Cancel</button>
-  		   </form>
-        </div>
-              
+<h2 style ="margin-left:100px; margin-top:50px;  " class="page_title">You do not have any Cancelled tours to view</h2>
+echo "</div>";
+<?php endif ?>             
+        
 
-
-                <!-- <div class="corner_buttons">
+               
+</div>
+     <div class="corner_buttons">
                         <div>
                             <button class="cobutton" style="width:260px"><i class="fa fa-credit-card" aria-hidden="true" ></i>Make a Complain</button>
                         </div>
@@ -157,35 +129,12 @@ if(isset($_GET['param1'])){
                             
                             <button class="cobutton" style="width:260px; margin-top:20px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
                         </div>
-                </div>corner_button -->
-</div>
-
-<script>
-
-function onForm() {
-       
-       document.getElementById('reviews').style.display = 'block';
-   }
-   
-   function offForm(){
-       document.getElementById('reviews').style.display = 'none';
-       
-   }
-
-   const rate = document.querySelector(".cobutton");
-   const save = document.querySelector(".save");
-   const cancel=document.querySelector(".cancel");
-    save.onclick = ()=>{
-          rate.style.display ="none";
-    }
-   
-
-
-   
-</script>
+                </div><!--corner_button-->    
+               
                 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
-        <script src="../resources/js/guide dashboard.js"></script>
-
+        <script src="../resources/js/guide dashboard.js"></script>       
         </div>
+      
+
     </body>
 </html>

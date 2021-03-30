@@ -20,7 +20,7 @@
         
             // $user_id=mysqli_real_escape_string($connection,$_GET['id']);
             $mypost_id=mysqli_real_escape_string($connection,$_GET['post_id']);
-             print_r($mypost_id);
+            // print_r($mypost_id);
 
             // delete rocord 
              $result1=delete_post($connection,$mypost_id);    

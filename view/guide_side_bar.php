@@ -51,13 +51,6 @@
             </li>
 
             <li>
-                <a href="../controller/guide_pre_tour_controller.php">
-                    <span class="menu-icon"><i class="fa fa-fast-backward fa-1x" aria-hidden="true"></i></span>
-                    <span class="menu-title">Previous Tours</span>
-                </a>
-            </li>
-
-            <li>
                 <a href="../controller/guide_upcoming_tour_controller.php">
                     <span class="menu-icon"><i class="fa fa-fast-forward fa-1x" aria-hidden="true"></i></span>
                     <span class="menu-title">Upcoming Tours</span>

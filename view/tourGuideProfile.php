@@ -96,11 +96,14 @@
           
           
           
-          <button type="review" class="loginbutton" style="width:200px; margin-right:60px" name="review" id="review" >
-                    <a href="../controller/view_review_controller.php?guide_id=<?php echo $_SESSION['current_guide_id']?>">
+              <a href="../controller/view_review_controller.php?guide_id=<?php echo $_SESSION['current_guide_id']?>">
+              <button type="review" class="loginbutton" style="width:200px; margin-right:60px" name="review" id="review" >
+                    
                       
                       <spn class="manu-title">View All Reviews</span>
-                  </a></button>
+                 </button> </a>
+         
+
         
 
 
@@ -145,13 +148,10 @@
            <div class="form-popup" id="myForm">
               <form action="../controller/availability_controller.php" class="form-container" method="post">
                 <span><b>Arrival Date :</b></span>
-                <input type="date"  required="" id="arrivaldate" name="arrivaldate" min=<?php echo date('Y-m-d');?>>
-                <?php
-                $datetime = new DateTime('tomorrow');
-               
-                ?>
+                <input type="text"  required="" id="arrivaldate" name="arrivaldate" >
+                
                 <span ><b>Departure  Date :</b></span>
-                <input type="date"  required="" id="departuredate" name="departuredate" min=<?php  echo $datetime->format('Y-m-d H:i:s');?>>
+                <input type="text"  required="" id="departuredate" name="departuredate" >
 
                  <span ><b>No. of Tourists :</b></span>
                 <input type="number" min="0"  required="" id="tourists" name="no_of_tourists">
@@ -258,6 +258,36 @@
     <script>
   showSlides(slideIndex);
   
+</script>
+
+</script>
+
+<!-- date picker -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
+type="text/javascript"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+rel="Stylesheet"type="text/css"/>
+<script type="text/javascript">
+$(function () {
+    $("#arrivaldate").datepicker({
+        numberOfMonths: 1,
+        minDate: 0,
+        onSelect: function (selected) {
+            var dt = new Date(selected);
+            dt.setDate(dt.getDate() + 1);
+            $("#departuredate").datepicker("option", "minDate", dt);
+        }
+    });
+    $("#departuredate").datepicker({
+        numberOfMonths: 1,
+        onSelect: function (selected) {
+            var dt = new Date(selected);
+            dt.setDate(dt.getDate() - 1);
+            $("#arrivaldate").datepicker("option", "maxDate", dt);
+        }
+    });
+});
 </script>
 </body>
 

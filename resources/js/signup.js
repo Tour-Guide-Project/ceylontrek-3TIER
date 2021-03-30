@@ -92,7 +92,7 @@ $('#registerForm').on('submit', function() {
             if (data.sucess == "sucess") {
                 alert('Welcome ceylon-trek!');
                 if (data.level == 'tourist') {
-                    window.location = '/ceylontrek-3tier/view/touristDashboard.php';
+                    window.location = '/ceylontrek-3tier/controller/view_tourist_dashboard_controller.php';
                 }
                 if (data.level == 'tourguide') {
                     window.location = '/ceylontrek-3tier/controller/view_guide_dashboard_controller.php';

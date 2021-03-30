@@ -218,7 +218,7 @@ if(isset($_POST['submit'])){
                                     $result2=insert_vehicleinfo_query($connection,$guide_id,$vRegNo,$vType,$vMake,$vModel,$vLicense,$vSeats);
 
                                     if($result1 && $result2){
-                                        //header('Location:/ceylontrek-3tier/view/createGuideProfile.php?profile-submitted=true');
+                                        header('Location:/ceylontrek-3tier/view/createGuideProfile.php?profile-submitted=true');
                                     }else{
                                         $errors[]='Failed to modify the record.';
                                     }
@@ -232,7 +232,7 @@ if(isset($_POST['submit'])){
 
                                             if($result1){
                                               
-                                               // header('Location:/ceylontrek-3tier/view/createGuideProfile.php?profile-submitted=true');
+                                                header('Location:/ceylontrek-3tier/view/createGuideProfile.php?profile-submitted=true');
                                             }
                                 
                                             else{

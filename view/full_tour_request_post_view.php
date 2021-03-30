@@ -10,7 +10,7 @@ $fullpost=$_SESSION['fullpost'];
 	<title>Full Tour Request Post View-Ceylon Trek</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/full_tour_request_view.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/full_request_view.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
 	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
@@ -25,9 +25,10 @@ $fullpost=$_SESSION['fullpost'];
     }
     ?> 
 	<div class="full_tour_request_post_view_box">
-			<form action="..\controller\full_tour_request_post_view_controller.php" method="GET" >
+			
 				
 				<div class="text_box">
+				<form action="..\controller\full_tour_request_post_view_controller.php" method="GET" >
 					<img src="../resources/img/ct6.jpg" width="112" height="112" style="border-radius: 65px;vertical-align:middle;float: left;">
 					<!--get associative array element to display-->
 						
@@ -46,16 +47,26 @@ $fullpost=$_SESSION['fullpost'];
 							
 						</ul>
 
-
-					    <?php
+						<?php
 						  }  
-					    ?> 	   
+					    ?> 
+				
+				</form> 	   
 
 				</div><!-- text_box -->
-				<button class="msg">Message Tourist</button>
-				<button class="report">Report</button>
-			</form>
+				
+				
+				
+		
+			
+			<div class="msg_button" >
+
+			<button  onclick="window.location='../controller/view_guide_ad_controller.php?msg'">Message Tourist</button></a>
+			    <a href=""><button >Report</button></a>
+			</div>
+			
 	</div><!-- tour_request_post_box -->
+	
 	
 <?php include('../view/footer.php'); ?>
 </body>

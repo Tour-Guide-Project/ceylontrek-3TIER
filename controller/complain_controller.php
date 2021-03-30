@@ -39,12 +39,12 @@ session_start();?>
                 $result_set2=add_complain($connection,$title,$complains,$date,$time,$complainee_level,$complainee);
                
             }
-            echo "<script>alert(' You have Added complaint Successfully!');window.location ='/ceylontrek-3tier/view/touristDashboard.php';</script>";
+            echo "<script>alert(' You have Added complaint Successfully!');window.location ='/ceylontrek-3tier/controller/view_tourist_dashboard_controller.php';</script>";
             
 
         }
         else{
-            header('Location: /ceylontrek-3tier/view/touristDashboard.php?'.http_build_query(array('param'=>$errors)));
+            header('Location: /ceylontrek-3tier/controller/view_tourist_dashboard_controller.php?'.http_build_query(array('param2'=>$errors)));
         }
     }
     
@@ -85,12 +85,12 @@ session_start();?>
                 $result_set2=add_complain($connection,$title,$complains,$date,$time,$complainee_level,$complainee);
                
             }
-            echo "<script>alert(' You have Added complaint Successfully!');window.location ='/ceylontrek-3tier/view/guideDashboard.php';</script>";
+            echo "<script>alert(' You have Added complaint Successfully!');window.location ='/ceylontrek-3tier/controller/view_guide_dashboard_controller.php';</script>";
             
 
         }
         else{
-            header('Location: /ceylontrek-3tier/view/guideDashboard.php?'.http_build_query(array('param'=>$errors)));
+            header('Location: /ceylontrek-3tier/controller/view_guide_dashboard_controller.php?'.http_build_query(array('param2'=>$errors)));
         }
     }
     

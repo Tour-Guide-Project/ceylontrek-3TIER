@@ -81,11 +81,11 @@ document.querySelector('.next').addEventListener('click', () => {
 randerCalender();
 
 
-function openForm() {
-       
-    document.getElementById('reviews').style.display = 'block';
-}
+// function openForm() {
 
-function closeForm(){
-    document.getElementById('reviews').style.display = 'none';
-}
+//     document.getElementById('reviews').style.display = 'block';
+// }
+
+// function closeForm(){
+//     document.getElementById('reviews').style.display = 'none';
+// }

@@ -69,7 +69,7 @@ if(isset($_POST['notifications_btn'])){
             $icon='fa fa-eercast';
         }
         else {
-            $path='/ceylontrek-3tier/view/guideDashboard.php';
+            $path='/ceylontrek-3tier/controller/view_guide_dashboard_controller.php';
             $icon='fa fa-eercast';       
         }
 

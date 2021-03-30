@@ -68,7 +68,7 @@
             $places= mysqli_real_escape_string($connection,$_POST['places']);
             $no_of_days= mysqli_real_escape_string($connection,$_POST['no_of_days']);
             $requested_date= mysqli_real_escape_string($connection,$_POST['requested_date']);
-
+       
              
             
             $result_request= request($connection,$tourist_id,$title,$activities,$places,$day_no,$no_of_days,$requested_date);
