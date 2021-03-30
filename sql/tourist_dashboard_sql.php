@@ -14,8 +14,6 @@ function get_package_name($connection,$package_id){
     $result= mysqli_query($connection,$query);
     return $result;
 }
-<<<<<<< HEAD
-=======
 function get_pending_tours($connection,$tourist_id,$date){
     $query="SELECT * FROM reservations WHERE active_status=0 AND tourist_id='{$tourist_id}' AND arrival_date>'{$date}'";
     $result= mysqli_query($connection,$query);
@@ -61,5 +59,3 @@ function get_reason($connection,$reservation_id){
     $result= mysqli_query($connection,$query);
     return $result;
 }
-?>
->>>>>>> 912803a17bcba728fc62d76122463566694e2aea
