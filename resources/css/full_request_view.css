@@ -21,6 +21,21 @@ body {
     margin-bottom: 100px;
 }
 
+.tour_request_post_box .m_btn{
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    
+
+}
+
 .text_box_search_bar {
     top: 35%;
     left: 5%;
@@ -126,25 +141,7 @@ input[type="submit"]:hover {
 .allposts{
     display: block;
 }
-.create_request_btn button {
-    color: #fff;
-    background-color: #2f375b;
-    font-size: 18px;
-    border-radius: 20px;
-    outline: none;
-    border: none;
-    padding: 20px 25px 20px 25px;
-    cursor: pointer;
-    position: fixed;
-    margin-left: 1110px;
-    margin-top: -1000px;
-    font-weight: 600;
-}
 
-.create_request_btn button:hover {
-    font-weight: bold;
-    background-color: #483D8B;
-}
 
 
 /* The popup form of create new request- hidden by default */
@@ -202,17 +199,7 @@ input[type="submit"]:hover {
     /*padding-bottom: 80px;*/
 }
 
-.form-container .btn {
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 20px;
-    padding: 10px 10px;
-    border: none;
-    cursor: pointer;
-    width: 30%;
-    opacity: 0.8;
-    float: left;
-}
+
 
 .form-container .cancel {
     background-color: red;
@@ -234,8 +221,22 @@ input[type="submit"]:hover {
     background: #C0C0C0;
     box-sizing: border-box;
     box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    outline: none;
 }
 
+.full_tour_request_post_view_box button{
+     width: 200px;
+     background-color: #13345a;
+     height: 50px;
+     display: block;
+     margin: 100px;
+     color: #fff;
+}
+
+
+.full_tour_request_post_view_box button:hover{
+    background-color: rgb(80, 98, 180);
+}
 .full_tour_request_post_view_box .text_box h1 {
     font-size: 25px;
     color: #2E8B57;
@@ -247,31 +248,6 @@ input[type="submit"]:hover {
     padding: 10px;
 }
 
-.full_tour_request_post_view_box .msg,
-.report {
-    background-color: #4CAF50;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    padding: 10px 10px;
-    border: none;
-    cursor: pointer;
-    width: 30%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    opacity: 0.8;
-    float: left;
-}
-
-.full_tour_request_post_view_box .report {
-    float: right;
-}
-
-.full_tour_request_post_view_box button:hover {
-    opacity: 1;
-    margin-top: 10px;
-    background-color: #228B22;
-    font-weight: bold;
-}
 
 
 /*menu bar styles*/

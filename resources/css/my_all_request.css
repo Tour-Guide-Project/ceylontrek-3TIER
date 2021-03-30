@@ -196,10 +196,9 @@ body {
     height: 765px;
 }
 
-
 .myposts ul{
     width: 900px;
-    height: 450px;
+    height: auto ;
     margin-top: 15px;
     background-color: rgb(241, 237, 241);
     color: black;
@@ -208,8 +207,6 @@ body {
     display: block;
     padding-bottom: 30px;
 }
-
-
 
 .myposts ul  li{
     width: 800px;
@@ -241,8 +238,10 @@ body {
     text-transform: uppercase;
 }
 
-.myposts ul button {
-    float: right;
+.myposts ul .bt{
+    justify-content: center;
+}
+.myposts ul li a button {
     height: 45px;
     background-color:  #2f375b;
     width: 120px;
@@ -272,56 +271,6 @@ body {
     z-index: 100000;
 }
 
-/* update form css
-.update-form {
-    margin: 60px auto 20px auto;
-    width: 520px;
-    height: 680px;
-    padding: 50px;
-    background: #F0F8FF;
-    box-sizing: border-box;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
-    border-radius: 15px;
-}
-.update-form h1{
-    color:black;
-    font-size: 25px;
-    text-align: center;
-    padding-bottom: 5px;
-}
-
-
-.update-form label {
-    font-size: 15px;
-    color: black;
-    width: 100%;
-    margin-top: 15px;
-}
-
-.update-form input {
-    font-size: 15px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color: #DCDCDC;
-    height: 15px;
-    padding: 10px;
-    margin: 5px 0 22px 0;
-}
-.update-form div input{
-    width: 62%;
-}
-
-.update-form textarea {
-    font-size: 15px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    width: 100%;
-    background-color: #DCDCDC;
-    padding: 5px;
-    margin: 5px 0 22px 0;
-    /*padding-bottom: 80px;*/
 
 
 .update-form .btn {
@@ -352,6 +301,6 @@ body {
     outline: none;
     border: none;
     cursor: pointer;
-}*/
+}
 
 

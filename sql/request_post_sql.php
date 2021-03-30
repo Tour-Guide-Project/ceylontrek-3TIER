@@ -47,7 +47,7 @@
     }
 
     function get_post_details($connection,$post_id){
-        $query= "SELECT * FROM custom_tour_request_post WHERE post_id='{$post_id}' AND WHERE delete_status='0'";
+        $query= "SELECT * FROM custom_tour_request_post WHERE post_id='{$post_id}' AND  delete_status='0'";
         $update_result = mysqli_query($connection, $query);
 
         return $update_result;

@@ -10,7 +10,7 @@ $fullpost=$_SESSION['fullpost'];
 	<title>Full Tour Request Post View-Ceylon Trek</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/full_tour_request_view.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/full_request_view.css">
 	<link rel="stylesheet" href="../resources/css/top_bar.css">
 	<link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
@@ -46,16 +46,26 @@ $fullpost=$_SESSION['fullpost'];
 							
 						</ul>
 
-
-					    <?php
+						<?php
 						  }  
-					    ?> 	   
+					    ?> 
+				
+					    	   
 
 				</div><!-- text_box -->
-				<button class="msg">Message Tourist</button>
-				<button class="report">Report</button>
+				
+				
+				
 			</form>
+			
+			<div class="msg_button" >
+
+			<button class="msg1" onclick="window.location='../controller/view_guide_ad_controller.php?msg'">Message Tourist</button></a>
+			    <a href=""><button class="report1">Report</button></a>
+			</div>
+			
 	</div><!-- tour_request_post_box -->
+	
 	
 <?php include('../view/footer.php'); ?>
 </body>

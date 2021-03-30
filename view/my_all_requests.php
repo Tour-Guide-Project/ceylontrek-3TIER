@@ -14,6 +14,7 @@ $mylist = $_SESSION['mylist'];
     <link rel="stylesheet" href="../resources/css/new_top_bar.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
 <body style="background-color:whitesmoke; background-size:cover;background-position: center center;background-attachment: fixed; background-repeat:no-repeat;">
@@ -43,37 +44,44 @@ $mylist = $_SESSION['mylist'];
 			<form action="my_all_requests.php"  method="post">	
                 <h3 style="color:black; font-size:30px; text-align:center; margin-top:0px; margin-left:20px; position:relative;">.......YOUR ALL REQUEST POSTS.......</h3>
 				       
+			        	
+				
 
-						 	
                 <div class="myposts" id="myposts">   <!--request post start-->
 
 					  <!--get associative array element to display-->
-					  <?php
+					  	
+					     <?php
 					      foreach ($mylist as $mylist_element){
 						 ?>		
-						 
-						<ul> 
+					     
+
+						 <ul id="ui_main"> 
                             <h5><?php echo $mylist_element['day_no']; ?></h5>
 							<h3><?php echo $mylist_element['title']; ?></h3>
 							<li><i class='fa fa-calendar' aria-hidden='true'></i>Requested Date :<?php echo $mylist_element['requested_date']; ?></li>
 							<li><i class='fa fa-clone' aria-hidden='true'></i>NO Of Dates :<?php echo $mylist_element['no_of_days']; ?></li>
                             <li><i class='fa fa-map-marker' aria-hidden='true'  style="margin-right:25px"></i>Places :<?php echo $mylist_element['places']; ?></li>
                             
-                            <li style="height:200px;"><i class='fa fa-futbol-o' aria-hidden='true'></i>Activities & Other Details :<textarea rows ="10" cols = "70" style="background:transparent; border:none; outline:none"><?php echo $mylist_element['activities']; ?></textarea></li>
+                            <li><i class='fa fa-futbol-o' aria-hidden='true'></i>Activities & Other Details :<textarea rows ="10" cols = "70" style="background:transparent; border:none; outline:none"><?php echo $mylist_element['activities']; ?></textarea></li>
 
 							
-							  <div >
-                              <button name='post_delete' style="color:white"><a  style="text-decoration:none" href="../controller/my_all_request_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>" 
-							  onclick="return confirm('Delete Post?');">DELETE</a></button>
-							  <a type="button" style="text-decoration:none" href="../controller/update_post_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>"><button type="button" name='post_update' onclick="openForm()" class="update">UPDATE</button></a>                                  
-                                
-						     </div>
-						</ul>
-				  <?php
-					  }  
-				    ?> 	   				    
-				</div>	 <!-- request post end-->
+							  
+                            <li class="bt">
+							  <a  style="text-decoration:none" href="../controller/my_all_request_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>" 
+							  onclick="return confirm('Delete Post?');"><button name='post_delete' style="color:white">DELETE</button></a>
 
+							  <a type="button" style="text-decoration:none" href="../controller/update_post_controller.php?post_id=<?php echo $mylist_element['post_id']; ?>"><button type="button" name='post_update' onclick="openForm()" class="update">UPDATE</button></a></li>                              
+                                
+						  
+						</ul>  
+						
+						<?php
+					      }  
+				        ?> 
+								    
+				</div>	 <!-- request post end-->
+				
 	        </form>
 
 	</div><!-- post_box -->
@@ -90,14 +98,6 @@ $mylist = $_SESSION['mylist'];
 	function closeForm() {
   		document.getElementById("myForm").style.display = "none";
 	}
-
-
-
-	$(document).ready(function(){
-        $("#tour_name").click(function(){
-            $("#myposts").slideToggle(1000);
-        });
-    });
 
 </script>
 <?php include('../view/footer.php'); ?>

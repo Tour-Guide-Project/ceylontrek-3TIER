@@ -153,7 +153,8 @@
                         <button class="cobutton" style="width:275px"><i class="fa fa-credit-card" aria-hidden="true"></i>Pay System Fee</button>
                     </div>
                     <div>
-                        <button class="cobutton" style="width:275px; "><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
+                         <a href="../controller/chat_controller.php">
+                        <button class="cobutton" style="width:275px; "><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button></a>
                     </div>
                 </div><!--corner_button-->
             </div>
