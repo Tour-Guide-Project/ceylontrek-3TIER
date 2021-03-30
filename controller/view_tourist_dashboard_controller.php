@@ -24,5 +24,12 @@ else{
 }
 
 header('Location: /ceylontrek-3tier/view/touristDashboard.php?'.http_build_query(array('param1'=>$info)));
+
+
+if(isset($_GET['param2'])){
+    $errors=array();
+    $errors=$_GET['param2'];
+    header('Location: /ceylontrek-3tier/view/touristDashboard.php?'.http_build_query(array('param'=>$errors,'param1'=>$info)));
+}
 ?>
 

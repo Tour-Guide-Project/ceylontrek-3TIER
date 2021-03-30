@@ -44,7 +44,7 @@ session_start();?>
 
         }
         else{
-            header('Location: /ceylontrek-3tier/controller/view_tourist_dashboard_controller.php?'.http_build_query(array('param'=>$errors)));
+            header('Location: /ceylontrek-3tier/controller/view_tourist_dashboard_controller.php?'.http_build_query(array('param2'=>$errors)));
         }
     }
     
@@ -90,7 +90,7 @@ session_start();?>
 
         }
         else{
-            header('Location: /ceylontrek-3tier/controller/view_guide_dashboard_controller.php?'.http_build_query(array('param'=>$errors)));
+            header('Location: /ceylontrek-3tier/controller/view_guide_dashboard_controller.php?'.http_build_query(array('param2'=>$errors)));
         }
     }
     

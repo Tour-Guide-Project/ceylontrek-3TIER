@@ -42,12 +42,12 @@
                 <div class="schedule">
                     <h1>CeylonTrek Guide Dashboard</h1><br>
                     <div class="announcements">
-                    <h3 style="">Announcements</h3> 
+                    <h3 >Announcements</h3> 
                   
                     <p>Number of Tour Requests Pending : <?php echo $info['pending_tours']?></p>
                     <div>
                     <form action="../controller/pending_tours_controller.php"  method="get">
-                        <button class="cobutton" type="submit" name="pending_tours" style="width:260px float:right" >View Pending Tours</button>
+                        <button class="cobutton" type="submit" name="pending_tours" style="width:260px ;float:right" >View Pending Tours</button>
                     </form>
                     </div>
                 

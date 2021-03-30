@@ -164,7 +164,7 @@ z .side_bar input[type=submit] {
 .schedule {
     background-color: rgba(0, 0, 0, 0.3);
     float: left;
-    margin-left: 100px;
+    margin-left: 60px;
     margin-top: 40px;
     width: 70%;
     height: auto;
@@ -689,8 +689,7 @@ hr.solid {
     -webkit-filter: blur(5px);
 }
 
-.announcements{
- 
+.announcements {
     margin-bottom: 20px;
     margin-left: 30px;
 }
