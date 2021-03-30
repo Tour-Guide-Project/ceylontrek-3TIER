@@ -29,7 +29,7 @@ if (isset($_SESSION['id'])) {
             //print_r($result_set);
 
             if ($result_set2) {
-                header('Location:/ceylontrek-3tier/controller/SS_criteria_selection_controller.php');
+                header('Location:/ceylontrek-3tier/controller/SS_criteria_selection_controller.php?deleteSuccess');
             }
         }
     }

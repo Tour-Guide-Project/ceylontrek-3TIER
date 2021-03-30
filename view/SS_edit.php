@@ -25,7 +25,7 @@
 
         <div class="content">
             <div class="con">
-                <form action="../controller/SS_edit_place_controller.php" method="get" enctype="multipart/form-data">
+                <form action="../controller/SS_update_place_controller.php" method="get" enctype="multipart/form-data">
                     <?php
                     if (isset($_GET['param'])) {
                         $errors = $_GET['param'];
@@ -108,7 +108,7 @@
 
                                     foreach ($activities as $act) {
                                 ?>
-                                        <label class="lbl_current" for="">
+                                        <label id="lbl" class="lbl_current" for="">
                                             <?php echo $act['activity']; ?>
                                             <button class="closebtn" type="button" name="delete_one" value="<?php echo $act['activity']; ?>" id="dbtn">
                                                 <i class="fa fa-close"></i>

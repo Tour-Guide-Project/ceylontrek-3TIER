@@ -40,7 +40,7 @@ if (isset($_SESSION['id'])) {
         $long_description = mysqli_real_escape_string($connection, $long_description);
 
         //checking if place already exists
-        $result_place = search_place($connection, $place_name);
+        $result_place = search_exists_place($connection, $place_name);
 
         if ($result_place) {
             if (mysqli_num_rows($result_place) == 1) {
@@ -54,10 +54,28 @@ if (isset($_SESSION['id'])) {
 
         if ($new_activity) {
 
-            // Add new activity
-            $new_result = new_activity($connection, $new_activity, $activity_type);
+            $activity_set = all_activities($connection);
+            if ($activity_set) {
+                $rows = mysqli_num_rows($activity_set);
+                for ($i = 0; $i < $rows; $i++) {
+                    $result = mysqli_fetch_assoc($activity_set);
+                    //print_r($result['activity']);
+                    if ($result['activity'] == $new_activity) {
+                        $x = 1;
+                        //print_r($x);
+                        break;
+                    }
+                }
+            }
 
-            $activities[] = $new_activity;
+            if ($x == 1) {
+                $errors[] = 'Activity already in the Current Activity Option';
+            } else {
+                // Add new activity
+                $new_result = new_activity($connection, $new_activity, $activity_type);
+
+                $activities[] = $new_activity;
+            }
         }
 
         if (empty($activities)) {
@@ -118,13 +136,13 @@ if (isset($_SESSION['id'])) {
                     $img_result = upload_place_image($connection, $place_name, $target_path);
                 }
 
-                header('Location:/ceylontrek-3tier/controller/SSviewmore_controller.php?view_place=' . $place_id . '&Success');
+                header('Location:/ceylontrek-3tier/controller/SSviewmore_controller.php?view_place=' . $place_id . '&createSuccess');
             } else {
                 $errors[] = 'Failed to create place.';
-                header('Location: /ceylontrek-3tier/view/SS_create.php?' . http_build_query(array('param' => $errors)) . '&path=' . $path . '');
+                header('Location: /ceylontrek-3tier/controller/SS_controller.php?' . http_build_query(array('param' => $errors)) . '&create_place');
             }
         } else {
-            header('Location: /ceylontrek-3tier/view/SS_create.php?' . http_build_query(array('param' => $errors)) . '&path=' . $path . '');
+            header('Location: /ceylontrek-3tier/controller/SS_controller.php?' . http_build_query(array('param' => $errors)) . '&create_place');
         }
     }
 

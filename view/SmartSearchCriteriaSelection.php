@@ -30,7 +30,7 @@
 			if ($_SESSION['level'] == 'moderator') {
 			?>
 				<div class="createB">
-					<form action="../controller/SS_controller.php" method="post">
+					<form action="../controller/SS_controller.php" method="get">
 						<button class="searchButton" name="create_place">Create Place</button>
 					</form>
 				</div>
@@ -103,6 +103,14 @@
 	<script src="/ceylontrek-3TIER/resources/js/checkboxes.js"></script>
 
 	<?php include('../view/footer.php'); ?>
+
+	<!-- //successfully deleted alert  -->
+	<?php
+	if (isset($_GET['deleteSuccess'])) { ?>
+		<script>
+			alert('You have Successfully Deleted Your Place');
+		</script>
+	<?php } ?>
 </body>
 
 </html>

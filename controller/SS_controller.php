@@ -4,7 +4,7 @@
 
 <?php
 
-if (isset($_POST['create_place'])) {
+if (isset($_GET['create_place'])) {
 
 	$all_activities = array();
 
@@ -22,7 +22,13 @@ if (isset($_POST['create_place'])) {
 		}
 		//print_r($all_activities);
 	}
-	header('Location: ../view/SS_create.php?' . http_build_query(array('all_activities' => $all_activities)));
+
+	if (isset($_GET['param'])) {
+		$errors = $_GET['param'];
+		header('Location: ../view/SS_create.php?' . http_build_query(array('all_activities' => $all_activities, 'param' => $errors)));
+	} else {
+		header('Location: ../view/SS_create.php?' . http_build_query(array('all_activities' => $all_activities)));
+	}
 }
 
 // if (isset($_POST['delete_place'])){

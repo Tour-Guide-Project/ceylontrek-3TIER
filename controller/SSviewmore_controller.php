@@ -19,7 +19,17 @@ if (isset($_GET['view_place'])) {
 
             $place = mysqli_fetch_assoc($result);
 
-            header('Location:/ceylontrek-3tier/view/SSR_ViewMorePage.php?' . http_build_query(array('place' => $place)));
+            if (!isset($_GET['createSuccess']) || !isset($_GET['updateSuccess'])) {
+                header('Location:/ceylontrek-3tier/view/SSR_ViewMorePage.php?' . http_build_query(array('place' => $place)));
+            }
+
+            if (isset($_GET['createSuccess'])) {
+                header('Location:/ceylontrek-3tier/view/SSR_ViewMorePage.php?' . http_build_query(array('place' => $place)) . '&createSuccess');
+            }
+
+            if (isset($_GET['updateSuccess'])) {
+                header('Location:/ceylontrek-3tier/view/SSR_ViewMorePage.php?' . http_build_query(array('place' => $place)) . '&updateSuccess');
+            }
         }
     }
 }

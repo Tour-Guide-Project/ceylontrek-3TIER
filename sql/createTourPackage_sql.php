@@ -1,14 +1,14 @@
 <?php
 function insert_packageinfo_query($connection, $id, $title, $duration, $destinations, $maxMembers, $price, $description, $target_path1, $target_path2, $target_path3, $target_path4)
 {
-        $query = "INSERT INTO tourpackage( guide_id, package_name, pdescription, display_price, day_no, members, destinations, imgpath1, imgpath2, imgpath3, imgpath4) VALUES ({$id},'{$title}','{$description}','{$price}','{$duration}','{$maxMembers}','{$destinations}','{$target_path1}','{$target_path2}','{$target_path3}','{$target_path4}')";
+        $query = "INSERT INTO tour_package( guide_id, package_name, pdescription, display_price, day_no, members, destinations, imgpath1, imgpath2, imgpath3, imgpath4) VALUES ({$id},'{$title}','{$description}','{$price}','{$duration}','{$maxMembers}','{$destinations}','{$target_path1}','{$target_path2}','{$target_path3}','{$target_path4}')";
         $result = mysqli_query($connection, $query);
         return $result;
 }
 
 function guide_all_packages($connection, $guide_id)
 {
-        $query = "SELECT * FROM tour_package WHERE (guide_id = '{$guide_id}' AND availability = 1)";
+        $query = "SELECT * FROM tour_package WHERE (guide_id = '{$guide_id}' AND remove_package = 0)";
 
         $result = mysqli_query($connection, $query);
         //print_r($result);
@@ -116,7 +116,7 @@ function remove_image4($connection, $package_id)
 
 function delete_package($connection, $package_id)
 {
-        $query = "UPDATE tour_package SET availability = 0
+        $query = "UPDATE tour_package SET remove_package = 1
 	WHERE package_id='{$package_id}'";
 
         $result = mysqli_query($connection, $query);

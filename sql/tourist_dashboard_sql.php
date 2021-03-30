@@ -10,8 +10,7 @@ function get_previous_tours($connection, $tourist_id,$date){
     return $result;
 }
 function get_package_name($connection,$package_id){
-    $query="SELECT * FROM tourpackage WHERE package_id='{$package_id}'";
+    $query="SELECT * FROM tour_package WHERE (package_id='{$package_id}' AND remove_package = 0)";
     $result= mysqli_query($connection,$query);
     return $result;
 }
-?>

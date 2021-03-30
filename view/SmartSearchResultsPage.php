@@ -1,7 +1,5 @@
 <?php session_start();
-
 $places = $_SESSION['places'];
-
 ?>
 
 <!DOCTYPE html>

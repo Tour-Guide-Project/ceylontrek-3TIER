@@ -23,9 +23,9 @@ if (isset($_SESSION['id'])) {
             $errors[] = 'Place Name is requried/Invalid!';
         }
         //check name has only a-z
-        // elseif (!preg_match(("/[^0-9]/"), $_GET['place_name'])) {
-        //     $errors[] = 'Place Name is Invalid';
-        // }
+        elseif (!preg_match(("/[^0-9]/"), $_GET['place_name'])) {
+            $errors[] = 'Place Name is Invalid';
+        }
 
         if (!isset($_GET['short_description']) || strlen(trim($_GET['short_description'])) < 1) {
             $errors[] = 'Short Descriptione is requried/Invalid!';
@@ -58,10 +58,28 @@ if (isset($_SESSION['id'])) {
 
         if ($new_activity) {
 
-            // Add new activity
-            $new_result = new_activity($connection, $new_activity, $activity_type);
+            $activity_set = all_activities($connection);
+            if ($activity_set) {
+                $rows = mysqli_num_rows($activity_set);
+                for ($i = 0; $i < $rows; $i++) {
+                    $result = mysqli_fetch_assoc($activity_set);
+                    //print_r($result['activity']);
+                    if ($result['activity'] == $new_activity) {
+                        $x = 1;
+                        //print_r($x);
+                        break;
+                    }
+                }
+            }
 
-            $activities[] = $new_activity;
+            if ($x == 1) {
+                $errors[] = 'Activity already in the Current Activity Option';
+            } else {
+                // Add new activity
+                $new_result = new_activity($connection, $new_activity, $activity_type);
+
+                $activities[] = $new_activity;
+            }
         }
 
         if ($_FILES['file']['name'] != NULL) {
@@ -85,7 +103,7 @@ if (isset($_SESSION['id'])) {
         if (empty($errors)) {
 
             //update place
-            $update_result_set = update_place($connection, $place_id, $place_name, $short_description, $long_description, $image_upload);
+            $update_result_set = update_place($connection, $place_id, $place_name, $short_description, $long_description);
 
             if ($update_result_set) {
 
@@ -112,7 +130,7 @@ if (isset($_SESSION['id'])) {
                     $img_result = upload_place_image($connection, $place_name, $target_path);
                 }
 
-                header('Location:/ceylontrek-3tier/controller/SSviewmore_controller.php?view_place=' . $place_id . '&Success');
+                header('Location:/ceylontrek-3tier/controller/SSviewmore_controller.php?view_place=' . $place_id . '&updateSuccess');
             }
             // else {
             //     $errors[] = 'Failed to update place.';

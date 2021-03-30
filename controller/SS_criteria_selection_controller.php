@@ -25,6 +25,10 @@ if ($result_set) {
     //print_r($criterias_out);
     //print_r($criterias_in);
 
+    if (isset($_GET['deleteSuccess'])) {
+        header('Location:/ceylontrek-3tier/view/SmartSearchCriteriaSelection.php?' . http_build_query(array('criterias_out' => $criterias_out, 'criterias_in' => $criterias_in)) . '&deleteSuccess');
+    }
+
     header('Location:/ceylontrek-3tier/view/SmartSearchCriteriaSelection.php?' . http_build_query(array('criterias_out' => $criterias_out, 'criterias_in' => $criterias_in)));
 }
 ?>

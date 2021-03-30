@@ -67,6 +67,22 @@
 
   <?php include('../view/footer.php'); ?>
 
+  <!-- //successfully create alert  -->
+  <?php
+  if (isset($_GET['createSuccess'])) { ?>
+    <script>
+      alert('You have Successfully Created Your Place');
+    </script>
+  <?php } ?>
+
+  <!-- //successfully update alert  -->
+  <?php
+  if (isset($_GET['updateSuccess'])) { ?>
+    <script>
+      alert('You have Successfully Updated Your Place');
+    </script>
+  <?php } ?>
+
 </body>
 
 </html>

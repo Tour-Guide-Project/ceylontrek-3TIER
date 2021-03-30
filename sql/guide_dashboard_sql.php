@@ -22,7 +22,7 @@ function get_pending_tours($connection,$guide_id,$date){
 }
 
 function get_package_name($connection,$package_id){
-    $query="SELECT * FROM tourpackage WHERE package_id='{$package_id}'";
+    $query="SELECT * FROM tour_package WHERE (package_id='{$package_id}' AND remove_package = 0)";
     $result= mysqli_query($connection,$query);
     return $result;
 }
@@ -68,4 +68,3 @@ function remove_notification_b($connection,$reservation_id){
     $result= mysqli_query($connection,$query);
     return $result;
 }
-?>
