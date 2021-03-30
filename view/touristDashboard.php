@@ -52,7 +52,7 @@ if(isset($_GET['param1'])){
                     <p>Number of Tour Requests to be accepted by Guide :<?php echo $info['pending_tours']?> </p>
                     <div>
                     <form action="../controller/pending_tours_tourist_controller.php"  method="get">
-                        <button class="cobutton" type="submit" name="pending_tours" style="width:260px; float:right" >View Pending Tours</button>
+                        <button class="cobutton" type="submit" name="pending_tours" style="width:260px; float:right; margin-top:60px;" >View Pending Tours</button>
                     </form>
                     </div>
                 

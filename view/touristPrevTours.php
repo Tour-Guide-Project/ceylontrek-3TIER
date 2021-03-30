@@ -84,7 +84,7 @@ if(isset($_GET['param1'])){
     <div class="controler">
 
         <!-- Start Button buying -->
-        <button class="cobutton" > Contact Guide
+        <button class="cobutton" type="button" onclick="window.location='../controller/chat_controller.php'"> Contact Guide
                
 </button>
 <button class="cobutton"  onclick="onForm()" > Write a Review
@@ -148,7 +148,7 @@ if(isset($_GET['param1'])){
               
 
 
-                <div class="corner_buttons">
+                <!-- <div class="corner_buttons">
                         <div>
                             <button class="cobutton" style="width:260px"><i class="fa fa-credit-card" aria-hidden="true" ></i>Make a Complain</button>
                         </div>
@@ -157,7 +157,7 @@ if(isset($_GET['param1'])){
                             
                             <button class="cobutton" style="width:260px; margin-top:20px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
                         </div>
-                </div><!--corner_button-->
+                </div>corner_button -->
 </div>
 
 <script>

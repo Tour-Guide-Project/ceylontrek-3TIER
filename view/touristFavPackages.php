@@ -34,30 +34,7 @@
                 }
 
              ?>
-                <div class="calendar">
-                <div class="guidecalender">
-                    <div class="month">
-                        <i class="fa fa-caret-left prev" aria-hidden="true"></i>
-                        <div class="date"><h2></h2><h3></h3><p></p></div>
-                        <i class="fa fa-caret-right next" aria-hidden="true"></i>
-                    </div><!--month-->  
-                    
-                    <div class="weekdays">
-                        <div>Sun</div>
-                        <div>Mon</div>
-                        <div>Tue</div>
-                        <div>Wed</div>
-                        <div>Thu</div>
-                        <div>Fri</div>
-                        <div>Sat</div>
-                    </div><!--weeekdays-->
-                             
-                    <div class="days">
-                              
-                    </div><!--days-->
-                </div><!--guidecalender-->
-                </div>
-                <!-- end of calendar -->
+                
              <div class="content">
                
              <div class="packages">

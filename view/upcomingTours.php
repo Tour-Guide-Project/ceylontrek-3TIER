@@ -84,7 +84,7 @@ if(isset($_GET['param1'])){
         <form action="../controller/cancellation_controller.php" method="get">
         <button type="submit" class="cobutton" name="cancel" style="float:left;" value="<?php echo $tour['reservation_id']?>"> Cancel Tour</button>
 </form>
-<button class="cobutton"  style="float:none;"> Contact Guide
+<button class="cobutton"  style="float:none;" type="button" onclick="window.location='../controller/chat_controller.php'"> Contact Guide
                
                </button>
 
@@ -122,7 +122,7 @@ echo "</div>";
 
                
 </div>
-     <div class="corner_buttons">
+     <!-- <div class="corner_buttons">
                         <div>
                             <button class="cobutton" style="width:260px"><i class="fa fa-credit-card" aria-hidden="true" ></i>Make a Complain</button>
                         </div>
@@ -131,7 +131,7 @@ echo "</div>";
                             
                             <button class="cobutton" style="width:260px; margin-top:20px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
                         </div>
-                </div><!--corner_button-->    
+                </div><corner_button-->    
                
                 <div class="dashend"> <?php include('../view/footer.php'); ?> </div>
         <script src="../resources/js/guide dashboard.js"></script>       
