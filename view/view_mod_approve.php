@@ -17,7 +17,7 @@ if (isset($_GET['profiles'])) {
                 ?>
                 <div class="pcontainer">
                     <h2><?php echo $profile['first_name'], " ", $profile['last_name']; ?></h2>
-                    <p>Pending Profile</p>
+                    <p style="color:cyan;">Pending Profile...</p>
                     <p><?php echo $profile['email']; ?></p>
                     <form action="../controller/mod_guide_others_controller.php" method="get">
                         <button class="pbutton" type="submit" name="view_guide_other_details" value="<?php echo $profile['guide_id']; ?>">View Profile</button>

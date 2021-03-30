@@ -152,7 +152,7 @@
         <div class="btnCls">
             <form action="../controller/mod_approve_button_controller.php" method="get">
 
-                <button class="modbtn" style="width:80%; height:65px;" name="decline" value="<?php echo $details['id']; ?>" onclick="return confirm('Are you sure you want to Decline this Tour-guide details?')"><span>Decline Profile</span></button>
+                <!-- <button class="modbtn" style="width:80%; height:65px;" name="decline" value="" onclick="return confirm('Are you sure you want to Decline this Tour-guide details?')"><span>Decline Profile</span></button> -->
                 <button class="modbtn" style="width:80%; height:65px;" name="approve" value="<?php echo $details['id']; ?>" onclick="return confirm('Are you sure you want to Approve this Tour-guide details?')"><span>Approve Profile</span></button>
                 <button class="modbtn" style="width:80%; height:65px;" type="button" onclick="window.location='../controller/mod_approve_button_controller.php?msg'"><span>Message Guide</span></button>
 

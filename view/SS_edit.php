@@ -143,7 +143,7 @@
                         </div>
                     </div>
                     <div class="submitCls" style="float: right;">
-                        <button class="btnbtn" style="margin-right: 5%;" name="cancel" value="<?php echo $details['place_name']; ?>">Cancel</button>
+                        <button class="btnbtn" style="margin-right: 5%;" name="cancel" value="<?php echo $details['place_id']; ?>">Cancel</button>
                         <button class="btnbtn" name="place_edit" value="<?php echo $details['place_id']; ?>">Edit Place</button>
                     </div>
                 </form>

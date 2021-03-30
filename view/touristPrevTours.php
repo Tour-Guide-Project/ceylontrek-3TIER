@@ -2,11 +2,10 @@
 $tours=array();
 if(isset($_GET['param1'])){
     $tours=$_GET['param1'];
-
-
-
-}?>
+}
+ 
 ?>
+
 <html  lang="en">
     <head>
         <title>Previous Tours</title>

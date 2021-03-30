@@ -55,8 +55,8 @@
             </div> -->
 		</div>
 
-		<div class="formCls">
-			<div class="formClsCls">
+		<div class="formCls" style="margin-left: -50px;">
+			<div class="formClsCls" style="width: 700px;">
 				<div class="row">
 					<div class="col-25">
 						<label for="fName" class="lbl">Full Name</label>
@@ -104,7 +104,7 @@
 		<div class="btnCls">
 			<form action="../controller/UserAccountAdmin_controller.php" method="post">
 				<div class="btn">
-					<button class="sectionBtn" type="submit" name="message_user">Message User</button>
+					<button class="sectionBtn"  style="width:180px;margin-left:-20px;" type="submit" name="message_user">Message User</button>
 				</div>
 			</form>
 			<!-- <div class="btn">
@@ -114,9 +114,9 @@
 			if ($_SESSION['level'] == 'admin') {
 			?>
 				<form action="../controller/delete_user_controller.php" method="get">
-					<div class="btn">
-						<input type="hidden" name="user_id" value="<?php echo $details['id']; ?>"></input>
-						<button class="sectionBtn" name="user_level" value="<?php echo $user_level; ?>" onclick="return confirm('Are you sure you want to Delete this Tour-guide Account?')"> Delete Account </button>
+					<div class="btn" >
+						<input type="hidden" name="user_id"  value="<?php echo $details['id']; ?>"></input>
+						<button class="sectionBtn" style="width:180px;margin-left:-20px;" name="user_level" value="<?php echo $user_level; ?>" onclick="return confirm('Are you sure you want to Delete this Tour-guide Account?')"> Delete Account </button>
 					</div>
 				</form>
 			<?php

@@ -98,21 +98,21 @@ $packages=$_SESSION['packages'];
     <h1><?php echo $package['package_name']?></h1>
     <h4 style="margin-top=10px">Main Destinations :<?php echo $package['destinations']?></h4>
     <h4 style="margin-top:10px">Price :<?php echo $package['display_price']?></h4>
-    <h4 style="margin-top:10px"Maximum Number of Tourists :<?php echo $package['members']?></h4>
+    <h4 style="margin-top:10px"Maximum Number of Tourists :<?php echo $package['members']?>></h4>
     <h4 style="margin-top=10px">No. of Days : <?php echo $package['day_no']?></h4>
 
-    <span class="hint-star star" >
+    <!-- <span class="hint-star star" >
 <i class="fa fa-star" aria-hidden="true"></i>
 <i class="fa fa-star" aria-hidden="true"></i>
 <i class="fa fa-star" aria-hidden="true"></i>
 <i class="fa fa-star-half-o" aria-hidden="true"></i>
 <i class="fa fa-star-o" aria-hidden="true"></i>
-</span>
+</span> -->
 
 
     <!-- Package bio -->
     <p class="information">
-    <?php echo $package['headline']; ?> 
+    <?php echo $package['pdescription']; ?> 
     </p>
 
 
@@ -122,7 +122,7 @@ $packages=$_SESSION['packages'];
 
         <!-- Start Button buying -->
         <form action="../controller/view_package_ad_controller.php" method="get">   
-                    <button class="btn" type="submit" name="view_package" value="<?php echo $package['package_id']; ?>" ><span>View More</span>
+                    <button class="btn" type="submit" style="margin-top: 10px;" name="view_package" value="<?php echo $package['package_id']; ?>" ><span>View More</span>
          </button>
          </form>
         <!-- End Button buying -->
@@ -139,7 +139,7 @@ $packages=$_SESSION['packages'];
 
 <div class="package-image">
 
-    <img src="../resources/img/Packageresult/4.jpg" alt="Omar Dsoky">
+    <img src=" <?php echo $package['imgpath1']; ?> " alt="Omar Dsoky">
 
 </div>
 <!--  End Package image  -->

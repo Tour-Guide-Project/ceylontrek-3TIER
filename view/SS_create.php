@@ -68,7 +68,7 @@
                     <div class="row">
                         <div class="col-50-left">
                             <div class="col-50-left">
-                                <label for="activity" class="lbl">Choosed Activities :</label>
+                                <label for="activity" class="lbl">Choose Activities :</label>
                             </div>
                             <div class="col-50-right-b">
                                 <select style="height: 150px; width: 170px;" name="activities[]" id="activities" multiple>
