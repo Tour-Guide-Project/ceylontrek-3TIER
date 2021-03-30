@@ -113,8 +113,8 @@
                         </div>
 
                         <div>
-                            
-                            <button class="cobutton" style="width:260px; margin-top:20px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button>
+                            <a href="../controller/chat_controller.php">
+                            <button class="cobutton" style="width:260px; margin-top:20px"><i class="fa fa-phone" aria-hidden="true"></i>Contact Ceylon Treck</button></a>
                         </div>
                 </div><!--corner_button-->
             </div> <!--content -->
