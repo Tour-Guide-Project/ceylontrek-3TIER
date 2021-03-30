@@ -12,7 +12,7 @@
           <ul>
 
           <li>
-                  <a href="touristDashboard.php">
+                  <a href="../controller/view_tourist_dashboard_controller.php">
                       <span class="menu-icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
                       <span class="menu-title">My Dashboard</span>
                   </a>

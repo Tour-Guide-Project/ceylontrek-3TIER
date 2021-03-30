@@ -3,7 +3,7 @@
 //get complain details
 function get_complain_details($connection){
     //prepare database query
-   $query= "SELECT * FROM complain WHERE report_status=1"; 
+   $query= "SELECT * FROM complain WHERE report_status=1 ORDER BY checked_status_admin ASC"; 
  
    $result_set=mysqli_query($connection,$query);
    return $result_set;
@@ -53,7 +53,7 @@ function get_oldest_order($connection){
 }
 //get tourist order
 function get_tourist_order($connection){
-    $query="SELECT * FROM complain  WHERE complainee_level='tourist' AND report_status=1 ORDER BY checked_status ASC";
+    $query="SELECT * FROM complain  WHERE complainee_level='tourist' AND report_status=1 ORDER BY checked_status_admin ASC";
   
     $result=mysqli_query($connection,$query);
     return $result;
@@ -61,7 +61,7 @@ function get_tourist_order($connection){
   }
   //get tourguide order
   function get_tourguide_order($connection){
-    $query="SELECT * FROM complain  WHERE complainee_level='tourguide' AND report_status=1 ORDER BY checked_status ASC";
+    $query="SELECT * FROM complain  WHERE complainee_level='tourguide' AND report_status=1 ORDER BY checked_status_admin ASC";
   
     $result=mysqli_query($connection,$query);
     return $result;
@@ -69,7 +69,7 @@ function get_tourist_order($connection){
   }
 //search function
 function search($connection,$get_word){
-    $query="SELECT * FROM complain WHERE report_status=1 AND complainee LIKE '$get_word%' ORDER BY checked_status ASC ";
+    $query="SELECT * FROM complain WHERE report_status=1 AND complainee LIKE '$get_word%' ORDER BY checked_status_admin ASC ";
   
     $result=mysqli_query($connection,$query);
     return $result;
